@@ -1,0 +1,188 @@
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+    - updater.updater
+    - group.family
+    - group.home_lights
+    - group.entertainment_center
+
+devices_peter:
+   name: Peter Devices
+   entities:
+      - device_tracker.peter_gs7
+      - device_tracker.corolla
+      - device_tracker.peter_tabs2
+      - device_tracker.peter_gears2
+#      - device_tracker.peter_nook
+
+devices_kelley:
+   name: Kelley Devices
+   entities:
+      - device_tracker.kelley_gs7e
+      - device_tracker.kelley_tabs2
+      - device_tracker.kelley_nook
+#      - device_tracker.nitendo_3ds
+
+computers:
+   name: Computers
+   entities:
+      - device_tracker.neo
+      - device_tracker.surface
+      - device_tracker.peter_computer_work
+#      - device_tracker.kelley_computer_work
+
+family:
+   name: Family
+   entities:
+      - device_tracker.kelley_gs7e
+      - device_tracker.peter_gs7
+
+home_lights:
+   name: Home Lights
+   entities:
+      - group.bedroom_lights
+      - group.living_room_lights
+      - group.office_lights
+
+living_room:
+   name: Living Room
+   view: yes
+   icon: mdi:sofa
+   entities:
+      - sensor.broadlink_sensor_temperature
+      - group.living_room_lights
+      - device_tracker.silicondust_hdhomerun_prime
+      - media_player.google_home
+      - media_player.roku_5s56ag426734
+      - device_tracker.chromecast_livingroom
+      - group.entertainment_center
+      - group.lr_tv_source
+      - group.cable_source
+
+living_room_lights:
+   name: Living Room Lights
+   entities:
+      - switch.lr_fl_light
+      - switch.lr_tb_light
+
+entertainment_center:
+   name: Entertainment Center
+   entities:
+      - group.lr_tv_power
+      - switch.cable_power
+
+lr_tv_power:
+   name: Living Room TV Power
+   entities:
+      - switch.lr_tv_power1
+      - switch.lr_tv_power2
+
+lr_tv_source:
+   name: Living Room TV Source
+   entities:
+      - switch.lr_tv_cm2
+      - switch.lr_tv_hdmi1
+      - switch.lr_tv_hdmi2
+      - switch.lr_tv_hdmi3
+      - switch.lr_tv_hdmi4
+
+cable_source:
+   name: Cable Source
+   entities:
+      - switch.cable_hd
+      - switch.cable_1
+      - switch.cable_2
+      - switch.cable_3
+      - switch.cable_4
+      - switch.cable_5
+      - switch.cable_6
+      - switch.cable_7
+      - switch.cable_8
+      - switch.cable_9
+      - switch.cable_0
+      - switch.cable_ok
+
+office:
+   name: Office
+   view: yes
+   icon: mdi:desktop-tower
+   entities:
+      - switch.neo
+      - configurator.plex_media_server
+      - group.office_lights
+      - device_tracker.brotherprinter
+      - group.computers
+      - device_tracker.FIOSrouter
+
+office_lights:
+   name: Office Lights
+   entities:
+      - switch.office_fl_light
+
+bedroom:
+   name: Bedroom
+   view: yes
+   icon: mdi:hotel
+   entities:
+      - group.bedroom_lights
+
+bedroom_lights:
+   name: Bedroom Lights
+   entities:
+      - switch.bedroom_kelley_light
+      - switch.bedroom_peter_light
+
+device_status:
+   name: Device Status
+   view: yes
+   icon: mdi:robot
+   entities:
+     - group.devices_peter
+     - group.devices_kelley
+     - group.devices_other
+
+devices_other:
+   name: Other Devices
+   entities:
+      - device_tracker.galaxytab3
+      - device_tracker.silicondust_hdhomerun_prime
+      - device_tracker.brotherprinter
+
+weather:
+  name: Weather
+  view: yes
+  icon: mdi:thermometer
+  entities:
+    - group.darksky
+    - sensor.yr_symbol
+    - sun.sun
+
+darksky:
+  name: Darksky
+  entities:
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_icon
+    - sensor.dark_sky_nearest_storm_distance
+    - sensor.dark_sky_nearest_storm_bearing
+    - sensor.dark_sky_precip
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_dew_point
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_wind_bearing
+    - sensor.dark_sky_cloud_coverage
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_pressure
+    - sensor.dark_sky_visibility
+    - sensor.dark_sky_ozone
+    - sensor.dark_sky_minutely_summary
+    - sensor.dark_sky_hourly_summary
+    - sensor.dark_sky_daily_summary
+    - sensor.dark_sky_daily_high_temperature
+    - sensor.dark_sky_daily_low_temperature
+    - sensor.dark_sky_daily_high_apparent_temperature
+    - sensor.dark_sky_daily_low_apparent_temperature
+    - sensor.dark_sky_daily_max_precip_intensity

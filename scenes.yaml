@@ -1,0 +1,13 @@
+- name: Livingroom normal
+  entities:
+      switch.lr_fl_light:
+          state: on
+      switch.lr_tb_light:
+          state: on
+
+- name: Livingroom dark
+  entities:
+      switch.lr_fl_light:
+          state: off
+      switch.lr_tb_light:
+          state: off
