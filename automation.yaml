@@ -93,10 +93,18 @@
 - alias: 'Goodnight'
   trigger:
     platform: time
-    after: '23:30:00'
+    after: '23:05:00'
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri  
   action:
     - service: switch.turn_off
-      entity_id: group.all_switches
+      entity_id: group.home_lights
     - service: notify.pushbullet
       data:
         message: 'Goodnight!'

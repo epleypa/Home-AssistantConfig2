@@ -6,6 +6,11 @@ default_view:
     - group.family
     - group.home_lights
     - group.entertainment_center
+    - group.all_automations
+    - group.wmata
+    - sensor.since_last_boot
+    - sensor.ram_use
+    - sensor.cpu_use
 
 devices_peter:
    name: Peter Devices
@@ -56,6 +61,7 @@ living_room:
       - media_player.google_home
       - media_player.roku_5s56ag426734
       - device_tracker.chromecast_livingroom
+      - device_tracker.broadlink_rmpro
       - group.entertainment_center
       - group.lr_tv_source
       - group.cable_source
@@ -81,6 +87,7 @@ lr_tv_power:
 lr_tv_source:
    name: Living Room TV Source
    entities:
+      - switch.lr_tv_mute
       - switch.lr_tv_cm2
       - switch.lr_tv_hdmi1
       - switch.lr_tv_hdmi2
@@ -186,3 +193,9 @@ darksky:
     - sensor.dark_sky_daily_high_apparent_temperature
     - sensor.dark_sky_daily_low_apparent_temperature
     - sensor.dark_sky_daily_max_precip_intensity
+
+wmata:
+  name: WMATA Info
+  entities:
+    - sensor.wmata_dc
+    - sensor.wmata_md

@@ -39,14 +39,41 @@
   monitored_conditions:
     - temperature
 
-#- platform: systemmonitor
-#  resources:
-#    - type: last_boot
-#    - type: since_last_boot
+- platform: systemmonitor
+  resources:
+    - type: last_boot
+    - type: since_last_boot
+    - type: memory_use_percent
+    - type: processor_use
 
-#- platform: rest
-#  resource: https://api.wmata.com/StationPrediction.svc/json/GetPrediction/A08
-#  method: GET
-#  headers:
-#    api_key: ***REMOVED***
-#  value_template: '{{ value_json.trains.destination[0] }}'
+- platform: rest
+  name: 'WMATA_DC'
+  resource: https://api.wmata.com/StationPrediction.svc/json/GetPrediction/A08
+  method: GET
+  headers:
+    api_key: !secret wmata_api
+  value_template: '
+    {% set trains = value_json.Trains %}
+    {% for train in trains if train.DestinationCode == "B08" or train.DestinationCode == "B11" %}
+        {% if loop.first %}{{ train.Min }},
+        {% elif loop.last %} and {{ train.Min }} minutes
+        {% else %} {{ train.Min }},
+        {% endif %}
+    {% endfor %}'
+#  scan_interval: 300
+
+- platform: rest
+  name: 'WMATA_MD'
+  resource: https://api.wmata.com/StationPrediction.svc/json/GetPrediction/A08
+  method: GET
+  headers:
+    api_key: !secret wmata_api
+  value_template: '
+    {% set trains = value_json.Trains %}
+    {% for train in trains if train.DestinationCode == "A15" or train.DestinationCode == "A11" %}
+        {% if loop.first %}{{ train.Min }},
+        {% elif loop.last %} and {{ train.Min }} minutes
+        {% else %} {{ train.Min }},
+        {% endif %}
+    {% endfor %}'
+#  scan_interval: 300
