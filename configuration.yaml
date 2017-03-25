@@ -67,6 +67,8 @@ device_tracker:
     home_interval: 10
     scan_options: "-PS135,445 -F --host-timeout 5s"
 
+config:
+    
 ifttt:
   key: !secret ifttt_key
 
