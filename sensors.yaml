@@ -1,3 +1,10 @@
+- platform: time_date
+  display_options:
+  - 'time'
+  - 'date'
+  - 'time_utc'
+  - 'beat'
+
 - platform: darksky
   api_key: !secret darksky_api
   monitored_conditions:

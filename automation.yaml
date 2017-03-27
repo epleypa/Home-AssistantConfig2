@@ -180,3 +180,15 @@
       data:
         title: 'New Home Assistant Release'
         message: "Home Assistant  {{ states.updater.updater.state }}  is now available"
+        
+- alias: "NextTrain_DC"
+  trigger:
+    - platform: state
+      entity_id: switch.office_fl_light
+      state: 'on'
+  action:
+    - service: tts.google_say
+      data_template:
+        cache: false
+        entity_id: media_player.google_home
+        message: "the next metro train leaves for DC from friendship heights in {{ states('sensor.wmata_dc') }}"
