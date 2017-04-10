@@ -21,7 +21,8 @@ devices_peter:
       - device_tracker.corolla
       - device_tracker.peter_tabs2
       - device_tracker.peter_gears2
-#      - device_tracker.peter_nook
+      - device_tracker.peter_nook
+      - device_tracker.peter_iphone7
 
 devices_kelley:
    name: Kelley Devices
@@ -29,7 +30,7 @@ devices_kelley:
       - device_tracker.kelley_gs7e
       - device_tracker.kelley_tabs2
       - device_tracker.kelley_nook
-#      - device_tracker.nitendo_3ds
+      - device_tracker.nintendo_3ds
 
 computers:
    name: Computers
@@ -37,6 +38,7 @@ computers:
       - device_tracker.neo
       - device_tracker.surface
       - device_tracker.peter_computer_work
+      - device_tracker.peter_computer_work2
 #      - device_tracker.kelley_computer_work
 
 family:
@@ -149,6 +151,7 @@ device_status:
    entities:
      - group.devices_peter
      - group.devices_kelley
+     - group.computers
      - group.devices_other
 
 devices_other:
@@ -201,3 +204,5 @@ wmata:
   entities:
     - sensor.wmata_dc
     - sensor.wmata_md
+    - input_boolean.wmata_dc
+    - input_boolean.wmata_md

@@ -49,6 +49,7 @@ sun:
 # Text to speech
 tts:
   platform: google
+  language: 'en-us'
 
 #media players
 media_player:
@@ -63,9 +64,17 @@ device_tracker:
     password: !secret automatic_password
   - platform: nmap_tracker
 #    hosts: 192.168.1.28 192.168.1.128
-    hosts: 192.168.1.1-254
-    home_interval: 10
+    hosts:
+    - 192.168.1.1-30
+    - 192.169.1.128
+    - 192.168.1.42
+    - 192.168.1.200
+    home_interval: 5
     scan_options: "-PS135,445 -F --host-timeout 5s"
+    exclude:
+    - 192.168.1.150
+    - 192.168.1.100
+    - 192.168.1.101
 
 config:
 
@@ -73,7 +82,7 @@ recorder:
   exclude:
     domains:
     entities:
-      - sun.sun
+      - sensor.internet_time
       - sensor.last_boot
       - sensor.since_last_boot
       - sensor.wmata_dc
@@ -85,6 +94,24 @@ recorder:
       - sensor.date
       - sensor.time_utc
       - sensor.time_beat
+      - switch.lr_tv_mute
+      - switch.lr_tv_cm2
+      - switch.lr_tv_hdmi1
+      - switch.lr_tv_hdmi2
+      - switch.lr_tv_hdmi3
+      - switch.lr_tv_hdmi4
+      - switch.cable_hd
+      - switch.cable_1
+      - switch.cable_2
+      - switch.cable_3
+      - switch.cable_4
+      - switch.cable_5
+      - switch.cable_6
+      - switch.cable_7
+      - switch.cable_8
+      - switch.cable_9
+      - switch.cable_0
+      - switch.cable_ok
     
 ifttt:
   key: !secret ifttt_key
@@ -99,5 +126,14 @@ zone: !include zones.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 group: !include groups.yaml
-
 #scene: !include scenes.yaml #not sure how these are different from automations
+
+input_boolean:
+  wmata_dc:
+    name: Notify Next DC Train
+    initial: off
+    icon: mdi:speaker-wireless
+  wmata_md:
+    name: Notify Next MD Train
+    initial: off
+    icon: mdi:speaker-wireless

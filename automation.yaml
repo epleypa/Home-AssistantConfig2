@@ -2,7 +2,7 @@
   trigger:
     platform: sun
     event: sunrise
-    offset: '+00:15:00'
+#    offset: '+00:15:00'
   action:
     - service: notify.pushbullet
       data:
@@ -17,9 +17,9 @@
   condition:
     condition: and
     conditions:
-      - condition: state
-        entity_id: sun.sun
-        state: 'below_horizon'
+      # - condition: state
+        # entity_id: sun.sun
+        # state: 'below_horizon'
       - condition: time
         weekday:
           - mon
@@ -179,16 +179,32 @@
     - service: notify.pushbullet
       data:
         title: 'New Home Assistant Release'
-        message: "Home Assistant  {{ states.updater.updater.state }}  is now available"
+        message: "Home Assistant {{ states.updater.updater.state }} is now available"
         
 - alias: "NextTrain_DC"
   trigger:
     - platform: state
-      entity_id: switch.office_fl_light
+      entity_id: input_boolean.wmata_dc
       state: 'on'
   action:
     - service: tts.google_say
       data_template:
         cache: false
         entity_id: media_player.google_home
-        message: "the next metro train leaves for DC from friendship heights in {{ states('sensor.wmata_dc') }}"
+        message: "the next metro train leaves for DC from friendship heights in {{ states('sensor.wmata_dc') }} minutes"
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.wmata_dc
+        
+- alias: "NextTrain_MD"
+  trigger:
+    - platform: state
+      entity_id: input_boolean.wmata_md
+      state: 'on'
+  action:
+    - service: tts.google_say
+      data_template:
+        cache: false
+        entity_id: media_player.google_home
+        message: "the next metro train leaves for Maryland from friendship heights in {{ states('sensor.wmata_md') }} minutes"
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.wmata_md

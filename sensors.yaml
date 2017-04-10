@@ -62,9 +62,9 @@
   value_template: '
     {% set trains = value_json.Trains %}
     {% for train in trains if train.DestinationCode == "B08" or train.DestinationCode == "B11" %}
-        {% if loop.first %}{{ train.Min }},
-        {% elif loop.last %} and {{ train.Min }} minutes
-        {% else %} {{ train.Min }},
+        {% if loop.first %}{{ train.Min }}
+        {% elif loop.last %} and {{ train.Min }}
+        {% else %}, {{ train.Min }},
         {% endif %}
     {% endfor %}'
 #  scan_interval: 300
@@ -78,9 +78,9 @@
   value_template: '
     {% set trains = value_json.Trains %}
     {% for train in trains if train.DestinationCode == "A15" or train.DestinationCode == "A11" %}
-        {% if loop.first %}{{ train.Min }},
-        {% elif loop.last %} and {{ train.Min }} minutes
-        {% else %} {{ train.Min }},
+        {% if loop.first %}{{ train.Min }}
+        {% elif loop.last %} and {{ train.Min }}
+        {% else %}, {{ train.Min }},
         {% endif %}
     {% endfor %}'
 #  scan_interval: 300
