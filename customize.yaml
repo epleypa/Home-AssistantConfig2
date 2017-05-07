@@ -1,0 +1,72 @@
+group.all_automations:
+  hidden: false
+group.lr_tv_power:
+  emulated_hue: true
+  friendly_name: 'TV'
+group.home_lights:
+  emulated_hue: true
+
+switch.lr_fl_light:
+  friendly_name: 'Living Room Floor Light'
+switch.lr_tb_light:
+  friendly_name: 'Living Room Table Light'
+switch.office_fl_light:
+  friendly_name: 'Office Floor Light'
+switch.bedroom_kelley_light:
+  friendly_name: 'Bedroom Kelley Light'
+switch.bedroom_peter_light:
+  friendly_name: 'Bedroom Peter Light'
+switch.lr_tv_power1:
+  friendly_name: 'TV'
+  emulated_hue: false
+switch.lr_tv_power2:
+  friendly_name: 'TV2'
+  emulated_hue: false
+switch.lr_tv_hdmi1:
+  friendly_name: 'hdmi1'
+switch.lr_tv_hdmi2:
+  friendly_name: 'hdmi2'
+switch.lr_tv_hdmi3:
+  friendly_name: 'Roku'
+switch.lr_tv_hdmi4:
+  friendly_name: 'Chromecast'
+switch.lr_tv_cm2:
+  friendly_name: 'cm2'
+switch.lr_tv_mute:
+  friendly_name: 'Mute'
+switch.cable_power:
+  friendly_name: 'Cable'
+switch.cable_1:
+  friendly_name: 'cable_1'
+  emulated_hue: false
+switch.cable_2:
+  friendly_name: 'cable_2'
+  emulated_hue: false
+switch.cable_3:
+  friendly_name: 'cable_3'
+  emulated_hue: false
+switch.cable_4:
+  friendly_name: 'cable_4'
+  emulated_hue: false
+switch.cable_5:
+  friendly_name: 'cable_5'
+  emulated_hue: false
+switch.cable_6:
+  friendly_name: 'cable_6'
+  emulated_hue: false
+switch.cable_7:
+  friendly_name: 'cable_7'
+  emulated_hue: false
+switch.cable_8:
+  friendly_name: 'cable_8'
+  emulated_hue: false
+switch.cable_9:
+  friendly_name: 'cable_9'
+  emulated_hue: false
+switch.cable_0:
+  friendly_name: 'cable_0'
+  emulated_hue: false
+switch.cable_ok:
+  friendly_name: 'ok'
+switch.cable_hd:
+  friendly_name: 'HD'

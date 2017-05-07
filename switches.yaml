@@ -55,7 +55,6 @@
       friendly_name: 'lr_tv_mute'
     cable_power:
       command_on: 'JgAwAAABI5QPSg6UD0kOlQ9JDkoOSg5KDkoOSg9KDkoOSg6UD5QPSQ8ABDYAASRKDgANBQAAAAAAAAAA'
-      command_off: 'JgAwAAABI5QPSg6UD0kOlQ9JDkoOSg5KDkoOSg9KDkoOSg6UD5QPSQ8ABDYAASRKDgANBQAAAAAAAAAA'
       friendly_name: 'cable_power'
     cable_1:
       command_on: 'JgAwAAABJZUPkw9JDkoPSg5KDkoOSg5KDkoOSg5KDksOlA+UD5MPlA8AA+0AASNKDgANBQAAAAAAAAAA'

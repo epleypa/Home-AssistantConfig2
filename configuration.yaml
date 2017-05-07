@@ -10,9 +10,7 @@ homeassistant:
   unit_system: imperial
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/New_York
-  customize:
-    group.all_automations:
-      hidden: false
+  customize: !include customize.yaml
 
 # Show links to resources in log and frontend
 #introduction:
@@ -121,11 +119,12 @@ notify:
     platform: pushbullet
     api_key: !secret pushbullet_key
 
-automation: !include automation.yaml
+automation: !include_dir_merge_list automation/
 zone: !include zones.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 group: !include groups.yaml
+script: !include scripts.yaml
 #scene: !include scenes.yaml #not sure how these are different from automations
 
 input_boolean:
@@ -137,3 +136,9 @@ input_boolean:
     name: Notify Next MD Train
     initial: off
     icon: mdi:speaker-wireless
+
+emulated_hue:
+  listen_port: 80
+  exposed_domains:
+    - switch
+    - light
