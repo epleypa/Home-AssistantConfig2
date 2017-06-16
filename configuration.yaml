@@ -23,8 +23,8 @@ http:
   api_password: !secret http_password
   # Uncomment this if you are using SSL or running in Docker etc
   base_url: !secret base_url
-#  ssl_certificate: !secret ssl_cert_loc
-#  ssl_key: !secret ssl_key_loc
+  ssl_certificate: !secret ssl_cert_loc
+  ssl_key: !secret ssl_key_loc
 
 # Checks for available updates
 updater:
