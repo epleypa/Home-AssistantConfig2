@@ -1,0 +1,19 @@
+- platform: mqtt_json
+  name: "Entry LED"
+  state_topic: "bruh/entrysensor"
+  command_topic: "bruh/entrysensor/set"
+  brightness: true
+  flash: true
+  rgb: true
+  optimistic: false
+  qos: 0  
+
+- platform: mqtt_json
+  name: "Office LED"
+  state_topic: "bruh/officesensor"
+  command_topic: "bruh/officesensor/set"
+  brightness: true
+  flash: true
+  rgb: true
+  optimistic: false
+  qos: 0  

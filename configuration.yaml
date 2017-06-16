@@ -49,6 +49,8 @@ tts:
   platform: google
   language: 'en-us'
 
+mqtt:
+  
 #media players
 media_player:
   - platform: plex
@@ -121,24 +123,16 @@ notify:
 
 automation: !include_dir_merge_list automation/
 zone: !include zones.yaml
-sensor: !include sensors.yaml
+sensor: !include_dir_merge_list sensors/
 switch: !include switches.yaml
 group: !include groups.yaml
 script: !include scripts.yaml
-#scene: !include scenes.yaml #not sure how these are different from automations
-
-input_boolean:
-  wmata_dc:
-    name: Notify Next DC Train
-    initial: off
-    icon: mdi:speaker-wireless
-  wmata_md:
-    name: Notify Next MD Train
-    initial: off
-    icon: mdi:speaker-wireless
+#input_boolean: !include input_boolean.yaml
+light: !include lights.yaml
 
 emulated_hue:
   listen_port: 80
   exposed_domains:
     - switch
-    - light
+    - script
+  off_maps_to_on_domains:

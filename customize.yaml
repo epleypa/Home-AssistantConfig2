@@ -1,5 +1,7 @@
 group.all_automations:
   hidden: false
+group.all_scripts:
+  hidden: false
 group.lr_tv_power:
   emulated_hue: true
   friendly_name: 'TV'
@@ -27,15 +29,16 @@ switch.lr_tv_hdmi1:
 switch.lr_tv_hdmi2:
   friendly_name: 'hdmi2'
 switch.lr_tv_hdmi3:
-  friendly_name: 'Roku'
+  friendly_name: 'hdmi3'
 switch.lr_tv_hdmi4:
-  friendly_name: 'Chromecast'
+  friendly_name: 'hdmi4'
 switch.lr_tv_cm2:
   friendly_name: 'cm2'
 switch.lr_tv_mute:
   friendly_name: 'Mute'
 switch.cable_power:
   friendly_name: 'Cable'
+  emulated_hue: false
 switch.cable_1:
   friendly_name: 'cable_1'
   emulated_hue: false
@@ -68,5 +71,17 @@ switch.cable_0:
   emulated_hue: false
 switch.cable_ok:
   friendly_name: 'ok'
+  emulated_hue: false
 switch.cable_hd:
   friendly_name: 'HD'
+  
+script.wmata_dc:
+  friendly_name: Notify Next DC Train
+  initial: off
+  icon: mdi:speaker-wireless
+  emulated_hue: false
+script.wmata_md:
+  friendly_name: Notify Next MD Train
+  initial: off
+  icon: mdi:speaker-wireless
+  emulated_hue: false

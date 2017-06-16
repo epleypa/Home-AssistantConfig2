@@ -1,0 +1,67 @@
+- alias: 'LED Motion'
+  trigger:
+    platform: state
+    entity_id: sensor.entry_pir, sensor.office_pir
+    to: 'motion detected'
+  action:
+    - service: light.turn_on
+      entity_id: light.entry_led, light.office_led
+    - delay: 00:00:01
+    - service: light.turn_off
+      entity_id: light.entry_led, light.office_led
+      
+- alias: 'Entry Motion'
+  trigger:
+    platform: state
+    entity_id: sensor.entry_pir
+    to: 'motion detected'
+  condition:
+    condition: and
+    conditions:
+      - condition: sun
+        after: sunset
+        before_offset: '-00:15:00'
+  action:
+    - service: switch.turn_on
+      entity_id: group.living_room_lights
+    # - service: notify.pushbullet
+      # data:
+        # message: 'Motion in Entryway'
+        
+- alias: 'Office Motion'
+  trigger:
+    platform: state
+    entity_id: sensor.office_pir
+    to: 'motion detected'
+  condition:
+    condition: and
+    conditions:
+      - condition: sun
+        after: sunset
+        before_offset: '-00:15:00'
+  action:
+    - service: switch.turn_on
+      entity_id: group.office_lights
+    # - service: notify.pushbullet
+      # data:
+        # message: 'Motion in Office'
+
+- alias: 'Office Motionless'
+  trigger:
+    platform: state
+    entity_id: sensor.office_pir
+    to: 'standby'
+    for:
+      minutes: 30
+  condition:
+    condition: and
+    conditions:
+      - condition: sun
+        after: sunset
+        before_offset: '-00:15:00'
+  action:
+    - service: switch.turn_off
+      entity_id: group.office_lights
+    # - service: notify.pushbullet
+      # data:
+        # message: 'No Motion in Office'

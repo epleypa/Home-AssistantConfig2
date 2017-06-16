@@ -1,0 +1,124 @@
+wmata_dc:
+  sequence:
+    - service: media_player.turn_on
+      entity_id: media_player.google_home
+    - service: tts.google_say
+      data_template:
+        cache: false
+        entity_id: media_player.google_home
+        message: "the next metro train leaves for DC from friendship heights in {{ states('sensor.wmata_dc') }} minutes"
+
+wmata_md:
+  sequence:
+    - service: media_player.turn_on
+      entity_id: media_player.google_home
+    - service: tts.google_say
+      data_template:
+        cache: false
+        entity_id: media_player.google_home
+        message: "the next metro train leaves for Maryland from friendship heights in {{ states('sensor.wmata_md') }} minutes"
+
+chromecast:
+  sequence:
+    - service: switch.turn_on
+      entity_id: group.lr_tv_power
+    - service: switch.turn_on
+      entity_id: switch.neo
+    - delay: '00:00:15'
+    - service: notify.pushbullet
+      data:
+        message: 'Switching to Chromecast'
+    - service: switch.turn_on
+      entity_id: switch.lr_tv_hdmi4
+      
+roku:
+  sequence:
+    - service: switch.turn_on
+      entity_id: group.lr_tv_power
+    - service: switch.turn_on
+      entity_id: switch.neo
+    - delay: '00:00:15'
+    - service: notify.pushbullet
+      data:
+        message: 'Switching to Roku'
+    - service: switch.turn_on
+      entity_id: switch.lr_tv_hdmi3
+      
+cable:
+  sequence:
+    - service: switch.turn_on
+      entity_id: group.lr_tv_power
+    - service: switch.turn_on
+      entity_id: switch.cable_power
+    - delay: '00:00:15'
+    - service: notify.pushbullet
+      data:
+        message: 'Switching to Cable'
+    - service: switch.turn_on
+      entity_id: switch.lr_tv_cm2
+      
+freeform:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.cable
+    - delay: '00:00:15'
+    - service: switch.turn_on
+      entity_id: switch.cable_6
+    - service: switch.turn_on
+      entity_id: switch.cable_9
+    - service: switch.turn_on
+      entity_id: switch.cable_9
+    - service: switch.turn_on
+      entity_id: switch.cable_ok
+nickelodeon:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.cable
+    - delay: '00:00:15'
+    - service: switch.turn_on
+      entity_id: switch.cable_7
+    - service: switch.turn_on
+      entity_id: switch.cable_5
+    - service: switch.turn_on
+      entity_id: switch.cable_2
+    - service: switch.turn_on
+      entity_id: switch.cable_ok
+disney:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.cable
+    - delay: '00:00:15'
+    - service: switch.turn_on
+      entity_id: switch.cable_7
+    - service: switch.turn_on
+      entity_id: switch.cable_8
+    - service: switch.turn_on
+      entity_id: switch.cable_0
+    - service: switch.turn_on
+      entity_id: switch.cable_ok
+hdtv:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.cable
+    - delay: '00:00:15'
+    - service: switch.turn_on
+      entity_id: switch.cable_6
+    - service: switch.turn_on
+      entity_id: switch.cable_6
+    - service: switch.turn_on
+      entity_id: switch.cable_5
+    - service: switch.turn_on
+      entity_id: switch.cable_ok
+abc:
+  sequence:
+    - service: script.turn_on
+      entity_id: script.cable
+    - delay: '00:00:15'
+    - service: switch.turn_on
+      entity_id: switch.cable_5
+    - service: switch.turn_on
+      entity_id: switch.cable_0
+    - service: switch.turn_on
+      entity_id: switch.cable_7
+    - service: switch.turn_on
+      entity_id: switch.cable_ok

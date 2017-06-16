@@ -7,6 +7,7 @@ default_view:
     - group.home_lights
     - group.entertainment_center
     - group.all_automations
+    - group.all_scripts
     - group.wmata
     - sensor.since_last_boot
     - sensor.ram_use
@@ -144,6 +145,32 @@ bedroom_lights:
       - switch.bedroom_kelley_light
       - switch.bedroom_peter_light
 
+sensors:
+   name: Sensors
+   view: yes
+   icon: mdi:led-on
+   entities:
+      - group.sensor_entry
+      - group.sensor_office
+    
+sensor_entry:
+  name: Entry Sensors
+  entities:
+    - sensor.entry_temperature
+    - sensor.entry_humidity
+    - sensor.entry_ldr
+    - sensor.entry_pir
+    - light.entry_led
+
+sensor_office:
+  name: Office Sensors
+  entities:
+    - sensor.office_temperature
+    - sensor.office_humidity
+    - sensor.office_ldr
+    - sensor.office_pir
+    - light.office_led
+
 device_status:
    name: Device Status
    view: yes
@@ -204,5 +231,5 @@ wmata:
   entities:
     - sensor.wmata_dc
     - sensor.wmata_md
-    - input_boolean.wmata_dc
-    - input_boolean.wmata_md
+    - script.wmata_dc
+    - script.wmata_md
