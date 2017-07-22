@@ -72,9 +72,6 @@ freeform:
       entity_id: switch.cable_ok
 nickelodeon:
   sequence:
-    - service: script.turn_on
-      entity_id: script.cable
-    - delay: '00:00:15'
     - service: switch.turn_on
       entity_id: switch.cable_7
     - service: switch.turn_on
@@ -85,9 +82,6 @@ nickelodeon:
       entity_id: switch.cable_ok
 disney:
   sequence:
-    - service: script.turn_on
-      entity_id: script.cable
-    - delay: '00:00:15'
     - service: switch.turn_on
       entity_id: switch.cable_7
     - service: switch.turn_on
@@ -98,9 +92,6 @@ disney:
       entity_id: switch.cable_ok
 hdtv:
   sequence:
-    - service: script.turn_on
-      entity_id: script.cable
-    - delay: '00:00:15'
     - service: switch.turn_on
       entity_id: switch.cable_6
     - service: switch.turn_on
@@ -111,9 +102,6 @@ hdtv:
       entity_id: switch.cable_ok
 abc:
   sequence:
-    - service: script.turn_on
-      entity_id: script.cable
-    - delay: '00:00:15'
     - service: switch.turn_on
       entity_id: switch.cable_5
     - service: switch.turn_on
