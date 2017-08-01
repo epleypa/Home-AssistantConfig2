@@ -188,14 +188,25 @@ devices_other:
       - device_tracker.silicondust_hdhomerun_prime
       - device_tracker.brotherprinter
 
+wmata:
+  name: WMATA Info
+  entities:
+    - sensor.wmata_dc
+    - sensor.wmata_md
+    - script.wmata_dc
+    - script.wmata_md      
+      
 weather:
   name: Weather
   view: yes
   icon: mdi:thermometer
   entities:
     - group.darksky
+    - group.wu
     - sensor.yr_symbol
     - sun.sun
+    - sensor.moon
+    - sensor.nws_alerts
 
 darksky:
   name: Darksky
@@ -225,11 +236,20 @@ darksky:
     - sensor.dark_sky_daily_high_apparent_temperature
     - sensor.dark_sky_daily_low_apparent_temperature
     - sensor.dark_sky_daily_max_precip_intensity
-
-wmata:
-  name: WMATA Info
+    
+wu:
+  name: WeatherUnderground
   entities:
-    - sensor.wmata_dc
-    - sensor.wmata_md
-    - script.wmata_dc
-    - script.wmata_md
+    - sensor.pws_observation_time
+    - sensor.pws_alerts
+    - sensor.pws_uv
+    - sensor.pws_solarradiation
+    - sensor.pws_visibility_mi
+    - sensor.pws_weather_1d
+    - sensor.pws_weather_1n
+    - sensor.pws_weather_2d
+    - sensor.pws_weather_2n
+    - sensor.pws_weather_3d
+    - sensor.pws_weather_3n
+    - sensor.pws_weather_4d
+    - sensor.pws_weather_4n
