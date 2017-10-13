@@ -121,6 +121,7 @@ office:
    icon: mdi:desktop-tower
    entities:
       - switch.neo
+      - switch.zion
       - configurator.plex_media_server
       - group.office_lights
       - device_tracker.brotherprinter

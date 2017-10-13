@@ -62,7 +62,7 @@ device_tracker:
     client_id: c1ce08e5c7825763112b
     secret: !secret automatic_secret
     username: pae2008@gmail.com
-    password: !secret automatic_password
+#    password: !secret automatic_password
   # - platform: nmap_tracker
 # #    hosts: 192.168.1.28 192.168.1.128
     # hosts:

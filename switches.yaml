@@ -2,6 +2,10 @@
   mac_address: "D4-3D-7E-BA-A6-EF"
   name: Neo
   host: "192.168.1.128"
+- platform: wake_on_lan
+  mac_address: "30-5A-3A-03-38-70"
+  name: Zion
+  host: "192.168.1.250"
 
 - platform: broadlink
   host: 192.168.1.42

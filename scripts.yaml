@@ -1,21 +1,21 @@
 wmata_dc:
   sequence:
     - service: media_player.turn_on
-      entity_id: media_player.google_home
+      entity_id: media_player.living_room_home
     - service: tts.google_say
       data_template:
         cache: false
-        entity_id: media_player.google_home
+        entity_id: media_player.living_room_home
         message: "the next metro train leaves for DC from friendship heights in {{ states('sensor.wmata_dc') }} minutes"
 
 wmata_md:
   sequence:
     - service: media_player.turn_on
-      entity_id: media_player.google_home
+      entity_id: media_player.living_room_home
     - service: tts.google_say
       data_template:
         cache: false
-        entity_id: media_player.google_home
+        entity_id: media_player.living_room_home
         message: "the next metro train leaves for Maryland from friendship heights in {{ states('sensor.wmata_md') }} minutes"
 
 chromecast:
@@ -41,6 +41,23 @@ roku:
     - service: notify.pushbullet
       data:
         message: 'Switching to Roku'
+    - service: switch.turn_on
+      entity_id: switch.lr_tv_hdmi3
+      
+plex: #on roku
+  sequence:
+    - service: switch.turn_on
+      entity_id: group.lr_tv_power
+    - service: switch.turn_on
+      entity_id: switch.neo
+    - delay: '00:00:15'
+    - service: notify.pushbullet
+      data:
+        message: 'Switching to Plex on Roku'
+    - service: media_player.select_source
+      entity_id: media_player.roku_5S56AG426734
+      data:
+        source: 'Plex'
     - service: switch.turn_on
       entity_id: switch.lr_tv_hdmi3
       

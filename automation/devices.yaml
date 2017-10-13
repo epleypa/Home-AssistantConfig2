@@ -69,3 +69,21 @@
       data:
         title: 'New Home Assistant Release'
         message: "Home Assistant {{ states.updater.updater.state }} is now available"
+
+- alias: 'Plex Wake'
+  trigger:
+    - platform: time
+      hours: '/1'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: '19:30:00'
+        before: '00:00:00'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.neo
+    - service: logbook.log
+      data:
+        name: "Wake Plex"
+        message: "has woke Neo"
