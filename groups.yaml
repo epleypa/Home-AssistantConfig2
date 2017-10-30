@@ -65,6 +65,7 @@ living_room:
       - device_tracker.silicondust_hdhomerun_prime
       - media_player.google_home
       - media_player.roku_5s56ag426734
+      - media_player.plex_web_chrome
       - device_tracker.chromecast_livingroom
       - device_tracker.broadlink_rmpro
       - group.entertainment_center
@@ -122,7 +123,6 @@ office:
    entities:
       - switch.neo
       - switch.zion
-      - configurator.plex_media_server
       - group.office_lights
       - device_tracker.brotherprinter
       - group.computers

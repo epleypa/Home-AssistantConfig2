@@ -73,7 +73,8 @@
 - alias: 'Plex Wake'
   trigger:
     - platform: time
-      hours: '/1'
+      minutes: '/60'
+      seconds: 00
   condition:
     condition: and
     conditions:
