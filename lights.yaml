@@ -16,4 +16,14 @@
   flash: true
   rgb: true
   optimistic: false
-  qos: 0  
+  qos: 0
+  
+- platform: mqtt_json
+  name: "Bedroom LED"
+  state_topic: "bruh/bedroomsensor"
+  command_topic: "bruh/bedroomsensor/set"
+  brightness: true
+  flash: true
+  rgb: true
+  optimistic: false
+  qos: 0

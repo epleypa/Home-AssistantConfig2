@@ -1,0 +1,32 @@
+- platform: mqtt
+  state_topic: "bruh/entrysensor"
+  name: "Entry PIR"
+  value_template: '{{ value_json.motion }}'
+  payload_on: "motion detected"
+  payload_off: "standby"
+  device_class: motion
+- platform: mqtt
+  state_topic: "bruh/officesensor"
+  name: "Office PIR"
+  value_template: '{{ value_json.motion }}'
+  payload_on: "motion detected"
+  payload_off: "standby"
+  device_class: motion
+# - platform: mqtt
+  # state_topic: "bruh/bedroomsensor"
+  # name: "Bedroom PIR"
+  # value_template: '{{ value_json.motion }}'
+  # payload_on: "motion_detected"
+  # payload_off: "standby"
+  # device_class: motion
+
+- platform: mqtt
+  name: "Fridge Door"
+  state_topic: "smartthings/Fridge/contact"
+  payload_on: "open"
+  payload_off: "closed"
+#  availability_topic: "home-assistant/window/availability"
+  payload_available: "online"
+  payload_not_available: "offline"
+  qos: 0
+  device_class: opening

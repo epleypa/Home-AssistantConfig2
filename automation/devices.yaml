@@ -1,3 +1,32 @@
+- alias: 'HASS Start'
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: google_assistant.request_sync
+    - service: light.turn_on
+      entity_id: light.entry_led, light.office_led, light.bedroom_led
+      data:
+        rgb_color: [255,0,0]
+    - delay: 00:00:01
+    - service: light.turn_on
+      entity_id: light.entry_led, light.office_led, light.bedroom_led
+      data:
+        rgb_color: [0,255,0]
+    - delay: 00:00:01
+    - service: light.turn_on
+      entity_id: light.entry_led, light.office_led, light.bedroom_led
+      data:
+        rgb_color: [0,0,255]
+    - delay: 00:00:01
+    - service: light.turn_on
+      entity_id: light.entry_led, light.office_led, light.bedroom_led
+      data:
+        rgb_color: [255,255,255]
+    - delay: 00:00:01
+    - service: light.turn_off
+      entity_id: light.entry_led, light.office_led, light.bedroom_led
+
 - alias: 'Computer On'
   trigger:
     platform: state

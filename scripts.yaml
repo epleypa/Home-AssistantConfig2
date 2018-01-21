@@ -24,7 +24,7 @@ chromecast:
       entity_id: group.lr_tv_power
     - service: switch.turn_on
       entity_id: switch.neo
-    - delay: '00:00:15'
+    - delay: '00:00:10'
     - service: notify.pushbullet
       data:
         message: 'Switching to Chromecast'
@@ -37,7 +37,7 @@ roku:
       entity_id: group.lr_tv_power
     - service: switch.turn_on
       entity_id: switch.neo
-    - delay: '00:00:15'
+    - delay: '00:00:10'
     - service: notify.pushbullet
       data:
         message: 'Switching to Roku'
@@ -50,7 +50,7 @@ plex: #on roku
       entity_id: group.lr_tv_power
     - service: switch.turn_on
       entity_id: switch.neo
-    - delay: '00:00:15'
+    - delay: '00:00:10'
     - service: notify.pushbullet
       data:
         message: 'Switching to Plex on Roku'
@@ -67,7 +67,7 @@ cable:
       entity_id: group.lr_tv_power
     - service: switch.turn_on
       entity_id: switch.cable_power
-    - delay: '00:00:15'
+    - delay: '00:00:10'
     - service: notify.pushbullet
       data:
         message: 'Switching to Cable'
@@ -76,9 +76,6 @@ cable:
       
 freeform:
   sequence:
-    - service: script.turn_on
-      entity_id: script.cable
-    - delay: '00:00:15'
     - service: switch.turn_on
       entity_id: switch.cable_6
     - service: switch.turn_on
@@ -127,3 +124,13 @@ abc:
       entity_id: switch.cable_7
     - service: switch.turn_on
       entity_id: switch.cable_ok
+      
+# say_entry_temperature:
+  # sequence:
+    # - service: media_player.turn_on
+      # entity_id: media_player.living_room_home
+    # - service: tts.google_say
+      # data_template:
+        # cache: false
+        # entity_id: media_player.living_room_home
+        # message: "The entry temperature is {{ states.sensor.entry_temperature.state }} degrees"

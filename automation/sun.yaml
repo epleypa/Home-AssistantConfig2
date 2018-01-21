@@ -114,13 +114,3 @@
     - service: notify.pushbullet
       data:
         message: 'Goodnight!'
-        
-- alias: "Weather Alert"
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.pws_alerts
-      above: 0
-  action:
-    - service: notify.pushbullet
-      data_template:
-        message: 'Weather Alert: {{ states.sensor.pws_alerts.attributes.Description }}'

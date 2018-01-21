@@ -1,0 +1,56 @@
+- alias: "Weather Alert"
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.pws_alerts
+      above: 0
+  action:
+    - service: notify.pushbullet
+      data_template:
+        message: 'Weather Alert: {{ states.sensor.pws_alerts.attributes.Description }}'
+
+# - alias: "Sunny Weather"
+  # trigger:
+    # - platform:
+    # condition: and
+    # conditions:
+      # - condition: numeric_state
+        # entity_id: sensor.dark_sky_temperature
+        # above: 40
+      # - condition: state
+        # entity_id: sensor.dark_sky_summary
+        # state: 'Clear'
+  # action:
+    # - service:
+
+# - alias: "Cloudy Weather"
+  # trigger:
+    # - platform:
+  # action:
+    # - service:
+
+# - alias: "Rainy Weather"
+  # trigger:
+    # - platform:
+  # action:
+    # - service:
+
+# - alias: "Icy/Cold Weather"
+  # trigger:
+    # - platform:
+  # action:
+    # - service: light.turn_on
+      # entity_id: light.bedroom_led
+      # data:
+        # rgb_color: [0,255,255]
+
+# - alias: "Snowy Weather"
+  # trigger:
+    # - platform: state
+      # entity_id: light.bedroom_led
+      # from: 'off'
+      # to: 'on'
+  # action:
+    # - service: light.turn_on
+      # entity_id: light.bedroom_led
+      # data:
+        # rgb_color: [255,255,255]

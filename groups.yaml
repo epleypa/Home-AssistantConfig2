@@ -38,6 +38,7 @@ computers:
    entities:
       - device_tracker.neo
       - device_tracker.surface
+      - device_tracker.trinity
       - device_tracker.peter_computer_work
       - device_tracker.peter_computer_work2
 #      - device_tracker.kelley_computer_work
@@ -63,7 +64,7 @@ living_room:
       - sensor.broadlink_sensor_temperature
       - group.living_room_lights
       - device_tracker.silicondust_hdhomerun_prime
-      - media_player.google_home
+      - media_player.living_room_home
       - media_player.roku_5s56ag426734
       - media_player.plex_web_chrome
       - device_tracker.chromecast_livingroom
@@ -77,6 +78,7 @@ living_room_lights:
    entities:
       - switch.lr_fl_light
       - switch.lr_tb_light
+#      - switch.christmas_tree
 
 entertainment_center:
    name: Entertainment Center
@@ -89,6 +91,7 @@ lr_tv_power:
    entities:
       - switch.lr_tv_power1
       - switch.lr_tv_power2
+      - switch.lr_tv_power1
 
 lr_tv_source:
    name: Living Room TV Source
@@ -122,7 +125,7 @@ office:
    icon: mdi:desktop-tower
    entities:
       - switch.neo
-      - switch.zion
+      - switch.trinity
       - group.office_lights
       - device_tracker.brotherprinter
       - group.computers
@@ -153,14 +156,19 @@ sensors:
    entities:
       - group.sensor_entry
       - group.sensor_office
+      - group.sensor_bedroom
+      - group.sensor_kitchen
+      - group.sensor_led
     
 sensor_entry:
   name: Entry Sensors
   entities:
     - sensor.entry_temperature
     - sensor.entry_humidity
+    - sensor.entry_real_feel
     - sensor.entry_ldr
-    - sensor.entry_pir
+    - sensor.entry_pir    
+    - binary_sensor.entry_pir
     - light.entry_led
 
 sensor_office:
@@ -168,9 +176,33 @@ sensor_office:
   entities:
     - sensor.office_temperature
     - sensor.office_humidity
+    - sensor.office_real_feel
     - sensor.office_ldr
     - sensor.office_pir
+    - binary_sensor.office_pir
     - light.office_led
+    
+sensor_bedroom:
+  name: Bedroom Sensors
+  entities:
+    - sensor.bedroom_temperature
+    - sensor.bedroom_humidity
+    - sensor.bedroom_real_feel
+    - sensor.bedroom_ldr
+    - light.bedroom_led
+
+sensor_kitchen:
+  name: Kitchen Sensors
+  entities:
+    - sensor.kitchen_temperature
+    - binary_sensor.fridge_door
+
+sensor_led:
+  name: Sensor LEDs
+  entities:
+    - light.entry_led
+    - light.office_led
+    - light.bedroom_led
 
 device_status:
    name: Device Status

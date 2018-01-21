@@ -1,0 +1,4 @@
+- platform: mqtt
+  state_topic: "smartthings/Fridge/temperature"
+  name: "Kitchen Temperature"
+  unit_of_measurement: "°F"

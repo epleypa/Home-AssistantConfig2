@@ -26,34 +26,68 @@
     - type: memory_use_percent
     - type: processor_use
 
-- platform: rest
-  name: 'WMATA_DC'
-  resource: https://api.wmata.com/StationPrediction.svc/json/GetPrediction/A08
-  method: GET
-  headers:
-    api_key: !secret wmata_api
-  value_template: '
-    {% set trains = value_json.Trains %}
-    {% for train in trains if train.DestinationCode == "B08" or train.DestinationCode == "B11" %}
-        {% if loop.first %}{{ train.Min }}
-        {% elif loop.last %} and {{ train.Min }}
-        {% else %}, {{ train.Min }},
-        {% endif %}
-    {% endfor %}'
-#  scan_interval: 300
+# - platform: rest
+  # name: 'WMATA_DC'
+  # resource: https://api.wmata.com/StationPrediction.svc/json/GetPrediction/A08
+  # method: GET
+  # headers:
+    # api_key: !secret wmata_api
+  # value_template: '
+    # {% set trains = value_json.Trains %}
+    # {% for train in trains if train.DestinationCode == "B08" or train.DestinationCode == "B11" %}
+        # {% if loop.first %}{{ train.Min }}
+        # {% elif loop.last %} and {{ train.Min }}
+        # {% else %}, {{ train.Min }},
+        # {% endif %}
+    # {% endfor %}'
+# #  scan_interval: 300
+
+# - platform: rest
+  # name: 'WMATA_MD'
+  # resource: https://api.wmata.com/StationPrediction.svc/json/GetPrediction/A08
+  # method: GET
+  # headers:
+    # api_key: !secret wmata_api
+  # value_template: '
+    # {% set trains = value_json.Trains %}
+    # {% for train in trains if train.DestinationCode == "A15" or train.DestinationCode == "A11" %}
+        # {% if loop.first %}{{ train.Min }}
+        # {% elif loop.last %} and {{ train.Min }}
+        # {% else %}, {{ train.Min }},
+        # {% endif %}
+    # {% endfor %}'
+# #  scan_interval: 300
 
 - platform: rest
-  name: 'WMATA_MD'
+  name: 'WMATA'
   resource: https://api.wmata.com/StationPrediction.svc/json/GetPrediction/A08
   method: GET
   headers:
     api_key: !secret wmata_api
-  value_template: '
-    {% set trains = value_json.Trains %}
-    {% for train in trains if train.DestinationCode == "A15" or train.DestinationCode == "A11" %}
+  value_template: '{{ value_json.Trains[0].LocationName }}'
+  json_attributes:
+    - Trains
+#  scan_interval: 300
+
+- platform: template
+  sensors:
+    wmata_dc:
+      value_template: '
+        {% set trains = states.sensor.wmata.attributes.Trains %}
+        {% for train in trains if train.DestinationCode == "B08" or train.DestinationCode == "B11" %}
         {% if loop.first %}{{ train.Min }}
         {% elif loop.last %} and {{ train.Min }}
         {% else %}, {{ train.Min }},
         {% endif %}
-    {% endfor %}'
-#  scan_interval: 300
+        {% endfor %}'
+      unit_of_measurement: 'minutes'
+    wmata_md:
+      value_template: '
+        {% set trains = states.sensor.wmata.attributes.Trains %}
+        {% for train in trains if train.DestinationCode == "A15" or train.DestinationCode == "A11" %}
+        {% if loop.first %}{{ train.Min }}
+        {% elif loop.last %} and {{ train.Min }}
+        {% else %}, {{ train.Min }},
+        {% endif %}
+        {% endfor %}'
+      unit_of_measurement: 'minutes'

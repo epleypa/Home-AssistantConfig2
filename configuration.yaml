@@ -30,7 +30,7 @@ http:
 updater:
 
 # Discover some devices automatically
-discovery:
+#discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -54,7 +54,13 @@ mqtt:
   
 #media players
 media_player:
-  # - platform: plex
+  - platform: plex
+  - platform: cast
+    host: 192.168.1.80
+  - platform: cast
+    host: 192.168.1.81
+  - platform: roku
+    host: 192.168.1.82
 
 #device tracking
 device_tracker:
@@ -131,7 +137,37 @@ switch: !include switches.yaml
 group: !include groups.yaml
 script: !include scripts.yaml
 #input_boolean: !include input_boolean.yaml
-light: !include lights.yaml
+binary_sensor: !include binary_sensor.yaml
+
+#BRUH sensors
+light:
+  - platform: mqtt_json
+    name: "Entry LED"
+    state_topic: "bruh/entrysensor"
+    command_topic: "bruh/entrysensor/set"
+    brightness: true
+    flash: true
+    rgb: true
+    optimistic: false
+    qos: 0  
+  - platform: mqtt_json
+    name: "Office LED"
+    state_topic: "bruh/officesensor"
+    command_topic: "bruh/officesensor/set"
+    brightness: true
+    flash: true
+    rgb: true
+    optimistic: false
+    qos: 0
+  - platform: mqtt_json
+    name: "Bedroom LED"
+    state_topic: "bruh/bedroomsensor"
+    command_topic: "bruh/bedroomsensor/set"
+    brightness: true
+    flash: true
+    rgb: true
+    optimistic: false
+    qos: 0
 
 # emulated_hue:
   # listen_port: 80
@@ -139,11 +175,11 @@ light: !include lights.yaml
     # - switch
     # - script
   # off_maps_to_on_domains:
-google_assistant:
-  project_id: !secret google_proj
-  client_id: !secret google_client
-  access_token: !secret google_token
-  api_key: !secret google_homegraph_api
-  exposed_domains:
-    - switch
-    - script
+google_assistant: !include google_assistant.yaml
+  # project_id: !secret google_proj
+  # client_id: !secret google_client
+  # access_token: !secret google_token
+  # api_key: !secret google_homegraph_api
+  # exposed_domains:
+    # - switch
+    # - script
