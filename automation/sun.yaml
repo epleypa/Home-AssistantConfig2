@@ -7,26 +7,55 @@
     - service: notify.pushbullet
       data:
         message: 'The sun is up.'
-    - service: switch.turn_off
-      entity_id: group.home_lights
+    # - service: switch.turn_off
+      # entity_id: group.home_lights
 
-- alias: 'Get Up'
+# - alias: 'Get Up'
+  # trigger:
+    # platform: time
+    # at: '07:00:00'
+  # condition:
+    # condition: and
+    # conditions:
+      # # - condition: state
+        # # entity_id: sun.sun
+        # # state: 'below_horizon'
+      # - condition: time
+        # weekday:
+          # - mon
+          # - tue
+          # - wed
+          # - thu
+          # - fri
+  # action:
+    # - service: switch.turn_on
+      # entity_id: group.home_lights
+    # - service: notify.pushbullet
+      # data:
+        # message: 'Time to start the day!'
+
+- alias: 'Wake Up'
   trigger:
-    platform: time
-    at: '07:00:00'
+    platform: template
+    value_template: '{{ states.sensor.time.state == states.sensor.alarm_time.state }}'
   condition:
-    condition: and
+    condition: or
     conditions:
-      # - condition: state
-        # entity_id: sun.sun
-        # state: 'below_horizon'
-      - condition: time
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
+      - condition: and
+        conditions:
+          - condition: state
+            entity_id: input_boolean.alarmweekday
+            state: 'on'
+          - condition: time
+            weekday:
+              - mon
+              - tue
+              - wed
+              - thu
+              - fri
+      - condition: state
+        entity_id: input_boolean.alarmweekday
+        state: 'off'
   action:
     - service: switch.turn_on
       entity_id: group.home_lights

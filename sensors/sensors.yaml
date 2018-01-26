@@ -5,6 +5,12 @@
   - 'time_utc'
   - 'beat'
 
+- platform: template
+  sensors:
+    alarm_time:
+      friendly_name: 'Time'
+      value_template: '{{ "%0.02d:%0.02d" | format(states("input_number.alarmhour") | int, states("input_number.alarmminutes") | int) }}'
+
 - platform: moon
 
 - platform: speedtest
@@ -25,38 +31,6 @@
     - type: since_last_boot
     - type: memory_use_percent
     - type: processor_use
-
-# - platform: rest
-  # name: 'WMATA_DC'
-  # resource: https://api.wmata.com/StationPrediction.svc/json/GetPrediction/A08
-  # method: GET
-  # headers:
-    # api_key: !secret wmata_api
-  # value_template: '
-    # {% set trains = value_json.Trains %}
-    # {% for train in trains if train.DestinationCode == "B08" or train.DestinationCode == "B11" %}
-        # {% if loop.first %}{{ train.Min }}
-        # {% elif loop.last %} and {{ train.Min }}
-        # {% else %}, {{ train.Min }},
-        # {% endif %}
-    # {% endfor %}'
-# #  scan_interval: 300
-
-# - platform: rest
-  # name: 'WMATA_MD'
-  # resource: https://api.wmata.com/StationPrediction.svc/json/GetPrediction/A08
-  # method: GET
-  # headers:
-    # api_key: !secret wmata_api
-  # value_template: '
-    # {% set trains = value_json.Trains %}
-    # {% for train in trains if train.DestinationCode == "A15" or train.DestinationCode == "A11" %}
-        # {% if loop.first %}{{ train.Min }}
-        # {% elif loop.last %} and {{ train.Min }}
-        # {% else %}, {{ train.Min }},
-        # {% endif %}
-    # {% endfor %}'
-# #  scan_interval: 300
 
 - platform: rest
   name: 'WMATA'

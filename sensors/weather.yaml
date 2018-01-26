@@ -48,3 +48,9 @@
   # name: 'NWS Alerts'
   # resource: https://api.weather.gov/alerts/active/zone/mdz504
   # method: GET
+  # headers:
+    # User-Agent: 'Home Assistant (https://github.com/epleypa/Home-AssistantConfig)'
+  # value_template: '{{ value_json.features|count }}'
+  # json_attributes:
+    # - title
+    # - features

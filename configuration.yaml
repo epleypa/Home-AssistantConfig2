@@ -136,7 +136,8 @@ sensor: !include_dir_merge_list sensors/
 switch: !include switches.yaml
 group: !include groups.yaml
 script: !include scripts.yaml
-#input_boolean: !include input_boolean.yaml
+input_boolean: !include input_boolean.yaml
+input_number: !include input_number.yaml
 binary_sensor: !include binary_sensor.yaml
 
 #BRUH sensors
@@ -169,17 +170,4 @@ light:
     optimistic: false
     qos: 0
 
-# emulated_hue:
-  # listen_port: 80
-  # exposed_domains:
-    # - switch
-    # - script
-  # off_maps_to_on_domains:
 google_assistant: !include google_assistant.yaml
-  # project_id: !secret google_proj
-  # client_id: !secret google_client
-  # access_token: !secret google_token
-  # api_key: !secret google_homegraph_api
-  # exposed_domains:
-    # - switch
-    # - script

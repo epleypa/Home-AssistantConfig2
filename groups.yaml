@@ -14,6 +14,16 @@ default_view:
     - sensor.cpu_use
     - sensor.date
     - sensor.time
+    - group.alarmclock
+
+alarmclock:
+  name: Wake Up
+  entities: 
+    - automation.wake_up
+    - sensor.alarm_time
+    - input_number.alarmhour
+    - input_number.alarmminutes
+    - input_boolean.alarmweekday
 
 devices_peter:
    name: Peter Devices
