@@ -1,0 +1,110 @@
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+    - updater.updater
+    - group.family
+    - group.home_lights
+    - group.entertainment_center
+    - group.all_automations
+    - group.all_scripts
+    - group.wmata
+    - sensor.since_last_boot
+    - sensor.ram_use
+    - sensor.cpu_use
+    - sensor.date
+    - sensor.time
+    - group.alarmclock
+
+living_room:
+   name: Living Room
+   view: yes
+   icon: mdi:sofa
+   entities:
+      - sensor.broadlink_sensor_temperature
+      - group.living_room_lights
+      - device_tracker.silicondust_hdhomerun_prime
+      - media_player.living_room_home
+      - media_player.roku_5s56ag426734
+      - media_player.plex_web_chrome
+      - device_tracker.chromecast_livingroom
+      - device_tracker.broadlink_rmpro
+      - group.entertainment_center
+      - group.lr_tv_source
+      - group.cable_source
+
+office:
+   name: Office
+   view: yes
+   icon: mdi:desktop-tower
+   entities:
+      - switch.neo
+      - switch.trinity
+      - group.office_lights
+      - device_tracker.brotherprinter
+      - group.computers
+      - device_tracker.FIOSrouter
+
+bedroom:
+   name: Bedroom
+   view: yes
+   icon: mdi:hotel
+   entities:
+      - group.bedroom_lights
+
+sensors:
+  name: Sensors
+  view: yes
+  icon: mdi:led-on
+  entities:
+    - group.sensor_entry
+    - group.sensor_office
+    - group.sensor_bedroom
+    - group.sensor_kitchen
+    - group.sensor_led
+
+device_status:
+   name: Device Status
+   view: yes
+   icon: mdi:robot
+   entities:
+     - group.devices_peter
+     - group.devices_kelley
+     - group.computers
+     - group.devices_other
+
+weather:
+  name: Weather
+  view: yes
+  icon: mdi:thermometer
+  entities:
+    - group.darksky
+    - group.wu
+    - sensor.yr_symbol
+    - sun.sun
+    - sensor.moon
+    - sensor.nws_alerts
+
+alarmclock:
+  name: Wake Up
+  entities: 
+    - automation.wake_up
+    - sensor.alarm_time
+    - input_number.alarmhour
+    - input_number.alarmminutes
+    - input_boolean.alarmweekday
+
+home_lights:
+   name: Home Lights
+   entities:
+      - group.bedroom_lights
+      - group.living_room_lights
+      - group.office_lights
+
+wmata:
+  name: WMATA Info
+  entities:
+    - sensor.wmata_dc
+    - sensor.wmata_md
+    - script.wmata_dc
+    - script.wmata_md

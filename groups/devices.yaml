@@ -1,0 +1,40 @@
+devices_peter:
+   name: Peter Devices
+   entities:
+      - device_tracker.peter_gs7
+      - device_tracker.corolla
+      - device_tracker.peter_tabs2
+      - device_tracker.peter_gears2
+      - device_tracker.peter_nook
+      - device_tracker.peter_iphone7
+
+devices_kelley:
+   name: Kelley Devices
+   entities:
+      - device_tracker.kelley_gs7e
+      - device_tracker.kelley_tabs2
+      - device_tracker.kelley_nook
+      - device_tracker.nintendo_3ds
+
+computers:
+   name: Computers
+   entities:
+      - device_tracker.neo
+      - device_tracker.surface
+      - device_tracker.trinity
+      - device_tracker.peter_computer_work
+      - device_tracker.peter_computer_work2
+#      - device_tracker.kelley_computer_work
+
+family:
+   name: Family
+   entities:
+      - device_tracker.kelley_gs7e
+      - device_tracker.peter_gs7
+
+devices_other:
+   name: Other Devices
+   entities:
+      - device_tracker.galaxytab3
+      - device_tracker.silicondust_hdhomerun_prime
+      - device_tracker.brotherprinter   

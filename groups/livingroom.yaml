@@ -1,0 +1,45 @@
+living_room_lights:
+   name: Living Room Lights
+   entities:
+      - switch.lr_fl_light
+      - switch.lr_tb_light
+#      - switch.christmas_tree
+
+entertainment_center:
+   name: Entertainment Center
+   entities:
+      - group.lr_tv_power
+      - switch.cable_power
+
+lr_tv_power:
+   name: Living Room TV Power
+   entities:
+      - switch.lr_tv_power1
+      - switch.lr_tv_power2
+      - switch.lr_tv_power1
+
+lr_tv_source:
+   name: Living Room TV Source
+   entities:
+      - switch.lr_tv_mute
+      - switch.lr_tv_cm2
+      - switch.lr_tv_hdmi1
+      - switch.lr_tv_hdmi2
+      - switch.lr_tv_hdmi3
+      - switch.lr_tv_hdmi4
+
+cable_source:
+   name: Cable Source
+   entities:
+      - switch.cable_hd
+      - switch.cable_1
+      - switch.cable_2
+      - switch.cable_3
+      - switch.cable_4
+      - switch.cable_5
+      - switch.cable_6
+      - switch.cable_7
+      - switch.cable_8
+      - switch.cable_9
+      - switch.cable_0
+      - switch.cable_ok
