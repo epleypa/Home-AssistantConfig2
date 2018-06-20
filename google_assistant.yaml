@@ -8,10 +8,8 @@ exposed_domains:
 entity_config:
   group.lr_tv_power:
     expose: true
-    type: switch
     name: 'TV'
   group.home_lights:
-    type: light
     expose: true
   switch.lr_tv_power1:
     name: 'TV1'
@@ -49,4 +47,6 @@ entity_config:
   script.wmata_dc:
     expose: false
   script.wmata_md:
+    expose: false
+  switch.christmas_tree:
     expose: false

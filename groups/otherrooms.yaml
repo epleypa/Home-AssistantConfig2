@@ -8,3 +8,8 @@ bedroom_lights:
    entities:
       - switch.bedroom_kelley_light
       - switch.bedroom_peter_light
+
+diningroom_lights:
+   name: Dining Room Lights
+   entities:
+      - switch.leeo

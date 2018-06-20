@@ -6,8 +6,6 @@ default_view:
     - group.family
     - group.home_lights
     - group.entertainment_center
-    - group.all_automations
-    - group.all_scripts
     - group.wmata
     - sensor.since_last_boot
     - sensor.ram_use
@@ -44,13 +42,15 @@ office:
       - device_tracker.brotherprinter
       - group.computers
       - device_tracker.FIOSrouter
+      - device_tracker.linksys22446
 
-bedroom:
-   name: Bedroom
+kitchen_dining_room:
+   name: Kitchen/Dining Room
    view: yes
-   icon: mdi:hotel
+   icon: mdi:silverware
    entities:
-      - group.bedroom_lights
+      - group.sensor_dining_room
+      - group.dining_room_lights
 
 sensors:
   name: Sensors
@@ -60,7 +60,9 @@ sensors:
     - group.sensor_entry
     - group.sensor_office
     - group.sensor_bedroom
+    - group.sensor_bathroom
     - group.sensor_kitchen
+    - group.sensor_dining_room
     - group.sensor_led
 
 device_status:
@@ -72,6 +74,14 @@ device_status:
      - group.devices_kelley
      - group.computers
      - group.devices_other
+
+automations:
+   name: Automations
+   view: yes
+   icon: mdi:playlist-check
+   entities:
+     - group.all_automations
+     - group.all_scripts 
 
 weather:
   name: Weather
@@ -88,12 +98,19 @@ weather:
 alarmclock:
   name: Wake Up
   entities: 
-    - automation.wake_up
     - sensor.alarm_time
+    - group.alarmclock_settings
+
+alarmclock_settings:
+  name: Settings
+  icon: mdi:settings
+  control: hidden
+  entities: 
+    - automation.wake_up
     - input_number.alarmhour
     - input_number.alarmminutes
     - input_boolean.alarmweekday
-
+    
 home_lights:
    name: Home Lights
    entities:

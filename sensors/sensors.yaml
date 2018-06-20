@@ -19,6 +19,9 @@
     - download
     - upload
 
+- platform: pushbullet
+  api_key: !secret pushbullet_key
+
 - platform: broadlink
   host: 192.168.1.42
   mac: 'B4:43:0D:FB:DD:62'
@@ -41,7 +44,7 @@
   value_template: '{{ value_json.Trains[0].LocationName }}'
   json_attributes:
     - Trains
-#  scan_interval: 300
+  scan_interval: 150
 
 - platform: template
   sensors:
@@ -65,3 +68,8 @@
         {% endif %}
         {% endfor %}'
       unit_of_measurement: 'minutes'
+
+- platform: google_travel_time
+  api_key: !secret google_homegraph_api
+  origin: zone.home
+  destination: zone.tysons_office

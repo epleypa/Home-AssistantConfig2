@@ -8,49 +8,76 @@
       data_template:
         message: 'Weather Alert: {{ states.sensor.pws_alerts.attributes.Description }}'
 
-# - alias: "Sunny Weather"
-  # trigger:
-    # - platform:
-    # condition: and
-    # conditions:
-      # - condition: numeric_state
-        # entity_id: sensor.dark_sky_temperature
-        # above: 40
-      # - condition: state
-        # entity_id: sensor.dark_sky_summary
-        # state: 'Clear'
-  # action:
-    # - service:
-
-# - alias: "Cloudy Weather"
-  # trigger:
-    # - platform:
-  # action:
-    # - service:
-
-# - alias: "Rainy Weather"
-  # trigger:
-    # - platform:
-  # action:
-    # - service:
-
-# - alias: "Icy/Cold Weather"
-  # trigger:
-    # - platform:
-  # action:
-    # - service: light.turn_on
-      # entity_id: light.bedroom_led
-      # data:
-        # rgb_color: [0,255,255]
-
-# - alias: "Snowy Weather"
-  # trigger:
-    # - platform: state
-      # entity_id: light.bedroom_led
-      # from: 'off'
-      # to: 'on'
-  # action:
-    # - service: light.turn_on
-      # entity_id: light.bedroom_led
-      # data:
-        # rgb_color: [255,255,255]
+- alias: "LED Weather"
+  trigger:
+    - platform: state
+      entity_id: sensor.dark_sky_icon
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "bruh/bedroomsensor/set"
+        payload: >-
+          {% if "clear" in states.sensor.dark_sky_icon.state %} {"color": {"r": 255, "g": 255, "b": 0}}
+          {%-elif "cloudy" in states.sensor.dark_sky_icon.state %} {"color": {"r": 128, "g": 0, "b": 128}}
+          {%-elif "overcast" in states.sensor.dark_sky_icon.state %} {"color": {"r": 128, "g": 0, "b": 128}}
+          {%-elif "fog" in states.sensor.dark_sky_icon.state %} {"color": {"r": 128, "g": 0, "b": 128}}
+          {%-elif "rain" in states.sensor.dark_sky_icon.state %} {"color": {"r": 0, "g": 0, "b": 255}}
+          {%-elif "wind" in states.sensor.dark_sky_icon.state %} {"color": {"r": 0, "g": 255, "b": 255}}
+          {%-elif "ice" in states.sensor.dark_sky_icon.state %} {"color": {"r": 0, "g": 255, "b": 255}}
+          {%-elif "snow" in states.sensor.dark_sky_icon.state %} {"color": {"r": 0, "g": 255, "b": 255}}
+          {%-elif "thunderstorm" in states.sensor.dark_sky_icon.state %} {"color": {"r": 255, "g": 0, "b": 0}}
+          {%-elif "hail" in states.sensor.dark_sky_icon.state %} {"color": {"r": 255, "g": 0, "b": 0}}
+          {%-elif "tornado" in states.sensor.dark_sky_icon.state %} {"color": {"r": 255, "g": 0, "b": 0}}
+          {%-else %} {"color": {"r": 255, "g": 255, "b": 255}}
+          {% endif %}
+    - service: mqtt.publish
+      data_template:
+        topic: "bruh/officesensor/set"
+        payload: >-
+          {% if "clear" in states.sensor.dark_sky_icon.state %} {"color": {"r": 255, "g": 255, "b": 0}}
+          {%-elif "cloudy" in states.sensor.dark_sky_icon.state %} {"color": {"r": 128, "g": 0, "b": 128}}
+          {%-elif "overcast" in states.sensor.dark_sky_icon.state %} {"color": {"r": 128, "g": 0, "b": 128}}
+          {%-elif "fog" in states.sensor.dark_sky_icon.state %} {"color": {"r": 128, "g": 0, "b": 128}}
+          {%-elif "rain" in states.sensor.dark_sky_icon.state %} {"color": {"r": 0, "g": 0, "b": 255}}
+          {%-elif "wind" in states.sensor.dark_sky_icon.state %} {"color": {"r": 0, "g": 255, "b": 255}}
+          {%-elif "ice" in states.sensor.dark_sky_icon.state %} {"color": {"r": 0, "g": 255, "b": 255}}
+          {%-elif "snow" in states.sensor.dark_sky_icon.state %} {"color": {"r": 0, "g": 255, "b": 255}}
+          {%-elif "thunderstorm" in states.sensor.dark_sky_icon.state %} {"color": {"r": 255, "g": 0, "b": 0}}
+          {%-elif "hail" in states.sensor.dark_sky_icon.state %} {"color": {"r": 255, "g": 0, "b": 0}}
+          {%-elif "tornado" in states.sensor.dark_sky_icon.state %} {"color": {"r": 255, "g": 0, "b": 0}}
+          {%-else %} {"color": {"r": 255, "g": 255, "b": 255}}
+          {% endif %}
+    - service: mqtt.publish
+      data_template:
+        topic: "bruh/entrysensor/set"
+        payload: >-
+          {% if "clear" in states.sensor.dark_sky_icon.state %} {"color": {"r": 255, "g": 255, "b": 0}}
+          {%-elif "cloudy" in states.sensor.dark_sky_icon.state %} {"color": {"r": 128, "g": 0, "b": 128}}
+          {%-elif "overcast" in states.sensor.dark_sky_icon.state %} {"color": {"r": 128, "g": 0, "b": 128}}
+          {%-elif "fog" in states.sensor.dark_sky_icon.state %} {"color": {"r": 128, "g": 0, "b": 128}}
+          {%-elif "rain" in states.sensor.dark_sky_icon.state %} {"color": {"r": 0, "g": 0, "b": 255}}
+          {%-elif "wind" in states.sensor.dark_sky_icon.state %} {"color": {"r": 0, "g": 255, "b": 255}}
+          {%-elif "ice" in states.sensor.dark_sky_icon.state %} {"color": {"r": 0, "g": 255, "b": 255}}
+          {%-elif "snow" in states.sensor.dark_sky_icon.state %} {"color": {"r": 0, "g": 255, "b": 255}}
+          {%-elif "thunderstorm" in states.sensor.dark_sky_icon.state %} {"color": {"r": 255, "g": 0, "b": 0}}
+          {%-elif "hail" in states.sensor.dark_sky_icon.state %} {"color": {"r": 255, "g": 0, "b": 0}}
+          {%-elif "tornado" in states.sensor.dark_sky_icon.state %} {"color": {"r": 255, "g": 0, "b": 0}}
+          {%-else %} {"color": {"r": 255, "g": 255, "b": 255}}
+          {% endif %}
+    - service: ifttt.trigger
+      data_template:
+        event: "leeo_led"      
+        value1: >-
+          {% if "clear" in states.sensor.dark_sky_icon.state %} #FFFF00
+          {%-elif "cloudy" in states.sensor.dark_sky_icon.state %} #800080
+          {%-elif "overcast" in states.sensor.dark_sky_icon.state %} #800080
+          {%-elif "fog" in states.sensor.dark_sky_icon.state %} #800080
+          {%-elif "rain" in states.sensor.dark_sky_icon.state %} #0000FF
+          {%-elif "wind" in states.sensor.dark_sky_icon.state %} #00FFFF
+          {%-elif "ice" in states.sensor.dark_sky_icon.state %} #00FFFF
+          {%-elif "snow" in states.sensor.dark_sky_icon.state %} #00FFFF
+          {%-elif "thunderstorm" in states.sensor.dark_sky_icon.state %} #FF0000
+          {%-elif "hail" in states.sensor.dark_sky_icon.state %} #FF0000
+          {%-elif "tornado" in states.sensor.dark_sky_icon.state %} #FF0000
+          {%-else %} #FFFFFF
+          {% endif %} 

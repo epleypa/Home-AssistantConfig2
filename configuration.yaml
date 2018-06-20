@@ -49,6 +49,9 @@ tts:
   platform: google
   language: 'en-us'
 
+config:
+map:
+
 mqtt:
   client_id: 8315
   
@@ -67,10 +70,8 @@ device_tracker:
   - platform: automatic
     client_id: c1ce08e5c7825763112b
     secret: !secret automatic_secret
-    username: pae2008@gmail.com
-#    password: !secret automatic_password
+    current_location: true
   # - platform: nmap_tracker
-# #    hosts: 192.168.1.28 192.168.1.128
     # hosts:
     # - 192.168.1.1-30
     # - 192.169.1.128
@@ -85,15 +86,11 @@ device_tracker:
   - platform: linksys_smart
     host: 192.168.1.1
 
-config:
-
 recorder:
   exclude:
     domains:
     entities:
       - sensor.internet_time
-      - sensor.last_boot
-      - sensor.since_last_boot
       - sensor.wmata_dc
       - sensor.wmata_md
       - sensor.dark_sky_daily_summary
@@ -103,12 +100,6 @@ recorder:
       - sensor.date
       - sensor.time_utc
       - sensor.time_beat
-      - switch.lr_tv_mute
-      - switch.lr_tv_cm2
-      - switch.lr_tv_hdmi1
-      - switch.lr_tv_hdmi2
-      - switch.lr_tv_hdmi3
-      - switch.lr_tv_hdmi4
       - switch.cable_hd
       - switch.cable_1
       - switch.cable_2

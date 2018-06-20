@@ -1,0 +1,108 @@
+media_player.roku_stick__5s56ag426734:
+  name:
+  platform: plex
+  unique_id: 6775c8a46fd279b80d11c10e459d4e13
+media_player.plex_web_chrome:
+  name:
+  platform: plex
+  unique_id: 1q8uwdrue82feq5scx5128cm
+media_player.plex_web_chrome_2:
+  name:
+  platform: plex
+  unique_id: dvb5f3kk1vv2py91l0wyekln
+media_player.living_room_home:
+  name:
+  platform: cast
+  unique_id: 9934ea0c-7ac2-c000-7f2a-e6cfba21fb25
+media_player.galaxy_tab_s2_97:
+  name:
+  platform: plex
+  unique_id: 1a86723648a89cd6-com-plexapp-android
+media_player.living_room_tv:
+  name:
+  platform: cast
+  unique_id: 06bea652-e252-9219-d77d-1df3b6b2d65a
+media_player.galaxy_tab_s2_97_2:
+  name:
+  platform: plex
+  unique_id: 218de86ed91bed0f-com-plexapp-android
+media_player.galaxy_s9:
+  name:
+  platform: plex
+  unique_id: e8affba072bf2c40-com-plexapp-android
+media_player.chrome:
+  name:
+  platform: plex
+  unique_id: uom75lnorpm64ln2vv27bnew
+media_player.galaxy_s9_2:
+  name:
+  platform: plex
+  unique_id: fb09a18d1575a8ce-com-plexapp-android
+sensor.pws_weather_4n:
+  name:
+  platform: wunderground
+  unique_id: '@-77.092121,38.962982,weather_4n'
+sensor.pws_uv:
+  name:
+  platform: wunderground
+  unique_id: '@-77.092121,38.962982,UV'
+sensor.pws_weather_2d:
+  name:
+  platform: wunderground
+  unique_id: '@-77.092121,38.962982,weather_2d'
+sensor.pws_weather_3d:
+  name:
+  platform: wunderground
+  unique_id: '@-77.092121,38.962982,weather_3d'
+sensor.pws_weather_1n:
+  name:
+  platform: wunderground
+  unique_id: '@-77.092121,38.962982,weather_1n'
+sensor.pws_solarradiation:
+  name:
+  platform: wunderground
+  unique_id: '@-77.092121,38.962982,solarradiation'
+sensor.pws_observation_time:
+  name:
+  platform: wunderground
+  unique_id: '@-77.092121,38.962982,observation_time'
+sensor.pws_weather_2n:
+  name:
+  platform: wunderground
+  unique_id: '@-77.092121,38.962982,weather_2n'
+sensor.pws_weather_3n:
+  name:
+  platform: wunderground
+  unique_id: '@-77.092121,38.962982,weather_3n'
+sensor.pws_weather_4d:
+  name:
+  platform: wunderground
+  unique_id: '@-77.092121,38.962982,weather_4d'
+sensor.pws_alerts:
+  name:
+  platform: wunderground
+  unique_id: '@-77.092121,38.962982,alerts'
+sensor.pws_weather_1d:
+  name:
+  platform: wunderground
+  unique_id: '@-77.092121,38.962982,weather_1d'
+sensor.pws_visibility_mi:
+  name:
+  platform: wunderground
+  unique_id: '@-77.092121,38.962982,visibility_mi'
+media_player.chrome_2:
+  name:
+  platform: plex
+  unique_id: wqfv4z86bpaljljx9r1fhp1u
+media_player.chrome_3:
+  name:
+  platform: plex
+  unique_id: 1xqj7q7kmw5h3n1bhg4pho6t
+media_player.roku_5s56ag426734:
+  name:
+  platform: roku
+  unique_id: 5S56AG426734
+media_player.nookc2ae_hd:
+  name:
+  platform: plex
+  unique_id: dc11e612caafbf8c-com-plexapp-android

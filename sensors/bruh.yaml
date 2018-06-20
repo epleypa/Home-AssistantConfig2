@@ -4,12 +4,14 @@
   name: "Entry Humidity"  
   unit_of_measurement: "%"  
   value_template: '{% if value_json.humidity %}{{ value_json.humidity | round(1) }}{% endif %}'  
+  device_class: humidity
 - platform: mqtt  
   state_topic: "bruh/entrysensor"  
   name: "Entry LDR"
   ##This sensor is not calibrated to actual LUX. Rather, this a map of the input voltage ranging from 0 - 1023.
   unit_of_measurement: "LUX"  
-  value_template: '{{ value_json.ldr }}'  
+  value_template: '{{ value_json.ldr }}'
+  device_class: illuminance
 # - platform: mqtt  
   # state_topic: "bruh/entrysensor"  
   # name: "Entry PIR"  
@@ -31,12 +33,14 @@
   name: "Office Humidity"  
   unit_of_measurement: "%"  
   value_template: '{% if value_json.humidity %}{{ value_json.humidity | round(1) }}{% endif %}'  
+  device_class: humidity
 - platform: mqtt  
   state_topic: "bruh/officesensor"  
   name: "Office LDR"
   ##This sensor is not calibrated to actual LUX. Rather, this a map of the input voltage ranging from 0 - 1023.
   unit_of_measurement: "LUX"  
-  value_template: '{{ value_json.ldr }}'  
+  value_template: '{{ value_json.ldr }}'
+  device_class: illuminance
 # - platform: mqtt  
   # state_topic: "bruh/officesensor"  
   # name: "Office PIR"  
@@ -57,13 +61,15 @@
   state_topic: "bruh/bedroomsensor"  
   name: "Bedroom Humidity"  
   unit_of_measurement: "%"  
-  value_template: '{% if value_json.humidity %}{{ value_json.humidity | round(1) }}{% endif %}'  
+  value_template: '{% if value_json.humidity %}{{ value_json.humidity | round(1) }}{% endif %}'
+  device_class: humidity
 - platform: mqtt  
   state_topic: "bruh/bedroomsensor"  
   name: "Bedroom LDR"
   ##This sensor is not calibrated to actual LUX. Rather, this a map of the input voltage ranging from 0 - 1023.
   unit_of_measurement: "LUX" 
-  value_template: '{{ value_json.ldr }}'  
+  value_template: '{{ value_json.ldr }}'
+  device_class: illuminance
 # - platform: mqtt  
   # state_topic: "bruh/bedroomsensor"  
   # name: "Bedroom PIR"  

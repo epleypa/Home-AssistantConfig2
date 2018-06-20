@@ -29,12 +29,29 @@ sensor_bedroom:
     - sensor.bedroom_ldr
     - light.bedroom_led
 
+sensor_bathroom:
+  name: Bathroom Sensors
+  entities:
+    - sensor.master_bath_temperature  
+    - binary_sensor.master_bath_leak_sensor
+    - sensor.half_bath_temperature
+    - binary_sensor.half_bath_leak_sensor
+    
 sensor_kitchen:
   name: Kitchen Sensors
   entities:
     - sensor.kitchen_temperature
     - binary_sensor.fridge_door
+    - binary_sensor.kitchen_leak_sensor
 
+sensor_dining_room:
+  name: Dining Room Sensors
+  entities:
+    - binary_sensor.smoke_alarm
+    - binary_sensor.co_alarm
+    - sensor.dining_room_temperature
+    - sensor.dining_room_humidity
+    
 sensor_led:
   name: Sensor LEDs
   entities:
