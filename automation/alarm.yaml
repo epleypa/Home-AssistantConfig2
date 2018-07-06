@@ -1,0 +1,78 @@
+- alias: "Fride Open"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.fridge_door
+      to: 'on'
+      for:
+        minutes: 1
+        seconds: 0
+  action:
+    - service: media_player.turn_on
+      entity_id: media_player.living_room_home
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data:
+        cache: false
+        message: "The fridge is still open"
+
+- alias: "Master Alarm"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.fridge_door
+      to: 'on'
+      for:
+        minutes: 1
+        seconds: 0
+    - platform: state
+      entity_id: binary_sensor.kitchen_leak_sensor
+      to: 'on'        
+      for:
+        minutes: 1
+        seconds: 0
+    - platform: state
+      entity_id: binary_sensor.master_bath_leak_sensor
+      to: 'on'        
+      for:
+        minutes: 1
+        seconds: 0
+    - platform: state
+      entity_id: binary_sensor.half_bath_leak_sensor
+      to: 'on'        
+      for:
+        minutes: 1
+        seconds: 0
+    - platform: state
+      entity_id: binary_sensor.smoke_alarm
+      to: 'on'        
+      for:
+        minutes: 1
+        seconds: 0
+    - platform: state
+      entity_id: binary_sensor.co_alarm
+      to: 'on'        
+      for:
+        minutes: 1
+        seconds: 0
+  action:
+    - service: notify.pushbullet
+      data:
+        title: 'Master Alarm'
+        message: '{% for state in states.binary_sensor -%}
+            {% if "leak" in state.name | lower and state.state == "on" %}{{ state.name | lower }} is wet
+            {% elif "alarm" in state.name | lower and state.state == "on" %}{{ state.name | lower }} has triggered
+            {% endif %}
+        {%- endfor %}'
+        # message: '{% for state in states.binary_sensor -%}
+  # {%- if state.state_with_unit=="on" %}{{ state.name }} is {{state.state_with_unit}} {% endif -%}
+# {%- endfor %}'
+    - service: media_player.turn_on
+      entity_id: media_player.living_room_home
+    - service: tts.google_say
+      entity_id: media_player.living_room_home
+      data_template:
+        cache: false
+        message: '{% for state in states.binary_sensor -%}
+            {% if "leak" in state.name | lower and state.state == "on" %}{{ state.name }} is wet
+            {% elif "alarm" in state.name | lower and state.state == "on" %}{{ state.name }} has triggered
+            {% endif %}
+        {%- endfor %}'

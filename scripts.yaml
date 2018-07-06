@@ -74,57 +74,6 @@ cable:
     - service: switch.turn_on
       entity_id: switch.lr_tv_cm2
       
-freeform:
-  sequence:
-    - service: switch.turn_on
-      entity_id: switch.cable_6
-    - service: switch.turn_on
-      entity_id: switch.cable_9
-    - service: switch.turn_on
-      entity_id: switch.cable_9
-    - service: switch.turn_on
-      entity_id: switch.cable_ok
-nickelodeon:
-  sequence:
-    - service: switch.turn_on
-      entity_id: switch.cable_7
-    - service: switch.turn_on
-      entity_id: switch.cable_5
-    - service: switch.turn_on
-      entity_id: switch.cable_2
-    - service: switch.turn_on
-      entity_id: switch.cable_ok
-disney:
-  sequence:
-    - service: switch.turn_on
-      entity_id: switch.cable_7
-    - service: switch.turn_on
-      entity_id: switch.cable_8
-    - service: switch.turn_on
-      entity_id: switch.cable_0
-    - service: switch.turn_on
-      entity_id: switch.cable_ok
-hdtv:
-  sequence:
-    - service: switch.turn_on
-      entity_id: switch.cable_6
-    - service: switch.turn_on
-      entity_id: switch.cable_6
-    - service: switch.turn_on
-      entity_id: switch.cable_5
-    - service: switch.turn_on
-      entity_id: switch.cable_ok
-abc:
-  sequence:
-    - service: switch.turn_on
-      entity_id: switch.cable_5
-    - service: switch.turn_on
-      entity_id: switch.cable_0
-    - service: switch.turn_on
-      entity_id: switch.cable_7
-    - service: switch.turn_on
-      entity_id: switch.cable_ok
-      
 # say_entry_temperature:
   # sequence:
     # - service: media_player.turn_on

@@ -79,13 +79,5 @@
   origin: zone.home
   destination: zone.bethesda_office
   name: Driving to Bethesda
-- platform: google_travel_time
-  api_key: !secret google_homegraph_api
-  origin: zone.tysons_office
-  destination: zone.home
-  name: Driving from Tysons
-- platform: google_travel_time
-  api_key: !secret google_homegraph_api
-  origin: zone.home
-  destination: zone.bethesda_office
-  name: Driving from Bethesda
+
+

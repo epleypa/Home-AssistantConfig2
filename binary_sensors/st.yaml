@@ -1,28 +1,3 @@
-- platform: workday
-  country: US
-
-- platform: mqtt
-  state_topic: "bruh/entrysensor"
-  name: "Entry PIR"
-  value_template: '{{ value_json.motion }}'
-  payload_on: "motion detected"
-  payload_off: "standby"
-  device_class: motion
-- platform: mqtt
-  state_topic: "bruh/officesensor"
-  name: "Office PIR"
-  value_template: '{{ value_json.motion }}'
-  payload_on: "motion detected"
-  payload_off: "standby"
-  device_class: motion
-# - platform: mqtt
-  # state_topic: "bruh/bedroomsensor"
-  # name: "Bedroom PIR"
-  # value_template: '{{ value_json.motion }}'
-  # payload_on: "motion_detected"
-  # payload_off: "standby"
-  # device_class: motion
-
 - platform: mqtt
   name: "Fridge Door"
   state_topic: "smartthings/Fridge/contact"

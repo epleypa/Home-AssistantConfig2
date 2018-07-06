@@ -13,6 +13,7 @@ default_view:
     - sensor.date
     - sensor.time
     - group.alarmclock
+    - group.sensor_travel
 
 living_room:
    name: Living Room
@@ -44,13 +45,13 @@ office:
       - device_tracker.FIOSrouter
       - device_tracker.linksys22446
 
-kitchen_dining_room:
-   name: Kitchen/Dining Room
-   view: yes
-   icon: mdi:silverware
-   entities:
-      - group.sensor_dining_room
-      - group.dining_room_lights
+# kitchen_dining_room:
+   # name: Kitchen/Dining Room
+   # view: yes
+   # icon: mdi:silverware
+   # entities:
+      # - group.sensor_dining_room
+      # - group.dining_room_lights
 
 sensors:
   name: Sensors

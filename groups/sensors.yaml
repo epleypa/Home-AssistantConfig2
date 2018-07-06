@@ -58,3 +58,11 @@ sensor_led:
     - light.entry_led
     - light.office_led
     - light.bedroom_led
+
+sensor_travel:
+  name: Travel Time
+  entities:
+    - sensor.driving_to_bethesda
+    - sensor.driving_from_bethesda
+    - sensor.driving_to_tysons
+    - sensor.driving_from_tysons

@@ -64,6 +64,10 @@ media_player:
     host: 192.168.1.81
   - platform: roku
     host: 192.168.1.82
+  - platform: cast
+    host: 192.168.1.83
+  - platform: cast
+    host: 192.168.1.84
 
 #device tracking
 device_tracker:
@@ -129,7 +133,8 @@ group: !include_dir_merge_named groups/
 script: !include scripts.yaml
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml
-binary_sensor: !include binary_sensor.yaml
+input_select: !include input_select.yaml
+binary_sensor: !include_dir_merge_list binary_sensors/
 
 #BRUH sensors
 light:

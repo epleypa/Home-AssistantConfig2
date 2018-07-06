@@ -1,0 +1,23 @@
+living_room_tv_source:
+  options:
+  - cable
+  - roku
+  - chromecast
+  - switch
+  - xbox
+
+cable_channel:
+  options:
+  - 504 NBC
+  - 505 Fox
+  - 507 ABC
+  - 509 CBS
+  - 600 CNN
+  - 664 Food Network
+  - 665 HGTV
+  - 683 TruTV
+  - 690 Comedy Central
+  - 699 Freeform
+  - 741 TV Land
+  - 752 Nickelodeon
+  - 780 Disney

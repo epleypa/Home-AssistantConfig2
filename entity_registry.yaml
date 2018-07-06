@@ -106,3 +106,15 @@ media_player.nookc2ae_hd:
   name:
   platform: plex
   unique_id: dc11e612caafbf8c-com-plexapp-android
+media_player.kitchen_speaker:
+  name:
+  platform: cast
+  unique_id: 38a22201-b1c5-4bba-493b-0192fd22e5f0
+media_player.bedroom_tv:
+  name:
+  platform: cast
+  unique_id: a4b7d5f7-f624-c2dd-b60e-8de2440af06c
+media_player.chrome_4:
+  name:
+  platform: plex
+  unique_id: 8xiyv0zim2my87o9t2y2cmse

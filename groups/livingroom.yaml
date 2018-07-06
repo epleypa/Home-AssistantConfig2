@@ -21,12 +21,14 @@ lr_tv_power:
 lr_tv_source:
    name: Living Room TV Source
    entities:
-      - switch.lr_tv_mute
-      - switch.lr_tv_cm2
-      - switch.lr_tv_hdmi1
-      - switch.lr_tv_hdmi2
-      - switch.lr_tv_hdmi3
-      - switch.lr_tv_hdmi4
+      # - switch.lr_tv_mute
+      # - switch.lr_tv_cm2
+      # - switch.lr_tv_hdmi1
+      # - switch.lr_tv_hdmi2
+      # - switch.lr_tv_hdmi3
+      # - switch.lr_tv_hdmi4
+      - input_select.living_room_tv_source
+      - input_select.cable_channel
 
 cable_source:
    name: Cable Source

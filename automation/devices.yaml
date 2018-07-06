@@ -108,7 +108,7 @@
     condition: and
     conditions:
       - condition: time
-        after: '19:30:00'
+        after: '18:59:00'
         before: '00:00:00'
   action:
     - service: switch.turn_on
@@ -117,20 +117,3 @@
       data:
         name: "Wake Plex"
         message: "has woke Neo"
-
-- alias: "Fride Open"
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.fridge_door
-      to: 'on'
-      for:
-        minutes: 1
-        seconds: 0
-  action:
-    - service: media_player.turn_on
-      entity_id: media_player.living_room_home
-    - service: tts.google_say
-      entity_id: media_player.living_room_home
-      data:
-        cache: false
-        message: "The fridge is still open"
