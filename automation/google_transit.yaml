@@ -62,9 +62,8 @@
         
 - alias: Update Commute
   trigger: 
-    - platform: time
+    - platform: time_pattern
       minutes: '/2'
-      seconds: 00
   condition:
     condition: or
     conditions:

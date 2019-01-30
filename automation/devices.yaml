@@ -3,9 +3,9 @@
     platform: homeassistant
     event: start
   action:
-    - service: google_assistant.request_sync
-      data:
-        agent_user_id: '4dea6e58fe1140c7a24ef3bf03a9e584'
+    # - service: google_assistant.request_sync
+      # data:
+        # agent_user_id: '4dea6e58fe1140c7a24ef3bf03a9e584'
     - service: light.turn_on
       entity_id: light.entry_led, light.office_led, light.bedroom_led
       data:
@@ -103,14 +103,13 @@
 
 - alias: 'Plex Wake'
   trigger:
-    - platform: time
+    - platform: time_pattern
       minutes: '/60'
-      seconds: 00
   condition:
     condition: and
     conditions:
       - condition: time
-        after: '18:59:00'
+        after: '18:58:00'
         before: '00:00:00'
   action:
     - service: switch.turn_on

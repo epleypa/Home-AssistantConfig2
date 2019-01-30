@@ -70,7 +70,7 @@
     - service: media_player.volume_set
       data_template:
         entity_id: media_player.home_speakers
-        volume_level: 0.6
+        volume_level: 0.5
     - service: tts.google_say
       entity_id: media_player.home_speakers
       data_template:
@@ -98,7 +98,7 @@
   condition:
     - condition: time
       after: '08:00:00'
-      before: '23:00:00'
+      before: '22:00:00'
   action:
     - service: notify.pushbullet
       data:
