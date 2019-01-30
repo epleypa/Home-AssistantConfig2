@@ -3,13 +3,33 @@ office_lights:
    entities:
       - switch.office_fl_light
       
-bedroom_lights:
-   name: Bedroom Lights
+bedroom_table_lights:
+   name: Bedroom Table Lights
    entities:
       - switch.bedroom_kelley_light
       - switch.bedroom_peter_light
+      
+bedroom_lights:
+   name: Bedroom Lights
+   entities:
+      - group.bedroom_table_lights
+      - light.bedroom_overhead_light
+      - switch.bedrood_closet_lights
 
 dining_room_lights:
    name: Dining Room Lights
    entities:
-      - switch.leeo
+      - switch.dining_room_light
+      - switch.bar_lights
+
+patio_lights:
+   name: Patio Lights
+   entities:
+      - switch.patio_wall_lights
+      - switch.patio_party_lights
+
+kitchen_lights:
+   name: Kitchen Lights
+   entities:
+      - switch.kitchen_cabinet_lights
+      - light.kitchen_overhead_lights

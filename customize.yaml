@@ -5,17 +5,6 @@ group.all_scripts:
 group.lr_tv_power:
   friendly_name: 'TV'
 
-switch.lr_fl_light:
-  friendly_name: 'Living Room Floor Light'
-switch.lr_tb_light:
-  friendly_name: 'Living Room Table Light'
-switch.office_fl_light:
-  friendly_name: 'Office Floor Light'
-switch.bedroom_kelley_light:
-  friendly_name: 'Bedroom Kelley Light'
-switch.christmas_tree:
-  friendly_name: 'Christmas Tree Light'
-
 switch.lr_tv_hdmi1:
   friendly_name: 'hdmi1'
 switch.lr_tv_hdmi2:
@@ -55,11 +44,17 @@ switch.cable_ok:
 switch.cable_hd:
   friendly_name: 'HD'
 
-script.wmata_dc:
-  friendly_name: Notify Next DC Train
+sensor.wmata_gr_no:
+  icon: mdi:train
+  icon_color: 'rgb(0,128,0)'
+sensor.wmata_gr_so:
+  icon: mdi:train
+  icon_color: 'rgb(0,128,0)'
+script.wmata_gr_no:
+  friendly_name: Next Green Line Northbound
   initial: off
   icon: mdi:speaker-wireless
-script.wmata_md:
-  friendly_name: Notify Next MD Train
+script.wmata_gr_so:
+  friendly_name: Next Green Line Southbound
   initial: off
   icon: mdi:speaker-wireless

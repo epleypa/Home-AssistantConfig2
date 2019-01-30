@@ -1,0 +1,85 @@
+- platform: template
+  sensors:
+    via_destination:
+      value_template: '
+        {% if is_state("input_select.destination", "Tysons") -%}
+          {{ state_attr("zone.tysons_office", "latitude") }},{{ state_attr("zone.tysons_office", "longitude") }}
+        {% elif is_state("input_select.destination", "Home") -%}
+          {{ state_attr("zone.home", "latitude") }},{{ state_attr("zone.home", "longitude") }}
+        {% elif is_state("input_select.destination", "Gym") -%}
+          {{ state_attr("zone.gym", "latitude") }},{{ state_attr("zone.gym", "longitude") }}
+        {%- endif %}'
+    via_origin:
+      value_template: '
+        {% if is_state("input_select.origin", "Tysons") -%}
+          {{ state_attr("zone.tysons_office", "latitude") }},{{ state_attr("zone.tysons_office", "longitude") }}
+        {% elif is_state("input_select.origin", "Home") -%}
+          {{ state_attr("zone.home", "latitude") }},{{ state_attr("zone.home", "longitude") }}
+        {% elif is_state("input_select.origin", "Gym") -%}
+          {{ state_attr("zone.gym", "latitude") }},{{ state_attr("zone.gym", "longitude") }}
+        {%- endif %}'
+
+- platform: google_travel_time
+  api_key: !secret google_homegraph_api
+  origin: sensor.via_origin
+  destination: sensor.via_destination
+  name: Via Driving
+  scan_interval: 21600
+  options:
+    mode: driving
+    avoid: tolls
+- platform: google_travel_time
+  api_key: !secret google_homegraph_api
+  origin: sensor.via_origin
+  destination: sensor.via_destination
+  name: Via Metro
+  scan_interval: 21600
+  options:
+    mode: transit
+    transit_mode: rail
+- platform: google_travel_time
+  api_key: !secret google_homegraph_api
+  origin: sensor.via_origin
+  destination: sensor.via_destination
+  name: Via Bus
+  scan_interval: 21600
+  options:
+    mode: transit
+    transit_mode: bus
+    
+# - platform: google_travel_time
+  # api_key: !secret google_homegraph_api
+  # origin: zone.home
+  # destination: zone.tysons_office
+  # name: Driving to Tysons
+  # scan_interval: 21600
+  # options:
+    # mode: driving
+    # avoid: tolls
+# - platform: google_travel_time
+  # api_key: !secret google_homegraph_api
+  # origin: zone.tysons_office
+  # destination: zone.home
+  # name: Driving from Tysons
+  # scan_interval: 21600
+  # options:
+    # mode: driving
+    # avoid: tolls
+# - platform: google_travel_time
+  # api_key: !secret google_homegraph_api
+  # origin: zone.home
+  # destination: zone.tysons_office
+  # name: Metro to Tysons
+  # scan_interval: 21600
+  # options:
+    # mode: transit
+    # transit_mode: rail
+# - platform: google_travel_time
+  # api_key: !secret google_homegraph_api
+  # origin: zone.tysons_office
+  # destination: zone.home
+  # name: Metro from Tysons
+  # scan_interval: 21600
+  # options:
+    # mode: transit
+    # transit_mode: rail

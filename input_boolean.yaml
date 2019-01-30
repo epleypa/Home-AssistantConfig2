@@ -2,3 +2,8 @@ alarmweekday:
   name: Weekdays Only
   icon: mdi:calendar
   initial: true
+
+update_route:
+  name: Update Route
+  icon: mdi:transit-transfer
+  initial: false

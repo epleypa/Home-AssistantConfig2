@@ -1,0 +1,107 @@
+- alias: Change Route
+  trigger: 
+    - platform: state
+      entity_id: input_select.destination
+    - platform: state
+      entity_id: input_select.origin
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.update_route  
+    - service: sensor.google_travel_sensor_update
+      data:
+        entity_id: sensor.via_driving
+    - service: sensor.google_travel_sensor_update
+      data:
+        entity_id: sensor.via_metro
+    - service: sensor.google_travel_sensor_update
+      data:
+        entity_id: sensor.via_bus
+
+- alias: Update Route
+  trigger:
+    - platform: state
+      entity_id: input_boolean.update_route
+      to: 'on'
+  action:
+    - delay: '00:30'
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.update_route
+      
+- alias: Daily Route
+  trigger:
+    - platform: time
+      at: '08:00:00'
+    - platform: time
+      at: '16:00:00'
+  condition:
+    - condition: time
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.origin
+        option: '{% if now().hour|int < 12 %}Tysons
+            {% else %}Home
+            {% endif %}'
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.destination
+        option: '{% if now().hour|int < 12 %}Home
+            {% else %}Tysons
+            {% endif %}'
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.update_route
+    - delay: '00:31'
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.update_route
+        
+- alias: Update Commute
+  trigger: 
+    - platform: time
+      minutes: '/2'
+      seconds: 00
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: input_boolean.update_route     
+        state: 'on'
+      # - condition: and
+        # conditions:
+          # - condition: time
+            # after: '08:00:00'
+            # before: '10:00:00'
+          # - condition: time
+            # weekday:
+            # - mon
+            # - tue
+            # - wed
+            # - thu
+            # - fri
+      # - condition: and
+        # conditions:
+          # - condition: time
+            # after: '15:00:00'
+            # before: '17:00:00'
+          # - condition: time
+            # weekday:
+            # - mon
+            # - tue
+            # - wed
+            # - thu
+            # - fri
+  action:
+    - service: sensor.google_travel_sensor_update
+      data:
+        entity_id: sensor.via_driving
+    - service: sensor.google_travel_sensor_update
+      data:
+        entity_id: sensor.via_metro
+    - service: sensor.google_travel_sensor_update
+      data:
+        entity_id: sensor.via_bus

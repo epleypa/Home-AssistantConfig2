@@ -1,9 +1,10 @@
 living_room_lights:
    name: Living Room Lights
    entities:
-      - switch.lr_fl_light
-      - switch.lr_tb_light
-#      - switch.christmas_tree
+      # - switch.lr_fl_light
+      # - switch.lr_tb_light
+      # - switch.christmas_tree
+      - light.living_room_lights
 
 entertainment_center:
    name: Entertainment Center

@@ -17,20 +17,29 @@ homeassistant:
 
 # Enables the frontend
 frontend:
+lovelace:
+  mode: yaml
 
 http:
   # Uncomment this to add a password (recommended!)
-  api_password: !secret http_password
+  #api_password: !secret http_password
   # Uncomment this if you are using SSL or running in Docker etc
   base_url: !secret base_url
   ssl_certificate: !secret ssl_cert_loc
   ssl_key: !secret ssl_key_loc
 
+# panel_custom:
+  # - name: floorplan
+    # sidebar_title: Floorplan
+    # sidebar_icon: mdi:home
+    # url_path: floorplan
+    # config: !include floorplan.yaml
+
 # Checks for available updates
 updater:
 
 # Discover some devices automatically
-#discovery:
+discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -54,20 +63,19 @@ map:
 
 mqtt:
   client_id: 8315
+  password: !secret http_password
   
 #media players
 media_player:
   - platform: plex
-  - platform: cast
-    host: 192.168.1.80
-  - platform: cast
-    host: 192.168.1.81
-  - platform: roku
-    host: 192.168.1.82
-  - platform: cast
-    host: 192.168.1.83
-  - platform: cast
-    host: 192.168.1.84
+
+# cast:
+  # media_player:
+  # - host: 192.168.1.80
+  # - host: 192.168.1.81
+  # - host: 192.168.1.82
+  # - host: 192.168.1.83
+  # - host: 192.168.1.84
 
 #device tracking
 device_tracker:
@@ -87,8 +95,11 @@ device_tracker:
     # - 192.168.1.150
     # - 192.168.1.100
     # - 192.168.1.101
-  - platform: linksys_smart
-    host: 192.168.1.1
+  # - platform: linksys_smart
+    # host: 192.168.1.1
+  - platform: quantum_gateway
+    host: 192.168.1.2
+    password: !secret quantum_gateway
 
 recorder:
   exclude:
@@ -128,42 +139,39 @@ notify:
 automation: !include_dir_merge_list automation/
 zone: !include zones.yaml
 sensor: !include_dir_merge_list sensors/
-switch: !include switches.yaml
+switch: !include_dir_merge_list switches/
 group: !include_dir_merge_named groups/
 script: !include scripts.yaml
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml
 input_select: !include input_select.yaml
 binary_sensor: !include_dir_merge_list binary_sensors/
+light: !include lights.yaml
 
-#BRUH sensors
-light:
-  - platform: mqtt_json
-    name: "Entry LED"
-    state_topic: "bruh/entrysensor"
-    command_topic: "bruh/entrysensor/set"
-    brightness: true
-    flash: true
-    rgb: true
-    optimistic: false
-    qos: 0  
-  - platform: mqtt_json
-    name: "Office LED"
-    state_topic: "bruh/officesensor"
-    command_topic: "bruh/officesensor/set"
-    brightness: true
-    flash: true
-    rgb: true
-    optimistic: false
-    qos: 0
-  - platform: mqtt_json
-    name: "Bedroom LED"
-    state_topic: "bruh/bedroomsensor"
-    command_topic: "bruh/bedroomsensor/set"
-    brightness: true
-    flash: true
-    rgb: true
-    optimistic: false
-    qos: 0
-
+google:
+  client_id: !secret google_oath_client
+  client_secret: !secret google_oath_secret
 google_assistant: !include google_assistant.yaml
+nest:
+  client_id: !secret nest_id
+  client_secret: !secret nest_secret
+  binary_sensors:
+    monitored_conditions:
+      - away
+      - online
+      - fan
+      - is_using_emergency_heat
+      - is_locked
+      - has_leaf
+      - motion_detected
+      - person_detected
+      - sound_detected
+
+climate:
+  platform: nest
+    
+alarm_control_panel:
+  - platform: totalconnect
+    username: !secret tc_user
+    password: !secret tc_password
+    code: !secret tc_usercode

@@ -21,23 +21,25 @@
 
 - platform: pushbullet
   api_key: !secret pushbullet_key
+  monitored_conditions:
+    - title
+    - body
 
 - platform: broadlink
   host: 192.168.1.42
-  mac: 'B4:43:0D:FB:DD:62'
+  mac: '78:0F:77:B9:62:85'
   monitored_conditions:
     - temperature
 
 - platform: systemmonitor
   resources:
     - type: last_boot
-    - type: since_last_boot
     - type: memory_use_percent
     - type: processor_use
 
 - platform: rest
   name: 'WMATA'
-  resource: https://api.wmata.com/StationPrediction.svc/json/GetPrediction/A08
+  resource: https://api.wmata.com/StationPrediction.svc/json/GetPrediction/E03
   method: GET
   headers:
     api_key: !secret wmata_api
@@ -48,44 +50,25 @@
 
 - platform: template
   sensors:
-    wmata_dc:
+    wmata_gr_no:
+      friendly_name: "Green Line Northbound"
       value_template: '
         {% set trains = states.sensor.wmata.attributes.Trains %}
-        {% for train in trains if train.DestinationCode == "B08" or train.DestinationCode == "B11" %}
+        {% for train in trains if train.DestinationCode == "E10" %}
         {% if loop.first %}{{ train.Min }}
         {% elif loop.last %} and {{ train.Min }}
         {% else %}, {{ train.Min }},
         {% endif %}
         {% endfor %}'
       unit_of_measurement: 'minutes'
-    wmata_md:
+    wmata_gr_so:
+      friendly_name: "Green Line Southbound"
       value_template: '
         {% set trains = states.sensor.wmata.attributes.Trains %}
-        {% for train in trains if train.DestinationCode == "A15" or train.DestinationCode == "A11" %}
+        {% for train in trains if train.DestinationCode == "F11" %}
         {% if loop.first %}{{ train.Min }}
         {% elif loop.last %} and {{ train.Min }}
         {% else %}, {{ train.Min }},
         {% endif %}
         {% endfor %}'
       unit_of_measurement: 'minutes'
-
-- platform: google_travel_time
-  api_key: !secret google_homegraph_api
-  origin: zone.home
-  destination: zone.tysons_office
-  name: Driving to Tysons
-- platform: google_travel_time
-  api_key: !secret google_homegraph_api
-  origin: zone.home
-  destination: zone.bethesda_office
-  name: Driving to Bethesda
-- platform: google_travel_time
-  api_key: !secret google_homegraph_api
-  origin: zone.tysons_office
-  destination: zone.home
-  name: Driving from Tysons
-- platform: google_travel_time
-  api_key: !secret google_homegraph_api
-  origin: zone.home
-  destination: zone.bethesda_office
-  name: Driving from Bethesda

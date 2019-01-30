@@ -1,36 +1,27 @@
-- platform: wake_on_lan
-  mac_address: "D4-3D-7E-BA-A6-EF"
-  name: Neo
-  host: "192.168.1.128"
-- platform: wake_on_lan
-  mac_address: "70-8B-CD-58-66-D5"
-  name: Trinity
-  host: "192.168.1.250"
-
 - platform: broadlink
   host: 192.168.1.42
-  mac: 'B4:43:0D:FB:DD:62'
+  mac: '78:0F:77:B9:62:85'
   switches:
-    lr_fl_light:
+    christmas_tree:
       command_on: 'sggyAAYTEwcHEwYTBhMSBwcTEgcGExMHBhMTBwYTEwcGExMHBhMHExIHEgcGEwYTEwcSBwe8AAAAAAAA'
       command_off: 'sgkyAAYTEwcGEwYTBhMTBwYTEgcGExIHBhMSBwYTEgcGExIHBxMGExIHEgcSBxMHBhMGEwa9AAAAAAAA'
-      friendly_name: 'lr_fl_light'
-    lr_tb_light:
-      command_on: 'shEyAAYTEwcHEwYTBxMSBwcTEgcGExIHBhMTBwYTEwcGExMHEgcTBwcTBhMGEwYTEwcTBwa9AAAAAAAA'
-      command_off: 'sgYyAAYTEgcGEwYTBhMSBwYTEwcGExMHBhMTBwYTEgcHExMHEgcTBwYTBhMTBxIHBhMGEwe9AAAAAAAA'
-      friendly_name: 'lr_tb_light'
-    office_fl_light:
-      command_on: 'shcyAAcTEgcHEwcTBhMTBwYTEwcGFBIHBhMTBwYTEwcTBxIHBhMHEwYUBhMHEwcTEgcSBwe9AAAAAAAA'
-      command_off: 'shUyAAYTEwcHEwYTBhMTBwYTEgcGExMHBxMTBwcTEwcSBxIHBxMGEwYTBhMTBxMHBhMHEwa9AAAAAAAA'
-      friendly_name: 'office_fl_light'
+      friendly_name: 'Christmas Tree Light'
+    # lr_tb_light:
+      # command_on: 'shEyAAYTEwcHEwYTBxMSBwcTEgcGExIHBhMTBwYTEwcGExMHEgcTBwcTBhMGEwYTEwcTBwa9AAAAAAAA'
+      # command_off: 'sgYyAAYTEgcGEwYTBhMSBwYTEwcGExMHBhMTBwYTEgcHExMHEgcTBwYTBhMTBxIHBhMGEwe9AAAAAAAA'
+      # friendly_name: 'lr_tb_light'
+    # office_fl_light:
+      # command_on: 'shcyAAcTEgcHEwcTBhMTBwYTEwcGFBIHBhMTBwYTEwcTBxIHBhMHEwYUBhMHEwcTEgcSBwe9AAAAAAAA'
+      # command_off: 'shUyAAYTEwcHEwYTBhMTBwYTEgcGExMHBxMTBwcTEwcSBxIHBxMGEwYTBhMTBxMHBhMHEwa9AAAAAAAA'
+      # friendly_name: 'office_fl_light'
     bedroom_kelley_light:
       command_on: 'sgkyAAcTEwgGEwcTBxMSBwYTEwcGFBIHBxMTBxIHEgcHExIIBhMGEwcTBhMGEwYTEgcSBwa9AAAAAAAA'
       command_off: 'sgkyAAcSEwcHEwcTBxMTBgcTEwYHExMHBxMTBhMHEwYHExMGBxMHEwcTBxMTBhMHBxIHEwe8AAAAAAAA'
-      friendly_name: 'bedroom_kelley_light'
-    christmas_tree:
+      friendly_name: 'Bedroom Kelley Light'
+    bedroom_peter_light:
       command_on: 'sgwyAAcTEwcGEwcTBxMTBwcTEwcHExMHEwcTBwYTEwcHExMHBhMGEwcTBhMHEwcTEwcTBwa9AAAAAAAA'
       command_off: 'sg4yAAcTEwcGEwcTBxMTBwcTEwcHExMHEwcTBgcTEwcHExMHBxMHEwcTBxMTBxMGBxMHEwe9AAAAAAAA'
-      friendly_name: 'christmas_tree'
+      friendly_name: 'Bedroom Peter Light'
     lr_tv_power1:
       command_on: 'JgBOAJOVEToQOhE5ERUQFRAVERQRFBE5EToQOhEUERQRFRAVEBUROREUERQROhA6ERQRFBE6EBURORE5ERUQFRA6ETkRFRAABaWWlRAVEQANBQAAAAAAAAAAAAA='
       command_off: 'JgBOAJWUEjgSOBM3ExMSExITEhMTEhM4EjgSOBEUExMSExITEhMSExMSExIROhI4ExITEhM4EjgSOBM4EhMRFBI4EzgSExIABaWVlBITEwANBQAAAAAAAAAAAAA='

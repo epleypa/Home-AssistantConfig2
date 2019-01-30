@@ -1,28 +1,28 @@
-- alias: "Fride Open"
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.fridge_door
-      to: 'on'
-      for:
-        minutes: 1
-        seconds: 0
-  action:
-    - service: media_player.turn_on
-      entity_id: media_player.living_room_home
-    - service: tts.google_say
-      entity_id: media_player.living_room_home
-      data:
-        cache: false
-        message: "The fridge is still open"
+# - alias: "Fridge Open"
+  # trigger:
+    # - platform: state
+      # entity_id: binary_sensor.fridge_door
+      # to: 'on'
+      # for:
+        # minutes: 1
+        # seconds: 0
+  # action:
+    # - service: media_player.turn_on
+      # entity_id: media_player.living_room_home
+    # - service: tts.google_say
+      # entity_id: media_player.living_room_home
+      # data:
+        # cache: false
+        # message: "The fridge is still open"
 
 - alias: "Master Alarm"
   trigger:
-    - platform: state
-      entity_id: binary_sensor.fridge_door
-      to: 'on'
-      for:
-        minutes: 1
-        seconds: 0
+    # - platform: state
+      # entity_id: binary_sensor.fridge_door
+      # to: 'on'
+      # for:
+        # minutes: 1
+        # seconds: 0
     - platform: state
       entity_id: binary_sensor.kitchen_leak_sensor
       to: 'on'        
@@ -66,9 +66,13 @@
   # {%- if state.state_with_unit=="on" %}{{ state.name }} is {{state.state_with_unit}} {% endif -%}
 # {%- endfor %}'
     - service: media_player.turn_on
-      entity_id: media_player.living_room_home
+      entity_id: media_player.home_speakers
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.home_speakers
+        volume_level: 0.6
     - service: tts.google_say
-      entity_id: media_player.living_room_home
+      entity_id: media_player.home_speakers
       data_template:
         cache: false
         message: '{% for state in states.binary_sensor -%}
@@ -76,3 +80,46 @@
             {% elif "alarm" in state.name | lower and state.state == "on" %}{{ state.name }} has triggered
             {% endif %}
         {%- endfor %}'
+
+- alias: "Laundry Alarm"
+  trigger:        
+    - platform: numeric_state
+      entity_id: sensor.washer_power
+      below: 5        
+      for:
+        minutes: 1
+        seconds: 0
+    - platform: numeric_state
+      entity_id: sensor.dryer_power
+      below: 5        
+      for:
+        minutes: 1
+        seconds: 0
+  condition:
+    - condition: time
+      after: '08:00:00'
+      before: '23:00:00'
+  action:
+    - service: notify.pushbullet
+      data:
+        title: 'Laundry Alarm'
+        message: "
+            {% if states('sensor.washer_power')|int < 5 and states('sensor.dryer_power')|int < 5 %}The washer and dryer are done
+            {% elif states('sensor.dryer_power')|int < 5 %}The dryer is done
+            {% elif states('sensor.washer_power')|int < 5 %}The washer is done
+            {% endif %}"
+    - service: media_player.turn_on
+      entity_id: media_player.home_speakers
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.home_speakers
+        volume_level: 0.4
+    - service: tts.google_say
+      entity_id: media_player.home_speakers
+      data_template:
+        cache: false
+        message: "
+            {% if states('sensor.washer_power')|int < 5 and states('sensor.dryer_power')|int < 5 %}The washer and dryer are done
+            {% elif states('sensor.dryer_power')|int < 5 %}The dryer is done
+            {% elif states('sensor.washer_power')|int < 5 %}The washer is done
+            {% endif %}"

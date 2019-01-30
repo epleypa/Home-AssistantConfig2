@@ -23,8 +23,7 @@ computers:
       - device_tracker.surface
       - device_tracker.trinity
       - device_tracker.peter_computer_work
-      - device_tracker.peter_computer_work2
-#      - device_tracker.kelley_computer_work
+      - device_tracker.kelley_computer_work
       - device_tracker.printer 
 
 family:

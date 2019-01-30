@@ -1,0 +1,36 @@
+- platform: mqtt
+  name: Bar Lights
+  state_topic: "smartthings/Bar Lights/switch"
+  command_topic: "smartthings/Bar Lights/switch"
+  payload_on: "on"
+  payload_off: "off"
+- platform: mqtt
+  name: Dining Room Light
+  state_topic: "smartthings/Dining Room Light/switch"
+  command_topic: "smartthings/Dining Room Light/switch"
+  payload_on: "on"
+  payload_off: "off"
+- platform: mqtt
+  name: Patio Wall Lights
+  state_topic: "smartthings/Patio Wall Lights/switch"
+  command_topic: "smartthings/Patio Wall Lights/switch"
+  payload_on: "on"
+  payload_off: "off"
+- platform: mqtt
+  name: Patio Party Lights
+  state_topic: "smartthings/Patio Party Lights/switch"
+  command_topic: "smartthings/Patio Party Lights/switch"
+  payload_on: "on"
+  payload_off: "off"
+- platform: mqtt
+  name: Bedroom Closet Lights
+  state_topic: "smartthings/Bedroom Closet Lights/switch"
+  command_topic: "smartthings/Bedroom Closet Lights/switch"
+  payload_on: "on"
+  payload_off: "off"
+- platform: mqtt
+  name: Kitchen Cabinet Lights
+  state_topic: "smartthings/Kitchen Cabinet Lights/switch"
+  command_topic: "smartthings/Kitchen Cabinet Lights/switch"
+  payload_on: "on"
+  payload_off: "off"

@@ -21,3 +21,15 @@ cable_channel:
   - 741 TV Land
   - 752 Nickelodeon
   - 780 Disney
+
+destination:
+  options:
+  - Tysons
+  - Gym
+  - Home
+  
+origin:
+  options:
+  - Home
+  - Tysons
+  - Gym

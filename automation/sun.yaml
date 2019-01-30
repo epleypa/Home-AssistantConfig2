@@ -58,7 +58,7 @@
         state: 'off'
   action:
     - service: switch.turn_on
-      entity_id: group.home_lights
+      entity_id: switch.bedroom_peter_light
     - service: notify.pushbullet
       data:
         message: 'Time to start the day!'
@@ -110,20 +110,20 @@
     platform: sun
     event: sunset
     offset: '-00:15:00'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: group.family
-        state: 'home'
-      - condition: time
-        before: '22:00:00'
+  # condition:
+    # condition: and
+    # conditions:
+      # - condition: state
+        # entity_id: group.family
+        # state: 'home'
+      # - condition: time
+        # before: '22:00:00'
   action:
     - service: notify.pushbullet
       data:
         message: 'The sun is down.'
-    - service: switch.turn_on
-      entity_id: group.living_room_lights
+    # - service: switch.turn_on
+      # entity_id: group.home_lights
 
 - alias: 'Goodnight'
   trigger:

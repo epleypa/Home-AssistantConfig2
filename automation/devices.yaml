@@ -4,6 +4,8 @@
     event: start
   action:
     - service: google_assistant.request_sync
+      data:
+        agent_user_id: '4dea6e58fe1140c7a24ef3bf03a9e584'
     - service: light.turn_on
       entity_id: light.entry_led, light.office_led, light.bedroom_led
       data:
@@ -117,3 +119,14 @@
       data:
         name: "Wake Plex"
         message: "has woke Neo"
+
+- alias: 'IFTTT Webhook'
+  trigger:
+    platform: event
+    event_type: ifttt_webhook_received
+    event_data:
+      action: call_service
+  action:
+    service_template: '{{ trigger.event.data.service }}'
+    data_template:
+      entity_id: '{{ trigger.event.data.entity_id }}'

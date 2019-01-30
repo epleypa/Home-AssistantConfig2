@@ -1,5 +1,8 @@
 - platform: workday
   country: US
+  workdays: [mon,tue,wed,thu,fri]
+  excludes: [sat,sun,holiday]
+  add_holidays: ['2018-12-24','2018-12-26','2018-12-27','2018-12-28','2018-12-31']
 
 - platform: mqtt
   state_topic: "bruh/entrysensor"

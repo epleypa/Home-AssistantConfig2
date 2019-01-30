@@ -22,6 +22,8 @@
   condition:
     condition: and
     conditions:
+      - condition: time
+        before: '22:00:00'
       - condition: sun
         after: sunset
         before_offset: '-00:15:00'
@@ -40,6 +42,8 @@
   condition:
     condition: and
     conditions:
+      - condition: time
+        before: '22:00:00'
       - condition: sun
         after: sunset
         before_offset: '-00:15:00'

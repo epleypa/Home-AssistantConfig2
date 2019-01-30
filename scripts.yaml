@@ -1,4 +1,4 @@
-wmata_dc:
+wmata_gr_no:
   sequence:
     - service: media_player.turn_on
       entity_id: media_player.living_room_home
@@ -6,9 +6,9 @@ wmata_dc:
       data_template:
         cache: false
         entity_id: media_player.living_room_home
-        message: "the next metro train leaves for DC from friendship heights in {{ states('sensor.wmata_dc') }} minutes"
+        message: "the next metro train heading north from u street is in {{ states('sensor.wmata_dc') }} minutes"
 
-wmata_md:
+wmata_gr_so:
   sequence:
     - service: media_player.turn_on
       entity_id: media_player.living_room_home
@@ -16,7 +16,7 @@ wmata_md:
       data_template:
         cache: false
         entity_id: media_player.living_room_home
-        message: "the next metro train leaves for Maryland from friendship heights in {{ states('sensor.wmata_md') }} minutes"
+        message: "the next metro train heading south from u street is in {{ states('sensor.wmata_md') }} minutes"
 
 chromecast:
   sequence:
@@ -83,3 +83,15 @@ cable:
         # cache: false
         # entity_id: media_player.living_room_home
         # message: "The entry temperature is {{ states.sensor.entry_temperature.state }} degrees"
+
+arm_away:
+  alias: Arm Away
+  sequence:
+    - service: alarm_control_panel.alarm_arm_away
+      entity_id: alarm_control_panel.total_connect
+
+arm_home:
+  alias: Arm Home
+  sequence:
+    - service: alarm_control_panel.alarm_arm_home
+      entity_id: alarm_control_panel.total_connect

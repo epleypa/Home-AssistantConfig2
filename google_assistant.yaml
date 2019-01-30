@@ -1,8 +1,10 @@
 project_id: !secret google_proj
-client_id: !secret google_client
-access_token: !secret google_token
+#client_id: !secret google_client
+#access_token: !secret google_token
 api_key: !secret google_homegraph_api
+#expose_by_default: false
 exposed_domains:
+  - light
   - switch
   - script
 entity_config:
@@ -11,6 +13,12 @@ entity_config:
     name: 'TV'
   group.home_lights:
     expose: true
+  light.Entry_LED:
+    expose: false
+  light.Office_LED:
+    expose: false
+  light.Bedroom_LED:
+    expose: false
   switch.lr_tv_power1:
     name: 'TV1'
     expose: false
@@ -44,9 +52,11 @@ entity_config:
     expose: false
   switch.cable_hd:
     name: 'HD'
-  script.wmata_dc:
+  script.wmata_gr_no:
     expose: false
-  script.wmata_md:
+  script.wmata_gr_so:
     expose: false
-  switch.christmas_tree:
+  switch.washer:
+    expose: false
+  switch.dryer:
     expose: false

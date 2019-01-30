@@ -2,6 +2,7 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
+    - group.nest
     - updater.updater
     - group.family
     - group.home_lights
@@ -118,11 +119,21 @@ home_lights:
       - group.bedroom_lights
       - group.living_room_lights
       - group.office_lights
+      - group.dining_room_lights
+      - group.patio_lights
+      - group.kitchen_lights
 
 wmata:
   name: WMATA Info
   entities:
-    - sensor.wmata_dc
-    - sensor.wmata_md
-    - script.wmata_dc
-    - script.wmata_md
+    - sensor.wmata_gr_no
+    - sensor.wmata_gr_so
+    - script.wmata_gr_no
+    - script.wmata_gr_so
+
+nest:
+  name: Nest
+  entities:
+    - climate.upstairs
+    - camera.front_door
+    - camera.backyard
