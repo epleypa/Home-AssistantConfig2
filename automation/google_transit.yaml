@@ -45,15 +45,17 @@
     - service: input_select.select_option
       data:
         entity_id: input_select.origin
-        option: '{% if now().hour|int < 12 %}Tysons
-            {% else %}Home
-            {% endif %}'
+        option: '
+          {% if now().hour|int < 12 %}Tysons
+          {% else %}Home
+          {% endif %}'
     - service: input_select.select_option
       data:
         entity_id: input_select.destination
-        option: '{% if now().hour|int < 12 %}Home
-            {% else %}Tysons
-            {% endif %}'
+        option: '
+          {% if now().hour|int < 12 %}Home
+          {% else %}Tysons
+          {% endif %}'
     - service: input_boolean.turn_on
       entity_id: input_boolean.update_route
     - delay: '00:31'

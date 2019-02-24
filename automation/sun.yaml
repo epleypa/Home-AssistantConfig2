@@ -9,6 +9,8 @@
         message: 'The sun is up.'
     # - service: switch.turn_off
       # entity_id: group.home_lights
+    - service: light.turn_off
+      entity_id: light.leeo
 
 # - alias: 'Get Up'
   # trigger:
@@ -124,6 +126,8 @@
         message: 'The sun is down.'
     # - service: switch.turn_on
       # entity_id: group.home_lights
+    - service: light.turn_on
+      entity_id: light.leeo
 
 - alias: 'Goodnight'
   trigger:

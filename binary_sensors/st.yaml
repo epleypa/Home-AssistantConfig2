@@ -1,65 +1,59 @@
-- platform: mqtt
-  name: "Fridge Door"
-  state_topic: "smartthings/Fridge/contact"
-  payload_on: "open"
-  payload_off: "closed"
-#  availability_topic: "home-assistant/window/availability"
-  payload_available: "online"
-  payload_not_available: "offline"
-  qos: 0
-  device_class: opening
+# - platform: mqtt
+  # name: "Fridge Door"
+  # state_topic: "smartthings/Fridge/contact"
+  # payload_on: "open"
+  # payload_off: "closed"
+  # payload_available: "online"
+  # payload_not_available: "offline"
+  # qos: 0
+  # device_class: opening
 
-- platform: mqtt
-  name: "Master Bath Leak Sensor"
-  state_topic: "smartthings/Master Bath Leak Sensor/water"
-  payload_on: "wet"
-  payload_off: "dry"
-#  availability_topic: "home-assistant/window/availability"
-  payload_available: "online"
-  payload_not_available: "offline"
-  qos: 0
-  device_class: moisture
+# - platform: mqtt
+  # name: "Master Bath Leak Sensor"
+  # state_topic: "smartthings/Master Bath Leak Sensor/water"
+  # payload_on: "wet"
+  # payload_off: "dry"
+  # payload_available: "online"
+  # payload_not_available: "offline"
+  # qos: 0
+  # device_class: moisture
 
-- platform: mqtt
-  name: "Half Bath Leak Sensor"
-  state_topic: "smartthings/Half Bath Leak Sensor/water"
-  payload_on: "wet"
-  payload_off: "dry"
-#  availability_topic: "home-assistant/window/availability"
-  payload_available: "online"
-  payload_not_available: "offline"
-  qos: 0
-  device_class: moisture
+# - platform: mqtt
+  # name: "Half Bath Leak Sensor"
+  # state_topic: "smartthings/Half Bath Leak Sensor/water"
+  # payload_on: "wet"
+  # payload_off: "dry"
+  # payload_available: "online"
+  # payload_not_available: "offline"
+  # qos: 0
+  # device_class: moisture
   
-- platform: mqtt
-  name: "Kitchen Leak Sensor"
-  state_topic: "smartthings/Kitchen Leak Sensor/water"
-  payload_on: "wet"
-  payload_off: "dry"
-#  availability_topic: "home-assistant/window/availability"
-  payload_available: "online"
-  payload_not_available: "offline"
-  qos: 0
-  device_class: moisture
+# - platform: mqtt
+  # name: "Kitchen Leak Sensor"
+  # state_topic: "smartthings/Kitchen Leak Sensor/water"
+  # payload_on: "wet"
+  # payload_off: "dry"
+  # payload_available: "online"
+  # payload_not_available: "offline"
+  # qos: 0
+  # device_class: moisture
   
-- platform: mqtt
-  name: "Smoke Alarm"
-  state_topic: "smartthings/Leeo/smoke"
-  payload_on: "detected"
-  payload_off: "clear"
-#  availability_topic: "home-assistant/window/availability"
-  payload_available: "online"
-  payload_not_available: "offline"
-  qos: 0
-  device_class: smoke
+# - platform: mqtt
+  # name: "Smoke Alarm"
+  # state_topic: "smartthings/Leeo/smoke"
+  # payload_on: "detected"
+  # payload_off: "clear"
+  # payload_available: "online"
+  # payload_not_available: "offline"
+  # qos: 0
+  # device_class: smoke
   
-- platform: mqtt
-  name: "CO Alarm"
-  state_topic: "smartthings/Leeo/carbonMonoxide"
-  payload_on: "detected"
-  payload_off: "clear"
-#  availability_topic: "home-assistant/window/availability"
-  payload_available: "online"
-  payload_not_available: "offline"
-  qos: 0
-  device_class: safety
+# - platform: mqtt
+  # name: "CO Alarm"
+  # state_topic: "smartthings/Leeo/carbonMonoxide"
+  # payload_on: "detected"
+  # payload_off: "clear"
+  # payload_available: "online"
+  # payload_not_available: "offline"
+  # qos: 0
+  # device_class: safety

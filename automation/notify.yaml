@@ -1,3 +1,15 @@
+- alias: "Update Available"
+  trigger:
+    - platform: state
+      entity_id: updater.updater
+  action:
+    - service: notify.pushbullet
+      data:
+        title: 'New Home Assistant Release'
+        message: "Home Assistant {{ states.updater.updater.state }} is now available"
+    - service: ifttt.trigger
+      data_template: {"event":"Home-AssistantConfig", "value1":"{{ states.updater.updater.state }}", "value2":"Home Assistant {{ states.updater.updater.state }} is now available."}
+
 # - alias: "Fridge Open"
   # trigger:
     # - platform: state
@@ -104,7 +116,7 @@
       data:
         title: 'Laundry Alarm'
         message: "
-            {% if states('sensor.washer_power')|int < 5 and states('sensor.dryer_power')|int < 5 %}The washer and dryer are done
+            {% if states('sensor.washer_power')|int < 5 and states('sensor.dryer_power')|int < 5 %}The laundry is done
             {% elif states('sensor.dryer_power')|int < 5 %}The dryer is done
             {% elif states('sensor.washer_power')|int < 5 %}The washer is done
             {% endif %}"
@@ -119,7 +131,7 @@
       data_template:
         cache: false
         message: "
-            {% if states('sensor.washer_power')|int < 5 and states('sensor.dryer_power')|int < 5 %}The washer and dryer are done
+            {% if states('sensor.washer_power')|int < 5 and states('sensor.dryer_power')|int < 5 %}The laundry is done
             {% elif states('sensor.dryer_power')|int < 5 %}The dryer is done
             {% elif states('sensor.washer_power')|int < 5 %}The washer is done
             {% endif %}"

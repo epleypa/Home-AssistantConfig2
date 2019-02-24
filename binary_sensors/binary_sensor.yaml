@@ -2,7 +2,7 @@
   country: US
   workdays: [mon,tue,wed,thu,fri]
   excludes: [sat,sun,holiday]
-  add_holidays: ['2018-12-24','2018-12-26','2018-12-27','2018-12-28','2018-12-31']
+#  add_holidays: ['2018-12-24','2018-12-26','2018-12-27','2018-12-28','2018-12-31']
 
 - platform: mqtt
   state_topic: "bruh/entrysensor"
@@ -25,3 +25,14 @@
   # payload_on: "motion_detected"
   # payload_off: "standby"
   # device_class: motion
+
+- platform: template
+  sensors:
+    smoke_alarm:
+      entity_id: sensor.leeo_smoke_detector
+      device_class: smoke
+      value_template: "{{ is_state('sensor.leeo_smoke_detector', 'detected') }}"
+    co_alarm:
+      entity_id: sensor.leeo_carbon_monoxide_detector
+      device_class: safety
+      value_template: "{{ is_state('sensor.leeo_carbon_monoxide_detector', 'detected') }}"

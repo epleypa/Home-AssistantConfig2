@@ -13,11 +13,11 @@
 
 - platform: moon
 
-- platform: speedtest
-  monitored_conditions:
-    - ping
-    - download
-    - upload
+# - platform: speedtest
+  # monitored_conditions:
+    # - ping
+    # - download
+    # - upload
 
 - platform: pushbullet
   api_key: !secret pushbullet_key

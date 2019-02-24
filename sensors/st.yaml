@@ -1,45 +1,45 @@
-- platform: mqtt
-  state_topic: "smartthings/Fridge/temperature"
-  name: "Contact Sensor Temperature"
-  unit_of_measurement: "°F"
-  device_class: temperature
+# - platform: mqtt
+  # state_topic: "smartthings/Fridge/temperature"
+  # name: "Contact Sensor Temperature"
+  # unit_of_measurement: "°F"
+  # device_class: temperature
   
-- platform: mqtt
-  state_topic: "smartthings/Leeo/temperature"
-  name: "Dining Room Temperature"
-  unit_of_measurement: "°F"
-  device_class: temperature
+# - platform: mqtt
+  # state_topic: "smartthings/Leeo/temperature"
+  # name: "Dining Room Temperature"
+  # unit_of_measurement: "°F"
+  # device_class: temperature
 
-- platform: mqtt
-  state_topic: "smartthings/Leeo/humidity"
-  name: "Dining Room Humidity"
-  unit_of_measurement: "%"
-  device_class: humidity
+# - platform: mqtt
+  # state_topic: "smartthings/Leeo/humidity"
+  # name: "Dining Room Humidity"
+  # unit_of_measurement: "%"
+  # device_class: humidity
 
-- platform: mqtt
-  state_topic: "smartthings/Master Bath Leak Sensor/temperature"
-  name: "Master Bath Temperature"
-  unit_of_measurement: "°F"
-  device_class: temperature
+# - platform: mqtt
+  # state_topic: "smartthings/Master Bath Leak Sensor/temperature"
+  # name: "Master Bath Temperature"
+  # unit_of_measurement: "°F"
+  # device_class: temperature
 
-- platform: mqtt
-  state_topic: "smartthings/Half Bath Leak Sensor/temperature"
-  name: "Half Bath Temperature"
-  unit_of_measurement: "°F"
-  device_class: temperature
+# - platform: mqtt
+  # state_topic: "smartthings/Half Bath Leak Sensor/temperature"
+  # name: "Half Bath Temperature"
+  # unit_of_measurement: "°F"
+  # device_class: temperature
 
-- platform: mqtt
-  state_topic: "smartthings/Kitchen Leak Sensor/temperature"
-  name: "Kitchen Temperature"
-  unit_of_measurement: "°F"
-  device_class: temperature
+# - platform: mqtt
+  # state_topic: "smartthings/Kitchen Leak Sensor/temperature"
+  # name: "Kitchen Temperature"
+  # unit_of_measurement: "°F"
+  # device_class: temperature
 
-- platform: mqtt
-  state_topic: "smartthings/Washer/power"
-  name: "Washer Power"
-  unit_of_measurement: "W"
+# - platform: mqtt
+  # state_topic: "smartthings/Washer/power"
+  # name: "Washer Power"
+  # unit_of_measurement: "W"
 
-- platform: mqtt
-  state_topic: "smartthings/Dryer/power"
-  name: "Dryer Power"
-  unit_of_measurement: "W"
+# - platform: mqtt
+  # state_topic: "smartthings/Dryer/power"
+  # name: "Dryer Power"
+  # unit_of_measurement: "W"

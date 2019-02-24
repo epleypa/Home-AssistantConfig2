@@ -134,13 +134,12 @@ views:
         cards:
           - type: entity-button
             entity: switch.neo
-            tap_action: toggle
+            tap_action: call-service
+            service: switch.turn_on
           - type: entity-button
             entity: switch.trinity
-            tap_action: toggle
-          - type: entity-button
-            entity: group.office_lights
-            tap_action: toggle
+            tap_action: call-service
+            service: switch.turn_on
       - type: glance
         title: Entry Sensors
         entities:
@@ -195,7 +194,6 @@ views:
         title: Kitchen Sensors
         entities:
           - sensor.kitchen_temperature
-          - binary_sensor.fridge_door
           - binary_sensor.kitchen_leak_sensor
         
   - title: Weather

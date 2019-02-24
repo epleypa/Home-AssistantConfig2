@@ -12,11 +12,13 @@ homeassistant:
   time_zone: America/New_York
   customize: !include customize.yaml
 
+default_config:
+
 # Show links to resources in log and frontend
 #introduction:
 
 # Enables the frontend
-frontend:
+#frontend:
 lovelace:
   mode: yaml
 
@@ -35,31 +37,31 @@ http:
     # url_path: floorplan
     # config: !include floorplan.yaml
 
-# Checks for available updates
-updater:
+# # Checks for available updates
+# updater:
 
-# Discover some devices automatically
-discovery:
+# # Discover some devices automatically
+# discovery:
 
-# Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
+# # Allows you to issue voice commands from the frontend in enabled browsers
+# conversation:
 
-# Enables support for tracking state changes over time.
-history:
+# # Enables support for tracking state changes over time.
+# history:
 
-# View all events in a logbook
-logbook:
+# # View all events in a logbook
+# logbook:
 
-# Track the sun
-sun:
+# # Track the sun
+# sun:
+
+# config:
+# map:
 
 # Text to speech
 tts:
   platform: google
   language: 'en-us'
-
-config:
-map:
 
 mqtt:
   client_id: 8315
@@ -174,4 +176,4 @@ alarm_control_panel:
   - platform: totalconnect
     username: !secret tc_user
     password: !secret tc_password
-    code: !secret tc_usercode
+#    code: !secret tc_usercode
