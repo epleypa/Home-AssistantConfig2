@@ -1,7 +1,7 @@
 office_lights:
    name: Office Lights
    entities:
-      - switch.office_fl_light
+      - light.office_light
       
 bedroom_table_lights:
    name: Bedroom Table Lights
@@ -20,7 +20,7 @@ dining_room_lights:
    name: Dining Room Lights
    entities:
       - switch.dining_room_light
-      - switch.bar_lights
+      - light.storage_light
 
 patio_lights:
    name: Patio Lights
@@ -33,3 +33,4 @@ kitchen_lights:
    entities:
       - switch.kitchen_cabinet_lights
       - light.kitchen_overhead_lights
+      - switch.bar_lights

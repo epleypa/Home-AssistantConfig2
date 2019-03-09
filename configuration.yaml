@@ -20,7 +20,7 @@ default_config:
 # Enables the frontend
 #frontend:
 lovelace:
-  mode: yaml
+#  mode: yaml
 
 http:
   # Uncomment this to add a password (recommended!)
@@ -171,6 +171,24 @@ nest:
 
 climate:
   platform: nest
+
+fan:
+  - platform: template
+    fans:
+      hvac_fan:
+        friendly_name: "HVAC Fan"
+        value_template: "{{ states('binary_sensor.upstairs_thermostat_fan') }}"
+        turn_on:
+          service: climate.set_fan_mode
+          data:
+            entity_id: climate.upstairs
+            fan_mode: 'on'
+        turn_off:
+          service: climate.set_fan_mode
+          data:
+            entity_id: climate.upstairs
+            fan_mode: 'off'
+        speeds:
     
 alarm_control_panel:
   - platform: totalconnect
