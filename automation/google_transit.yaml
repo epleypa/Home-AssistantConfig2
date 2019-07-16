@@ -7,13 +7,13 @@
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.update_route  
-    - service: sensor.google_travel_sensor_update
+    - service: homeassistant.update_entity
       data:
         entity_id: sensor.via_driving
-    - service: sensor.google_travel_sensor_update
+    - service: homeassistant.update_entity
       data:
         entity_id: sensor.via_metro
-    - service: sensor.google_travel_sensor_update
+    - service: homeassistant.update_entity
       data:
         entity_id: sensor.via_bus
 
@@ -97,12 +97,12 @@
             # - thu
             # - fri
   action:
-    - service: sensor.google_travel_sensor_update
+    - service: homeassistant.update_entity
       data:
         entity_id: sensor.via_driving
-    - service: sensor.google_travel_sensor_update
+    - service: homeassistant.update_entity
       data:
         entity_id: sensor.via_metro
-    - service: sensor.google_travel_sensor_update
+    - service: homeassistant.update_entity
       data:
         entity_id: sensor.via_bus

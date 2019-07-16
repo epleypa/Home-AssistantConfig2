@@ -19,11 +19,11 @@
     # - download
     # - upload
 
-- platform: pushbullet
-  api_key: !secret pushbullet_key
-  monitored_conditions:
-    - title
-    - body
+# - platform: pushbullet # borked
+  # api_key: !secret pushbullet_key
+  # monitored_conditions:
+    # - title
+    # - body
 
 - platform: broadlink
   host: 192.168.1.42
@@ -36,6 +36,9 @@
     - type: last_boot
     - type: memory_use_percent
     - type: processor_use
+
+- platform: uptime
+  unit_of_measurement: minutes
 
 - platform: rest
   name: 'WMATA'
@@ -72,3 +75,13 @@
         {% endif %}
         {% endfor %}'
       unit_of_measurement: 'minutes'
+    washer_power:
+        friendly_name: "Washer Power"
+        value_template: "{{ states.switch.washer.attributes['current_power_w'] | default('0') }}"
+        unit_of_measurement: "W"
+        icon_template: mdi:washing-machine
+    dryer_power:
+        friendly_name: "Dryer Power"
+        value_template: "{{ states.switch.dryer.attributes['current_power_w'] | default('0') }}"
+        unit_of_measurement: "W"
+        icon_template: mdi:tumble-dryer

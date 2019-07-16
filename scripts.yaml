@@ -55,7 +55,7 @@ plex: #on roku
       data:
         message: 'Switching to Plex on Roku'
     - service: media_player.select_source
-      entity_id: media_player.roku_5S56AG426734
+      entity_id: media_player.roku_streaming_stick_681
       data:
         source: 'Plex'
     - service: switch.turn_on

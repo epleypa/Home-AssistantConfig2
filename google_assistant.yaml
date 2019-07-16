@@ -60,3 +60,5 @@ entity_config:
     expose: false
   switch.dryer:
     expose: false
+  fan.hvac_fan:
+    expose: true

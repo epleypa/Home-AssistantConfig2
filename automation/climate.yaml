@@ -8,9 +8,6 @@
       - condition: state
         entity_id: group.family
         state: home
-      - condition: time
-        after: '10:00:00'
-        before: '00:30:00'
   action:
     - service: fan.turn_on
       entity_id: fan.hvac_fan

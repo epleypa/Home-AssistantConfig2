@@ -14,7 +14,7 @@ bedroom_lights:
    entities:
       - group.bedroom_table_lights
       - light.bedroom_overhead_light
-      - switch.bedrood_closet_lights
+      - switch.bedroom_closet_lights
 
 dining_room_lights:
    name: Dining Room Lights

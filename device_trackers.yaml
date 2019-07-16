@@ -1,0 +1,13 @@
+- platform: automatic
+  client_id: !secret automatic_id
+  secret: !secret automatic_secret
+  current_location: true
+- platform: quantum_gateway
+  host: 192.168.1.2
+  password: !secret quantum_gateway
+- platform: tile
+  username: !secret tile_pe_un
+  password: !secret tile_pe_pw
+- platform: tile
+  username: !secret tile_ks_un
+  password: !secret tile_ks_pw

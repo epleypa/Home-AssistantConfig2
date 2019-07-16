@@ -14,17 +14,9 @@ homeassistant:
 
 default_config:
 
-# Show links to resources in log and frontend
-#introduction:
-
-# Enables the frontend
-#frontend:
 lovelace:
-#  mode: yaml
 
 http:
-  # Uncomment this to add a password (recommended!)
-  #api_password: !secret http_password
   # Uncomment this if you are using SSL or running in Docker etc
   base_url: !secret base_url
   ssl_certificate: !secret ssl_cert_loc
@@ -37,31 +29,14 @@ http:
     # url_path: floorplan
     # config: !include floorplan.yaml
 
-# # Checks for available updates
-# updater:
-
-# # Discover some devices automatically
-# discovery:
-
-# # Allows you to issue voice commands from the frontend in enabled browsers
-# conversation:
-
-# # Enables support for tracking state changes over time.
-# history:
-
-# # View all events in a logbook
-# logbook:
-
-# # Track the sun
-# sun:
-
-# config:
-# map:
+# Discover some devices automatically
+discovery:
 
 # Text to speech
 tts:
-  platform: google
+  platform: google_translate
   language: 'en-us'
+  service_name: google_say
 
 mqtt:
   client_id: 8315
@@ -71,52 +46,13 @@ mqtt:
 media_player:
   - platform: plex
 
-# cast:
-  # media_player:
-  # - host: 192.168.1.80
-  # - host: 192.168.1.81
-  # - host: 192.168.1.82
-  # - host: 192.168.1.83
-  # - host: 192.168.1.84
-
 #device tracking
-device_tracker:
-  - platform: automatic
-    client_id: c1ce08e5c7825763112b
-    secret: !secret automatic_secret
-    current_location: true
-  # - platform: nmap_tracker
-    # hosts:
-    # - 192.168.1.1-30
-    # - 192.169.1.128
-    # - 192.168.1.42
-    # - 192.168.1.200
-    # home_interval: 5
-    # scan_options: "-PS135,445 -F --host-timeout 5s"
-    # exclude:
-    # - 192.168.1.150
-    # - 192.168.1.100
-    # - 192.168.1.101
-  # - platform: linksys_smart
-    # host: 192.168.1.1
-  - platform: quantum_gateway
-    host: 192.168.1.2
-    password: !secret quantum_gateway
+device_tracker: !include device_trackers.yaml
 
 recorder:
   exclude:
     domains:
     entities:
-      - sensor.internet_time
-      - sensor.wmata_dc
-      - sensor.wmata_md
-      - sensor.dark_sky_daily_summary
-      - sensor.dark_sky_hourly_summary
-      - sensor.dark_sky_minutely_summary
-      - sensor.time
-      - sensor.date
-      - sensor.time_utc
-      - sensor.time_beat
       - switch.cable_hd
       - switch.cable_1
       - switch.cable_2

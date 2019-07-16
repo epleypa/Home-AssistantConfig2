@@ -11,6 +11,8 @@
       # entity_id: group.home_lights
     - service: light.turn_off
       entity_id: light.leeo
+    - service: switch.turn_off
+      entity_id: switch.bedroom_humidifier
 
 # - alias: 'Get Up'
   # trigger:
@@ -64,6 +66,9 @@
     - service: notify.pushbullet
       data:
         message: 'Time to start the day!'
+    - delay: 00:45:00
+    - service: switch.turn_off
+      entity_id: switch.bedroom_peter_light
 
 - alias: 'See You Later'
   trigger:
@@ -88,30 +93,33 @@
         # after: sunset
         # after_offset: '-00:30:00'
   action:
-    - service: switch.turn_off
+    - service: homeassistant.turn_off
       entity_id: group.home_lights
     - service: notify.pushbullet
       data:
        message: 'See you later!'
 
-#- alias: 'Welcome Home'
-#  trigger:
-#    platform: state
-#    entity_id: group.family
-#    from: 'not_home'
-#    to: 'home'
-#    for:
-#      minutes: 10
-#  condition:
-#    condition: sun
-#    after: sunset
-#    after_offset: '-00:30:00'
-#  action:
-#    - service: switch.turn_on
-#      entity_id: group.living_room_lights
-#    - service: notify.pushbullet
-#      data:
-#        message: 'Welcome Home!'
+- alias: 'Welcome Home'
+  trigger:
+   # platform: state
+   # entity_id: group.family
+   # from: 'not_home'
+   # to: 'home'
+   # for:
+     # minutes: 10
+    - platform: state
+      entity_id: alarm_control_panel.total_connect
+      to: 'disarmed'
+  condition:
+    condition: sun
+    after: sunset
+    after_offset: '-00:30:00'
+  action:
+    - service: switch.turn_on
+      entity_id: group.living_room_lights
+    - service: notify.pushbullet
+      data:
+        message: 'Welcome Home!'
 
 - alias: 'Sunset'
   trigger:
@@ -146,10 +154,12 @@
         - tue
         - wed
         - thu
-        - fri  
+        - sun
   action:
-    - service: switch.turn_off
+    - service: homeassistant.turn_off
       entity_id: group.home_lights
     - service: notify.pushbullet
       data:
         message: 'Goodnight!'
+    - service: switch.turn_on
+      entity_id: switch.bedroom_humidifier

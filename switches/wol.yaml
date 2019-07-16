@@ -1,8 +1,0 @@
-- platform: wake_on_lan
-  mac_address: "D4-3D-7E-BA-A6-EF"
-  name: Neo
-  host: "192.168.1.128"
-- platform: wake_on_lan
-  mac_address: "70-8B-CD-58-66-D5"
-  name: Trinity
-  host: "192.168.1.250"
