@@ -1,11 +1,11 @@
-Home Assistant Configuration |Build Status|
+Home Assistant Configuration [![Alt Text](https://travis-ci.org/epleypa/Home-AssistantConfig.svg?branch=master)](https://travis-ci.org/epleypa/Home-AssistantConfig)
 =================================================================================
 
 Home Assistant is a home automation platform running on Python 3. It is able to track and control all devices at home and offer a platform for automating control.
 
 Check out [home-assistant.io](https://home-assistant.io)
 
-|screenshot-states|
+[![Alt Text](https://raw.github.com/home-assistant/home-assistant/master/docs/screenshots.png)](https://home-assistant.io/demo/)
 
 ## Docker [letsencrypt](https://hub.docker.com/r/linuxserver/letsencrypt/)
 
@@ -54,9 +54,3 @@ docker run \
     -p 8081:8080 \
     smartthings-mqtt-bridge
 ```
-
-
-.. |Build Status| image:: https://travis-ci.org/epleypa/Home-AssistantConfig.svg?branch=master
-   :target: https://travis-ci.org/epleypa/Home-AssistantConfig
-.. |screenshot-states| image:: https://raw.github.com/home-assistant/home-assistant/master/docs/screenshots.png
-   :target: https://home-assistant.io/demo/

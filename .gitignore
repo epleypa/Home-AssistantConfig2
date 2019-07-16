@@ -70,5 +70,6 @@ icloud
 .automatic
 entity_registry.yaml
 zones.yaml
-.storage
+.storage/*
 !.storage/lovelace
+!.storage/person

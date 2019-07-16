@@ -1,0 +1,557 @@
+{
+    "data": {
+        "config": {
+            "title": "Home",
+            "views": [
+                {
+                    "cards": [
+                        {
+                            "camera_image": "camera.front_door",
+                            "entities": [
+                                "camera.front_door",
+                                "binary_sensor.front_door_camera_motion_detected",
+                                "binary_sensor.front_door_camera_person_detected",
+                                "binary_sensor.front_door_camera_sound_detected",
+                                {
+                                    "entity": "binary_sensor.front_door_camera_online",
+                                    "icon": "mdi:power"
+                                }
+                            ],
+                            "show_info": true,
+                            "tap_action": "dialog",
+                            "title": "Front Door",
+                            "type": "picture-glance"
+                        },
+                        {
+                            "aspect_ratio": "80%",
+                            "type": "iframe",
+                            "url": "https://embed.windy.com/embed2.html?lat=38.897&lon=-77.044&zoom=6&level=surface&overlay=rain&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&detailLat=38.900&detailLon=-77.040&metricWind=mph&metricTemp=%C2%B0F&radarRange=-1"
+                        },
+                        {
+                            "camera_image": "camera.backyard",
+                            "entities": [
+                                "camera.backyard",
+                                "binary_sensor.backyard_camera_motion_detected",
+                                "binary_sensor.backyard_camera_person_detected",
+                                "binary_sensor.backyard_camera_sound_detected",
+                                {
+                                    "entity": "binary_sensor.backyard_camera_online",
+                                    "icon": "mdi:power"
+                                }
+                            ],
+                            "show_info": true,
+                            "tap_action": "dialog",
+                            "title": "Backyard",
+                            "type": "picture-glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.home_away",
+                                    "name": "Away?"
+                                },
+                                {
+                                    "entity": "fan.hvac_fan",
+                                    "name": "Fan"
+                                },
+                                {
+                                    "entity": "sensor.home_security_state",
+                                    "name": "State"
+                                }
+                            ],
+                            "type": "glance"
+                        },
+                        {
+                            "entity": "climate.upstairs",
+                            "show_header_toggle": true,
+                            "title": "Climate",
+                            "type": "thermostat"
+                        },
+                        {
+                            "entities": [
+                                "group.bedroom_lights",
+                                "group.living_room_lights",
+                                "group.office_lights",
+                                "group.dining_room_lights",
+                                "group.patio_lights",
+                                "group.kitchen_lights"
+                            ],
+                            "title": "Home Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "calendar.trash",
+                                    "name": "Trash Day"
+                                },
+                                {
+                                    "entity": "calendar.recycle",
+                                    "name": "Recycle Day"
+                                }
+                            ],
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                "sensor.alarm_time",
+                                "group.alarmclock_settings"
+                            ],
+                            "title": "Wake Up",
+                            "type": "entities"
+                        }
+                    ],
+                    "title": "Home"
+                },
+                {
+                    "cards": [
+                        {
+                            "entity": "alarm_control_panel.total_connect",
+                            "type": "alarm-panel"
+                        },
+                        {
+                            "entities": [
+                                "binary_sensor.front_door",
+                                "binary_sensor.back_door",
+                                "binary_sensor.office_window"
+                            ],
+                            "title": "Sensors",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                "binary_sensor.smoke_alarm",
+                                "binary_sensor.co_alarm",
+                                "binary_sensor.half_bath_leak_sensor",
+                                "binary_sensor.kitchen_leak_sensor",
+                                "binary_sensor.master_bath_leak_sensor"
+                            ],
+                            "title": "Alerts",
+                            "type": "glance"
+                        }
+                    ],
+                    "icon": "mdi:shield",
+                    "title": "Security"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "light.kitchen_overhead_lights",
+                                            "type": "light"
+                                        },
+                                        {
+                                            "entity": "light.living_room_lights",
+                                            "type": "light"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "light.bedroom_overhead_light",
+                                            "type": "light"
+                                        },
+                                        {
+                                            "entity": "light.storage_light",
+                                            "type": "light"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "light.office_overhead_lights",
+                                            "type": "light"
+                                        },
+                                        {
+                                            "entity": "light.office_light",
+                                            "type": "light"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "switch.dining_room_light",
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "switch.kitchen_cabinet_lights",
+                                            "type": "entity-button"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "switch.patio_party_lights",
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "switch.patio_wall_lights",
+                                            "type": "entity-button"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "switch.bedroom_kelley_light",
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "switch.bedroom_peter_light",
+                                            "type": "entity-button"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "switch.bedroom_closet_lights",
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "switch.bedroom_humidifier",
+                                            "type": "entity-button"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "icon": "mdi:ceiling-light",
+                    "panel": false,
+                    "title": "Lights"
+                },
+                {
+                    "cards": [
+                        {
+                            "entities": [
+                                "group.lr_tv_power",
+                                "switch.cable_power",
+                                "switch.lr_tv_mute",
+                                "input_select.living_room_tv_source",
+                                "input_select.cable_channel"
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "media_player.bedroom_tv",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.home_speakers",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.kitchen_home",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.living_room_speaker",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.living_room_tv",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.office_speaker",
+                            "type": "media-control"
+                        }
+                    ],
+                    "icon": "mdi:sofa",
+                    "title": "Living Room"
+                },
+                {
+                    "cards": [
+                        {
+                            "entities": [
+                                "device_tracker.verizonfiosg1100",
+                                "device_tracker.linksys22446",
+                                "device_tracker.neo",
+                                "device_tracker.surface",
+                                "device_tracker.trinity",
+                                "device_tracker.peter_computer_work",
+                                "device_tracker.kelley_computer_work",
+                                "device_tracker.printer"
+                            ],
+                            "type": "glance"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entity": "switch.neo",
+                                    "type": "entity-button"
+                                },
+                                {
+                                    "entity": "switch.trinity",
+                                    "type": "entity-button"
+                                }
+                            ],
+                            "type": "horizontal-stack"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.entry_temperature",
+                                    "name": "Temp"
+                                },
+                                {
+                                    "entity": "sensor.entry_humidity",
+                                    "name": "Humidity"
+                                },
+                                {
+                                    "entity": "sensor.entry_real_feel",
+                                    "name": "Real Feel"
+                                },
+                                {
+                                    "entity": "sensor.entry_ldr",
+                                    "name": "Bright"
+                                },
+                                {
+                                    "entity": "binary_sensor.entry_pir",
+                                    "name": "Motion"
+                                },
+                                {
+                                    "entity": "light.entry_led",
+                                    "name": "LED"
+                                }
+                            ],
+                            "title": "Entry Sensors",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.office_temperature",
+                                    "name": "Temp"
+                                },
+                                {
+                                    "entity": "sensor.office_humidity",
+                                    "name": "Humidity"
+                                },
+                                {
+                                    "entity": "sensor.office_real_feel",
+                                    "name": "Real Feel"
+                                },
+                                {
+                                    "entity": "sensor.office_ldr",
+                                    "name": "Bright"
+                                },
+                                {
+                                    "entity": "binary_sensor.office_pir",
+                                    "name": "Motion"
+                                },
+                                {
+                                    "entity": "light.office_led",
+                                    "name": "LED"
+                                }
+                            ],
+                            "title": "Office Sensors",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.bedroom_temperature",
+                                    "name": "Temp"
+                                },
+                                {
+                                    "entity": "sensor.bedroom_humidity",
+                                    "name": "Humidity"
+                                },
+                                {
+                                    "entity": "sensor.bedroom_real_feel",
+                                    "name": "Real Feel"
+                                },
+                                {
+                                    "entity": "sensor.bedroom_ldr",
+                                    "name": "Bright"
+                                },
+                                {
+                                    "entity": "light.bedroom_led",
+                                    "name": "LED"
+                                }
+                            ],
+                            "title": "Bedroom Sensors",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                "sensor.master_bath_temperature",
+                                "binary_sensor.master_bath_leak_sensor",
+                                "sensor.half_bath_temperature",
+                                "binary_sensor.half_bath_leak_sensor"
+                            ],
+                            "title": "Bathroom Sensors",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                "sensor.kitchen_temperature",
+                                "binary_sensor.kitchen_leak_sensor"
+                            ],
+                            "title": "Kitchen Sensors",
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.washer_power",
+                                    "name": "Washer"
+                                },
+                                {
+                                    "entity": "sensor.dryer_power",
+                                    "name": "Dryer"
+                                }
+                            ],
+                            "title": "Laundry",
+                            "type": "history-graph"
+                        }
+                    ],
+                    "icon": "mdi:led-on",
+                    "title": "Sensors"
+                },
+                {
+                    "cards": [
+                        {
+                            "entities": [
+                                "sun.sun",
+                                "sensor.moon"
+                            ],
+                            "type": "glance"
+                        },
+                        {
+                            "entities": [
+                                "sensor.dark_sky_apparent_temperature",
+                                "sensor.dark_sky_cloud_coverage",
+                                "sensor.dark_sky_daily_max_precip_intensity",
+                                "sensor.dark_sky_daily_summary",
+                                "sensor.dark_sky_daytime_high_apparent_temperature",
+                                "sensor.dark_sky_daytime_high_temperature",
+                                "sensor.dark_sky_dew_point",
+                                "sensor.dark_sky_hourly_summary",
+                                "sensor.dark_sky_humidity",
+                                "sensor.dark_sky_icon",
+                                "sensor.dark_sky_minutely_summary",
+                                "sensor.dark_sky_nearest_storm_bearing",
+                                "sensor.dark_sky_nearest_storm_distance",
+                                "sensor.dark_sky_overnight_low_apparent_temperature",
+                                "sensor.dark_sky_overnight_low_temperature",
+                                "sensor.dark_sky_ozone",
+                                "sensor.dark_sky_precip",
+                                "sensor.dark_sky_precip_intensity",
+                                "sensor.dark_sky_precip_probability",
+                                "sensor.dark_sky_pressure",
+                                "sensor.dark_sky_summary",
+                                "sensor.dark_sky_temperature",
+                                "sensor.dark_sky_visibility",
+                                "sensor.dark_sky_wind_bearing",
+                                "sensor.dark_sky_wind_speed"
+                            ],
+                            "title": "Darksky",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "sensor.pws_alerts",
+                                "sensor.pws_observation_time",
+                                "sensor.pws_solarradiation",
+                                "sensor.pws_uv",
+                                "sensor.pws_visibility_mi",
+                                "sensor.pws_weather_1d",
+                                "sensor.pws_weather_1n",
+                                "sensor.pws_weather_2d",
+                                "sensor.pws_weather_2n",
+                                "sensor.pws_weather_3d",
+                                "sensor.pws_weather_3n",
+                                "sensor.pws_weather_4d",
+                                "sensor.pws_weather_4n"
+                            ],
+                            "title": "Weather Underground",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:thermometer",
+                    "title": "Weather"
+                },
+                {
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "group.all_automations"
+                                },
+                                {
+                                    "entity": "group.all_devices"
+                                },
+                                {
+                                    "entity": "group.all_fans"
+                                },
+                                {
+                                    "entity": "group.all_lights"
+                                },
+                                {
+                                    "entity": "group.all_remotes"
+                                },
+                                {
+                                    "entity": "group.all_scripts"
+                                },
+                                {
+                                    "entity": "group.all_switches"
+                                }
+                            ],
+                            "show_header_toggle": true,
+                            "title": "All Groups",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "sensor.wmata_gr_no",
+                                "sensor.wmata_gr_so",
+                                "script.wmata_gr_no",
+                                "script.wmata_gr_so"
+                            ],
+                            "title": "WMATA Info",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "input_select.origin",
+                                "input_select.destination",
+                                "sensor.via_driving",
+                                "sensor.via_metro",
+                                "sensor.via_bus"
+                            ],
+                            "title": "Travel Time",
+                            "type": "entities"
+                        }
+                    ],
+                    "title": "More"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}

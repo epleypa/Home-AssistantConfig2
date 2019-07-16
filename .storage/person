@@ -1,0 +1,16 @@
+{
+    "data": {
+        "persons": [
+            {
+                "device_trackers": [
+                    "device_tracker.peter_phone"
+                ],
+                "id": "6c48bdcdd7c4483a98b763567743b7a5",
+                "name": "Peter",
+                "user_id": "4dea6e58fe1140c7a24ef3bf03a9e584"
+            }
+        ]
+    },
+    "key": "person",
+    "version": 1
+}
