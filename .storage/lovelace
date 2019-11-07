@@ -82,14 +82,15 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "calendar.trash",
+                                    "entity": "binary_sensor.trash",
                                     "name": "Trash Day"
                                 },
                                 {
-                                    "entity": "calendar.recycle",
+                                    "entity": "binary_sensor.recycle",
                                     "name": "Recycle Day"
                                 }
                             ],
+                            "show_icon": true,
                             "type": "glance"
                         },
                         {
@@ -106,7 +107,7 @@
                 {
                     "cards": [
                         {
-                            "entity": "alarm_control_panel.total_connect",
+                            "entity": "alarm_control_panel.10th_street",
                             "type": "alarm-panel"
                         },
                         {
@@ -120,11 +121,21 @@
                         },
                         {
                             "entities": [
-                                "binary_sensor.smoke_alarm",
-                                "binary_sensor.co_alarm",
-                                "binary_sensor.half_bath_leak_sensor",
-                                "binary_sensor.kitchen_leak_sensor",
-                                "binary_sensor.master_bath_leak_sensor"
+                                {
+                                    "entity": "binary_sensor.smoke_alarm"
+                                },
+                                {
+                                    "entity": "binary_sensor.co_alarm"
+                                },
+                                {
+                                    "entity": "binary_sensor.half_bath_leak_sensor_water"
+                                },
+                                {
+                                    "entity": "binary_sensor.kitchen_leak_sensor_water"
+                                },
+                                {
+                                    "entity": "binary_sensor.master_bath_leak_sensor_water"
+                                }
                             ],
                             "title": "Alerts",
                             "type": "glance"
@@ -185,11 +196,11 @@
                                 {
                                     "cards": [
                                         {
-                                            "entity": "switch.dining_room_light",
+                                            "entity": "switch.kitchen_cabinet_lights",
                                             "type": "entity-button"
                                         },
                                         {
-                                            "entity": "switch.kitchen_cabinet_lights",
+                                            "entity": "switch.patio_wall_lights",
                                             "type": "entity-button"
                                         }
                                     ],
@@ -198,11 +209,15 @@
                                 {
                                     "cards": [
                                         {
-                                            "entity": "switch.patio_party_lights",
+                                            "entity": "switch.dining_room_light",
                                             "type": "entity-button"
                                         },
                                         {
-                                            "entity": "switch.patio_wall_lights",
+                                            "entity": "switch.bar_lights",
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "switch.patio_party_lights",
                                             "type": "entity-button"
                                         }
                                     ],
@@ -217,6 +232,14 @@
                                         {
                                             "entity": "switch.bedroom_peter_light",
                                             "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "switch.bedroom_closet_lights",
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "switch.bedroom_humidifier",
+                                            "type": "entity-button"
                                         }
                                     ],
                                     "type": "horizontal-stack"
@@ -224,11 +247,7 @@
                                 {
                                     "cards": [
                                         {
-                                            "entity": "switch.bedroom_closet_lights",
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "switch.bedroom_humidifier",
+                                            "entity": "group.home_lights",
                                             "type": "entity-button"
                                         }
                                     ],
@@ -286,14 +305,30 @@
                     "cards": [
                         {
                             "entities": [
-                                "device_tracker.verizonfiosg1100",
-                                "device_tracker.linksys22446",
-                                "device_tracker.neo",
-                                "device_tracker.surface",
-                                "device_tracker.trinity",
-                                "device_tracker.peter_computer_work",
-                                "device_tracker.kelley_computer_work",
-                                "device_tracker.printer"
+                                {
+                                    "entity": "device_tracker.verizonfiosg1100"
+                                },
+                                {
+                                    "entity": "device_tracker.linksys22446"
+                                },
+                                {
+                                    "entity": "device_tracker.neo"
+                                },
+                                {
+                                    "entity": "device_tracker.surface"
+                                },
+                                {
+                                    "entity": "device_tracker.trinity"
+                                },
+                                {
+                                    "entity": "device_tracker.peter_computer_work"
+                                },
+                                {
+                                    "entity": "device_tracker.kelley_computer_work"
+                                },
+                                {
+                                    "entity": "device_tracker.brother_printer"
+                                }
                             ],
                             "type": "glance"
                         },
@@ -398,18 +433,30 @@
                         },
                         {
                             "entities": [
-                                "sensor.master_bath_temperature",
-                                "binary_sensor.master_bath_leak_sensor",
-                                "sensor.half_bath_temperature",
-                                "binary_sensor.half_bath_leak_sensor"
+                                {
+                                    "entity": "sensor.master_bath_leak_sensor_temperature_measurement"
+                                },
+                                {
+                                    "entity": "binary_sensor.master_bath_leak_sensor_water"
+                                },
+                                {
+                                    "entity": "sensor.half_bath_leak_sensor_temperature_measurement"
+                                },
+                                {
+                                    "entity": "binary_sensor.half_bath_leak_sensor_water"
+                                }
                             ],
                             "title": "Bathroom Sensors",
                             "type": "glance"
                         },
                         {
                             "entities": [
-                                "sensor.kitchen_temperature",
-                                "binary_sensor.kitchen_leak_sensor"
+                                {
+                                    "entity": "sensor.kitchen_leak_sensor_temperature_measurement"
+                                },
+                                {
+                                    "entity": "binary_sensor.kitchen_leak_sensor_water"
+                                }
                             ],
                             "title": "Kitchen Sensors",
                             "type": "glance"

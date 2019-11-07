@@ -1,14 +1,14 @@
 - alias: "Update Available"
   trigger:
     - platform: state
-      entity_id: updater.updater
+      entity_id: binary_sensor.updater
   action:
     - service: notify.pushbullet
       data:
         title: 'New Home Assistant Release'
-        message: "Home Assistant {{ states.updater.updater.state }} is now available"
+        message: "Home Assistant {{ states.binary_sensor.updater.attributes.newest_version }} is now available"
     - service: ifttt.trigger
-      data_template: {"event":"Home-AssistantConfig", "value1":"{{ states.updater.updater.state }}", "value2":"Home Assistant {{ states.updater.updater.state }} is now available."}
+      data_template: {"event":"Home-AssistantConfig", "value1":"{{ states.binary_sensor.updater.attributes.newest_version }}", "value2":"Home Assistant {{ states.binary_sensor.updater.attributes.newest_version }} is now available."}
 
 - alias: "Emergency Alert"
   trigger:

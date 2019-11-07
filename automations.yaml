@@ -1,0 +1,143 @@
+- alias: Sunrise
+  id: sunrise
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+  - service: notify.pushbullet
+    data:
+      message: The sun is up.
+  - service: light.turn_off
+    entity_id: light.leeo
+- alias: Wake Up
+  id: wake_up
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.time.state == states.sensor.alarm_time.state
+      }}'
+  condition:
+    condition: or
+    conditions:
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_boolean.alarmweekday
+        state: 'on'
+      - condition: time
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: state
+      entity_id: input_boolean.alarmweekday
+      state: 'off'
+  action:
+  - service: switch.turn_on
+    entity_id: switch.bedroom_peter_light
+  - service: notify.pushbullet
+    data:
+      message: Time to start the day!
+  - delay: 00:45:00
+  - service: switch.turn_off
+    entity_id: switch.bedroom_peter_light
+- alias: See You Later
+  id: later
+  trigger:
+  - platform: state
+    entity_id: group.family
+    to: not_home
+    for:
+      minutes: 10
+  - platform: state
+    entity_id: alarm_control_panel.10th_street
+    to: armed_home
+  - platform: state
+    entity_id: alarm_control_panel.10th_street
+    to: armed_away
+  action:
+  - service: homeassistant.turn_off
+    entity_id: group.home_lights
+  - service: notify.pushbullet
+    data:
+      message: See you later!
+- alias: Welcome Home
+  id: home
+  trigger:
+  - platform: state
+    entity_id: group.family
+    from: not_home
+    to: home
+    for:
+      minutes: 1
+  - platform: state
+    entity_id: alarm_control_panel.10th_street
+    to: disarmed
+  action:
+  - service: notify.pushbullet
+    data:
+      message: Welcome Home!
+- alias: Sunset
+  id: sunset
+  trigger:
+    platform: sun
+    event: sunset
+    offset: -00:15:00
+  action:
+  - service: notify.pushbullet
+    data:
+      message: The sun is down.
+  - service: light.turn_on
+    entity_id: light.leeo
+- alias: Goodnight
+  id: goodnight
+  trigger:
+    platform: time
+    at: '23:05:00'
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - sun
+  action:
+  - service: homeassistant.turn_off
+    entity_id: group.home_lights
+  - service: notify.pushbullet
+    data:
+      message: Goodnight!
+- alias: LED Motion
+  id: led_motion
+  trigger:
+    platform: state
+    entity_id: binary_sensor.entry_pir, binary_sensor.office_pir
+    to: 'on'
+  condition:
+  - condition: time
+    after: '6:00:00'
+    before: '23:00:00'
+  action:
+  - service: light.turn_on
+    entity_id: light.entry_led, light.office_led, light.bedroom_led
+  - delay: 00:00:01
+  - service: light.turn_off
+    entity_id: light.entry_led, light.office_led, light.bedroom_led
+- id: fan
+  alias: Fan
+  trigger:
+  - minutes: /60
+    platform: time_pattern
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: group.family
+      state: home
+  action:
+  - alias: ''
+    data:
+      entity_id: fan.hvac_fan
+    service: fan.turn_on

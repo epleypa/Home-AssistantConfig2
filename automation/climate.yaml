@@ -1,14 +1,19 @@
-- alias: Fan On
+- alias: 'Humidifier'
   trigger:
-    - platform: time_pattern
-      minutes: '/60'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: group.family
-        state: home
+    - platform: template
+      value_template: '{{ states.sensor.time.state == states.sensor.alarm_time.state }}'
+    - platform: time
+      at: '22:00:00'
   action:
-    - service: fan.turn_on
-      entity_id: fan.hvac_fan
-      
+    - service_template: > 
+        {% if now().strftime('%H:%M:%S') >= '12:00:00' %}switch.turn_on
+        {% else %}switch.turn_off
+        {% endif %}
+      entity_id: switch.bedroom_humidifier
+    # - service: notify.pushbullet
+      # data_template:
+        # title: 'Home Info'
+        # message: "It is {{trigger.now}} and the humidifier is 
+        # {% if trigger.now.time() >= strptime('12:00:00', '%H:%M:%S').time() %}switch.turn_on
+        # {% else %}switch.turn_off
+        # {% endif %}."

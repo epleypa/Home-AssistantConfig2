@@ -2,6 +2,7 @@ office_lights:
    name: Office Lights
    entities:
       - light.office_light
+      - light.office_overhead_lights
       
 bedroom_table_lights:
    name: Bedroom Table Lights

@@ -3,9 +3,6 @@
     platform: homeassistant
     event: start
   action:
-    # - service: google_assistant.request_sync
-      # data:
-        # agent_user_id: '4dea6e58fe1140c7a24ef3bf03a9e584'
     - service: light.turn_on
       entity_id: light.entry_led, light.office_led, light.bedroom_led
       data:
@@ -28,68 +25,6 @@
     - delay: 00:00:01
     - service: light.turn_off
       entity_id: light.entry_led, light.office_led, light.bedroom_led
-
-- alias: 'Computer On'
-  trigger:
-    platform: state
-    entity_id: switch.neo
-    from: 'off'
-    to: 'on'
-    # for:
-      # minutes: 1
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        before: '22:00:00'
-      - condition: sun
-        after: sunset
-        after_offset: '-00:15:00'
-  action:
-    - service: switch.turn_on
-      entity_id: group.office_lights
-
-# - alias: 'Computer Off'
-  # trigger:
-    # platform: state
-    # entity_id: switch.neo
-    # from: 'on'
-    # to: 'off'
-    # for:
-      # minutes: 1
-  # condition:
-    # condition: sun
-    # after: sunset
-    # after_offset: '-00:30:00'
-  # action:
-    # - service: switch.turn_off
-      # entity_id: group.office_lights
-
-#- alias: "Media player paused/stopped"
-#  trigger:
-#    - platform: state
-#      entity_id: media_player.living_room
-#      from: 'playing'
-#  condition:
-#    - condition: state
-#      entity_id: sun.sun
-#      state: 'below_horizon'
-#  action:
-#    - service: switch.turn_on
-#      entity_id: group.living_room_lights
-
-- alias: "Media player playing"
-  trigger:
-    - platform: state
-      entity_id: media_player.living_room
-      to: 'playing'
-  condition:
-    - condition: state
-      entity_id: sun.sun
-      state: 'below_horizon'
-  action:
-    - service: switch.turn_off
-      entity_id: group.living_room_lights
 
 - alias: 'Plex Wake'
   trigger:

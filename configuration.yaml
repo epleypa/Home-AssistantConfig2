@@ -74,7 +74,8 @@ notify:
     platform: pushbullet
     api_key: !secret pushbullet_key
 
-automation: !include_dir_merge_list automation/
+automation: !include automations.yaml
+automation old: !include_dir_merge_list automation/
 zone: !include zones.yaml
 sensor: !include_dir_merge_list sensors/
 switch: !include_dir_merge_list switches/
@@ -126,8 +127,7 @@ fan:
             fan_mode: 'off'
         speeds:
     
-alarm_control_panel:
-  - platform: totalconnect
-    username: !secret tc_user
-    password: !secret tc_password
-#    code: !secret tc_usercode
+totalconnect:
+  username: !secret tc_user
+  password: !secret tc_password
+#  code: !secret tc_usercode

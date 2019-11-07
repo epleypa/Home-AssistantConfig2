@@ -36,3 +36,26 @@
       entity_id: sensor.leeo_carbon_monoxide_detector
       device_class: safety
       value_template: "{{ is_state('sensor.leeo_carbon_monoxide_detector', 'detected') }}"
+
+- platform: template
+  sensors:
+    recycle:
+      entity_id:
+        - calendar.recycle
+        - sensor.time
+      friendly_name: "Recycle"
+      value_template: >
+        {% set e = strptime(
+             states.calendar.recycle.attributes.start_time,
+             '%Y-%m-%d %H:%M:%S') %}
+        {{ e.strftime('%j')|int - now().strftime('%j')|int == 1 and now().hour >= 12 }}
+    trash:
+      entity_id:
+        - calendar.trash
+        - sensor.time
+      friendly_name: "Trash"
+      value_template: >
+        {% set e = strptime(
+             states.calendar.trash.attributes.start_time,
+             '%Y-%m-%d %H:%M:%S') %}
+        {{ e.strftime('%j')|int - now().strftime('%j')|int == 1 and now().hour >= 12 }}

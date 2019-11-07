@@ -7,7 +7,7 @@ Check out [home-assistant.io](https://home-assistant.io)
 
 [![Alt Text](https://raw.github.com/home-assistant/home-assistant/master/docs/screenshots.png)](https://home-assistant.io/demo/)
 
-## Docker [letsencrypt](https://hub.docker.com/r/linuxserver/letsencrypt/)
+## Docker [linuxserver/letsencrypt](https://hub.docker.com/r/linuxserver/letsencrypt/)
 
 ```
 docker create \
@@ -42,7 +42,21 @@ Below are the instructions for updating containers:
   ```
 * You can also remove the old dangling images: `docker image prune`
 
-## Docker [smartthings-mqtt-bridge]{https://github.com/stjohnjohnson/smartthings-mqtt-bridge} (no longer in use)
+
+## Amazon Dash (https://github.com/Nekmo/amazon-dash)
+```
+docker build -t amazon-dash -f Dockerfile https://github.com/Nekmo/amazon-dash.git
+
+docker run -it --network=host \
+             -v /srv/amazon-dash:/config \
+             shoejosh/amazon-dash-rpi \
+             amazon-dash run --ignore-perms --root-allowed \
+                             --config /config/amazon-dash.yml
+```
+
+## Sunset Configurations
+
+### Docker [stjohnjohnson/smartthings-mqtt-bridge](https://github.com/stjohnjohnson/smartthings-mqtt-bridge) (no longer in use)
 
 ```
 docker build -t smartthings-mqtt-bridge -f Dockerfile-rpi https://github.com/stjohnjohnson/smartthings-mqtt-bridge.git

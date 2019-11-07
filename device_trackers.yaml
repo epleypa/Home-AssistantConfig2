@@ -2,12 +2,17 @@
   client_id: !secret automatic_id
   secret: !secret automatic_secret
   current_location: true
-- platform: quantum_gateway
-  host: 192.168.1.2
-  password: !secret quantum_gateway
+# - platform: quantum_gateway
+  # host: !secret quantum_gateway_host
+  # password: !secret quantum_gateway_pw
 - platform: tile
   username: !secret tile_pe_un
   password: !secret tile_pe_pw
 - platform: tile
   username: !secret tile_ks_un
   password: !secret tile_ks_pw
+# - platform: unifi
+  # host: !secret unifi_host
+  # username: !secret unifi_un
+  # password: !secret unifi_pw
+  # verify_ssl: false

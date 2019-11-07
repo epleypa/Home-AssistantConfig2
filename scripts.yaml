@@ -1,97 +1,84 @@
 wmata_gr_no:
   sequence:
-    - service: media_player.turn_on
+  - service: media_player.turn_on
+    entity_id: media_player.living_room_home
+  - service: tts.google_say
+    data_template:
+      cache: false
       entity_id: media_player.living_room_home
-    - service: tts.google_say
-      data_template:
-        cache: false
-        entity_id: media_player.living_room_home
-        message: "the next metro train heading north from u street is in {{ states('sensor.wmata_dc') }} minutes"
-
+      message: the next metro train heading north from u street is in {{ states('sensor.wmata_md')
+        }} minutes
 wmata_gr_so:
   sequence:
-    - service: media_player.turn_on
+  - service: media_player.turn_on
+    entity_id: media_player.living_room_home
+  - service: tts.google_say
+    data_template:
+      cache: false
       entity_id: media_player.living_room_home
-    - service: tts.google_say
-      data_template:
-        cache: false
-        entity_id: media_player.living_room_home
-        message: "the next metro train heading south from u street is in {{ states('sensor.wmata_md') }} minutes"
-
+      message: the next metro train heading south from u street is in {{ states('sensor.wmata_dc')
+        }} minutes
 chromecast:
   sequence:
-    - service: switch.turn_on
-      entity_id: group.lr_tv_power
-    - service: switch.turn_on
-      entity_id: switch.neo
-    - delay: '00:00:10'
-    - service: notify.pushbullet
-      data:
-        message: 'Switching to Chromecast'
-    - service: switch.turn_on
-      entity_id: switch.lr_tv_hdmi4
-      
+  - service: switch.turn_on
+    entity_id: group.lr_tv_power
+  - service: switch.turn_on
+    entity_id: switch.neo
+  - delay: 00:00:10
+  - service: notify.pushbullet
+    data:
+      message: Switching to Chromecast
+  - service: switch.turn_on
+    entity_id: switch.lr_tv_hdmi4
 roku:
   sequence:
-    - service: switch.turn_on
-      entity_id: group.lr_tv_power
-    - service: switch.turn_on
-      entity_id: switch.neo
-    - delay: '00:00:10'
-    - service: notify.pushbullet
-      data:
-        message: 'Switching to Roku'
-    - service: switch.turn_on
-      entity_id: switch.lr_tv_hdmi3
-      
-plex: #on roku
+  - service: switch.turn_on
+    entity_id: group.lr_tv_power
+  - service: switch.turn_on
+    entity_id: switch.neo
+  - delay: 00:00:10
+  - service: notify.pushbullet
+    data:
+      message: Switching to Roku
+  - service: switch.turn_on
+    entity_id: switch.lr_tv_hdmi3
+plex:
   sequence:
-    - service: switch.turn_on
-      entity_id: group.lr_tv_power
-    - service: switch.turn_on
-      entity_id: switch.neo
-    - delay: '00:00:10'
-    - service: notify.pushbullet
-      data:
-        message: 'Switching to Plex on Roku'
-    - service: media_player.select_source
-      entity_id: media_player.roku_streaming_stick_681
-      data:
-        source: 'Plex'
-    - service: switch.turn_on
-      entity_id: switch.lr_tv_hdmi3
-      
+  - service: switch.turn_on
+    entity_id: group.lr_tv_power
+  - service: switch.turn_on
+    entity_id: switch.neo
+  - delay: 00:00:10
+  - service: notify.pushbullet
+    data:
+      message: Switching to Plex on Roku
+  - service: media_player.select_source
+    entity_id: media_player.roku_streaming_stick
+    data:
+      source: Plex
+  - service: switch.turn_on
+    entity_id: switch.lr_tv_hdmi3
 cable:
   sequence:
-    - service: switch.turn_on
-      entity_id: group.lr_tv_power
-    - service: switch.turn_on
-      entity_id: switch.cable_power
-    - delay: '00:00:10'
-    - service: notify.pushbullet
-      data:
-        message: 'Switching to Cable'
-    - service: switch.turn_on
-      entity_id: switch.lr_tv_cm2
-      
-# say_entry_temperature:
-  # sequence:
-    # - service: media_player.turn_on
-      # entity_id: media_player.living_room_home
-    # - service: tts.google_say
-      # data_template:
-        # cache: false
-        # entity_id: media_player.living_room_home
-        # message: "The entry temperature is {{ states.sensor.entry_temperature.state }} degrees"
-
+  - service: switch.turn_on
+    entity_id: group.lr_tv_power
+  - service: switch.turn_on
+    entity_id: switch.cable_power
+  - delay: 00:00:10
+  - service: notify.pushbullet
+    data:
+      message: Switching to Cable
+  - service: switch.turn_on
+    entity_id: switch.lr_tv_cm2
 arm_away:
   alias: Arm Away
   sequence:
-    - service: alarm_control_panel.alarm_arm_away
-      entity_id: alarm_control_panel.total_connect
-
+  - service: alarm_control_panel.alarm_arm_away
+    data:
+      entity_id: alarm_control_panel.10th_street
 arm_home:
   alias: Arm Home
   sequence:
-    - service: alarm_control_panel.alarm_arm_home
-      entity_id: alarm_control_panel.total_connect
+  - data:
+      entity_id: alarm_control_panel.10th_street
+    service: alarm_control_panel.alarm_arm_home
