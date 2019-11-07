@@ -74,3 +74,5 @@ zones.yaml
 !.storage/lovelace
 !.storage/person
 shell/*
+core
+automation_archive
