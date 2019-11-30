@@ -3,20 +3,20 @@
     via_destination:
       value_template: '
         {% if is_state("input_select.destination", "Tysons") -%}
-          {{ state_attr("zone.tysons_office", "latitude") }},{{ state_attr("zone.tysons_office", "longitude") }}
+          {{ state_attr("zone.peter_tysons_office", "latitude") }},{{ state_attr("zone.peter_tysons_office", "longitude") }}
         {% elif is_state("input_select.destination", "Home") -%}
           {{ state_attr("zone.home", "latitude") }},{{ state_attr("zone.home", "longitude") }}
         {% elif is_state("input_select.destination", "Gym") -%}
-          {{ state_attr("zone.gym", "latitude") }},{{ state_attr("zone.gym", "longitude") }}
+          {{ state_attr("zone.gym_dupont", "latitude") }},{{ state_attr("zone.gym_dupont", "longitude") }}
         {%- endif %}'
     via_origin:
       value_template: '
         {% if is_state("input_select.origin", "Tysons") -%}
-          {{ state_attr("zone.tysons_office", "latitude") }},{{ state_attr("zone.tysons_office", "longitude") }}
+          {{ state_attr("zone.peter_tysons_office", "latitude") }},{{ state_attr("zone.peter_tysons_office", "longitude") }}
         {% elif is_state("input_select.origin", "Home") -%}
           {{ state_attr("zone.home", "latitude") }},{{ state_attr("zone.home", "longitude") }}
         {% elif is_state("input_select.origin", "Gym") -%}
-          {{ state_attr("zone.gym", "latitude") }},{{ state_attr("zone.gym", "longitude") }}
+          {{ state_attr("zone.gym_dupont", "latitude") }},{{ state_attr("zone.gym_dupont", "longitude") }}
         {%- endif %}'
 
 - platform: google_travel_time

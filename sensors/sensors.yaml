@@ -77,11 +77,11 @@
       unit_of_measurement: 'minutes'
     washer_power:
         friendly_name: "Washer Power"
-        value_template: "{{ states.switch.washer.attributes['current_power_w'] | default('0') }}"
+        value_template: "{{ state_attr('switch.washer','current_power_w') | default('0') }}"
         unit_of_measurement: "W"
         icon_template: mdi:washing-machine
     dryer_power:
         friendly_name: "Dryer Power"
-        value_template: "{{ states.switch.dryer.attributes['current_power_w'] | default('0') }}"
+        value_template: "{{ state_attr('switch.dryer','current_power_w') | default('0') }}"
         unit_of_measurement: "W"
         icon_template: mdi:tumble-dryer

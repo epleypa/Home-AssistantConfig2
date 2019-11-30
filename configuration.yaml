@@ -38,9 +38,9 @@ tts:
   language: 'en-us'
   service_name: google_say
 
-mqtt:
-  client_id: 8315
-  password: !secret http_password
+# mqtt:
+  # client_id: 8315
+  # password: !secret http_password
   
 #media players
 media_player:
@@ -84,7 +84,7 @@ script: !include scripts.yaml
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml
 input_select: !include input_select.yaml
-binary_sensor: !include_dir_merge_list binary_sensors/
+binary_sensor: !include binary_sensors.yaml #!include_dir_merge_list binary_sensors/
 light: !include lights.yaml
 
 google:
@@ -105,7 +105,12 @@ nest:
       - motion_detected
       - person_detected
       - sound_detected
-
+  sensors:
+    monitored_conditions:
+      - eta
+      - security_state
+      - humidity
+      - temperature
 climate:
   platform: nest
 

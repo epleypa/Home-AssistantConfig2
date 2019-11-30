@@ -26,6 +26,46 @@
     - service: light.turn_off
       entity_id: light.entry_led, light.office_led, light.bedroom_led
 
+- alias: LED Motion
+  trigger:
+    platform: state
+    entity_id: binary_sensor.livingroom_motion, binary_sensor.bedroom_motion
+    to: 'on'
+  condition:
+  - condition: time
+    after: '6:00:00'
+    before: '23:00:00'
+  action:
+  - service: light.turn_on
+    entity_id: light.livingroom_led, light.office_led, light.bedroom_led
+  - delay: 00:00:01
+  - service: light.turn_off
+    entity_id: light.livingroom_led, light.office_led, light.bedroom_led
+
+- alias: Motionless #Broken, filed issue #29240
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.livingroom_motion
+      to: 'off'
+      for:
+        minutes: 20
+    - platform: state
+      entity_id: binary_sensor.bedroom_motion
+      to: 'off'
+      for:
+        minutes: 20
+  action:
+    - service: homeassistant.turn_off
+      data_template: 
+        entity_id: >
+          {% if trigger.entity_id == 'binary_sensor.bedroom_motion' %}
+            - group.bedroom_lights
+          {% elif trigger.entity_id == 'binary_sensor.livingroom_motion' %}
+            - group.living_room_lights
+            - group.kitchen_lights
+            - group.dining_room_lights
+          {% endif %}
+
 - alias: 'Plex Wake'
   trigger:
     - platform: time_pattern

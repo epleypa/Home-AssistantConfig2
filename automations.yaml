@@ -7,14 +7,13 @@
   - service: notify.pushbullet
     data:
       message: The sun is up.
-  - service: light.turn_off
-    entity_id: light.leeo
+#  - service: light.turn_off
+#    entity_id: light.leeo
 - alias: Wake Up
   id: wake_up
   trigger:
     platform: template
-    value_template: '{{ states.sensor.time.state == states.sensor.alarm_time.state
-      }}'
+    value_template: "{{ states('sensor.time') == states('sensor.alarm_time') }}"
   condition:
     condition: or
     conditions:
@@ -58,7 +57,7 @@
     to: armed_away
   action:
   - service: homeassistant.turn_off
-    entity_id: group.home_lights
+    entity_id: group.home_lights, group.patio_lights
   - service: notify.pushbullet
     data:
       message: See you later!
@@ -88,8 +87,8 @@
   - service: notify.pushbullet
     data:
       message: The sun is down.
-  - service: light.turn_on
-    entity_id: light.leeo
+#  - service: light.turn_on
+#    entity_id: light.leeo
 - alias: Goodnight
   id: goodnight
   trigger:
@@ -105,26 +104,10 @@
     - sun
   action:
   - service: homeassistant.turn_off
-    entity_id: group.home_lights
+    entity_id: group.home_lights, group.patio_lights
   - service: notify.pushbullet
     data:
       message: Goodnight!
-- alias: LED Motion
-  id: led_motion
-  trigger:
-    platform: state
-    entity_id: binary_sensor.entry_pir, binary_sensor.office_pir
-    to: 'on'
-  condition:
-  - condition: time
-    after: '6:00:00'
-    before: '23:00:00'
-  action:
-  - service: light.turn_on
-    entity_id: light.entry_led, light.office_led, light.bedroom_led
-  - delay: 00:00:01
-  - service: light.turn_off
-    entity_id: light.entry_led, light.office_led, light.bedroom_led
 - id: fan
   alias: Fan
   trigger:

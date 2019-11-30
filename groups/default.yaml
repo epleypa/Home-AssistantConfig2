@@ -120,7 +120,7 @@ home_lights:
       - group.living_room_lights
       - group.office_lights
       - group.dining_room_lights
-      - group.patio_lights
+#      - group.patio_lights
       - group.kitchen_lights
 
 wmata:

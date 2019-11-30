@@ -2,13 +2,14 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.updater
+      to: 'on'
   action:
     - service: notify.pushbullet
       data:
         title: 'New Home Assistant Release'
-        message: "Home Assistant {{ states.binary_sensor.updater.attributes.newest_version }} is now available"
+        message: "Home Assistant {{ state_attr('binary_sensor.updater','newest_version') }} is now available"
     - service: ifttt.trigger
-      data_template: {"event":"Home-AssistantConfig", "value1":"{{ states.binary_sensor.updater.attributes.newest_version }}", "value2":"Home Assistant {{ states.binary_sensor.updater.attributes.newest_version }} is now available."}
+      data_template: {"event":"Home-AssistantConfig", "value1":"{{ state_attr('binary_sensor.updater','newest_version') }}", "value2":"Home Assistant {{ states.binary_sensor.updater.attributes.newest_version }} is now available."}
 
 - alias: "Emergency Alert"
   trigger:

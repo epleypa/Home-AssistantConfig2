@@ -112,9 +112,12 @@
                         },
                         {
                             "entities": [
-                                "binary_sensor.front_door",
-                                "binary_sensor.back_door",
-                                "binary_sensor.office_window"
+                                {
+                                    "entity": "binary_sensor.front_door_contact"
+                                },
+                                {
+                                    "entity": "binary_sensor.back_door_contact"
+                                }
                             ],
                             "title": "Sensors",
                             "type": "glance"
@@ -348,31 +351,27 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.entry_temperature",
+                                    "entity": "sensor.livingroom_temperature",
                                     "name": "Temp"
                                 },
                                 {
-                                    "entity": "sensor.entry_humidity",
+                                    "entity": "sensor.livingroom_humidity",
                                     "name": "Humidity"
                                 },
                                 {
-                                    "entity": "sensor.entry_real_feel",
-                                    "name": "Real Feel"
-                                },
-                                {
-                                    "entity": "sensor.entry_ldr",
+                                    "entity": "sensor.livingroom_brightness",
                                     "name": "Bright"
                                 },
                                 {
-                                    "entity": "binary_sensor.entry_pir",
+                                    "entity": "binary_sensor.livingroom_motion",
                                     "name": "Motion"
                                 },
                                 {
-                                    "entity": "light.entry_led",
+                                    "entity": "light.livingroom_led",
                                     "name": "LED"
                                 }
                             ],
-                            "title": "Entry Sensors",
+                            "title": "Living Room Sensors",
                             "type": "glance"
                         },
                         {
@@ -386,16 +385,8 @@
                                     "name": "Humidity"
                                 },
                                 {
-                                    "entity": "sensor.office_real_feel",
-                                    "name": "Real Feel"
-                                },
-                                {
-                                    "entity": "sensor.office_ldr",
+                                    "entity": "sensor.office_brightness",
                                     "name": "Bright"
-                                },
-                                {
-                                    "entity": "binary_sensor.office_pir",
-                                    "name": "Motion"
                                 },
                                 {
                                     "entity": "light.office_led",
@@ -416,12 +407,11 @@
                                     "name": "Humidity"
                                 },
                                 {
-                                    "entity": "sensor.bedroom_real_feel",
-                                    "name": "Real Feel"
+                                    "entity": "sensor.bedroom_brightness",
+                                    "name": "Bright"
                                 },
                                 {
-                                    "entity": "sensor.bedroom_ldr",
-                                    "name": "Bright"
+                                    "entity": "binary_sensor.bedroom_motion"
                                 },
                                 {
                                     "entity": "light.bedroom_led",
