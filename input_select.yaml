@@ -8,6 +8,9 @@ living_room_tv_source:
 
 cable_channel:
   options:
+  - 109 CSPAN
+  - 110 CSPAN2
+  - 111 CSPAN3
   - 504 NBC
   - 505 Fox
   - 507 ABC
@@ -15,6 +18,7 @@ cable_channel:
   - 550 USA
   - 553 FX
   - 600 CNN
+  - 603 MSNBC
   - 664 Food Network
   - 665 HGTV
   - 683 TruTV

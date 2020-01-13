@@ -7,22 +7,30 @@
       entity_id: light.entry_led, light.office_led, light.bedroom_led, light.office_light, light.storage_light
       data:
         rgb_color: [255,0,0]
-    - delay: 00:00:01
+    - delay: 
+        milliseconds: 500
     - service: light.turn_on
       entity_id: light.entry_led, light.office_led, light.bedroom_led, light.office_light, light.storage_light
       data:
         rgb_color: [0,255,0]
-    - delay: 00:00:01
+    - delay: 
+        milliseconds: 500
     - service: light.turn_on
       entity_id: light.entry_led, light.office_led, light.bedroom_led, light.office_light, light.storage_light
       data:
         rgb_color: [0,0,255]
-    - delay: 00:00:01
+    - delay: 
+        milliseconds: 500
     - service: light.turn_on
-      entity_id: light.entry_led, light.office_led, light.bedroom_led, light.office_light, light.storage_light
+      entity_id: light.office_light, light.storage_light
       data:
         color_temp: 369
-    - delay: 00:00:01
+    - service: light.turn_on
+      entity_id: light.entry_led, light.office_led, light.bedroom_led
+      data:
+        rgb_color: [255,255,255]
+    - delay: 
+        milliseconds: 500
     - service: light.turn_off
       entity_id: light.entry_led, light.office_led, light.bedroom_led, light.office_light, light.storage_light
 
@@ -91,4 +99,13 @@
   action:
     service_template: '{{ trigger.event.data.service }}'
     data_template:
-      entity_id: '{{ trigger.event.data.entity_id }}'
+      entity_id: '{{ trigger.event.data.entity_id|lower }}'
+      device: '{{ trigger.event.data.device|lower }}'
+      command: >
+        {% set source = trigger.event.data.command|lower %}
+        {% if source == "cable" %}cm2
+        {% elif source == "roku" %}hdmi3
+        {% elif source == "chromecast" %}hdmi4
+        {% elif source == "switch" %}hdmi1
+        {% elif source == "xbox" %}hdmi2
+        {% endif %}

@@ -77,4 +77,3 @@ shell/*
 core
 automation_archive
 google_service_account.json
-custom_components/*

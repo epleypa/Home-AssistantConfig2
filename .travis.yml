@@ -5,7 +5,6 @@ python:
 before_install:
   - mv travis/travis_secrets.yaml secrets.yaml
   - mv travis/travis_zones.yaml zones.yaml
-  - mv travis/google_service_account.json google_service_account.json
 install:
   - pip3 install homeassistant
 script:
