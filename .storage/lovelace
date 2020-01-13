@@ -1,48 +1,20 @@
 {
     "data": {
         "config": {
+            "resources": [
+                {
+                    "type": "module",
+                    "url": "/community_plugin/aftership-card/aftership-card.js"
+                }
+            ],
             "title": "Home",
             "views": [
                 {
                     "cards": [
                         {
-                            "camera_image": "camera.front_door",
-                            "entities": [
-                                "camera.front_door",
-                                "binary_sensor.front_door_camera_motion_detected",
-                                "binary_sensor.front_door_camera_person_detected",
-                                "binary_sensor.front_door_camera_sound_detected",
-                                {
-                                    "entity": "binary_sensor.front_door_camera_online",
-                                    "icon": "mdi:power"
-                                }
-                            ],
-                            "show_info": true,
-                            "tap_action": "dialog",
-                            "title": "Front Door",
-                            "type": "picture-glance"
-                        },
-                        {
                             "aspect_ratio": "80%",
                             "type": "iframe",
                             "url": "https://embed.windy.com/embed2.html?lat=38.897&lon=-77.044&zoom=6&level=surface&overlay=rain&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&detailLat=38.900&detailLon=-77.040&metricWind=mph&metricTemp=%C2%B0F&radarRange=-1"
-                        },
-                        {
-                            "camera_image": "camera.backyard",
-                            "entities": [
-                                "camera.backyard",
-                                "binary_sensor.backyard_camera_motion_detected",
-                                "binary_sensor.backyard_camera_person_detected",
-                                "binary_sensor.backyard_camera_sound_detected",
-                                {
-                                    "entity": "binary_sensor.backyard_camera_online",
-                                    "icon": "mdi:power"
-                                }
-                            ],
-                            "show_info": true,
-                            "tap_action": "dialog",
-                            "title": "Backyard",
-                            "type": "picture-glance"
                         },
                         {
                             "entities": [
@@ -88,6 +60,12 @@
                                 {
                                     "entity": "binary_sensor.recycle",
                                     "name": "Recycle Day"
+                                },
+                                {
+                                    "entity": "binary_sensor.workday"
+                                },
+                                {
+                                    "entity": "binary_sensor.worknight"
                                 }
                             ],
                             "show_icon": true,
@@ -100,6 +78,11 @@
                             ],
                             "title": "Wake Up",
                             "type": "entities"
+                        },
+                        {
+                            "entity": "sensor.aftership",
+                            "title": "Packages",
+                            "type": "custom:aftership-card"
                         }
                     ],
                     "title": "Home"
@@ -111,12 +94,31 @@
                             "type": "alarm-panel"
                         },
                         {
+                            "columns": 3,
                             "entities": [
                                 {
                                     "entity": "binary_sensor.front_door_contact"
                                 },
                                 {
                                     "entity": "binary_sensor.back_door_contact"
+                                },
+                                {
+                                    "entity": "binary_sensor.bedroom_north_window_contact"
+                                },
+                                {
+                                    "entity": "binary_sensor.bedroom_south_window_contact"
+                                },
+                                {
+                                    "entity": "binary_sensor.hall_attic_door_contact"
+                                },
+                                {
+                                    "entity": "binary_sensor.bedroom_attic_door_contact"
+                                },
+                                {
+                                    "entity": "binary_sensor.office_north_window_contact"
+                                },
+                                {
+                                    "entity": "binary_sensor.mailbox_contact"
                                 }
                             ],
                             "title": "Sensors",
@@ -142,6 +144,57 @@
                             ],
                             "title": "Alerts",
                             "type": "glance"
+                        },
+                        {
+                            "camera_image": "camera.front_yard",
+                            "entities": [
+                                "camera.front_yard",
+                                "binary_sensor.front_yard_camera_motion_detected",
+                                "binary_sensor.front_yard_camera_person_detected",
+                                "binary_sensor.front_yard_camera_sound_detected",
+                                {
+                                    "entity": "binary_sensor.front_yard_camera_online",
+                                    "icon": "mdi:power"
+                                }
+                            ],
+                            "show_info": true,
+                            "tap_action": "dialog",
+                            "title": "Front Yard",
+                            "type": "picture-glance"
+                        },
+                        {
+                            "camera_image": "camera.front_door",
+                            "entities": [
+                                "camera.front_door",
+                                "binary_sensor.front_door_camera_motion_detected",
+                                "binary_sensor.front_door_camera_person_detected",
+                                "binary_sensor.front_door_camera_sound_detected",
+                                {
+                                    "entity": "binary_sensor.front_door_camera_online",
+                                    "icon": "mdi:power"
+                                }
+                            ],
+                            "show_info": true,
+                            "tap_action": "dialog",
+                            "title": "Front Door",
+                            "type": "picture-glance"
+                        },
+                        {
+                            "camera_image": "camera.backyard",
+                            "entities": [
+                                "camera.backyard",
+                                "binary_sensor.backyard_camera_motion_detected",
+                                "binary_sensor.backyard_camera_person_detected",
+                                "binary_sensor.backyard_camera_sound_detected",
+                                {
+                                    "entity": "binary_sensor.backyard_camera_online",
+                                    "icon": "mdi:power"
+                                }
+                            ],
+                            "show_info": true,
+                            "tap_action": "dialog",
+                            "title": "Backyard",
+                            "type": "picture-glance"
                         }
                     ],
                     "icon": "mdi:shield",
@@ -168,11 +221,24 @@
                                 {
                                     "cards": [
                                         {
-                                            "entity": "light.bedroom_overhead_light",
+                                            "entity": "light.tv_backlight",
                                             "type": "light"
                                         },
                                         {
                                             "entity": "light.storage_light",
+                                            "type": "light"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "light.storage_light",
+                                            "type": "light"
+                                        },
+                                        {
+                                            "entity": "light.Abc",
                                             "type": "light"
                                         }
                                     ],
@@ -217,6 +283,10 @@
                                         },
                                         {
                                             "entity": "switch.bar_lights",
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "switch.christmas_tree",
                                             "type": "entity-button"
                                         },
                                         {
@@ -464,73 +534,17 @@
                             ],
                             "title": "Laundry",
                             "type": "history-graph"
-                        }
-                    ],
-                    "icon": "mdi:led-on",
-                    "title": "Sensors"
-                },
-                {
-                    "cards": [
+                        },
                         {
                             "entities": [
                                 "sun.sun",
                                 "sensor.moon"
                             ],
                             "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                "sensor.dark_sky_apparent_temperature",
-                                "sensor.dark_sky_cloud_coverage",
-                                "sensor.dark_sky_daily_max_precip_intensity",
-                                "sensor.dark_sky_daily_summary",
-                                "sensor.dark_sky_daytime_high_apparent_temperature",
-                                "sensor.dark_sky_daytime_high_temperature",
-                                "sensor.dark_sky_dew_point",
-                                "sensor.dark_sky_hourly_summary",
-                                "sensor.dark_sky_humidity",
-                                "sensor.dark_sky_icon",
-                                "sensor.dark_sky_minutely_summary",
-                                "sensor.dark_sky_nearest_storm_bearing",
-                                "sensor.dark_sky_nearest_storm_distance",
-                                "sensor.dark_sky_overnight_low_apparent_temperature",
-                                "sensor.dark_sky_overnight_low_temperature",
-                                "sensor.dark_sky_ozone",
-                                "sensor.dark_sky_precip",
-                                "sensor.dark_sky_precip_intensity",
-                                "sensor.dark_sky_precip_probability",
-                                "sensor.dark_sky_pressure",
-                                "sensor.dark_sky_summary",
-                                "sensor.dark_sky_temperature",
-                                "sensor.dark_sky_visibility",
-                                "sensor.dark_sky_wind_bearing",
-                                "sensor.dark_sky_wind_speed"
-                            ],
-                            "title": "Darksky",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "sensor.pws_alerts",
-                                "sensor.pws_observation_time",
-                                "sensor.pws_solarradiation",
-                                "sensor.pws_uv",
-                                "sensor.pws_visibility_mi",
-                                "sensor.pws_weather_1d",
-                                "sensor.pws_weather_1n",
-                                "sensor.pws_weather_2d",
-                                "sensor.pws_weather_2n",
-                                "sensor.pws_weather_3d",
-                                "sensor.pws_weather_3n",
-                                "sensor.pws_weather_4d",
-                                "sensor.pws_weather_4n"
-                            ],
-                            "title": "Weather Underground",
-                            "type": "entities"
                         }
                     ],
-                    "icon": "mdi:thermometer",
-                    "title": "Weather"
+                    "icon": "mdi:led-on",
+                    "title": "Sensors"
                 },
                 {
                     "cards": [

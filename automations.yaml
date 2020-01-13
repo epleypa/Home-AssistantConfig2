@@ -7,13 +7,11 @@
   - service: notify.pushbullet
     data:
       message: The sun is up.
-#  - service: light.turn_off
-#    entity_id: light.leeo
 - alias: Wake Up
   id: wake_up
   trigger:
     platform: template
-    value_template: "{{ states('sensor.time') == states('sensor.alarm_time') }}"
+    value_template: '{{ states(''sensor.time'') == states(''sensor.alarm_time'') }}'
   condition:
     condition: or
     conditions:
@@ -57,7 +55,7 @@
     to: armed_away
   action:
   - service: homeassistant.turn_off
-    entity_id: group.home_lights, group.patio_lights
+    entity_id: group.home_lights
   - service: notify.pushbullet
     data:
       message: See you later!
@@ -77,34 +75,42 @@
   - service: notify.pushbullet
     data:
       message: Welcome Home!
-- alias: Sunset
-  id: sunset
+- id: sunset
+  alias: Sunset
   trigger:
+  - event: sunset
     platform: sun
-    event: sunset
-    offset: -00:15:00
   action:
-  - service: notify.pushbullet
-    data:
+  - data:
       message: The sun is down.
-#  - service: light.turn_on
-#    entity_id: light.leeo
-- alias: Goodnight
-  id: goodnight
+    service: notify.pushbullet
+- alias: Goodnight Work Night
+  id: goodnight-work
   trigger:
     platform: time
     at: '23:05:00'
   condition:
-  - condition: time
-    weekday:
-    - mon
-    - tue
-    - wed
-    - thu
-    - sun
+  - condition: state
+    entity_id: binary_sensor.worknight
+    state: 'on'
   action:
   - service: homeassistant.turn_off
-    entity_id: group.home_lights, group.patio_lights
+    entity_id: group.home_lights, group.patio_lights, group.holiday_lights
+  - service: notify.pushbullet
+    data:
+      message: Goodnight!
+- alias: Goodnight Leisure Night
+  id: goodnight-leisure
+  trigger:
+    platform: time
+    at: 01:05:00
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday
+    state: 'off'
+  action:
+  - service: homeassistant.turn_off
+    entity_id: group.home_lights, group.patio_lights, group.holiday_lights
   - service: notify.pushbullet
     data:
       message: Goodnight!

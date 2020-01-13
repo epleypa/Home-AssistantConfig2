@@ -43,8 +43,7 @@ tts:
   # password: !secret http_password
   
 #media players
-media_player:
-  - platform: plex
+media_player: !include media_players.yaml
 
 #device tracking
 device_tracker: !include device_trackers.yaml
@@ -65,15 +64,16 @@ recorder:
       - switch.cable_9
       - switch.cable_0
       - switch.cable_ok
+
+logger:
+  default: warning
+  logs:
+    camect: error
     
 ifttt:
   key: !secret ifttt_key
 
-notify:
-  - name: pushbullet
-    platform: pushbullet
-    api_key: !secret pushbullet_key
-
+notify: !include notify.yaml
 automation: !include automations.yaml
 automation old: !include_dir_merge_list automation/
 zone: !include zones.yaml
@@ -86,6 +86,10 @@ input_number: !include input_number.yaml
 input_select: !include input_select.yaml
 binary_sensor: !include binary_sensors.yaml #!include_dir_merge_list binary_sensors/
 light: !include lights.yaml
+remote:
+  - platform: broadlink
+    host: 192.168.1.42
+    mac: '78:0F:77:B9:62:85'
 
 google:
   client_id: !secret google_oath_client
@@ -136,3 +140,10 @@ totalconnect:
   username: !secret tc_user
   password: !secret tc_password
 #  code: !secret tc_usercode
+
+camect:
+  host: !secret camect_host
+  port: 443
+  username: !secret camect_un
+  password: !secret camect_pw
+  camera_ids: 5634535cb67205fc016d,e2229460a6d9a626be20,5a5056a4b910eb39318d

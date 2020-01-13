@@ -1,17 +1,27 @@
 project_id: !secret google_proj
 #client_id: !secret google_client
 #access_token: !secret google_token
-api_key: !secret google_homegraph_api
+#api_key: !secret google_homegraph_api
+#secure_devices_pin: !secret google_pin
+service_account: !include google_service_account.json
+report_state: true
 #expose_by_default: false
 exposed_domains:
   - light
   - switch
   - script
+  - fan
 entity_config:
+  automation.information_alert:
+    expose: true
   group.lr_tv_power:
     expose: true
     name: 'TV'
   group.home_lights:
+    expose: true
+  group.upstairs_lights:
+    expose: true
+  group.downstairs_lights:
     expose: true
   light.Entry_LED:
     expose: false
@@ -60,5 +70,5 @@ entity_config:
     expose: false
   switch.dryer:
     expose: false
-  fan.hvac_fan:
+  media_player.media_player_name:
     expose: true

@@ -12,6 +12,8 @@ cable_channel:
   - 505 Fox
   - 507 ABC
   - 509 CBS
+  - 550 USA
+  - 553 FX
   - 600 CNN
   - 664 Food Network
   - 665 HGTV
@@ -24,12 +26,16 @@ cable_channel:
 
 destination:
   options:
-  - Tysons
-  - Gym
+  - Peter Tysons Office
+  - Peter Client
+  - Gym Dupont
+  - Gym 14th St
   - Home
   
 origin:
   options:
+  - Peter Tysons Office
+  - Peter Client
+  - Gym Dupont
+  - Gym 14th St
   - Home
-  - Tysons
-  - Gym

@@ -1,0 +1,42 @@
+- platform: plex
+- platform: universal
+  name: MEDIA_PLAYER_NAME
+  children:
+    - media_player.living_room_tv
+  commands:
+    turn_on:
+      service: switch.turn_on
+      data:
+        entity_id: switch.lr_tv_power1
+    turn_off:
+      service: switch.turn_off
+      data:
+        entity_id: switch.lr_tv_power1
+    volume_up:
+      service: remote.send_command
+      data:
+        entity_id: remote.broadlink
+        device: television
+        command: volume_up
+    volume_down:
+      service: remote.send_command
+      data:
+        entity_id: remote.broadlink
+        device: television
+        command: volume_down
+    volume_mute:
+      service: switch.toggle
+      data:
+        entity_id: switch.lr_tv_mute
+    select_source:
+      service: input_select.select_option
+      data_template:
+        entity_id: input_select.living_room_tv_source
+        option: '{{ option }}'
+
+  attributes:
+    state: switch.lr_tv_power1
+    is_volume_muted: switch.lr_tv_mute
+#    volume_level: media_player.MEDIA_PLAYER_NAME|volume_level
+    source: input_select.living_room_tv_source
+    source_list: input_select.living_room_tv_source|options

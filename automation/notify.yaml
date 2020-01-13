@@ -127,3 +127,16 @@
             {% elif trigger.entity_id == 'binary_sensor.mailbox_contact' %}The mail has arrived!
             {% endif %}"
     - delay: "00:01:00" # cooldown
+
+- id: system_log
+  alias: 'Log Error to File'
+  initial_state: true
+  trigger:
+    - platform: event
+      event_type: system_log_event
+      event_data:
+        level: ERROR
+  action:
+    - service: notify.error_logfile
+      data_template:
+        message: '{{ trigger.event.data }}'

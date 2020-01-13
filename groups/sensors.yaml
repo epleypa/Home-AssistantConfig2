@@ -1,3 +1,16 @@
+sensors:
+  name: Sensors
+  view: yes
+  icon: mdi:led-on
+  entities:
+    - group.sensor_entry
+    - group.sensor_office
+    - group.sensor_bedroom
+    - group.sensor_bathroom
+    - group.sensor_kitchen
+    - group.sensor_dining_room
+    - group.sensor_led
+
 sensor_entry:
   name: Entry Sensors
   entities:

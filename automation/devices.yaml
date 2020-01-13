@@ -4,27 +4,27 @@
     event: start
   action:
     - service: light.turn_on
-      entity_id: light.entry_led, light.office_led, light.bedroom_led
+      entity_id: light.entry_led, light.office_led, light.bedroom_led, light.office_light, light.storage_light
       data:
         rgb_color: [255,0,0]
     - delay: 00:00:01
     - service: light.turn_on
-      entity_id: light.entry_led, light.office_led, light.bedroom_led
+      entity_id: light.entry_led, light.office_led, light.bedroom_led, light.office_light, light.storage_light
       data:
         rgb_color: [0,255,0]
     - delay: 00:00:01
     - service: light.turn_on
-      entity_id: light.entry_led, light.office_led, light.bedroom_led
+      entity_id: light.entry_led, light.office_led, light.bedroom_led, light.office_light, light.storage_light
       data:
         rgb_color: [0,0,255]
     - delay: 00:00:01
     - service: light.turn_on
-      entity_id: light.entry_led, light.office_led, light.bedroom_led
+      entity_id: light.entry_led, light.office_led, light.bedroom_led, light.office_light, light.storage_light
       data:
-        rgb_color: [255,255,255]
+        color_temp: 369
     - delay: 00:00:01
     - service: light.turn_off
-      entity_id: light.entry_led, light.office_led, light.bedroom_led
+      entity_id: light.entry_led, light.office_led, light.bedroom_led, light.office_light, light.storage_light
 
 - alias: LED Motion
   trigger:
@@ -42,13 +42,13 @@
   - service: light.turn_off
     entity_id: light.livingroom_led, light.office_led, light.bedroom_led
 
-- alias: Motionless #Broken, filed issue #29240
+- alias: Motionless
   trigger:
     - platform: state
       entity_id: binary_sensor.livingroom_motion
       to: 'off'
       for:
-        minutes: 20
+        minutes: 60
     - platform: state
       entity_id: binary_sensor.bedroom_motion
       to: 'off'
@@ -59,11 +59,9 @@
       data_template: 
         entity_id: >
           {% if trigger.entity_id == 'binary_sensor.bedroom_motion' %}
-            - group.bedroom_lights
+            group.bedroom_lights
           {% elif trigger.entity_id == 'binary_sensor.livingroom_motion' %}
-            - group.living_room_lights
-            - group.kitchen_lights
-            - group.dining_room_lights
+            group.downstairs_lights
           {% endif %}
 
 - alias: 'Plex Wake'

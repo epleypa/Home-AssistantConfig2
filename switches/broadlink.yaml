@@ -26,70 +26,117 @@
       command_on: 'sh8yAAUUEggFFAUUBhQSCAYUEggFFBIIBhQSCAYUEggSCBIIBhQGFAUVBRQGFAUUEggSCAXBAAAAAAAA'
       command_off: 'shcyAAYUEggFFAYUBRQSCAYUEggGFBIIBhQSCAYUEggSCBIIBRQFFQUUBhQSCBIIBRQGFAbAAAAAAAAA'
       friendly_name: 'Bedroom Humidifier'
-    lr_tv_power1:
-      command_on: 'JgBOAJOVEToQOhE5ERUQFRAVERQRFBE5EToQOhEUERQRFRAVEBUROREUERQROhA6ERQRFBE6EBURORE5ERUQFRA6ETkRFRAABaWWlRAVEQANBQAAAAAAAAAAAAA='
-      command_off: 'JgBOAJWUEjgSOBM3ExMSExITEhMTEhM4EjgSOBEUExMSExITEhMSExMSExIROhI4ExITEhM4EjgSOBM4EhMRFBI4EzgSExIABaWVlBITEwANBQAAAAAAAAAAAAA='
-      friendly_name: 'lr_tv_power1'
-    lr_tv_power2:
-      command_on: 'JgBOAJOVEToQOhE5ERUQFRAVERQRFBE5EToQOhEUERQRFRAVEBUROREUERQROhA6ERQRFBE6EBURORE5ERUQFRA6ETkRFRAABaWWlRAVEQANBQAAAAAAAAAAAAA='
-      command_off: 'JgBOAJWUEjgSOBM3ExMSExITEhMTEhM4EjgSOBEUExMSExITEhMSExMSExIROhI4ExITEhM4EjgSOBM4EhMRFBI4EzgSExIABaWVlBITEwANBQAAAAAAAAAAAAA='
-      friendly_name: 'lr_tv_power2'
-    lr_tv_hdmi1:
-      command_on: 'JgBOAJOVETkROhE5ERQRFBEUERUQFRE5ETkROhEUERQRFBEUERUQOhEUERQROREVEDoRORE6EBURORE5ERQROhEUERQRFBEABaeTlREVEAANBQAAAAAAAAAAAAA='
-      friendly_name: 'lr_tv_hdmi1'
-    lr_tv_hdmi2:
-      command_on: 'JgBOAJOVETkROhE5ERQRFBEUERUQFRE5ETkROhEUERQRFBEUERUQFRA6ETkROhA6ETkRFBE6ETkRFBEUERUQFRAVETkRFBEABaeTlREVEAANBQAAAAAAAAAAAAA='
-      friendly_name: 'lr_tv_hdmi2'
-    lr_tv_hdmi3:
-      command_on: 'JgBOAJSVETkRORE6EBURFBEUERQRFBE6ETkROREVEBURFBEUERQRFBE6EBURFBEUERQROhA6ETkRFBE6EDoRORE6EBURFBEABaeTlREUEQANBQAAAAAAAAAAAAA='
-      friendly_name: 'lr_tv_hdmi3'
-    lr_tv_hdmi4:
-      command_on: 'JgBOAJOVEzcTOBI4ExIRFBMTEhMSExE5EzcTOBITExITEhMSERUQOhMSEzcRFBMTEhMSOBM3ExMSOBMSETkTOBA6ExITEhEABaeTlRMTEgANBQAAAAAAAAAAAAA='
-      friendly_name: 'lr_tv_hdmi4'
-    lr_tv_cm2:
-      command_on: 'JgBOAJOWEDoRORE6EBUQFREUERQRFBE6EDoROREUERUQFRAVERQRFBEUERQROhEUERQRFBE6EDoRORE6EBUQOhE5EToQFREABaeTlREUEQANBQAAAAAAAAAAAAA='
-      friendly_name: 'lr_tv_cm2'
-    lr_tv_mute:
-      command_on: 'JgBAAZSWEBEPEg8SDxIQMw8zDxIPEg80DzMPMw8zEBIPEg8SDxIPlhAREBIPEg8SDzMPEhASDxIPMw8zEDMPEg8SDzMPMxAzDxIPEg8SEDMPAAcolJYQEQ8SDxIQERAzDzMPEg8SEDMPMw8zEDMPEg8SDxIPEg+WEBIPEg8SDxIPMxASDxIPEg8zDzQPMw8SDxIPNA8zDzMPEg8SEBIPMw8AByiUlhARDxIQEg8SDzMPMw8SEBIPMw8zDzMQMw8SDxIPEg8SEJYQEQ8SDxIPEhAzDxIPEg8SDzMQMw8zDxIPEg80DzMPMw8SDxIQEg8zDwAHKJSWEBEPEg8SEBEQMw8zDxIPEhAzDzMPMw8zEBIPEg8SDxIPlhAREBIPEg8SDzMQERASDxIPMw8zEDMPEg8SDzMPNA8zDxIPEg8SEDMPAA0FAAAAAAAAAAA='
-      command_off: 'JgBAAZSWEBEPEg8SDxIQMw8zDxIPEg80DzMPMw8zEBIPEg8SDxIPlhAREBIPEg8SDzMPEhASDxIPMw8zEDMPEg8SDzMPMxAzDxIPEg8SEDMPAAcolJYQEQ8SDxIQERAzDzMPEg8SEDMPMw8zEDMPEg8SDxIPEg+WEBIPEg8SDxIPMxASDxIPEg8zDzQPMw8SDxIPNA8zDzMPEg8SEBIPMw8AByiUlhARDxIQEg8SDzMPMw8SEBIPMw8zDzMQMw8SDxIPEg8SEJYQEQ8SDxIPEhAzDxIPEg8SDzMQMw8zDxIPEg80DzMPMw8SDxIQEg8zDwAHKJSWEBEPEg8SEBEQMw8zDxIPEhAzDzMPMw8zEBIPEg8SDxIPlhAREBIPEg8SDzMQERASDxIPMw8zEDMPEg8SDzMPNA8zDxIPEg8SEDMPAA0FAAAAAAAAAAA='
-      friendly_name: 'lr_tv_mute'
+    # lr_tv_power1:
+      # command_on: 'JgBOAJOVEToQOhE5ERUQFRAVERQRFBE5EToQOhEUERQRFRAVEBUROREUERQROhA6ERQRFBE6EBURORE5ERUQFRA6ETkRFRAABaWWlRAVEQANBQAAAAAAAAAAAAA='
+      # command_off: 'JgBOAJWUEjgSOBM3ExMSExITEhMTEhM4EjgSOBEUExMSExITEhMSExMSExIROhI4ExITEhM4EjgSOBM4EhMRFBI4EzgSExIABaWVlBITEwANBQAAAAAAAAAAAAA='
+      # friendly_name: 'lr_tv_power1'
+    # lr_tv_power2:
+      # command_on: 'JgBOAJOVEToQOhE5ERUQFRAVERQRFBE5EToQOhEUERQRFRAVEBUROREUERQROhA6ERQRFBE6EBURORE5ERUQFRA6ETkRFRAABaWWlRAVEQANBQAAAAAAAAAAAAA='
+      # command_off: 'JgBOAJWUEjgSOBM3ExMSExITEhMTEhM4EjgSOBEUExMSExITEhMSExMSExIROhI4ExITEhM4EjgSOBM4EhMRFBI4EzgSExIABaWVlBITEwANBQAAAAAAAAAAAAA='
+      # friendly_name: 'lr_tv_power2'
+    # lr_tv_hdmi1:
+      # command_on: 'JgBOAJOVETkROhE5ERQRFBEUERUQFRE5ETkROhEUERQRFBEUERUQOhEUERQROREVEDoRORE6EBURORE5ERQROhEUERQRFBEABaeTlREVEAANBQAAAAAAAAAAAAA='
+      # friendly_name: 'lr_tv_hdmi1'
+    # lr_tv_hdmi2:
+      # command_on: 'JgBOAJOVETkROhE5ERQRFBEUERUQFRE5ETkROhEUERQRFBEUERUQFRA6ETkROhA6ETkRFBE6ETkRFBEUERUQFRAVETkRFBEABaeTlREVEAANBQAAAAAAAAAAAAA='
+      # friendly_name: 'lr_tv_hdmi2'
+    # lr_tv_hdmi3:
+      # command_on: 'JgBOAJSVETkRORE6EBURFBEUERQRFBE6ETkROREVEBURFBEUERQRFBE6EBURFBEUERQROhA6ETkRFBE6EDoRORE6EBURFBEABaeTlREUEQANBQAAAAAAAAAAAAA='
+      # friendly_name: 'lr_tv_hdmi3'
+    # lr_tv_hdmi4:
+      # command_on: 'JgBOAJOVEzcTOBI4ExIRFBMTEhMSExE5EzcTOBITExITEhMSERUQOhMSEzcRFBMTEhMSOBM3ExMSOBMSETkTOBA6ExITEhEABaeTlRMTEgANBQAAAAAAAAAAAAA='
+      # friendly_name: 'lr_tv_hdmi4'
+    # lr_tv_cm2:
+      # command_on: 'JgBOAJOWEDoRORE6EBUQFREUERQRFBE6EDoROREUERUQFRAVERQRFBEUERQROhEUERQRFBE6EDoRORE6EBUQOhE5EToQFREABaeTlREUEQANBQAAAAAAAAAAAAA='
+      # friendly_name: 'lr_tv_cm2'
+    # lr_tv_mute:
+      # command_on: 'JgBAAZSWEBEPEg8SDxIQMw8zDxIPEg80DzMPMw8zEBIPEg8SDxIPlhAREBIPEg8SDzMPEhASDxIPMw8zEDMPEg8SDzMPMxAzDxIPEg8SEDMPAAcolJYQEQ8SDxIQERAzDzMPEg8SEDMPMw8zEDMPEg8SDxIPEg+WEBIPEg8SDxIPMxASDxIPEg8zDzQPMw8SDxIPNA8zDzMPEg8SEBIPMw8AByiUlhARDxIQEg8SDzMPMw8SEBIPMw8zDzMQMw8SDxIPEg8SEJYQEQ8SDxIPEhAzDxIPEg8SDzMQMw8zDxIPEg80DzMPMw8SDxIQEg8zDwAHKJSWEBEPEg8SEBEQMw8zDxIPEhAzDzMPMw8zEBIPEg8SDxIPlhAREBIPEg8SDzMQERASDxIPMw8zEDMPEg8SDzMPNA8zDxIPEg8SEDMPAA0FAAAAAAAAAAA='
+      # command_off: 'JgBAAZSWEBEPEg8SDxIQMw8zDxIPEg80DzMPMw8zEBIPEg8SDxIPlhAREBIPEg8SDzMPEhASDxIPMw8zEDMPEg8SDzMPMxAzDxIPEg8SEDMPAAcolJYQEQ8SDxIQERAzDzMPEg8SEDMPMw8zEDMPEg8SDxIPEg+WEBIPEg8SDxIPMxASDxIPEg8zDzQPMw8SDxIPNA8zDzMPEg8SEBIPMw8AByiUlhARDxIQEg8SDzMPMw8SEBIPMw8zDzMQMw8SDxIPEg8SEJYQEQ8SDxIPEhAzDxIPEg8SDzMQMw8zDxIPEg80DzMPMw8SDxIQEg8zDwAHKJSWEBEPEg8SEBEQMw8zDxIPEhAzDzMPMw8zEBIPEg8SDxIPlhAREBIPEg8SDzMQERASDxIPMw8zEDMPEg8SDzMPNA8zDxIPEg8SEDMPAA0FAAAAAAAAAAA='
+      # friendly_name: 'lr_tv_mute'
+    # cable_power:
+      # command_on: 'JgAwAAABI5QPSg6UD0kOlQ9JDkoOSg5KDkoOSg9KDkoOSg6UD5QPSQ8ABDYAASRKDgANBQAAAAAAAAAA'
+      # command_off: 'JgAwAAABI5QPSg6UD0kOlQ9JDkoOSg5KDkoOSg9KDkoOSg6UD5QPSQ8ABDYAASRKDgANBQAAAAAAAAAA'
+      # friendly_name: 'cable_power'
+    # cable_1:
+      # command_on: 'JgAwAAABJZUPkw9JDkoPSg5KDkoOSg5KDkoOSg5KDksOlA+UD5MPlA8AA+0AASNKDgANBQAAAAAAAAAA'
+      # friendly_name: 'cable_1'
+    # cable_2:
+      # command_on: 'JgAwAAABI5QPSQ+UD0kOSg5KDksOSg5KDkoOSg5KDkgRSQ6VD5MPlA8ABDYAASRKDgANBQAAAAAAAAAA'
+      # friendly_name: 'cable_2'
+    # cable_3:
+      # command_on: 'JgAwAAABI5QPlA+TD0oOSg5KDkoOSg5KDkoOSg5LDkoOlA9JD5QPkw8AA+0AASRKDgANBQAAAAAAAAAA'
+      # friendly_name: 'cable_3'
+    # cable_4:
+      # command_on: 'JgAwAAABI5UPSQ5KDpUPSQ9JDkoOSg5KDkoOSw5KDkoOSg5KDpUOlA8ABIAAASNKDgANBQAAAAAAAAAA'
+      # friendly_name: 'cable_4'
+    # cable_5:
+      # command_on: 'JgAwAAABI5QPlA9JDpUPSQ5KD0kOSg5KDkoOSw5KDkoOlA+UD0kOlQ4AA+0AASRKDgANBQAAAAAAAAAA'
+      # friendly_name: 'cable_5'
+    # cable_6:
+      # command_on: 'JgAwAAABI5QPSQ+UD5QOSg5KDkoOSg5KDkoOSBFKDkoOSg6UD0kPlA8ABDYAASRKDgANBQAAAAAAAAAA'
+      # friendly_name: 'cable_6'
+    # cable_7:
+      # command_on: 'JgAwAAABJJQPlA+TD5QPSQ5KDkoOSg5KD0oOSg5KDkoOlQ5KDkoOlA8AA+0AASNKDwANBQAAAAAAAAAA'
+      # friendly_name: 'cable_7'
+    # cable_8:
+      # command_on: 'JgAwAAABI5QPSg5KDkoOlA9JD0oOSg5KDkoOSg5KDkoOSg9KDkoOlA8ABMsAASNKDgANBQAAAAAAAAAA'
+      # friendly_name: 'cable_8'
+    # cable_9:
+      # command_on: 'JgAwAAABI5UPkw9KDkoOlA9JDkoPSg5KDkoOSg5KDkoOlQ+TD5QPSQ4AA+4AASNKDgANBQAAAAAAAAAA'
+      # friendly_name: 'cable_9'
+    # cable_0:
+      # command_on: 'JgAwAAABJJQPSQ5KDkoPSg5KDkoOSg5KDkoOSg5LDkoOSg5KDkoOSg4ABV4AASNKDgANBQAAAAAAAAAA'
+      # friendly_name: 'cable_0'
+    # cable_ok:
+      # command_on: 'JgAwAAABJJQPlA9JD0kOSg6VD0kOSg5KDkoOSg5KD0oOSg6UD5QPkw8AA+0AASNKDwANBQAAAAAAAAAA'
+      # friendly_name: 'cable_ok'
+    # cable_hd:
+      # command_on: 'JgAwAAABJJQPSQ5KDkoPkw9KD5MPSQ5KD0kPSg5KD0kPSQ+UDpQPSQ8ABDcAASNKDgANBQAAAAAAAAAA'
+      # friendly_name: 'cable_hd'
+
+- platform: template
+  switches:
+    tv_power:
+      value_template: "{{ is_state('remote.broadlink', 'on') }}"
+      turn_on:
+        service: remote.send_command
+        data:
+          entity_id: remote.broadlink
+          device: television
+          command: turn_on
+          num_repeats: 3
+      turn_off:
+        service: remote.send_command
+        data:
+          entity_id: remote.broadlink
+          device: television
+          command: turn_off
+          num_repeats: 3
+    tv_mute:
+      value_template: "{{ is_state('remote.broadlink', 'on') }}"
+      turn_on:
+        service: remote.send_command
+        data:
+          entity_id: remote.broadlink
+          device: television
+          command: mute
+      turn_off:
+        service: remote.send_command
+        data:
+          entity_id: remote.broadlink
+          device: television
+          command: mute
     cable_power:
-      command_on: 'JgAwAAABI5QPSg6UD0kOlQ9JDkoOSg5KDkoOSg9KDkoOSg6UD5QPSQ8ABDYAASRKDgANBQAAAAAAAAAA'
-      command_off: 'JgAwAAABI5QPSg6UD0kOlQ9JDkoOSg5KDkoOSg9KDkoOSg6UD5QPSQ8ABDYAASRKDgANBQAAAAAAAAAA'
-      friendly_name: 'cable_power'
-    cable_1:
-      command_on: 'JgAwAAABJZUPkw9JDkoPSg5KDkoOSg5KDkoOSg5KDksOlA+UD5MPlA8AA+0AASNKDgANBQAAAAAAAAAA'
-      friendly_name: 'cable_1'
-    cable_2:
-      command_on: 'JgAwAAABI5QPSQ+UD0kOSg5KDksOSg5KDkoOSg5KDkgRSQ6VD5MPlA8ABDYAASRKDgANBQAAAAAAAAAA'
-      friendly_name: 'cable_2'
-    cable_3:
-      command_on: 'JgAwAAABI5QPlA+TD0oOSg5KDkoOSg5KDkoOSg5LDkoOlA9JD5QPkw8AA+0AASRKDgANBQAAAAAAAAAA'
-      friendly_name: 'cable_3'
-    cable_4:
-      command_on: 'JgAwAAABI5UPSQ5KDpUPSQ9JDkoOSg5KDkoOSw5KDkoOSg5KDpUOlA8ABIAAASNKDgANBQAAAAAAAAAA'
-      friendly_name: 'cable_4'
-    cable_5:
-      command_on: 'JgAwAAABI5QPlA9JDpUPSQ5KD0kOSg5KDkoOSw5KDkoOlA+UD0kOlQ4AA+0AASRKDgANBQAAAAAAAAAA'
-      friendly_name: 'cable_5'
-    cable_6:
-      command_on: 'JgAwAAABI5QPSQ+UD5QOSg5KDkoOSg5KDkoOSBFKDkoOSg6UD0kPlA8ABDYAASRKDgANBQAAAAAAAAAA'
-      friendly_name: 'cable_6'
-    cable_7:
-      command_on: 'JgAwAAABJJQPlA+TD5QPSQ5KDkoOSg5KD0oOSg5KDkoOlQ5KDkoOlA8AA+0AASNKDwANBQAAAAAAAAAA'
-      friendly_name: 'cable_7'
-    cable_8:
-      command_on: 'JgAwAAABI5QPSg5KDkoOlA9JD0oOSg5KDkoOSg5KDkoOSg9KDkoOlA8ABMsAASNKDgANBQAAAAAAAAAA'
-      friendly_name: 'cable_8'
-    cable_9:
-      command_on: 'JgAwAAABI5UPkw9KDkoOlA9JDkoPSg5KDkoOSg5KDkoOlQ+TD5QPSQ4AA+4AASNKDgANBQAAAAAAAAAA'
-      friendly_name: 'cable_9'
-    cable_0:
-      command_on: 'JgAwAAABJJQPSQ5KDkoPSg5KDkoOSg5KDkoOSg5LDkoOSg5KDkoOSg4ABV4AASNKDgANBQAAAAAAAAAA'
-      friendly_name: 'cable_0'
-    cable_ok:
-      command_on: 'JgAwAAABJJQPlA9JD0kOSg6VD0kOSg5KDkoOSg5KD0oOSg6UD5QPkw8AA+0AASNKDwANBQAAAAAAAAAA'
-      friendly_name: 'cable_ok'
-    cable_hd:
-      command_on: 'JgAwAAABJJQPSQ5KDkoPkw9KD5MPSQ5KD0kPSg5KD0kPSQ+UDpQPSQ8ABDcAASNKDgANBQAAAAAAAAAA'
-      friendly_name: 'cable_hd'
+      value_template: "{{ is_state('remote.broadlink', 'on') }}"
+      turn_on:
+        service: remote.send_command
+        data:
+          entity_id: remote.broadlink
+          device: cable
+          command: cable_power
+      turn_off:
+        service: remote.send_command
+        data:
+          entity_id: remote.broadlink
+          device: cable
+          command: cable_power

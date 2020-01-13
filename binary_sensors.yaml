@@ -1,41 +1,29 @@
 - platform: workday
+  name: "Workday"
+  country: US
+  workdays: [mon,tue,wed,thu,fri]
+  excludes: [sat,sun,holiday]
+  add_holidays: ['2019-11-29','2019-12-23','2019-12-24','2019-12-26','2019-12-27','2019-12-28','2019-12-30','2019-12-31']
+- platform: workday
+  name: "Worknight"
+  days_offset: 1
   country: US
   workdays: [mon,tue,wed,thu,fri]
   excludes: [sat,sun,holiday]
   add_holidays: ['2019-11-29','2019-12-23','2019-12-24','2019-12-26','2019-12-27','2019-12-28','2019-12-30','2019-12-31']
 
-# - platform: mqtt
-  # state_topic: "bruh/entrysensor"
-  # name: "Entry PIR"
-  # value_template: '{{ value_json.motion }}'
-  # payload_on: "motion detected"
-  # payload_off: "standby"
-  # device_class: motion
-# - platform: mqtt
-  # state_topic: "bruh/officesensor"
-  # name: "Office PIR"
-  # value_template: '{{ value_json.motion }}'
-  # payload_on: "motion detected"
-  # payload_off: "standby"
-  # device_class: motion
-# # - platform: mqtt
-  # # state_topic: "bruh/bedroomsensor"
-  # # name: "Bedroom PIR"
-  # # value_template: '{{ value_json.motion }}'
-  # # payload_on: "motion_detected"
-  # # payload_off: "standby"
-  # # device_class: motion
-
-# - platform: template
-  # sensors:
-    # smoke_alarm:
-      # entity_id: sensor.leeo_smoke_detector
-      # device_class: smoke
-      # value_template: "{{ is_state('sensor.leeo_smoke_detector', 'detected') }}"
-    # co_alarm:
-      # entity_id: sensor.leeo_carbon_monoxide_detector
-      # device_class: safety
-      # value_template: "{{ is_state('sensor.leeo_carbon_monoxide_detector', 'detected') }}"
+- platform: template
+  sensors:
+    smoke_alarm:
+      entity_id: sensor.firefighter_smoke_detector
+      friendly_name: "Smoke Alarm"
+      device_class: smoke
+      value_template: "{{ is_state('sensor.firefighter_smoke_detector', 'detected') }}"
+    co_alarm:
+      entity_id: sensor.firefighter_carbon_monoxide_detector
+      friendly_name: "CO Alarm"
+      device_class: safety
+      value_template: "{{ is_state('sensor.firefighter_carbon_monoxide_detector', 'detected') }}"
 
 - platform: template
   sensors:
@@ -44,6 +32,7 @@
         - calendar.recycle
         - sensor.time
       friendly_name: "Recycle"
+      icon_template: mdi:recycle
       value_template: >
         {% set e = strptime(
              states.calendar.recycle.attributes.start_time,
@@ -54,6 +43,12 @@
         - calendar.trash
         - sensor.time
       friendly_name: "Trash"
+      icon_template: >-
+        {% if is_state("binary_sensor.trash", "on") %}
+          mdi:delete
+        {% else %}
+          mdi:delete-outline
+        {% endif %}
       value_template: >
         {% set e = strptime(
              states.calendar.trash.attributes.start_time,

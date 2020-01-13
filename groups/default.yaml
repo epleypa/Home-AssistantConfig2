@@ -1,81 +1,10 @@
-default_view:
-  view: yes
-  icon: mdi:home
-  entities:
-    - group.nest
-    - updater.updater
-    - group.family
-    - group.home_lights
-    - group.entertainment_center
-    - group.wmata
-    - sensor.since_last_boot
-    - sensor.ram_use
-    - sensor.cpu_use
-    - sensor.date
-    - sensor.time
-    - group.alarmclock
-    - group.sensor_travel
-
-living_room:
-   name: Living Room
-   view: yes
-   icon: mdi:sofa
+home_lights:
+   name: Home Lights
    entities:
-      - sensor.broadlink_sensor_temperature
-      - group.living_room_lights
-      - device_tracker.silicondust_hdhomerun_prime
-      - media_player.living_room_home
-      - media_player.roku_5s56ag426734
-      - media_player.plex_web_chrome
-      - device_tracker.chromecast_livingroom
-      - device_tracker.broadlink_rmpro
-      - group.entertainment_center
-      - group.lr_tv_source
-      - group.cable_source
-
-office:
-   name: Office
-   view: yes
-   icon: mdi:desktop-tower
-   entities:
-      - switch.neo
-      - switch.trinity
-      - group.office_lights
-      - device_tracker.brotherprinter
-      - group.computers
-      - device_tracker.FIOSrouter
-      - device_tracker.linksys22446
-
-# kitchen_dining_room:
-   # name: Kitchen/Dining Room
-   # view: yes
-   # icon: mdi:silverware
-   # entities:
-      # - group.sensor_dining_room
-      # - group.dining_room_lights
-
-sensors:
-  name: Sensors
-  view: yes
-  icon: mdi:led-on
-  entities:
-    - group.sensor_entry
-    - group.sensor_office
-    - group.sensor_bedroom
-    - group.sensor_bathroom
-    - group.sensor_kitchen
-    - group.sensor_dining_room
-    - group.sensor_led
-
-device_status:
-   name: Device Status
-   view: yes
-   icon: mdi:robot
-   entities:
-     - group.devices_peter
-     - group.devices_kelley
-     - group.computers
-     - group.devices_other
+      - group.upstairs_lights
+      - group.downstairs_lights
+      - group.patio_lights
+      - group.holiday_lights
 
 automations:
    name: Automations
@@ -112,16 +41,6 @@ alarmclock_settings:
     - input_number.alarmhour
     - input_number.alarmminutes
     - input_boolean.alarmweekday
-    
-home_lights:
-   name: Home Lights
-   entities:
-      - group.bedroom_lights
-      - group.living_room_lights
-      - group.office_lights
-      - group.dining_room_lights
-#      - group.patio_lights
-      - group.kitchen_lights
 
 wmata:
   name: WMATA Info
@@ -130,10 +49,3 @@ wmata:
     - sensor.wmata_gr_so
     - script.wmata_gr_no
     - script.wmata_gr_so
-
-nest:
-  name: Nest
-  entities:
-    - climate.upstairs
-    - camera.front_door
-    - camera.backyard

@@ -2,9 +2,12 @@ group.all_automations:
   hidden: false
 group.all_scripts:
   hidden: false
+
+media_player.media_player_name:
+  device_class: tv
 group.lr_tv_power:
   friendly_name: 'TV'
-
+  device_class: tv
 switch.lr_tv_hdmi1:
   friendly_name: 'hdmi1'
 switch.lr_tv_hdmi2:
@@ -58,3 +61,22 @@ script.wmata_gr_so:
   friendly_name: Next Green Line Southbound
   initial: off
   icon: mdi:speaker-wireless
+
+switch.christmas_tree:
+  icon: mdi:pine-tree
+switch.patio_party_lights:
+  icon: mdi:snowflake
+
+binary_sensor.front_door_contact:
+  device_class: door
+binary_sensor.back_door_contact:
+  device_class: door
+binary_sensor.bedroom_north_window_contact:
+  device_class: window
+binary_sensor.bedroom_south_window_contact:
+  device_class: window
+binary_sensor.office_north_window_contact:
+  device_class: window
+
+binary_sensor.home_away:
+  icon: mdi:shield-home

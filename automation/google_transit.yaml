@@ -46,7 +46,7 @@
       data_template:
         entity_id: input_select.origin
         option: '
-          {% if now().hour|int < 12 %}Tysons
+          {% if now().hour|int < 12 %}Peter Client
           {% else %}Home
           {% endif %}'
     - service: input_select.select_option
@@ -54,7 +54,7 @@
         entity_id: input_select.destination
         option: '
           {% if now().hour|int < 12 %}Home
-          {% else %}Tysons
+          {% else %}Peter Client
           {% endif %}'
     - service: input_boolean.turn_on
       entity_id: input_boolean.update_route

@@ -1,0 +1,37 @@
+upstairs_lights:
+   name: Upstairs Lights
+   entities:
+      - group.office_lights
+      - group.bedroom_lights
+
+office:
+   name: Office
+   view: yes
+   icon: mdi:desktop-tower
+   entities:
+      - switch.neo
+      - switch.trinity
+      - group.office_lights
+      - device_tracker.brotherprinter
+      - group.computers
+      - device_tracker.FIOSrouter
+      - device_tracker.linksys22446
+
+office_lights:
+   name: Office Lights
+   entities:
+      - light.office_light
+      - light.office_overhead_lights
+      
+bedroom_table_lights:
+   name: Bedroom Table Lights
+   entities:
+      - switch.bedroom_kelley_light
+      - switch.bedroom_peter_light
+      
+bedroom_lights:
+   name: Bedroom Lights
+   entities:
+      - group.bedroom_table_lights
+      - light.bedroom_overhead_light
+      - switch.bedroom_closet_lights

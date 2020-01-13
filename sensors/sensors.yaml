@@ -85,3 +85,6 @@
         value_template: "{{ state_attr('switch.dryer','current_power_w') | default('0') }}"
         unit_of_measurement: "W"
         icon_template: mdi:tumble-dryer
+
+- platform: aftership
+  api_key: !secret aftership_api
