@@ -3,7 +3,7 @@ group.all_automations:
 group.all_scripts:
   hidden: false
 
-media_player.media_player_name:
+media_player.living_room_tv:
   device_class: tv
 group.lr_tv_power:
   friendly_name: 'TV'

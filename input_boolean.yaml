@@ -8,3 +8,11 @@ update_route:
   icon: mdi:transit-transfer
   initial: false
 
+tv_power:
+  name: TV Power
+  
+cable_power:
+  name: Cable Power
+  
+tv_mute:
+  name: TV Mute

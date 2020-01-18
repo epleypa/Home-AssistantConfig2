@@ -77,3 +77,4 @@ shell/*
 core
 automation_archive
 google_service_account.json
+.vscode/*

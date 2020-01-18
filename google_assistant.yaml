@@ -70,5 +70,5 @@ entity_config:
     expose: false
   switch.dryer:
     expose: false
-  media_player.media_player_name:
+  media_player.living_room_tv:
     expose: true

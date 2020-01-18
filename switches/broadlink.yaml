@@ -97,46 +97,59 @@
 - platform: template
   switches:
     tv_power:
-      value_template: "{{ is_state('remote.broadlink', 'on') }}"
+      value_template: "{{ is_state('input_boolean.tv_power', 'on') }}"
       turn_on:
-        service: remote.send_command
-        data:
-          entity_id: remote.broadlink
-          device: television
-          command: turn_on
-          num_repeats: 3
+        - service: remote.send_command
+          data:
+            entity_id: remote.broadlink
+            device: television
+            command: turn_on
+            num_repeats: 3
+        - service: input_boolean.turn_on
+          entity_id: input_boolean.tv_power
       turn_off:
-        service: remote.send_command
-        data:
-          entity_id: remote.broadlink
-          device: television
-          command: turn_off
-          num_repeats: 3
+        - service: remote.send_command
+          data:
+            entity_id: remote.broadlink
+            device: television
+            command: turn_off
+            num_repeats: 3
+        - service: input_boolean.turn_off
+          entity_id: input_boolean.tv_power
     tv_mute:
-      value_template: "{{ is_state('remote.broadlink', 'on') }}"
+      value_template: "{{ is_state('input_boolean.tv_mute', 'on') }}"
       turn_on:
-        service: remote.send_command
-        data:
-          entity_id: remote.broadlink
-          device: television
-          command: mute
+        - service: remote.send_command
+          data:
+            entity_id: remote.broadlink
+            device: television
+            command: mute
+        - service: input_boolean.turn_on
+          entity_id: input_boolean.tv_mute
       turn_off:
-        service: remote.send_command
-        data:
-          entity_id: remote.broadlink
-          device: television
-          command: mute
+        - service: remote.send_command
+          data:
+            entity_id: remote.broadlink
+            device: television
+            command: mute
+        - service: input_boolean.turn_off
+          entity_id: input_boolean.tv_mute
     cable_power:
-      value_template: "{{ is_state('remote.broadlink', 'on') }}"
+      value_template: "{{ is_state('input_boolean.cable_power', 'on') }}"
       turn_on:
-        service: remote.send_command
-        data:
-          entity_id: remote.broadlink
-          device: cable
-          command: cable_power
+        - service: remote.send_command
+          data:
+            entity_id: remote.broadlink
+            device: cable
+            command: cable_power
+        - service: input_boolean.turn_on
+          entity_id: input_boolean.cable_power
       turn_off:
-        service: remote.send_command
-        data:
-          entity_id: remote.broadlink
-          device: cable
-          command: cable_power
+        - service: remote.send_command
+          data:
+            entity_id: remote.broadlink
+            device: cable
+            command: cable_power
+
+        - service: input_boolean.turn_off
+          entity_id: input_boolean.cable_power

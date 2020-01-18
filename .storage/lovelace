@@ -338,16 +338,26 @@
                     "cards": [
                         {
                             "entities": [
-                                "group.lr_tv_power",
-                                "switch.cable_power",
-                                "switch.lr_tv_mute",
-                                "input_select.living_room_tv_source",
-                                "input_select.cable_channel"
+                                {
+                                    "entity": "switch.tv_power"
+                                },
+                                {
+                                    "entity": "switch.cable_power"
+                                },
+                                {
+                                    "entity": "switch.lr_tv_mute"
+                                },
+                                {
+                                    "entity": "input_select.living_room_tv_source"
+                                },
+                                {
+                                    "entity": "input_select.cable_channel"
+                                }
                             ],
                             "type": "entities"
                         },
                         {
-                            "entity": "media_player.bedroom_tv",
+                            "entity": "media_player.bedroom_chromecast",
                             "type": "media-control"
                         },
                         {
@@ -368,6 +378,10 @@
                         },
                         {
                             "entity": "media_player.office_speaker",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.living_room_chromecast",
                             "type": "media-control"
                         }
                     ],
@@ -548,34 +562,6 @@
                 },
                 {
                     "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "group.all_automations"
-                                },
-                                {
-                                    "entity": "group.all_devices"
-                                },
-                                {
-                                    "entity": "group.all_fans"
-                                },
-                                {
-                                    "entity": "group.all_lights"
-                                },
-                                {
-                                    "entity": "group.all_remotes"
-                                },
-                                {
-                                    "entity": "group.all_scripts"
-                                },
-                                {
-                                    "entity": "group.all_switches"
-                                }
-                            ],
-                            "show_header_toggle": true,
-                            "title": "All Groups",
-                            "type": "entities"
-                        },
                         {
                             "entities": [
                                 "sensor.wmata_gr_no",
