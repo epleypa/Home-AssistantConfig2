@@ -4,7 +4,7 @@
       entity_id: binary_sensor.updater
       to: 'on'
   action:
-    - service: notify.pushbullet
+    - service: notify.telegram_peter
       data:
         title: 'New Home Assistant Release'
         message: "Home Assistant {{ state_attr('binary_sensor.updater','newest_version') }} is now available"
@@ -44,8 +44,8 @@
         minutes: 0
         seconds: 10
   action:
-    - service: notify.pushbullet
-      data:
+    - service: notify.telegram_peter
+      data_template:
         title: 'Master Alarm'
         message: '{% for state in states.binary_sensor -%}
             {% if "leak" in state.name | lower and state.state == "on" %}{{ state.name | lower }} is wet
@@ -103,7 +103,7 @@
           entity_id: sensor.uptime
           above: 2
   action:
-    - service: notify.pushbullet
+    - service: notify.telegram_peter
       data_template:
         title: 'Home Info'
         message: "

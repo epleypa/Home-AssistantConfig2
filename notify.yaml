@@ -5,3 +5,7 @@
 - name: error_logfile
   platform: file
   filename: error_log.log
+
+- name: telegram_peter
+  platform: telegram
+  chat_id: !secret telegram_id_peter

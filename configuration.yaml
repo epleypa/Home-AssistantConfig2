@@ -37,10 +37,6 @@ tts:
   platform: google_translate
   language: 'en-us'
   service_name: google_say
-
-# mqtt:
-  # client_id: 8315
-  # password: !secret http_password
   
 #media players
 media_player: !include media_players.yaml
@@ -49,29 +45,26 @@ media_player: !include media_players.yaml
 device_tracker: !include device_trackers.yaml
 
 recorder:
-  exclude:
-    domains:
-    entities:
-      - switch.cable_hd
-      - switch.cable_1
-      - switch.cable_2
-      - switch.cable_3
-      - switch.cable_4
-      - switch.cable_5
-      - switch.cable_6
-      - switch.cable_7
-      - switch.cable_8
-      - switch.cable_9
-      - switch.cable_0
-      - switch.cable_ok
+  # exclude:
+  #   domains:
+  #   entities:
+  #     - switch.cable_hd
+  #     - switch.cable_1
+  #     - switch.cable_2
+  #     - switch.cable_3
+  #     - switch.cable_4
+  #     - switch.cable_5
+  #     - switch.cable_6
+  #     - switch.cable_7
+  #     - switch.cable_8
+  #     - switch.cable_9
+  #     - switch.cable_0
+  #     - switch.cable_ok
 
 logger:
   default: warning
   logs:
     camect: error
-    
-ifttt:
-  key: !secret ifttt_key
 
 notify: !include notify.yaml
 automation: !include automations.yaml
@@ -91,6 +84,30 @@ remote:
     host: 192.168.1.42
     mac: '78:0F:77:B9:62:85'
 
+climate:
+  platform: nest
+
+fan:
+  - platform: template
+    fans:
+      hvac_fan:
+        friendly_name: "HVAC Fan"
+        value_template: "{{ states('binary_sensor.upstairs_thermostat_fan') }}"
+        turn_on:
+          service: climate.set_fan_mode
+          data:
+            entity_id: climate.upstairs
+            fan_mode: 'on'
+        turn_off:
+          service: climate.set_fan_mode
+          data:
+            entity_id: climate.upstairs
+            fan_mode: 'off'
+        speeds:
+
+#vendor-specific integrations
+ifttt:
+  key: !secret ifttt_key
 google:
   client_id: !secret google_oath_client
   client_secret: !secret google_oath_secret
@@ -115,35 +132,22 @@ nest:
       - security_state
       - humidity
       - temperature
-climate:
-  platform: nest
-
-fan:
-  - platform: template
-    fans:
-      hvac_fan:
-        friendly_name: "HVAC Fan"
-        value_template: "{{ states('binary_sensor.upstairs_thermostat_fan') }}"
-        turn_on:
-          service: climate.set_fan_mode
-          data:
-            entity_id: climate.upstairs
-            fan_mode: 'on'
-        turn_off:
-          service: climate.set_fan_mode
-          data:
-            entity_id: climate.upstairs
-            fan_mode: 'off'
-        speeds:
     
 totalconnect:
   username: !secret tc_user
   password: !secret tc_password
 #  code: !secret tc_usercode
 
-camect:
+camect: #custom component
   host: !secret camect_host
   port: 443
   username: !secret camect_un
   password: !secret camect_pw
   camera_ids: 5634535cb67205fc016d,e2229460a6d9a626be20,5a5056a4b910eb39318d
+
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_api
+    allowed_chat_ids: 
+      - !secret telegram_id_peter
+      - !secret telegram_id_kelley
