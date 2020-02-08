@@ -15,31 +15,31 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.kitchen_leak_sensor
-      to: 'on'        
+      to: 'on'
       for:
         minutes: 1
         seconds: 0
     - platform: state
       entity_id: binary_sensor.master_bath_leak_sensor
-      to: 'on'        
+      to: 'on'
       for:
         minutes: 1
         seconds: 0
     - platform: state
       entity_id: binary_sensor.half_bath_leak_sensor
-      to: 'on'        
+      to: 'on'
       for:
         minutes: 1
         seconds: 0
     - platform: state
       entity_id: binary_sensor.smoke_alarm
-      to: 'on'        
+      to: 'on'
       for:
         minutes: 0
         seconds: 10
     - platform: state
       entity_id: binary_sensor.co_alarm
-      to: 'on'        
+      to: 'on'
       for:
         minutes: 0
         seconds: 10
@@ -71,19 +71,19 @@
             {% if "alarm" in state.name | lower and state.state == "on" %}homeassistant.turn_on
             {% endif %}
         {%- endfor %}'
-      entity_id: group.home_lights        
+      entity_id: group.home_lights
 
 - alias: "Information Alert"
-  trigger:        
+  trigger:
     - platform: numeric_state
       entity_id: sensor.washer_power
-      below: 5        
+      below: 5
       for:
         minutes: 0
         seconds: 1
     - platform: numeric_state
       entity_id: sensor.dryer_power
-      below: 5        
+      below: 5
       for:
         minutes: 0
         seconds: 1

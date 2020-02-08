@@ -37,7 +37,7 @@ tts:
   platform: google_translate
   language: 'en-us'
   service_name: google_say
-  
+
 #media players
 media_player: !include media_players.yaml
 
@@ -132,7 +132,7 @@ nest:
       - security_state
       - humidity
       - temperature
-    
+
 totalconnect:
   username: !secret tc_user
   password: !secret tc_password
@@ -148,6 +148,6 @@ camect: #custom component
 telegram_bot:
   - platform: polling
     api_key: !secret telegram_api
-    allowed_chat_ids: 
+    allowed_chat_ids:
       - !secret telegram_id_peter
       - !secret telegram_id_kelley

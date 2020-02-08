@@ -7,19 +7,19 @@
       entity_id: light.entry_led, light.office_led, light.bedroom_led, light.office_light, light.storage_light
       data:
         rgb_color: [255,0,0]
-    - delay: 
+    - delay:
         milliseconds: 500
     - service: light.turn_on
       entity_id: light.entry_led, light.office_led, light.bedroom_led, light.office_light, light.storage_light
       data:
         rgb_color: [0,255,0]
-    - delay: 
+    - delay:
         milliseconds: 500
     - service: light.turn_on
       entity_id: light.entry_led, light.office_led, light.bedroom_led, light.office_light, light.storage_light
       data:
         rgb_color: [0,0,255]
-    - delay: 
+    - delay:
         milliseconds: 500
     - service: light.turn_on
       entity_id: light.office_light, light.storage_light
@@ -29,7 +29,7 @@
       entity_id: light.entry_led, light.office_led, light.bedroom_led
       data:
         rgb_color: [255,255,255]
-    - delay: 
+    - delay:
         milliseconds: 500
     - service: light.turn_off
       entity_id: light.entry_led, light.office_led, light.bedroom_led, light.office_light, light.storage_light
@@ -64,7 +64,7 @@
         minutes: 20
   action:
     - service: homeassistant.turn_off
-      data_template: 
+      data_template:
         entity_id: >
           {% if trigger.entity_id == 'binary_sensor.bedroom_motion' %}
             group.bedroom_lights
