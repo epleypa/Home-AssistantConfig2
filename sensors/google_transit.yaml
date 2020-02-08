@@ -5,26 +5,26 @@
         {% if is_state("input_select.destination", "Peter Tysons Office") -%}
           {{ state_attr("zone.peter_tysons_office", "latitude") }},{{ state_attr("zone.peter_tysons_office", "longitude") }}
         {% elif is_state("input_select.destination", "Peter Client") -%}
-          {{ state_attr("zone.peter_tysons_office", "latitude") }},{{ state_attr("zone.peter_client", "longitude") }}
+          {{ state_attr("zone.peter_client", "latitude") }},{{ state_attr("zone.peter_client", "longitude") }}
         {% elif is_state("input_select.destination", "Home") -%}
           {{ state_attr("zone.home", "latitude") }},{{ state_attr("zone.home", "longitude") }}
         {% elif is_state("input_select.destination", "Gym Dupont") -%}
           {{ state_attr("zone.gym_dupont", "latitude") }},{{ state_attr("zone.gym_dupont", "longitude") }}
         {% elif is_state("input_select.destination", "Gym 14th St") -%}
-          {{ state_attr("zone.gym_dupont", "latitude") }},{{ state_attr("zone.gym_14th", "longitude") }}
+          {{ state_attr("zone.gym_14th", "latitude") }},{{ state_attr("zone.gym_14th", "longitude") }}
         {%- endif %}'
     via_origin:
       value_template: '
         {% if is_state("input_select.origin", "Peter Tysons Office") -%}
           {{ state_attr("zone.peter_tysons_office", "latitude") }},{{ state_attr("zone.peter_tysons_office", "longitude") }}
         {% elif is_state("input_select.destination", "Peter Client") -%}
-          {{ state_attr("zone.peter_tysons_office", "latitude") }},{{ state_attr("zone.peter_client", "longitude") }}
+          {{ state_attr("zone.peter_client", "latitude") }},{{ state_attr("zone.peter_client", "longitude") }}
         {% elif is_state("input_select.origin", "Home") -%}
           {{ state_attr("zone.home", "latitude") }},{{ state_attr("zone.home", "longitude") }}
         {% elif is_state("input_select.origin", "Gym Dupont") -%}
           {{ state_attr("zone.gym_dupont", "latitude") }},{{ state_attr("zone.gym_dupont", "longitude") }}
         {% elif is_state("input_select.destination", "Gym 14th St") -%}
-          {{ state_attr("zone.gym_dupont", "latitude") }},{{ state_attr("zone.gym_14th", "longitude") }}
+          {{ state_attr("zone.gym_14th", "latitude") }},{{ state_attr("zone.gym_14th", "longitude") }}
         {%- endif %}'
 
 - platform: google_travel_time

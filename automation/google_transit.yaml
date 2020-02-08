@@ -58,8 +58,8 @@
           {% endif %}'
     - service: input_boolean.turn_on
       entity_id: input_boolean.update_route
-    - delay: '00:31'
-    - service: input_boolean.turn_on
+    - delay: '00:45'
+    - service: input_boolean.turn_off
       entity_id: input_boolean.update_route
         
 - alias: Update Commute

@@ -8,7 +8,6 @@ home_lights:
 
 automations:
    name: Automations
-   view: yes
    icon: mdi:playlist-check
    entities:
      - group.all_automations
@@ -16,7 +15,6 @@ automations:
 
 weather:
   name: Weather
-  view: yes
   icon: mdi:thermometer
   entities:
     - group.darksky
@@ -35,7 +33,6 @@ alarmclock:
 alarmclock_settings:
   name: Settings
   icon: mdi:settings
-  control: hidden
   entities: 
     - automation.wake_up
     - input_number.alarmhour

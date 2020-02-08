@@ -234,18 +234,9 @@
                                 {
                                     "cards": [
                                         {
-                                            "entity": "light.storage_light",
+                                            "entity": "light.bedroom_overhead_light",
                                             "type": "light"
                                         },
-                                        {
-                                            "entity": "light.Abc",
-                                            "type": "light"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "cards": [
                                         {
                                             "entity": "light.office_overhead_lights",
                                             "type": "light"
@@ -312,6 +303,21 @@
                                         },
                                         {
                                             "entity": "switch.bedroom_humidifier",
+                                            "type": "entity-button"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "cards": [
+                                        {
+                                            "entity": "group.upstairs_lights",
+                                            "icon": "mdi:stairs-up",
+                                            "type": "entity-button"
+                                        },
+                                        {
+                                            "entity": "group.downstairs_lights",
+                                            "icon": "mdi:stairs-down",
                                             "type": "entity-button"
                                         }
                                     ],
@@ -393,28 +399,31 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "device_tracker.verizonfiosg1100"
+                                    "entity": "device_tracker.verizon_g1100"
                                 },
                                 {
-                                    "entity": "device_tracker.linksys22446"
+                                    "entity": "device_tracker.uap"
                                 },
                                 {
                                     "entity": "device_tracker.neo"
                                 },
                                 {
-                                    "entity": "device_tracker.surface"
+                                    "entity": "device_tracker.defiant"
                                 },
                                 {
                                     "entity": "device_tracker.trinity"
                                 },
                                 {
-                                    "entity": "device_tracker.peter_computer_work"
-                                },
-                                {
-                                    "entity": "device_tracker.kelley_computer_work"
-                                },
-                                {
                                     "entity": "device_tracker.brother_printer"
+                                },
+                                {
+                                    "entity": "device_tracker.uap_ac_pro"
+                                },
+                                {
+                                    "entity": "device_tracker.usg"
+                                },
+                                {
+                                    "entity": "device_tracker.verizon_mi424wr"
                                 }
                             ],
                             "type": "glance"
@@ -546,6 +555,8 @@
                                     "name": "Dryer"
                                 }
                             ],
+                            "hours_to_show": 12,
+                            "refresh_interval": 0,
                             "title": "Laundry",
                             "type": "history-graph"
                         },

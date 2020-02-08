@@ -1,6 +1,5 @@
 sensors:
   name: Sensors
-  view: yes
   icon: mdi:led-on
   entities:
     - group.sensor_entry

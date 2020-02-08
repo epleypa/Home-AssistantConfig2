@@ -18,34 +18,41 @@ wmata_gr_so:
       entity_id: media_player.living_room_home
       message: the next metro train heading south from u street is in {{ states('sensor.wmata_dc')
         }} minutes
+
 chromecast:
   sequence:
   - service: switch.turn_on
-    entity_id: group.lr_tv_power
+    entity_id: switch.tv_power
   - service: switch.turn_on
     entity_id: switch.neo
   - delay: 00:00:10
   - service: notify.pushbullet
     data:
       message: Switching to Chromecast
-  - service: switch.turn_on
-    entity_id: switch.lr_tv_hdmi4
+  - service: remote.send_command
+    data:
+      entity_id: remote.broadlink
+      device: television
+      command: hdmi4
 roku:
   sequence:
   - service: switch.turn_on
-    entity_id: group.lr_tv_power
+    entity_id: switch.tv_power
   - service: switch.turn_on
     entity_id: switch.neo
   - delay: 00:00:10
   - service: notify.pushbullet
     data:
       message: Switching to Roku
-  - service: switch.turn_on
-    entity_id: switch.lr_tv_hdmi3
+  - service: remote.send_command
+    data:
+      entity_id: remote.broadlink
+      device: television
+      command: hdmi3
 plex:
   sequence:
   - service: switch.turn_on
-    entity_id: group.lr_tv_power
+    entity_id: switch.tv_power
   - service: switch.turn_on
     entity_id: switch.neo
   - delay: 00:00:10
@@ -56,20 +63,27 @@ plex:
     entity_id: media_player.roku_streaming_stick
     data:
       source: Plex
-  - service: switch.turn_on
-    entity_id: switch.lr_tv_hdmi3
+  - service: remote.send_command
+    data:
+      entity_id: remote.broadlink
+      device: television
+      command: hdmi3
 cable:
   sequence:
   - service: switch.turn_on
-    entity_id: group.lr_tv_power
+    entity_id: switch.tv_power
   - service: switch.turn_on
     entity_id: switch.cable_power
   - delay: 00:00:10
   - service: notify.pushbullet
     data:
       message: Switching to Cable
-  - service: switch.turn_on
-    entity_id: switch.lr_tv_cm2
+  - service: remote.send_command
+    data:
+      entity_id: remote.broadlink
+      device: television
+      command: cm2
+
 arm_away:
   alias: Arm Away
   sequence:

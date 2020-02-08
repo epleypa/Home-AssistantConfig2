@@ -16,7 +16,6 @@ living_room_lights:
 
 living_room:
    name: Living Room
-   view: yes
    icon: mdi:sofa
    entities:
       - sensor.broadlink_sensor_temperature

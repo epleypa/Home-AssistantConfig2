@@ -6,7 +6,6 @@ upstairs_lights:
 
 office:
    name: Office
-   view: yes
    icon: mdi:desktop-tower
    entities:
       - switch.neo
