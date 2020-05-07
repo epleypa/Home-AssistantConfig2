@@ -67,15 +67,15 @@ switch.christmas_tree:
 switch.patio_party_lights:
   icon: mdi:snowflake
 
-binary_sensor.front_door_contact:
+binary_sensor.front_door:
   device_class: door
-binary_sensor.back_door_contact:
+binary_sensor.back_door:
   device_class: door
-binary_sensor.bedroom_north_window_contact:
+binary_sensor.bedroom_north_window:
   device_class: window
-binary_sensor.bedroom_south_window_contact:
+binary_sensor.bedroom_south_window:
   device_class: window
-binary_sensor.office_north_window_contact:
+binary_sensor.office_north_window:
   device_class: window
 
 binary_sensor.home_away:

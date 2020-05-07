@@ -1,20 +1,17 @@
 {
     "data": {
-        "persons": [
+        "items": [
             {
                 "device_trackers": [
-                    "device_tracker.peter_phone",
-                    "device_tracker.peters_iphone",
-                    "device_tracker.tile_d97a13d00b4045c0"
+                    "device_tracker.tile_d97a13d00b4045c0",
+                    "device_tracker.sm_g981u"
                 ],
                 "id": "6c48bdcdd7c4483a98b763567743b7a5",
                 "name": "Peter",
                 "user_id": "4dea6e58fe1140c7a24ef3bf03a9e584"
             },
             {
-                "device_trackers": [
-                    "device_tracker.kelley_phone"
-                ],
+                "device_trackers": [],
                 "id": "abd93aa045b14dd2a642a34c40bec196",
                 "name": "Kelley",
                 "user_id": null
@@ -22,5 +19,5 @@
         ]
     },
     "key": "person",
-    "version": 1
+    "version": 2
 }

@@ -1,16 +1,14 @@
 {
     "data": {
         "config": {
-            "resources": [
-                {
-                    "type": "module",
-                    "url": "/community_plugin/aftership-card/aftership-card.js"
-                }
-            ],
             "title": "Home",
             "views": [
                 {
                     "cards": [
+                        {
+                            "entity": "weather.kdca_daynight",
+                            "type": "weather-forecast"
+                        },
                         {
                             "aspect_ratio": "80%",
                             "type": "iframe",
@@ -41,18 +39,6 @@
                         },
                         {
                             "entities": [
-                                "group.bedroom_lights",
-                                "group.living_room_lights",
-                                "group.office_lights",
-                                "group.dining_room_lights",
-                                "group.patio_lights",
-                                "group.kitchen_lights"
-                            ],
-                            "title": "Home Lights",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
                                 {
                                     "entity": "binary_sensor.trash",
                                     "name": "Trash Day"
@@ -80,9 +66,67 @@
                             "type": "entities"
                         },
                         {
-                            "entity": "sensor.aftership",
-                            "title": "Packages",
-                            "type": "custom:aftership-card"
+                            "cards": [
+                                {
+                                    "cards": [
+                                        {
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.us_coronavirus_confirmed",
+                                                    "icon": "mdi:emoticon-neutral-outline",
+                                                    "name": "Confirmed"
+                                                },
+                                                {
+                                                    "entity": "sensor.us_coronavirus_current",
+                                                    "icon": "mdi:emoticon-frown-outline",
+                                                    "name": "Current"
+                                                },
+                                                {
+                                                    "entity": "sensor.us_coronavirus_recovered",
+                                                    "icon": "mdi:emoticon-happy-outline",
+                                                    "name": "Recovered"
+                                                },
+                                                {
+                                                    "entity": "sensor.us_coronavirus_deaths",
+                                                    "icon": "mdi:emoticon-dead-outline",
+                                                    "name": "Deaths"
+                                                }
+                                            ],
+                                            "type": "glance"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.us_coronavirus_current",
+                                            "hours_to_show": 90,
+                                            "name": "US Current"
+                                        },
+                                        {
+                                            "entity": "sensor.us_coronavirus_deaths",
+                                            "hours_to_show": 90,
+                                            "name": "US Deaths"
+                                        }
+                                    ],
+                                    "type": "history-graph"
+                                }
+                            ],
+                            "title": "COVID-19 United States",
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "entities": [
+                                "group.bedroom_lights",
+                                "group.living_room_lights",
+                                "group.office_lights",
+                                "group.dining_room_lights",
+                                "group.patio_lights",
+                                "group.kitchen_lights"
+                            ],
+                            "title": "Home Lights",
+                            "type": "entities"
                         }
                     ],
                     "title": "Home"
@@ -94,31 +138,37 @@
                             "type": "alarm-panel"
                         },
                         {
-                            "columns": 3,
+                            "columns": 4,
                             "entities": [
                                 {
-                                    "entity": "binary_sensor.front_door_contact"
+                                    "entity": "binary_sensor.front_door"
                                 },
                                 {
-                                    "entity": "binary_sensor.back_door_contact"
+                                    "entity": "binary_sensor.back_door"
                                 },
                                 {
-                                    "entity": "binary_sensor.bedroom_north_window_contact"
+                                    "entity": "binary_sensor.bedroom_north_window"
                                 },
                                 {
-                                    "entity": "binary_sensor.bedroom_south_window_contact"
+                                    "entity": "binary_sensor.bedroom_south_window"
                                 },
                                 {
-                                    "entity": "binary_sensor.hall_attic_door_contact"
+                                    "entity": "binary_sensor.office_north_window"
                                 },
                                 {
-                                    "entity": "binary_sensor.bedroom_attic_door_contact"
+                                    "entity": "binary_sensor.hall_attic_door"
                                 },
                                 {
-                                    "entity": "binary_sensor.office_north_window_contact"
+                                    "entity": "binary_sensor.bedroom_attic_door"
                                 },
                                 {
                                     "entity": "binary_sensor.mailbox_contact"
+                                },
+                                {
+                                    "entity": "binary_sensor.main_floor_motion_sensor"
+                                },
+                                {
+                                    "entity": "binary_sensor.upstairs_motion_sensor"
                                 }
                             ],
                             "title": "Sensors",
@@ -133,13 +183,22 @@
                                     "entity": "binary_sensor.co_alarm"
                                 },
                                 {
-                                    "entity": "binary_sensor.half_bath_leak_sensor_water"
+                                    "entity": "binary_sensor.half_bath_sink_leak_sensor_water"
                                 },
                                 {
                                     "entity": "binary_sensor.kitchen_leak_sensor_water"
                                 },
                                 {
-                                    "entity": "binary_sensor.master_bath_leak_sensor_water"
+                                    "entity": "binary_sensor.master_bath_sink_leak_sensor_water"
+                                },
+                                {
+                                    "entity": "binary_sensor.laundry_water_leak_sensor_water"
+                                },
+                                {
+                                    "entity": "binary_sensor.half_bath_toliet_leak_sensor_water"
+                                },
+                                {
+                                    "entity": "binary_sensor.master_bath_toliet_leak_sensor_water"
                                 }
                             ],
                             "title": "Alerts",
@@ -189,12 +248,17 @@
                                 {
                                     "entity": "binary_sensor.backyard_camera_online",
                                     "icon": "mdi:power"
-                                }
+                                },
+                                "switch.patio_wall_lights"
                             ],
                             "show_info": true,
                             "tap_action": "dialog",
                             "title": "Backyard",
                             "type": "picture-glance"
+                        },
+                        {
+                            "entity": "camera",
+                            "type": "custom:camect-card"
                         }
                     ],
                     "icon": "mdi:shield",
@@ -222,6 +286,7 @@
                                     "cards": [
                                         {
                                             "entity": "light.tv_backlight",
+                                            "icon": "mdi:television-ambient-light",
                                             "type": "light"
                                         },
                                         {
@@ -261,6 +326,7 @@
                                         },
                                         {
                                             "entity": "switch.patio_wall_lights",
+                                            "icon": "mdi:coach-lamp",
                                             "type": "entity-button"
                                         }
                                     ],
@@ -282,6 +348,7 @@
                                         },
                                         {
                                             "entity": "switch.patio_party_lights",
+                                            "icon": "mdi:string-lights",
                                             "type": "entity-button"
                                         }
                                     ],
@@ -291,10 +358,12 @@
                                     "cards": [
                                         {
                                             "entity": "switch.bedroom_kelley_light",
+                                            "icon": "mdi:lamp",
                                             "type": "entity-button"
                                         },
                                         {
                                             "entity": "switch.bedroom_peter_light",
+                                            "icon": "mdi:lamp",
                                             "type": "entity-button"
                                         },
                                         {
@@ -303,6 +372,7 @@
                                         },
                                         {
                                             "entity": "switch.bedroom_humidifier",
+                                            "icon": "mdi:air-humidifier",
                                             "type": "entity-button"
                                         }
                                     ],
@@ -327,6 +397,7 @@
                                     "cards": [
                                         {
                                             "entity": "group.home_lights",
+                                            "icon": "mdi:home-lightbulb",
                                             "type": "entity-button"
                                         }
                                     ],
@@ -345,13 +416,13 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.tv_power"
+                                    "entity": "input_boolean.tv_power"
                                 },
                                 {
                                     "entity": "switch.cable_power"
                                 },
                                 {
-                                    "entity": "switch.lr_tv_mute"
+                                    "entity": "input_boolean.tv_mute"
                                 },
                                 {
                                     "entity": "input_select.living_room_tv_source"
@@ -360,6 +431,7 @@
                                     "entity": "input_select.cable_channel"
                                 }
                             ],
+                            "show_header_toggle": false,
                             "type": "entities"
                         },
                         {
@@ -395,7 +467,21 @@
                     "title": "Living Room"
                 },
                 {
+                    "badges": [],
                     "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "entity": "switch.neo",
+                                    "type": "entity-button"
+                                },
+                                {
+                                    "entity": "switch.trinity",
+                                    "type": "entity-button"
+                                }
+                            ],
+                            "type": "horizontal-stack"
+                        },
                         {
                             "entities": [
                                 {
@@ -431,36 +517,106 @@
                         {
                             "cards": [
                                 {
-                                    "entity": "switch.neo",
-                                    "type": "entity-button"
+                                    "cards": [
+                                        {
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.brother_mfc_j880dw"
+                                                },
+                                                {
+                                                    "entity": "sensor.brother_mfc_j880dw_uptime",
+                                                    "name": "Uptime"
+                                                }
+                                            ],
+                                            "type": "glance"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
                                 },
                                 {
-                                    "entity": "switch.trinity",
-                                    "type": "entity-button"
+                                    "cards": [
+                                        {
+                                            "entity": "sensor.brother_mfc_j880dw_bk",
+                                            "max": 100,
+                                            "min": 0,
+                                            "name": "Black",
+                                            "severity": {
+                                                "green": 40,
+                                                "red": 0,
+                                                "yellow": 10
+                                            },
+                                            "type": "gauge"
+                                        },
+                                        {
+                                            "entity": "sensor.brother_mfc_j880dw_c",
+                                            "max": 100,
+                                            "min": 0,
+                                            "name": "Cyan",
+                                            "severity": {
+                                                "green": 40,
+                                                "red": 0,
+                                                "yellow": 10
+                                            },
+                                            "type": "gauge"
+                                        },
+                                        {
+                                            "entity": "sensor.brother_mfc_j880dw_m",
+                                            "max": 100,
+                                            "min": 0,
+                                            "name": "Magenta",
+                                            "severity": {
+                                                "green": 40,
+                                                "red": 0,
+                                                "yellow": 10
+                                            },
+                                            "type": "gauge"
+                                        },
+                                        {
+                                            "entity": "sensor.brother_mfc_j880dw_y",
+                                            "max": 100,
+                                            "min": 0,
+                                            "name": "Yellow",
+                                            "severity": {
+                                                "green": 40,
+                                                "red": 0,
+                                                "yellow": 10
+                                            },
+                                            "type": "gauge"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
                                 }
                             ],
-                            "type": "horizontal-stack"
-                        },
+                            "title": "Brother MFC-J880DW",
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "icon": "mdi:desktop-tower-monitor",
+                    "path": "office",
+                    "title": "Office"
+                },
+                {
+                    "cards": [
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.livingroom_temperature",
+                                    "entity": "sensor.living_room_temperature",
                                     "name": "Temp"
                                 },
                                 {
-                                    "entity": "sensor.livingroom_humidity",
+                                    "entity": "sensor.living_room_humidity",
                                     "name": "Humidity"
                                 },
                                 {
-                                    "entity": "sensor.livingroom_brightness",
+                                    "entity": "sensor.living_room_brightness",
                                     "name": "Bright"
                                 },
                                 {
-                                    "entity": "binary_sensor.livingroom_motion",
+                                    "entity": "binary_sensor.living_room_motion",
                                     "name": "Motion"
                                 },
                                 {
-                                    "entity": "light.livingroom_led",
+                                    "entity": "light.living_room_led",
                                     "name": "LED"
                                 }
                             ],
@@ -480,6 +636,10 @@
                                 {
                                     "entity": "sensor.office_brightness",
                                     "name": "Bright"
+                                },
+                                {
+                                    "entity": "binary_sensor.office_motion",
+                                    "name": "Motion"
                                 },
                                 {
                                     "entity": "light.office_led",
@@ -517,16 +677,28 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.master_bath_leak_sensor_temperature_measurement"
+                                    "entity": "sensor.master_bath_toliet_leak_sensor_temperature_measurement"
                                 },
                                 {
-                                    "entity": "binary_sensor.master_bath_leak_sensor_water"
+                                    "entity": "binary_sensor.master_bath_toliet_leak_sensor_water"
                                 },
                                 {
-                                    "entity": "sensor.half_bath_leak_sensor_temperature_measurement"
+                                    "entity": "sensor.master_bath_sink_leak_sensor_temperature_measurement"
                                 },
                                 {
-                                    "entity": "binary_sensor.half_bath_leak_sensor_water"
+                                    "entity": "binary_sensor.master_bath_sink_leak_sensor_water"
+                                },
+                                {
+                                    "entity": "sensor.half_bath_toliet_leak_sensor_temperature_measurement"
+                                },
+                                {
+                                    "entity": "binary_sensor.half_bath_toliet_leak_sensor_water"
+                                },
+                                {
+                                    "entity": "sensor.half_bath_sink_leak_sensor_temperature_measurement"
+                                },
+                                {
+                                    "entity": "binary_sensor.half_bath_sink_leak_sensor_water"
                                 }
                             ],
                             "title": "Bathroom Sensors",
@@ -559,13 +731,6 @@
                             "refresh_interval": 0,
                             "title": "Laundry",
                             "type": "history-graph"
-                        },
-                        {
-                            "entities": [
-                                "sun.sun",
-                                "sensor.moon"
-                            ],
-                            "type": "glance"
                         }
                     ],
                     "icon": "mdi:led-on",
@@ -593,6 +758,13 @@
                             ],
                             "title": "Travel Time",
                             "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "sun.sun",
+                                "sensor.moon"
+                            ],
+                            "type": "glance"
                         }
                     ],
                     "title": "More"

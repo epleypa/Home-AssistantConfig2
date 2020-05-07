@@ -64,11 +64,10 @@ recorder:
 logger:
   default: warning
   logs:
-    camect: error
+    camect: info
 
 notify: !include notify.yaml
 automation: !include automations.yaml
-automation old: !include_dir_merge_list automation/
 zone: !include zones.yaml
 sensor: !include_dir_merge_list sensors/
 switch: !include_dir_merge_list switches/
@@ -108,7 +107,7 @@ fan:
 #vendor-specific integrations
 ifttt:
   key: !secret ifttt_key
-google:
+google: #calendar
   client_id: !secret google_oath_client
   client_secret: !secret google_oath_secret
 google_assistant: !include google_assistant.yaml
@@ -133,17 +132,13 @@ nest:
       - humidity
       - temperature
 
-totalconnect:
-  username: !secret tc_user
-  password: !secret tc_password
-#  code: !secret tc_usercode
-
 camect: #custom component
   host: !secret camect_host
   port: 443
   username: !secret camect_un
   password: !secret camect_pw
-  camera_ids: 5634535cb67205fc016d,e2229460a6d9a626be20,5a5056a4b910eb39318d
+  camera_ids: !secret camect_cameras
+#  id: !secret camect_home
 
 telegram_bot:
   - platform: polling

@@ -62,7 +62,7 @@ plex:
   - service: media_player.select_source
     entity_id: media_player.roku_streaming_stick
     data:
-      source: Plex
+      source: 'Plex - Stream Free TV & Movies'
   - service: remote.send_command
     data:
       entity_id: remote.broadlink
@@ -96,3 +96,16 @@ arm_home:
   - data:
       entity_id: alarm_control_panel.10th_street
     service: alarm_control_panel.alarm_arm_home
+
+remote_command:
+  alias: Remote Command
+  sequence:
+    service: 'remote.send_command'
+    data_template:
+      entity_id: '{{ trigger.event.data.entity_id|lower }}'
+      device: '{{ trigger.event.data.device|lower }}'
+      command: >
+        '{% set source = trigger.event.data.command|lower %} {% if source ==
+        "cable" %}cm2 {% elif source == "roku" %}hdmi3 {% elif source == "chromecast"
+        %}hdmi4 {% elif source == "switch" %}hdmi1 {% elif source == "xbox" %}hdmi2
+        {% endif %}'

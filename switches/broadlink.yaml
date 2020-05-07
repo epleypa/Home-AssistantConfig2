@@ -105,6 +105,7 @@
             device: television
             command: turn_on
             num_repeats: 3
+            delay_secs: 0.6
         - service: input_boolean.turn_on
           entity_id: input_boolean.tv_power
       turn_off:
@@ -114,6 +115,7 @@
             device: television
             command: turn_off
             num_repeats: 3
+            delay_secs: 0.6
         - service: input_boolean.turn_off
           entity_id: input_boolean.tv_power
     tv_mute:

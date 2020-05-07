@@ -16,3 +16,6 @@ cable_power:
   
 tv_mute:
   name: TV Mute
+
+voice_notifications:
+  name: Voice Notifications

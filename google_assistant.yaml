@@ -12,7 +12,7 @@ exposed_domains:
   - script
   - fan
 entity_config:
-  automation.information_alert:
+  input_boolean.voice_notifications:
     expose: true
   # group.lr_tv_power:
     # expose: true
@@ -23,7 +23,7 @@ entity_config:
     expose: true
   group.downstairs_lights:
     expose: true
-  light.Entry_LED:
+  light.living_room_LED:
     expose: false
   light.Office_LED:
     expose: false
