@@ -66,6 +66,24 @@
                             "type": "entities"
                         },
                         {
+                            "entities": [
+                                "group.bedroom_lights",
+                                "group.living_room_lights",
+                                "group.office_lights",
+                                "group.dining_room_lights",
+                                "group.patio_lights",
+                                "group.kitchen_lights"
+                            ],
+                            "title": "Home Lights",
+                            "type": "entities"
+                        }
+                    ],
+                    "title": "Home"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
                             "cards": [
                                 {
                                     "cards": [
@@ -117,152 +135,56 @@
                             "type": "vertical-stack"
                         },
                         {
-                            "entities": [
-                                "group.bedroom_lights",
-                                "group.living_room_lights",
-                                "group.office_lights",
-                                "group.dining_room_lights",
-                                "group.patio_lights",
-                                "group.kitchen_lights"
+                            "cards": [
+                                {
+                                    "entities": [
+                                        {
+                                            "attribute": "confirmed",
+                                            "name": "Confirmed"
+                                        },
+                                        {
+                                            "attribute": "active",
+                                            "name": "Active"
+                                        },
+                                        {
+                                            "attribute": "deaths",
+                                            "name": "Deaths"
+                                        }
+                                    ],
+                                    "entity": "sensor.coronavirus_dc",
+                                    "icon": "mdi:star",
+                                    "secondary_info": "last-changed",
+                                    "show_state": false,
+                                    "type": "custom:multiple-entity-row"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "attribute": "confirmed",
+                                            "name": "Confirmed"
+                                        },
+                                        {
+                                            "attribute": "active",
+                                            "name": "Active"
+                                        },
+                                        {
+                                            "attribute": "deaths",
+                                            "name": "Deaths"
+                                        }
+                                    ],
+                                    "entity": "sensor.coronavirus_us",
+                                    "icon": "mdi:flag",
+                                    "secondary_info": "last-changed",
+                                    "show_state": false,
+                                    "type": "custom:multiple-entity-row"
+                                }
                             ],
-                            "title": "Home Lights",
-                            "type": "entities"
+                            "type": "vertical-stack"
                         }
                     ],
-                    "title": "Home"
-                },
-                {
-                    "cards": [
-                        {
-                            "entity": "alarm_control_panel.10th_street",
-                            "type": "alarm-panel"
-                        },
-                        {
-                            "columns": 4,
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.front_door"
-                                },
-                                {
-                                    "entity": "binary_sensor.back_door"
-                                },
-                                {
-                                    "entity": "binary_sensor.bedroom_north_window"
-                                },
-                                {
-                                    "entity": "binary_sensor.bedroom_south_window"
-                                },
-                                {
-                                    "entity": "binary_sensor.office_north_window"
-                                },
-                                {
-                                    "entity": "binary_sensor.hall_attic_door"
-                                },
-                                {
-                                    "entity": "binary_sensor.bedroom_attic_door"
-                                },
-                                {
-                                    "entity": "binary_sensor.mailbox_contact"
-                                },
-                                {
-                                    "entity": "binary_sensor.main_floor_motion_sensor"
-                                },
-                                {
-                                    "entity": "binary_sensor.upstairs_motion_sensor"
-                                }
-                            ],
-                            "title": "Sensors",
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.smoke_alarm"
-                                },
-                                {
-                                    "entity": "binary_sensor.co_alarm"
-                                },
-                                {
-                                    "entity": "binary_sensor.half_bath_sink_leak_sensor_water"
-                                },
-                                {
-                                    "entity": "binary_sensor.kitchen_leak_sensor_water"
-                                },
-                                {
-                                    "entity": "binary_sensor.master_bath_sink_leak_sensor_water"
-                                },
-                                {
-                                    "entity": "binary_sensor.laundry_water_leak_sensor_water"
-                                },
-                                {
-                                    "entity": "binary_sensor.half_bath_toliet_leak_sensor_water"
-                                },
-                                {
-                                    "entity": "binary_sensor.master_bath_toliet_leak_sensor_water"
-                                }
-                            ],
-                            "title": "Alerts",
-                            "type": "glance"
-                        },
-                        {
-                            "camera_image": "camera.front_yard",
-                            "entities": [
-                                "camera.front_yard",
-                                "binary_sensor.front_yard_camera_motion_detected",
-                                "binary_sensor.front_yard_camera_person_detected",
-                                "binary_sensor.front_yard_camera_sound_detected",
-                                {
-                                    "entity": "binary_sensor.front_yard_camera_online",
-                                    "icon": "mdi:power"
-                                }
-                            ],
-                            "show_info": true,
-                            "tap_action": "dialog",
-                            "title": "Front Yard",
-                            "type": "picture-glance"
-                        },
-                        {
-                            "camera_image": "camera.front_door",
-                            "entities": [
-                                "camera.front_door",
-                                "binary_sensor.front_door_camera_motion_detected",
-                                "binary_sensor.front_door_camera_person_detected",
-                                "binary_sensor.front_door_camera_sound_detected",
-                                {
-                                    "entity": "binary_sensor.front_door_camera_online",
-                                    "icon": "mdi:power"
-                                }
-                            ],
-                            "show_info": true,
-                            "tap_action": "dialog",
-                            "title": "Front Door",
-                            "type": "picture-glance"
-                        },
-                        {
-                            "camera_image": "camera.backyard",
-                            "entities": [
-                                "camera.backyard",
-                                "binary_sensor.backyard_camera_motion_detected",
-                                "binary_sensor.backyard_camera_person_detected",
-                                "binary_sensor.backyard_camera_sound_detected",
-                                {
-                                    "entity": "binary_sensor.backyard_camera_online",
-                                    "icon": "mdi:power"
-                                },
-                                "switch.patio_wall_lights"
-                            ],
-                            "show_info": true,
-                            "tap_action": "dialog",
-                            "title": "Backyard",
-                            "type": "picture-glance"
-                        },
-                        {
-                            "entity": "camera",
-                            "type": "custom:camect-card"
-                        }
-                    ],
-                    "icon": "mdi:shield",
-                    "title": "Security"
+                    "icon": "mdi:biohazard",
+                    "path": "virus",
+                    "title": "Virus"
                 },
                 {
                     "badges": [],
@@ -414,57 +336,135 @@
                 {
                     "cards": [
                         {
+                            "entity": "alarm_control_panel.10th_street",
+                            "type": "alarm-panel"
+                        },
+                        {
+                            "columns": 4,
                             "entities": [
                                 {
-                                    "entity": "input_boolean.tv_power"
+                                    "entity": "binary_sensor.front_door"
                                 },
                                 {
-                                    "entity": "switch.cable_power"
+                                    "entity": "binary_sensor.back_door"
                                 },
                                 {
-                                    "entity": "input_boolean.tv_mute"
+                                    "entity": "binary_sensor.bedroom_north_window"
                                 },
                                 {
-                                    "entity": "input_select.living_room_tv_source"
+                                    "entity": "binary_sensor.bedroom_south_window"
                                 },
                                 {
-                                    "entity": "input_select.cable_channel"
+                                    "entity": "binary_sensor.office_north_window"
+                                },
+                                {
+                                    "entity": "binary_sensor.hall_attic_door"
+                                },
+                                {
+                                    "entity": "binary_sensor.bedroom_attic_door"
+                                },
+                                {
+                                    "entity": "binary_sensor.mailbox_contact"
+                                },
+                                {
+                                    "entity": "binary_sensor.main_floor_motion_sensor"
+                                },
+                                {
+                                    "entity": "binary_sensor.upstairs_motion_sensor"
                                 }
                             ],
-                            "show_header_toggle": false,
-                            "type": "entities"
+                            "title": "Sensors",
+                            "type": "glance"
                         },
                         {
-                            "entity": "media_player.bedroom_chromecast",
-                            "type": "media-control"
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.smoke_alarm"
+                                },
+                                {
+                                    "entity": "binary_sensor.co_alarm"
+                                },
+                                {
+                                    "entity": "binary_sensor.half_bath_sink_leak_sensor_water"
+                                },
+                                {
+                                    "entity": "binary_sensor.kitchen_leak_sensor_water"
+                                },
+                                {
+                                    "entity": "binary_sensor.master_bath_sink_leak_sensor_water"
+                                },
+                                {
+                                    "entity": "binary_sensor.laundry_water_leak_sensor_water"
+                                },
+                                {
+                                    "entity": "binary_sensor.half_bath_toliet_leak_sensor_water"
+                                },
+                                {
+                                    "entity": "binary_sensor.master_bath_toliet_leak_sensor_water"
+                                }
+                            ],
+                            "title": "Alerts",
+                            "type": "glance"
                         },
                         {
-                            "entity": "media_player.home_speakers",
-                            "type": "media-control"
+                            "camera_image": "camera.front_yard",
+                            "entities": [
+                                "camera.front_yard",
+                                "binary_sensor.front_yard_camera_motion_detected",
+                                "binary_sensor.front_yard_camera_person_detected",
+                                "binary_sensor.front_yard_camera_sound_detected",
+                                {
+                                    "entity": "binary_sensor.front_yard_camera_online",
+                                    "icon": "mdi:power"
+                                }
+                            ],
+                            "show_info": true,
+                            "tap_action": "dialog",
+                            "title": "Front Yard",
+                            "type": "picture-glance"
                         },
                         {
-                            "entity": "media_player.kitchen_home",
-                            "type": "media-control"
+                            "camera_image": "camera.front_door",
+                            "entities": [
+                                "camera.front_door",
+                                "binary_sensor.front_door_camera_motion_detected",
+                                "binary_sensor.front_door_camera_person_detected",
+                                "binary_sensor.front_door_camera_sound_detected",
+                                {
+                                    "entity": "binary_sensor.front_door_camera_online",
+                                    "icon": "mdi:power"
+                                }
+                            ],
+                            "show_info": true,
+                            "tap_action": "dialog",
+                            "title": "Front Door",
+                            "type": "picture-glance"
                         },
                         {
-                            "entity": "media_player.living_room_speaker",
-                            "type": "media-control"
+                            "camera_image": "camera.backyard",
+                            "entities": [
+                                "camera.backyard",
+                                "binary_sensor.backyard_camera_motion_detected",
+                                "binary_sensor.backyard_camera_person_detected",
+                                "binary_sensor.backyard_camera_sound_detected",
+                                {
+                                    "entity": "binary_sensor.backyard_camera_online",
+                                    "icon": "mdi:power"
+                                },
+                                "switch.patio_wall_lights"
+                            ],
+                            "show_info": true,
+                            "tap_action": "dialog",
+                            "title": "Backyard",
+                            "type": "picture-glance"
                         },
                         {
-                            "entity": "media_player.living_room_tv",
-                            "type": "media-control"
-                        },
-                        {
-                            "entity": "media_player.office_speaker",
-                            "type": "media-control"
-                        },
-                        {
-                            "entity": "media_player.living_room_chromecast",
-                            "type": "media-control"
+                            "entity": "camera",
+                            "type": "custom:camect-card"
                         }
                     ],
-                    "icon": "mdi:sofa",
-                    "title": "Living Room"
+                    "icon": "mdi:shield",
+                    "title": "Security"
                 },
                 {
                     "badges": [],
@@ -600,6 +600,65 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "input_boolean.tv_power"
+                                },
+                                {
+                                    "entity": "switch.cable_power"
+                                },
+                                {
+                                    "entity": "input_boolean.tv_mute"
+                                },
+                                {
+                                    "entity": "input_select.living_room_tv_source"
+                                },
+                                {
+                                    "entity": "input_select.cable_channel"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "media_player.bedroom_chromecast",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.home_speakers",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.kitchen_home",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.living_room_speaker",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.living_room_tv",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.office_speaker",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.living_room_chromecast",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.roku_streaming_stick",
+                            "type": "media-control"
+                        }
+                    ],
+                    "icon": "mdi:sofa",
+                    "title": "Living Room"
+                },
+                {
+                    "cards": [
+                        {
+                            "entities": [
+                                {
                                     "entity": "sensor.living_room_temperature",
                                     "name": "Temp"
                                 },
@@ -717,20 +776,46 @@
                             "type": "glance"
                         },
                         {
-                            "entities": [
+                            "cards": [
                                 {
-                                    "entity": "sensor.washer_power",
-                                    "name": "Washer"
+                                    "cards": [
+                                        {
+                                            "entities": [
+                                                {
+                                                    "entity": "binary_sensor.washer_status"
+                                                },
+                                                {
+                                                    "entity": "binary_sensor.dryer_status"
+                                                }
+                                            ],
+                                            "type": "glance"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
                                 },
                                 {
-                                    "entity": "sensor.dryer_power",
-                                    "name": "Dryer"
+                                    "cards": [
+                                        {
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.washer_power",
+                                                    "name": "Washer"
+                                                },
+                                                {
+                                                    "entity": "sensor.dryer_power",
+                                                    "name": "Dryer"
+                                                }
+                                            ],
+                                            "hours_to_show": 12,
+                                            "refresh_interval": 0,
+                                            "type": "history-graph"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
                                 }
                             ],
-                            "hours_to_show": 12,
-                            "refresh_interval": 0,
                             "title": "Laundry",
-                            "type": "history-graph"
+                            "type": "vertical-stack"
                         }
                     ],
                     "icon": "mdi:led-on",
@@ -738,6 +823,10 @@
                 },
                 {
                     "cards": [
+                        {
+                            "entity": "device_tracker.toyota_corolla",
+                            "type": "entity"
+                        },
                         {
                             "entities": [
                                 "sensor.wmata_gr_no",

@@ -9,3 +9,9 @@
 - name: telegram_peter
   platform: telegram
   chat_id: !secret telegram_id_peter
+
+- name: all_mobiles
+  platform: group
+  services:
+    - service: mobile_app_peter_sm_g981u
+    - service: mobile_app_kelley_sm_g981u

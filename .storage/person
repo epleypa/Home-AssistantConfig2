@@ -4,7 +4,9 @@
             {
                 "device_trackers": [
                     "device_tracker.tile_d97a13d00b4045c0",
-                    "device_tracker.sm_g981u"
+                    "device_tracker.sm_g981u",
+                    "device_tracker.sm_t290",
+                    "device_tracker.sm_g981u_2"
                 ],
                 "id": "6c48bdcdd7c4483a98b763567743b7a5",
                 "name": "Peter",

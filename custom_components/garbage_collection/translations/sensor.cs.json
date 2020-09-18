@@ -1,6 +1,8 @@
 {
     "state": {
-        "today": "Dnes",
-        "tomorrow": "Zítra"
+        "garbage_collection__schedule": {
+            "today": "Dnes",
+            "tomorrow": "Zítra"
+        }
     }
 }

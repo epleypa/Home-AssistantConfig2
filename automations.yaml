@@ -30,42 +30,42 @@
   - delay: 00:45:00
   - service: switch.turn_off
     entity_id: switch.bedroom_peter_light
-- alias: See You Later
-  id: later
+- id: later
+  alias: See You Later
   trigger:
-  - platform: state
-    entity_id: group.family
+  - entity_id: group.family
+    for: 0:10:00
+    platform: state
     to: not_home
-    for:
-      minutes: 10
-  - platform: state
-    entity_id: alarm_control_panel.10th_street
+  - entity_id: alarm_control_panel.10th_street
+    platform: state
     to: armed_home
-  - platform: state
-    entity_id: alarm_control_panel.10th_street
+  - entity_id: alarm_control_panel.10th_street
+    platform: state
     to: armed_away
   action:
-  - service: homeassistant.turn_off
-    entity_id: group.home_lights
-  - service: notify.pushbullet
-    data:
+  - entity_id: group.home_lights
+    service: homeassistant.turn_off
+  - condition: template
+    value_template: '{{ trigger.event.data.new_state.state != "armed_home" }}'
+  - data:
       message: See you later!
-- alias: Welcome Home
-  id: home
+    service: telegram_bot.send_message
+- id: home
+  alias: Welcome Home
   trigger:
-  - platform: state
-    entity_id: group.family
+  - entity_id: group.family
+    for: 0:01:00
     from: not_home
+    platform: state
     to: home
-    for:
-      minutes: 1
-  - platform: state
-    entity_id: alarm_control_panel.10th_street
+  - entity_id: alarm_control_panel.10th_street
+    platform: state
     to: disarmed
   action:
-  - service: notify.pushbullet
-    data:
+  - data:
       message: Welcome Home!
+    service: telegram_bot.send_message
 - id: goodnight-work
   alias: Goodnight
   trigger:
@@ -93,9 +93,9 @@
   action:
   - entity_id: group.home_lights, group.patio_lights, group.holiday_lights
     service: homeassistant.turn_off
-  - data:
+  - data_template:
       message: Goodnight!
-    service: notify.pushbullet
+    service: telegram_bot.send_message
 - id: fan
   alias: Fan
   trigger:
@@ -170,6 +170,7 @@
     event_type: call_service
     platform: event
   action:
+  - delay: 0:00:02
   - entity_id: switch.neo
     service: switch.turn_on
   - data:
@@ -183,13 +184,18 @@
       - 255
     entity_id: light.living_room_led, light.office_led, light.bedroom_led
     service: light.turn_on
+  - data:
+      color_name: blueviolet
+    entity_id: light.tv_backlight
+    service: light.turn_on
   - delay: 00:00:02
   - entity_id: light.living_room_led, light.office_led, light.bedroom_led, light.storage_light,
-      light.office_light
+      light.office_light, light.tv_backlight
     service: light.turn_off
   - data: {}
     entity_id: automation.information_alert
     service: automation.turn_on
+  mode: single
 - id: ledmotion
   alias: LED Motion
   trigger:
@@ -209,22 +215,23 @@
 - id: motionless
   alias: Motionless
   trigger:
-  - platform: state
-    entity_id: binary_sensor.living_room_motion
+  - entity_id: binary_sensor.living_room_motion
+    for: 02:00:00
+    platform: state
     to: 'off'
-    for:
-      minutes: 60
-  - platform: state
-    entity_id: binary_sensor.bedroom_motion
+  - entity_id: binary_sensor.bedroom_motion
+    for: 0:20:00
+    platform: state
     to: 'off'
-    for:
-      minutes: 20
+  condition: []
   action:
-  - service: homeassistant.turn_off
-    data_template:
+  - data_template:
       entity_id: "{% if trigger.entity_id == 'binary_sensor.bedroom_motion' %}\n \
         \ group.bedroom_lights\n{% elif trigger.entity_id == 'binary_sensor.living_room_motion'\
-        \ %}\n  group.downstairs_lights\n{% endif %}\n"
+        \ %}\n  group.living_room_lights\n{% endif %}\n"
+    service: homeassistant.turn_off
+  mode: single
+  max: 10
 - id: plex
   alias: Plex Wake
   trigger:
@@ -252,8 +259,8 @@
     platform: event
   condition:
   - condition: template
-    value_template: '{% if trigger.event.data.service == ''remote.send_command'' %}true{%
-      endif %}'
+    value_template: '{% if trigger.event.data.service == ''remote.send_command'' %}true{%endif
+      %}'
   action:
   - data_template:
       command: '{% set source = trigger.event.data.command|lower %} {% if source ==
@@ -263,6 +270,23 @@
       device: '{{ trigger.event.data.device|lower }}'
       entity_id: '{{ trigger.event.data.entity_id|lower }}'
     service_template: '{{ trigger.event.data.service }}'
+- id: ifttt_tracker
+  alias: IFTTT - Device Tracker
+  trigger:
+  - event_data:
+      action: call_service
+    event_type: ifttt_webhook_received
+    platform: event
+  condition:
+  - condition: template
+    value_template: '{% if trigger.event.data.service == ''device_tracker.see'' %}true{%
+      endif %}'
+  action:
+  - data_template:
+      dev_id: '{{ trigger.event.data.dev_id | lower | replace(" ","_") }}'
+      location_name: '{{ trigger.event.data.location_name|lower }}'
+    service_template: '{{ trigger.event.data.service }}'
+  mode: single
 - id: ifttt
   alias: IFTTT Webhook
   trigger:
@@ -272,8 +296,8 @@
     platform: event
   condition:
   - condition: template
-    value_template: '{% if trigger.event.data.service != ''remote.send_command'' %}true{%
-      endif %}'
+    value_template: '{% if trigger.event.data.service != ''remote.send_command'' and
+      trigger.event.data.service != ''device_tracker.see'' %}true{% endif %}'
   action:
   - data_template:
       entity_id: '{{ trigger.event.data.entity_id|lower }}'
@@ -437,62 +461,40 @@
 - id: emergencyalert
   alias: Emergency Alert
   trigger:
-  - platform: state
-    entity_id: binary_sensor.kitchen_leak_sensor
-    to: 'on'
-    for:
-      minutes: 1
-      seconds: 0
-  - platform: state
-    entity_id: binary_sensor.master_bath_leak_sensor
-    to: 'on'
-    for:
-      minutes: 1
-      seconds: 0
-  - platform: state
-    entity_id: binary_sensor.half_bath_leak_sensor
-    to: 'on'
-    for:
-      minutes: 1
-      seconds: 0
-  - platform: state
-    entity_id: binary_sensor.smoke_alarm
-    to: 'on'
-    for:
-      minutes: 0
-      seconds: 10
-  - platform: state
-    entity_id: binary_sensor.co_alarm
-    to: 'on'
-    for:
-      minutes: 0
-      seconds: 10
+  - event_data:
+      domain: sensor
+    event_type: state_changed
+    platform: event
+  condition:
+    condition: or
+    conditions:
+    - condition: template
+      value_template: '{% if ''_leak_sensor_water'' in trigger.event.data.entity_id
+        and trigger.event.data.new_state.state == ''on'' %}True{% endif %}'
+    - condition: template
+      value_template: '{% if ''_alarm'' in trigger.event.data.entity_id and trigger.event.data.new_state.state
+        == ''on'' %}True{% endif %}'
   action:
-  - service: notify.telegram_peter
-    data_template:
-      title: Master Alarm
-      message: '{% for state in states.binary_sensor -%} {% if "leak" in state.name
-        | lower and state.state == "on" %}{{ state.name | lower }} is wet {% elif
-        "alarm" in state.name | lower and state.state == "on" %}{{ state.name | lower
-        }} has triggered {% endif %} {%- endfor %}'
-  - service: media_player.turn_on
-    entity_id: media_player.home_speakers
-  - service: media_player.volume_set
-    data_template:
+  - data_template:
+      message: '{{ trigger.event.data.new_state.attributes.friendly_name | replace("_",
+        "\_") }} is {{ trigger.event.data.new_state.state | replace("_", "\_") }}'
+    service: telegram_bot.send_message
+  - entity_id: media_player.home_speakers
+    service: media_player.turn_on
+  - data_template:
       entity_id: media_player.home_speakers
       volume_level: 0.5
-  - service: tts.google_say
-    entity_id: media_player.home_speakers
-    data_template:
+    service: media_player.volume_set
+  - data_template:
       cache: false
-      message: '{% for state in states.binary_sensor -%} {% if "leak" in state.name
-        | lower and state.state == "on" %}{{ state.name }} is wet {% elif "alarm"
-        in state.name | lower and state.state == "on" %}{{ state.name }} has triggered
-        {% endif %} {%- endfor %}'
-  - service_template: '{% for state in states.binary_sensor -%} {% if "alarm" in state.name
+      message: '{{ trigger.event.data.new_state.attributes.friendly_name | replace("_",
+        "\_") }} is {{ trigger.event.data.new_state.state | replace("_", "\_") }}'
+    entity_id: media_player.home_speakers
+    service: tts.google_say
+  - entity_id: group.home_lights
+    service_template: '{% for state in states.binary_sensor -%} {% if "alarm" in state.name
       | lower and state.state == "on" %}homeassistant.turn_on {% endif %} {%- endfor
       %}'
-    entity_id: group.home_lights
 - id: infoalert
   alias: Information Alert
   trigger:
@@ -512,16 +514,16 @@
   - condition: and
     conditions:
     - after: '8:00'
-      before: '23:00'
+      condition: time
+    - before: '23:00'
       condition: time
   action:
   - data_template:
-      message: ' {% if trigger.entity_id == ''sensor.dryer_power'' %}The dryer is
-        done {% elif trigger.entity_id == ''sensor.washer_power'' %}The washer is
-        done {% elif trigger.entity_id == ''binary_sensor.mailbox_contact'' %}The
-        mail has arrived! {% endif %}'
-      title: Home Info
-    service: notify.telegram_peter
+      message: ' {% if trigger.entity_id == ''binary_sensor.dryer_status'' %}The dryer
+        is done {% elif trigger.entity_id == ''binary_sensor.washer_status'' %}The
+        washer is done {% elif trigger.entity_id == ''binary_sensor.mailbox_contact''
+        %}The mail has arrived! {% endif %}'
+    service: telegram_bot.send_message
   - condition: state
     entity_id: input_boolean.voice_notifications
     state: 'on'
@@ -545,7 +547,7 @@
   alias: Log Error to File
   trigger:
   - event_data:
-      level: error
+      level: ERROR
     event_type: system_log_event
     platform: event
   action:
@@ -553,6 +555,8 @@
       message: '{{ trigger.event.data }}'
     service: notify.error_logfile
   initial_state: true
+  mode: parallel
+  max: 10
 - id: '1588304855176'
   alias: Night Motion
   description: ''
@@ -590,16 +594,36 @@
       cam_name: Backyard
       detected_obj:
       - person
+      - cat
     event_type: camect_event
     platform: event
-  condition: []
+  condition:
+  - condition: template
+    value_template: '{% if trigger.event.data.cam_name != "" and ( as_timestamp(now())
+      - as_timestamp(state_attr("automation.camect_automation", "last_triggered"))
+      |int(0) ) > 3600 %}True{% endif %}'
   action:
-  - data:
-      message: Camect Test
-    service: telegram_bot.send_message
   - data_template:
-      message: '{{ trigger.event.data }}'
+      entity_id: camera.{{ trigger.event.data.cam_name | lower }}
+      filename: /tmp/{{ trigger.event.data.cam_name | lower }}_{{ trigger.event.data.detected_obj
+        | lower }}.jpg
+    service: camera.snapshot
+  - delay: 00:00:01
+  - data_template:
+      caption: '{{ trigger.event.data.cam_name }} detected {{ trigger.event.data.detected_obj
+        }}'
+      file: /tmp/{{ trigger.event.data.cam_name | lower }}_{{ trigger.event.data.detected_obj
+        | lower }}.jpg
+    service: telegram_bot.send_photo
+  - data_template:
+      message: '{{ trigger.event.data.cam_name }}'
     service: notify.error_logfile
+  - data_template:
+      message: '{{ trigger.event.data.cam_name }} detected {{ trigger.event.data.detected_obj
+        }}'
+      title:
+        '[object Object]':
+    service: notify.mobile_app_peter_sm_g981u
 - id: '1588452709021'
   alias: Sun
   description: ''
@@ -610,7 +634,8 @@
     platform: sun
   condition: []
   action:
+  - delay: 00:00:10
   - data_template:
-      message: '{% if is_state(''sun.sun'', ''above_horizon'') %} The sun is up{%
+      message: '{% if is_state(''sun.sun'', ''above_horizon'') %} The sun is up {%
         else %} The sun is down{% endif %}'
     service: telegram_bot.send_message

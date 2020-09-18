@@ -4,7 +4,7 @@ project_id: !secret google_proj
 service_account:
   private_key: !secret google_private_key
   client_email: !secret google_client_email
-report_state: true
+#report_state: true
 #expose_by_default: false
 exposed_domains:
   - light
@@ -14,9 +14,6 @@ exposed_domains:
 entity_config:
   input_boolean.voice_notifications:
     expose: true
-  # group.lr_tv_power:
-    # expose: true
-    # name: 'TV'
   group.home_lights:
     expose: true
   group.upstairs_lights:
@@ -29,39 +26,6 @@ entity_config:
     expose: false
   light.Bedroom_LED:
     expose: false
-  # switch.lr_tv_power1:
-    # name: 'TV1'
-    # expose: false
-  # switch.lr_tv_power2:
-    # name: 'TV2'
-    # expose: false
-  # switch.cable_power:
-    # name: 'Cable'
-    # expose: false
-  # switch.cable_1:
-    # expose: false
-  # switch.cable_2:
-    # expose: false
-  # switch.cable_3:
-    # expose: false
-  # switch.cable_4:
-    # expose: false
-  # switch.cable_5:
-    # expose: false
-  # switch.cable_6:
-    # expose: false
-  # switch.cable_7:
-    # expose: false
-  # switch.cable_8:
-    # expose: false
-  # switch.cable_9:
-    # expose: false
-  # switch.cable_0:
-    # expose: false
-  # switch.cable_ok:
-    # expose: false
-  # switch.cable_hd:
-    # name: 'HD'
   script.wmata_gr_no:
     expose: false
   script.wmata_gr_so:
@@ -72,3 +36,6 @@ entity_config:
     expose: false
   media_player.living_room_tv:
     expose: true
+  switch.neo:
+    aliases:
+      - computer

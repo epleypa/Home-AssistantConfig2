@@ -32,7 +32,7 @@ alarmclock:
 
 alarmclock_settings:
   name: Settings
-  icon: mdi:settings
+  icon: mdi:cog
   entities: 
     - automation.wake_up
     - input_number.alarmhour

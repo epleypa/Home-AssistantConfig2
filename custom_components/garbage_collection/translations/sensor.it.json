@@ -1,6 +1,8 @@
 {
     "state": {
-        "today": "Oggi",
-        "tomorrow": "Domani"
+        "garbage_collection__schedule": {
+            "today": "Oggi",
+            "tomorrow": "Domani"
+        }
     }
 }

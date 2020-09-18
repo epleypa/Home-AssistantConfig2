@@ -67,7 +67,7 @@ sensor_dining_room:
 sensor_led:
   name: Sensor LEDs
   entities:
-    - light.entry_led
+    - light.living_room_led
     - light.office_led
     - light.bedroom_led
 

@@ -1,6 +1,8 @@
 {
     "state": {
-        "today": "Dzisiaj",
-        "tomorrow": "Jutro"
+        "garbage_collection__schedule": {
+            "today": "Dzisiaj",
+            "tomorrow": "Jutro"
+        }
     }
 }

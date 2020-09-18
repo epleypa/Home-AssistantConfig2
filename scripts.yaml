@@ -18,7 +18,6 @@ wmata_gr_so:
       entity_id: media_player.living_room_home
       message: the next metro train heading south from u street is in {{ states('sensor.wmata_dc')
         }} minutes
-
 chromecast:
   sequence:
   - service: switch.turn_on
@@ -51,23 +50,24 @@ roku:
       command: hdmi3
 plex:
   sequence:
-  - service: switch.turn_on
-    entity_id: switch.tv_power
-  - service: switch.turn_on
-    entity_id: switch.neo
+  - entity_id: switch.tv_power
+    service: switch.turn_on
+  - entity_id: switch.neo
+    service: switch.turn_on
   - delay: 00:00:10
-  - service: notify.pushbullet
-    data:
+  - data:
       message: Switching to Plex on Roku
-  - service: media_player.select_source
+    service: telegram_bot.send_message
+  - data:
+      source: Plex - Stream for Free
     entity_id: media_player.roku_streaming_stick
-    data:
-      source: 'Plex - Stream Free TV & Movies'
-  - service: remote.send_command
-    data:
-      entity_id: remote.broadlink
-      device: television
+    service: media_player.select_source
+  - data:
       command: hdmi3
+      device: television
+      entity_id: remote.broadlink
+    service: remote.send_command
+  mode: single
 cable:
   sequence:
   - service: switch.turn_on
@@ -83,7 +83,6 @@ cable:
       entity_id: remote.broadlink
       device: television
       command: cm2
-
 arm_away:
   alias: Arm Away
   sequence:
@@ -96,16 +95,14 @@ arm_home:
   - data:
       entity_id: alarm_control_panel.10th_street
     service: alarm_control_panel.alarm_arm_home
-
 remote_command:
   alias: Remote Command
   sequence:
-    service: 'remote.send_command'
+    service: remote.send_command
     data_template:
       entity_id: '{{ trigger.event.data.entity_id|lower }}'
       device: '{{ trigger.event.data.device|lower }}'
-      command: >
-        '{% set source = trigger.event.data.command|lower %} {% if source ==
-        "cable" %}cm2 {% elif source == "roku" %}hdmi3 {% elif source == "chromecast"
+      command: '''{% set source = trigger.event.data.command|lower %} {% if source
+        == "cable" %}cm2 {% elif source == "roku" %}hdmi3 {% elif source == "chromecast"
         %}hdmi4 {% elif source == "switch" %}hdmi1 {% elif source == "xbox" %}hdmi2
-        {% endif %}'
+        {% endif %}'''
