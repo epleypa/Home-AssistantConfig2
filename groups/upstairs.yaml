@@ -21,13 +21,13 @@ office_lights:
    entities:
       - light.office_light
       - light.office_overhead_lights
-      
+
 bedroom_table_lights:
    name: Bedroom Table Lights
    entities:
       - switch.bedroom_kelley_light
       - switch.bedroom_peter_light
-      
+
 bedroom_lights:
    name: Bedroom Lights
    entities:

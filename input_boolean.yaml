@@ -10,10 +10,10 @@ update_route:
 
 tv_power:
   name: TV Power
-  
+
 cable_power:
   name: Cable Power
-  
+
 tv_mute:
   name: TV Mute
 
