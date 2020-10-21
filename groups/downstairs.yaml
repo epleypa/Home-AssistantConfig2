@@ -56,7 +56,7 @@ kitchen_lights:
       - switch.kitchen_cabinet_lights
       - light.kitchen_overhead_lights
       - switch.bar_lights
-      
+
 patio_lights:
    name: Patio Lights
    entities:
@@ -67,4 +67,4 @@ holiday_lights:
   name: Holiday Lights
   entities:
     - switch.christmas_tree
-    - switch.patio_party_lights  
+    - switch.patio_party_lights

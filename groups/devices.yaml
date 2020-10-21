@@ -49,4 +49,3 @@ devices_other:
     - device_tracker.silicondust_hdhomerun_prime
     - device_tracker.xbox360
     - device_tracker.nintendo_switch
-  

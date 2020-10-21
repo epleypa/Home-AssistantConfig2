@@ -44,7 +44,7 @@ sensor_bedroom:
 sensor_bathroom:
   name: Bathroom Sensors
   entities:
-    - sensor.master_bath_temperature  
+    - sensor.master_bath_temperature
     - binary_sensor.master_bath_leak_sensor
     - sensor.half_bath_temperature
     - binary_sensor.half_bath_leak_sensor
