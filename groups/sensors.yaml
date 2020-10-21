@@ -17,7 +17,7 @@ sensor_entry:
     - sensor.entry_humidity
     - sensor.entry_real_feel
     - sensor.entry_ldr
-    - sensor.entry_pir    
+    - sensor.entry_pir
     - binary_sensor.entry_pir
     - light.entry_led
 
@@ -48,7 +48,7 @@ sensor_bathroom:
     - binary_sensor.master_bath_leak_sensor
     - sensor.half_bath_temperature
     - binary_sensor.half_bath_leak_sensor
-    
+
 sensor_kitchen:
   name: Kitchen Sensors
   entities:
@@ -63,7 +63,7 @@ sensor_dining_room:
     - binary_sensor.co_alarm
     - sensor.dining_room_temperature
     - sensor.dining_room_humidity
-    
+
 sensor_led:
   name: Sensor LEDs
   entities:
