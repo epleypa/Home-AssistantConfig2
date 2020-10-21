@@ -1,0 +1,51 @@
+- id: '1601610747609'
+  name: Calm
+  entities:
+    light.tv_backlight:
+      min_mireds: 111
+      max_mireds: 500
+      brightness: 255
+      color_temp: 500
+      hs_color:
+      - 271.148
+      - 80.973
+      rgb_color:
+      - 155
+      - 48
+      - 255
+      xy_color:
+      - 0.251
+      - 0.105
+      friendly_name: TV Backlight
+      supported_features: 51
+      state: 'on'
+    light.storage_light:
+      min_mireds: 111
+      max_mireds: 500
+      brightness: 237
+      color_temp: 500
+      hs_color:
+      - 271.148
+      - 80
+      rgb_color:
+      - 156
+      - 50
+      - 255
+      xy_color:
+      - 0.252
+      - 0.106
+      friendly_name: Storage Light
+      supported_features: 51
+      state: 'on'
+    light.living_room_lights:
+      friendly_name: Living Room Lights
+      supported_features: 33
+      state: 'off'
+    group.kitchen_lights:
+      entity_id:
+      - switch.kitchen_cabinet_lights
+      - light.kitchen_overhead_lights
+      - switch.bar_lights
+      order: 17
+      friendly_name: Kitchen Lights
+      state: 'off'

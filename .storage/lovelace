@@ -1,4 +1,6 @@
 {
+    "version": 1,
+    "key": "lovelace",
     "data": {
         "config": {
             "title": "Home",
@@ -17,24 +19,18 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "binary_sensor.home_away",
-                                    "name": "Away?"
-                                },
-                                {
                                     "entity": "fan.hvac_fan",
-                                    "name": "Fan"
+                                    "secondary_info": "last-changed"
                                 },
                                 {
-                                    "entity": "sensor.home_security_state",
-                                    "name": "State"
+                                    "entity": "vacuum.robovac",
+                                    "secondary_info": "last-changed"
                                 }
                             ],
-                            "type": "glance"
+                            "type": "entities"
                         },
                         {
-                            "entity": "climate.upstairs",
-                            "show_header_toggle": true,
-                            "title": "Climate",
+                            "entity": "climate.upstairs_thermostat",
                             "type": "thermostat"
                         },
                         {
@@ -132,53 +128,6 @@
                                 }
                             ],
                             "title": "COVID-19 United States",
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "entities": [
-                                        {
-                                            "attribute": "confirmed",
-                                            "name": "Confirmed"
-                                        },
-                                        {
-                                            "attribute": "active",
-                                            "name": "Active"
-                                        },
-                                        {
-                                            "attribute": "deaths",
-                                            "name": "Deaths"
-                                        }
-                                    ],
-                                    "entity": "sensor.coronavirus_dc",
-                                    "icon": "mdi:star",
-                                    "secondary_info": "last-changed",
-                                    "show_state": false,
-                                    "type": "custom:multiple-entity-row"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "attribute": "confirmed",
-                                            "name": "Confirmed"
-                                        },
-                                        {
-                                            "attribute": "active",
-                                            "name": "Active"
-                                        },
-                                        {
-                                            "attribute": "deaths",
-                                            "name": "Deaths"
-                                        }
-                                    ],
-                                    "entity": "sensor.coronavirus_us",
-                                    "icon": "mdi:flag",
-                                    "secondary_info": "last-changed",
-                                    "show_state": false,
-                                    "type": "custom:multiple-entity-row"
-                                }
-                            ],
                             "type": "vertical-stack"
                         }
                     ],
@@ -407,9 +356,9 @@
                             "type": "glance"
                         },
                         {
-                            "camera_image": "camera.front_yard",
+                            "camera_image": "camera.camect_front_yard",
                             "entities": [
-                                "camera.front_yard",
+                                "camera.camect_front_yard",
                                 "binary_sensor.front_yard_camera_motion_detected",
                                 "binary_sensor.front_yard_camera_person_detected",
                                 "binary_sensor.front_yard_camera_sound_detected",
@@ -418,15 +367,13 @@
                                     "icon": "mdi:power"
                                 }
                             ],
-                            "show_info": true,
-                            "tap_action": "dialog",
                             "title": "Front Yard",
                             "type": "picture-glance"
                         },
                         {
-                            "camera_image": "camera.front_door",
+                            "camera_image": "camera.camect_front_door",
                             "entities": [
-                                "camera.front_door",
+                                "camera.camect_front_door",
                                 "binary_sensor.front_door_camera_motion_detected",
                                 "binary_sensor.front_door_camera_person_detected",
                                 "binary_sensor.front_door_camera_sound_detected",
@@ -435,15 +382,13 @@
                                     "icon": "mdi:power"
                                 }
                             ],
-                            "show_info": true,
-                            "tap_action": "dialog",
                             "title": "Front Door",
                             "type": "picture-glance"
                         },
                         {
-                            "camera_image": "camera.backyard",
+                            "camera_image": "camera.camect_backyard",
                             "entities": [
-                                "camera.backyard",
+                                "camera.camect_backyard",
                                 "binary_sensor.backyard_camera_motion_detected",
                                 "binary_sensor.backyard_camera_person_detected",
                                 "binary_sensor.backyard_camera_sound_detected",
@@ -453,14 +398,8 @@
                                 },
                                 "switch.patio_wall_lights"
                             ],
-                            "show_info": true,
-                            "tap_action": "dialog",
                             "title": "Backyard",
                             "type": "picture-glance"
-                        },
-                        {
-                            "entity": "camera",
-                            "type": "custom:camect-card"
                         }
                     ],
                     "icon": "mdi:shield",
@@ -860,7 +799,5 @@
                 }
             ]
         }
-    },
-    "key": "lovelace",
-    "version": 1
+    }
 }

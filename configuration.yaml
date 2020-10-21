@@ -44,6 +44,7 @@ logger:
 
 notify: !include notify.yaml
 automation: !include automations.yaml
+scene: !include scenes.yaml
 zone: !include zones.yaml
 sensor: !include_dir_merge_list sensors/
 switch: !include_dir_merge_list switches/
@@ -54,30 +55,26 @@ input_number: !include input_number.yaml
 input_select: !include input_select.yaml
 binary_sensor: !include binary_sensors.yaml #!include_dir_merge_list binary_sensors/
 light: !include lights.yaml
-remote:
-  - platform: broadlink
-    host: 192.168.1.42
-    mac: '78:0F:77:B9:62:85'
 
-climate:
-  platform: nest
+#climate:
+#  platform: nest
 
 fan:
   - platform: template
     fans:
       hvac_fan:
         friendly_name: "HVAC Fan"
-        value_template: "{{ states('binary_sensor.upstairs_thermostat_fan') }}"
+        value_template: "{% if is_state_attr('climate.upstairs_thermostat', 'fan_mode', 'on') %}on{% else %}off{% endif %}"
         turn_on:
           service: climate.set_fan_mode
           data:
-            entity_id: climate.upstairs
+            entity_id: climate.upstairs_thermostat
             fan_mode: 'on'
         turn_off:
           service: climate.set_fan_mode
           data:
-            entity_id: climate.upstairs
-            fan_mode: 'off'
+            entity_id: climate.upstairs_thermostat
+            fan_mode: 'auto'
         speeds:
 
 #vendor-specific integrations
@@ -87,26 +84,34 @@ google: #calendar
   client_id: !secret google_oath_client
   client_secret: !secret google_oath_secret
 google_assistant: !include google_assistant.yaml
-nest:
-  client_id: !secret nest_id
-  client_secret: !secret nest_secret
-  binary_sensors:
-    monitored_conditions:
-      - away
-      - online
-      - fan
-      - is_using_emergency_heat
-      - is_locked
-      - has_leaf
-      - motion_detected
-      - person_detected
-      - sound_detected
-  sensors:
-    monitored_conditions:
-      - eta
-      - security_state
-      - humidity
-      - temperature
+#nest:
+#  client_id: !secret nest_id
+#  client_secret: !secret nest_secret
+#  binary_sensors:
+#    monitored_conditions:
+#      - away
+#      - online
+#      - fan
+#      - is_using_emergency_heat
+#      - is_locked
+#      - has_leaf
+#      - motion_detected
+#      - person_detected
+#      - sound_detected
+#  sensors:
+#    monitored_conditions:
+#      - eta
+#      - security_state
+#      - humidity
+#      - temperature
+
+badnest:
+  issue_token: !secret badnest_issue_token
+  cookie: !secret badnest_cookie
+  region: us
+climate:
+  - platform: badnest
+    scan_interval: 10
 
 camect: #custom component
   host: !secret camect_host
@@ -122,3 +127,11 @@ telegram_bot:
     allowed_chat_ids:
       - !secret telegram_id_peter
       - !secret telegram_id_kelley
+
+eufy_vacuum:
+  devices:
+  - name: Robovac
+    address: !secret eufy_ip
+    access_token: !secret eufy_token
+    id: !secret eufy_id
+    type: T2118
