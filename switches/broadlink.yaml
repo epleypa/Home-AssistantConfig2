@@ -1,11 +1,18 @@
 - platform: broadlink
-  host: 192.168.1.42
   mac: '78:0F:77:B9:62:85'
   switches:
-    christmas_tree:
+    - name: 'Christmas Tree Light'
       command_on: 'sggyAAYTEwcHEwYTBhMSBwcTEgcGExMHBhMTBwYTEwcGExMHBhMHExIHEgcGEwYTEwcSBwe8AAAAAAAA'
       command_off: 'sgkyAAYTEwcGEwYTBhMTBwYTEgcGExIHBhMSBwYTEgcGExIHBxMGExIHEgcSBxMHBhMGEwa9AAAAAAAA'
-      friendly_name: 'Christmas Tree Light'
+    - name: 'Bedroom Kelley Light'
+      command_on: 'sgkyAAcTEwgGEwcTBxMSBwYTEwcGFBIHBxMTBxIHEgcHExIIBhMGEwcTBhMGEwYTEgcSBwa9AAAAAAAA'
+      command_off: 'sgkyAAcSEwcHEwcTBxMTBgcTEwYHExMHBxMTBhMHEwYHExMGBxMHEwcTBxMTBhMHBxIHEwe8AAAAAAAA'
+    - name: 'Bedroom Peter Light'
+      command_on: 'sgwyAAcTEwcGEwcTBxMTBwcTEwcHExMHEwcTBwYTEwcHExMHBhMGEwcTBhMHEwcTEwcTBwa9AAAAAAAA'
+      command_off: 'sg4yAAcTEwcGEwcTBxMTBwcTEwcHExMHEwcTBgcTEwcHExMHBxMHEwcTBxMTBxMGBxMHEwe9AAAAAAAA'
+    - name: 'Bedroom Humidifier'
+      command_on: 'sh8yAAUUEggFFAUUBhQSCAYUEggFFBIIBhQSCAYUEggSCBIIBhQGFAUVBRQGFAUUEggSCAXBAAAAAAAA'
+      command_off: 'shcyAAYUEggFFAYUBRQSCAYUEggGFBIIBhQSCAYUEggSCBIIBRQFFQUUBhQSCBIIBRQGFAbAAAAAAAAA'
     # lr_tb_light:
       # command_on: 'shEyAAYTEwcHEwYTBxMSBwcTEgcGExIHBhMTBwYTEwcGExMHEgcTBwcTBhMGEwYTEwcTBwa9AAAAAAAA'
       # command_off: 'sgYyAAYTEgcGEwYTBhMSBwYTEwcGExMHBhMTBwYTEgcHExMHEgcTBwYTBhMTBxIHBhMGEwe9AAAAAAAA'
@@ -14,18 +21,6 @@
       # command_on: 'shcyAAcTEgcHEwcTBhMTBwYTEwcGFBIHBhMTBwYTEwcTBxIHBhMHEwYUBhMHEwcTEgcSBwe9AAAAAAAA'
       # command_off: 'shUyAAYTEwcHEwYTBhMTBwYTEgcGExMHBxMTBwcTEwcSBxIHBxMGEwYTBhMTBxMHBhMHEwa9AAAAAAAA'
       # friendly_name: 'office_fl_light'
-    bedroom_kelley_light:
-      command_on: 'sgkyAAcTEwgGEwcTBxMSBwYTEwcGFBIHBxMTBxIHEgcHExIIBhMGEwcTBhMGEwYTEgcSBwa9AAAAAAAA'
-      command_off: 'sgkyAAcSEwcHEwcTBxMTBgcTEwYHExMHBxMTBhMHEwYHExMGBxMHEwcTBxMTBhMHBxIHEwe8AAAAAAAA'
-      friendly_name: 'Bedroom Kelley Light'
-    bedroom_peter_light:
-      command_on: 'sgwyAAcTEwcGEwcTBxMTBwcTEwcHExMHEwcTBwYTEwcHExMHBhMGEwcTBhMHEwcTEwcTBwa9AAAAAAAA'
-      command_off: 'sg4yAAcTEwcGEwcTBxMTBwcTEwcHExMHEwcTBgcTEwcHExMHBxMHEwcTBxMTBxMGBxMHEwe9AAAAAAAA'
-      friendly_name: 'Bedroom Peter Light'
-    bedroom_humidifier:
-      command_on: 'sh8yAAUUEggFFAUUBhQSCAYUEggFFBIIBhQSCAYUEggSCBIIBhQGFAUVBRQGFAUUEggSCAXBAAAAAAAA'
-      command_off: 'shcyAAYUEggFFAYUBRQSCAYUEggGFBIIBhQSCAYUEggSCBIIBRQFFQUUBhQSCBIIBRQGFAbAAAAAAAAA'
-      friendly_name: 'Bedroom Humidifier'
     # lr_tv_power1:
       # command_on: 'JgBOAJOVEToQOhE5ERUQFRAVERQRFBE5EToQOhEUERQRFRAVEBUROREUERQROhA6ERQRFBE6EBURORE5ERUQFRA6ETkRFRAABaWWlRAVEQANBQAAAAAAAAAAAAA='
       # command_off: 'JgBOAJWUEjgSOBM3ExMSExITEhMTEhM4EjgSOBEUExMSExITEhMSExMSExIROhI4ExITEhM4EjgSOBM4EhMRFBI4EzgSExIABaWVlBITEwANBQAAAAAAAAAAAAA='

@@ -19,18 +19,6 @@
     # - download
     # - upload
 
-# - platform: pushbullet # borked
-  # api_key: !secret pushbullet_key
-  # monitored_conditions:
-    # - title
-    # - body
-
-- platform: broadlink
-  host: 192.168.1.42
-  mac: '78:0F:77:B9:62:85'
-  monitored_conditions:
-    - temperature
-
 - platform: systemmonitor
   resources:
     - type: last_boot
@@ -88,3 +76,5 @@
 
 - platform: aftership
   api_key: !secret aftership_api
+
+- platform: badnest

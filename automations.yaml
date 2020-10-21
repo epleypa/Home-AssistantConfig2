@@ -99,7 +99,7 @@
 - id: fan
   alias: Fan
   trigger:
-  - minutes: /60
+  - minutes: 0
     platform: time_pattern
   condition:
   - condition: and
@@ -236,7 +236,7 @@
   alias: Plex Wake
   trigger:
   - platform: time_pattern
-    minutes: /60
+    minutes: 0
   condition:
     condition: and
     conditions:
@@ -604,7 +604,7 @@
       |int(0) ) > 3600 %}True{% endif %}'
   action:
   - data_template:
-      entity_id: camera.{{ trigger.event.data.cam_name | lower }}
+      entity_id: camera.camect_{{ trigger.event.data.cam_name | lower }}
       filename: /tmp/{{ trigger.event.data.cam_name | lower }}_{{ trigger.event.data.detected_obj
         | lower }}.jpg
     service: camera.snapshot
@@ -622,8 +622,8 @@
       message: '{{ trigger.event.data.cam_name }} detected {{ trigger.event.data.detected_obj
         }}'
       title:
-        '[object Object]':
     service: notify.mobile_app_peter_sm_g981u
+  mode: single
 - id: '1588452709021'
   alias: Sun
   description: ''

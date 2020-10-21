@@ -11,7 +11,7 @@ automations:
    icon: mdi:playlist-check
    entities:
      - group.all_automations
-     - group.all_scripts 
+     - group.all_scripts
 
 weather:
   name: Weather
@@ -26,14 +26,14 @@ weather:
 
 alarmclock:
   name: Wake Up
-  entities: 
+  entities:
     - sensor.alarm_time
     - group.alarmclock_settings
 
 alarmclock_settings:
   name: Settings
   icon: mdi:cog
-  entities: 
+  entities:
     - automation.wake_up
     - input_number.alarmhour
     - input_number.alarmminutes
