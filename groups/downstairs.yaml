@@ -3,8 +3,7 @@ downstairs_lights:
    entities:
       - group.living_room_lights
       - group.dining_room_lights
-      - group.patio_lights
-      - group.holiday_lights
+      - group.backyard_lights
       - group.kitchen_lights
       - light.tv_backlight
 
@@ -57,14 +56,15 @@ kitchen_lights:
       - light.kitchen_overhead_lights
       - switch.bar_lights
 
-patio_lights:
-   name: Patio Lights
+backyard_lights:
+   name: Backyard Lights
    entities:
-      - switch.patio_wall_lights
-      - switch.patio_party_lights
+      - switch.backyard_wall_lights
+      - switch.party_lights
 
 holiday_lights:
   name: Holiday Lights
   entities:
-    - switch.christmas_tree
-    - switch.patio_party_lights
+      - switch.christmas_tree_lights
+      - switch.christmas_window_lights
+      - switch.patio_lights

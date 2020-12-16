@@ -3,8 +3,8 @@ home_lights:
    entities:
       - group.upstairs_lights
       - group.downstairs_lights
-      - group.patio_lights
-      - group.holiday_lights
+      - group.backyard_lights
+#      - group.holiday_lights
 
 automations:
    name: Automations

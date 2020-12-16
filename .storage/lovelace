@@ -6,6 +6,24 @@
             "title": "Home",
             "views": [
                 {
+                    "title": "Home",
+                    "badges": [
+                        {
+                            "entity": "person.peter"
+                        },
+                        {
+                            "entity": "person.kelley"
+                        },
+                        {
+                            "entity": "device_tracker.toyota_corolla"
+                        },
+                        {
+                            "entity": "sun.sun"
+                        },
+                        {
+                            "entity": "sensor.moon"
+                        }
+                    ],
                     "cards": [
                         {
                             "entity": "weather.kdca_daynight",
@@ -27,6 +45,30 @@
                                     "secondary_info": "last-changed"
                                 }
                             ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "group.bedroom_lights"
+                                },
+                                {
+                                    "entity": "group.living_room_lights"
+                                },
+                                {
+                                    "entity": "group.office_lights"
+                                },
+                                {
+                                    "entity": "group.dining_room_lights"
+                                },
+                                {
+                                    "entity": "group.backyard_lights"
+                                },
+                                {
+                                    "entity": "group.kitchen_lights"
+                                }
+                            ],
+                            "title": "Home Lights",
                             "type": "entities"
                         },
                         {
@@ -60,84 +102,47 @@
                             ],
                             "title": "Wake Up",
                             "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "group.bedroom_lights",
-                                "group.living_room_lights",
-                                "group.office_lights",
-                                "group.dining_room_lights",
-                                "group.patio_lights",
-                                "group.kitchen_lights"
-                            ],
-                            "title": "Home Lights",
-                            "type": "entities"
                         }
-                    ],
-                    "title": "Home"
+                    ]
                 },
                 {
-                    "badges": [],
+                    "icon": "mdi:ceiling-light",
+                    "panel": false,
+                    "title": "Lights",
                     "cards": [
                         {
+                            "type": "vertical-stack",
                             "cards": [
                                 {
-                                    "cards": [
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "sensor.us_coronavirus_confirmed",
-                                                    "icon": "mdi:emoticon-neutral-outline",
-                                                    "name": "Confirmed"
-                                                },
-                                                {
-                                                    "entity": "sensor.us_coronavirus_current",
-                                                    "icon": "mdi:emoticon-frown-outline",
-                                                    "name": "Current"
-                                                },
-                                                {
-                                                    "entity": "sensor.us_coronavirus_recovered",
-                                                    "icon": "mdi:emoticon-happy-outline",
-                                                    "name": "Recovered"
-                                                },
-                                                {
-                                                    "entity": "sensor.us_coronavirus_deaths",
-                                                    "icon": "mdi:emoticon-dead-outline",
-                                                    "name": "Deaths"
-                                                }
-                                            ],
-                                            "type": "glance"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
+                                    "type": "entities",
                                     "entities": [
                                         {
-                                            "entity": "sensor.us_coronavirus_current",
-                                            "hours_to_show": 90,
-                                            "name": "US Current"
+                                            "entity": "group.holiday_lights"
                                         },
                                         {
-                                            "entity": "sensor.us_coronavirus_deaths",
-                                            "hours_to_show": 90,
-                                            "name": "US Deaths"
+                                            "entity": "switch.patio_lights"
+                                        },
+                                        {
+                                            "entity": "group.backyard_lights"
                                         }
-                                    ],
-                                    "type": "history-graph"
+                                    ]
+                                },
+                                {
+                                    "type": "entities",
+                                    "entities": [
+                                        {
+                                            "entity": "group.upstairs_lights"
+                                        },
+                                        {
+                                            "entity": "group.downstairs_lights"
+                                        },
+                                        {
+                                            "entity": "group.home_lights"
+                                        }
+                                    ]
                                 }
-                            ],
-                            "title": "COVID-19 United States",
-                            "type": "vertical-stack"
-                        }
-                    ],
-                    "icon": "mdi:biohazard",
-                    "path": "virus",
-                    "title": "Virus"
-                },
-                {
-                    "badges": [],
-                    "cards": [
+                            ]
+                        },
                         {
                             "cards": [
                                 {
@@ -192,13 +197,17 @@
                                 {
                                     "cards": [
                                         {
-                                            "entity": "switch.kitchen_cabinet_lights",
+                                            "entity": "switch.backyard_wall_lights",
+                                            "icon": "mdi:coach-lamp",
                                             "type": "entity-button"
                                         },
                                         {
-                                            "entity": "switch.patio_wall_lights",
-                                            "icon": "mdi:coach-lamp",
-                                            "type": "entity-button"
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "entity": "switch.party_lights",
+                                            "show_state": false
                                         }
                                     ],
                                     "type": "horizontal-stack"
@@ -206,20 +215,15 @@
                                 {
                                     "cards": [
                                         {
+                                            "entity": "switch.kitchen_cabinet_lights",
+                                            "type": "entity-button"
+                                        },
+                                        {
                                             "entity": "switch.dining_room_light",
                                             "type": "entity-button"
                                         },
                                         {
                                             "entity": "switch.bar_lights",
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "switch.christmas_tree",
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "switch.patio_party_lights",
-                                            "icon": "mdi:string-lights",
                                             "type": "entity-button"
                                         }
                                     ],
@@ -250,37 +254,22 @@
                                     "type": "horizontal-stack"
                                 },
                                 {
+                                    "type": "horizontal-stack",
                                     "cards": [
                                         {
-                                            "entity": "group.upstairs_lights",
-                                            "icon": "mdi:stairs-up",
+                                            "entity": "switch.christmas_tree_lights",
                                             "type": "entity-button"
                                         },
                                         {
-                                            "entity": "group.downstairs_lights",
-                                            "icon": "mdi:stairs-down",
+                                            "entity": "switch.christmas_window_lights",
                                             "type": "entity-button"
                                         }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "cards": [
-                                        {
-                                            "entity": "group.home_lights",
-                                            "icon": "mdi:home-lightbulb",
-                                            "type": "entity-button"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
+                                    ]
                                 }
                             ],
                             "type": "vertical-stack"
                         }
-                    ],
-                    "icon": "mdi:ceiling-light",
-                    "panel": false,
-                    "title": "Lights"
+                    ]
                 },
                 {
                     "cards": [
@@ -404,6 +393,65 @@
                     ],
                     "icon": "mdi:shield",
                     "title": "Security"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "cards": [
+                                        {
+                                            "entities": [
+                                                {
+                                                    "entity": "sensor.us_coronavirus_confirmed",
+                                                    "icon": "mdi:emoticon-neutral-outline",
+                                                    "name": "Confirmed"
+                                                },
+                                                {
+                                                    "entity": "sensor.us_coronavirus_current",
+                                                    "icon": "mdi:emoticon-frown-outline",
+                                                    "name": "Current"
+                                                },
+                                                {
+                                                    "entity": "sensor.us_coronavirus_recovered",
+                                                    "icon": "mdi:emoticon-happy-outline",
+                                                    "name": "Recovered"
+                                                },
+                                                {
+                                                    "entity": "sensor.us_coronavirus_deaths",
+                                                    "icon": "mdi:emoticon-dead-outline",
+                                                    "name": "Deaths"
+                                                }
+                                            ],
+                                            "type": "glance"
+                                        }
+                                    ],
+                                    "type": "horizontal-stack"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "sensor.us_coronavirus_current",
+                                            "hours_to_show": 90,
+                                            "name": "US Current"
+                                        },
+                                        {
+                                            "entity": "sensor.us_coronavirus_deaths",
+                                            "hours_to_show": 90,
+                                            "name": "US Deaths"
+                                        }
+                                    ],
+                                    "type": "history-graph"
+                                }
+                            ],
+                            "title": "COVID-19 United States",
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "icon": "mdi:biohazard",
+                    "path": "virus",
+                    "title": "Virus"
                 },
                 {
                     "badges": [],
@@ -796,6 +844,12 @@
                         }
                     ],
                     "title": "More"
+                },
+                {
+                    "title": "Packages",
+                    "path": "packages",
+                    "badges": [],
+                    "cards": []
                 }
             ]
         }

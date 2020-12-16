@@ -106,3 +106,12 @@ remote_command:
         == "cable" %}cm2 {% elif source == "roku" %}hdmi3 {% elif source == "chromecast"
         %}hdmi4 {% elif source == "switch" %}hdmi1 {% elif source == "xbox" %}hdmi2
         {% endif %}'''
+goodnight:
+  alias: Goodnight
+  sequence:
+  - service: script.arm_home
+    data: {}
+  - service: homeassistant.turn_off
+    data: {}
+    entity_id: group.holiday_lights
+  mode: single

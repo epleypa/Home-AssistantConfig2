@@ -1,9 +1,6 @@
 - platform: broadlink
   mac: '78:0F:77:B9:62:85'
   switches:
-    - name: 'Christmas Tree Light'
-      command_on: 'sggyAAYTEwcHEwYTBhMSBwcTEgcGExMHBhMTBwYTEwcGExMHBhMHExIHEgcGEwYTEwcSBwe8AAAAAAAA'
-      command_off: 'sgkyAAYTEwcGEwYTBhMTBwYTEgcGExIHBhMSBwYTEgcGExIHBxMGExIHEgcSBxMHBhMGEwa9AAAAAAAA'
     - name: 'Bedroom Kelley Light'
       command_on: 'sgkyAAcTEwgGEwcTBxMSBwYTEwcGFBIHBxMTBxIHEgcHExIIBhMGEwcTBhMGEwYTEgcSBwa9AAAAAAAA'
       command_off: 'sgkyAAcSEwcHEwcTBxMTBgcTEwYHExMHBxMTBhMHEwYHExMGBxMHEwcTBxMTBhMHBxIHEwe8AAAAAAAA'
@@ -13,14 +10,12 @@
     - name: 'Bedroom Humidifier'
       command_on: 'sh8yAAUUEggFFAUUBhQSCAYUEggFFBIIBhQSCAYUEggSCBIIBhQGFAUVBRQGFAUUEggSCAXBAAAAAAAA'
       command_off: 'shcyAAYUEggFFAYUBRQSCAYUEggGFBIIBhQSCAYUEggSCBIIBRQFFQUUBhQSCBIIBRQGFAbAAAAAAAAA'
-    # lr_tb_light:
-      # command_on: 'shEyAAYTEwcHEwYTBxMSBwcTEgcGExIHBhMTBwYTEwcGExMHEgcTBwcTBhMGEwYTEwcTBwa9AAAAAAAA'
-      # command_off: 'sgYyAAYTEgcGEwYTBhMSBwYTEwcGExMHBhMTBwYTEgcHExMHEgcTBwYTBhMTBxIHBhMGEwe9AAAAAAAA'
-      # friendly_name: 'lr_tb_light'
-    # office_fl_light:
-      # command_on: 'shcyAAcTEgcHEwcTBhMTBwYTEwcGFBIHBhMTBwYTEwcTBxIHBhMHEwYUBhMHEwcTEgcSBwe9AAAAAAAA'
-      # command_off: 'shUyAAYTEwcHEwYTBhMTBwYTEgcGExMHBxMTBwcTEwcSBxIHBxMGEwYTBhMTBxMHBhMHEwa9AAAAAAAA'
-      # friendly_name: 'office_fl_light'
+    - name: 'Christmas Tree Lights'
+      command_on: 'sggyAAYTEwcHEwYTBhMSBwcTEgcGExMHBhMTBwYTEwcGExMHBhMHExIHEgcGEwYTEwcSBwe8AAAAAAAA'
+      command_off: 'sgkyAAYTEwcGEwYTBhMTBwYTEgcGExIHBhMSBwYTEgcGExIHBxMGExIHEgcSBxMHBhMGEwa9AAAAAAAA'
+    - name: 'Christmas Window Lights'
+      command_on: 'shEyAAYTEwcHEwYTBxMSBwcTEgcGExIHBhMTBwYTEwcGExMHEgcTBwcTBhMGEwYTEwcTBwa9AAAAAAAA'
+      command_off: 'sgYyAAYTEgcGEwYTBhMSBwYTEwcGExMHBhMTBwYTEgcHExMHEgcTBwYTBhMTBxIHBhMGEwe9AAAAAAAA'
     # lr_tv_power1:
       # command_on: 'JgBOAJOVEToQOhE5ERUQFRAVERQRFBE5EToQOhEUERQRFRAVEBUROREUERQROhA6ERQRFBE6EBURORE5ERUQFRA6ETkRFRAABaWWlRAVEQANBQAAAAAAAAAAAAA='
       # command_off: 'JgBOAJWUEjgSOBM3ExMSExITEhMTEhM4EjgSOBEUExMSExITEhMSExMSExIROhI4ExITEhM4EjgSOBM4EhMRFBI4EzgSExIABaWVlBITEwANBQAAAAAAAAAAAAA='
@@ -85,9 +80,8 @@
     # cable_ok:
       # command_on: 'JgAwAAABJJQPlA9JD0kOSg6VD0kOSg5KDkoOSg5KD0oOSg6UD5QPkw8AA+0AASNKDwANBQAAAAAAAAAA'
       # friendly_name: 'cable_ok'
-    # cable_hd:
-      # command_on: 'JgAwAAABJJQPSQ5KDkoPkw9KD5MPSQ5KD0kPSg5KD0kPSQ+UDpQPSQ8ABDcAASNKDgANBQAAAAAAAAAA'
-      # friendly_name: 'cable_hd'
+    - name: 'Cable HD'
+      command_on: 'JgAwAAABJJQPSQ5KDkoPkw9KD5MPSQ5KD0kPSg5KD0kPSQ+UDpQPSQ8ABDcAASNKDgANBQAAAAAAAAAA'
 
 - platform: template
   switches:
@@ -132,6 +126,7 @@
         - service: input_boolean.turn_off
           entity_id: input_boolean.tv_mute
     cable_power:
+      unique_id: cable_power
       value_template: "{{ is_state('input_boolean.cable_power', 'on') }}"
       turn_on:
         - service: remote.send_command
@@ -147,6 +142,5 @@
             entity_id: remote.broadlink
             device: cable
             command: cable_power
-
         - service: input_boolean.turn_off
           entity_id: input_boolean.cable_power

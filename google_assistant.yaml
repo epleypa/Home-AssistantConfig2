@@ -1,6 +1,6 @@
 project_id: !secret google_proj
 #api_key: !secret google_homegraph_api
-#secure_devices_pin: !secret google_pin
+secure_devices_pin: !secret google_pin
 service_account:
   private_key: !secret google_private_key
   client_email: !secret google_client_email
@@ -20,6 +20,13 @@ entity_config:
     expose: true
   group.downstairs_lights:
     expose: true
+  group.backyard_lights:
+    expose: true
+  group.holiday_lights:
+    expose: true
+    aliases:
+      - "Christmas Lights"
+
   light.living_room_LED:
     expose: false
   light.Office_LED:
@@ -34,8 +41,17 @@ entity_config:
     expose: false
   switch.dryer:
     expose: false
-  media_player.living_room_tv:
-    expose: true
+
   switch.neo:
     aliases:
       - computer
+
+  media_player.living_room_tv:
+    expose: true
+  switch.tv_mute:
+    expose: false
+  switch.tv_power:
+    expose: false
+
+  alarm_control_panel.10th_street:
+    expose: true
