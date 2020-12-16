@@ -1,28 +1,23 @@
 media_player.living_room_tv:
   device_class: tv
 switch.cable_power:
-  friendly_name: 'Cable'
-
+  friendly_name: Cable
 sensor.wmata_gr_no:
   icon: mdi:train
-  icon_color: 'rgb(0,128,0)'
+  icon_color: rgb(0,128,0)
 sensor.wmata_gr_so:
   icon: mdi:train
-  icon_color: 'rgb(0,128,0)'
+  icon_color: rgb(0,128,0)
 script.wmata_gr_no:
   friendly_name: Next Green Line Northbound
-  initial: off
+  initial: false
   icon: mdi:speaker-wireless
 script.wmata_gr_so:
   friendly_name: Next Green Line Southbound
-  initial: off
+  initial: false
   icon: mdi:speaker-wireless
-
-switch.christmas_tree:
+switch.christmas_tree_light:
   icon: mdi:pine-tree
-switch.patio_party_lights:
-  icon: mdi:snowflake
-
 binary_sensor.front_door:
   device_class: door
 binary_sensor.back_door:
@@ -33,6 +28,7 @@ binary_sensor.bedroom_south_window:
   device_class: window
 binary_sensor.office_north_window:
   device_class: window
-
 binary_sensor.home_away:
   icon: mdi:shield-home
+alarm_control_panel.10th_street:
+  code_arm_required: false

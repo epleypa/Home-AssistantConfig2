@@ -76,5 +76,8 @@
 
 - platform: aftership
   api_key: !secret aftership_api
+- platform: seventeentrack
+  username: !secret 17track_email
+  password: !secret 17track_pw
 
 - platform: badnest
