@@ -76,5 +76,5 @@ zones.yaml
 shell/*
 core
 automation_archive
-google_service_account.json
+*.json
 .vscode/*

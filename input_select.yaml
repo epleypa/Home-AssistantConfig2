@@ -43,3 +43,28 @@ origin:
   - Gym Dupont
   - Gym 14th St
   - Home
+
+238b3c51d11f99da1bd7bedd372f050a_alert:
+  name: Front Door Alert
+  options:
+  - idle
+  - camera_motion
+  - camera_person
+  - camera_sound
+  - doorbell_chime
+
+16015c01b7a49cafbfcdb5d184a8b3a1_alert:
+  name: Front Yard Alert
+  options:
+  - idle
+  - camera_motion
+  - camera_person
+  - camera_sound
+
+6124c7af4dc88ecfef3ebb42daa5ecf6_alert:
+  name: Backyard Alert
+  options:
+  - idle
+  - camera_motion
+  - camera_person
+  - camera_sound

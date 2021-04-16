@@ -1,25 +1,25 @@
-- platform: mqtt
-  state_topic: "honeywell/804123"
-  name: "Front Door"
-  qos: 0
-  device_class: door
-  payload_on: 160
-  payload_off: 128
-#  value_template: '{% if value_json.id is equalto 804123 %}{{ value_json.event }}{% endif %}'
+# - platform: mqtt
+#   state_topic: "honeywell/804123"
+#   name: "Front Door"
+#   qos: 0
+#   device_class: door
+#   payload_on: 160
+#   payload_off: 128
+# #  value_template: '{% if value_json.id is equalto 804123 %}{{ value_json.event }}{% endif %}'
 
-- platform: mqtt
-  state_topic: "honeywell/57870"
-  name: "Back Door"
-  qos: 0
-  device_class: door
-  payload_on: 160
-  payload_off: 128
-#  value_template: '{% if value_json.id is equalto 57870 %}{{ value_json.event }}{% endif %}'
+# - platform: mqtt
+#   state_topic: "honeywell/57870"
+#   name: "Back Door"
+#   qos: 0
+#   device_class: door
+#   payload_on: 160
+#   payload_off: 128
+# #  value_template: '{% if value_json.id is equalto 57870 %}{{ value_json.event }}{% endif %}'
 
-- platform: mqtt
-  state_topic: "honeywell/64540"
-  name: "Office Window"
-  qos: 0
-  device_class: door
-  payload_on: 160
-  payload_off: 128
+# - platform: mqtt
+#   state_topic: "honeywell/64540"
+#   name: "Office Window"
+#   qos: 0
+#   device_class: door
+#   payload_on: 160
+#   payload_off: 128

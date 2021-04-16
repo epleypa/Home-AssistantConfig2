@@ -20,8 +20,10 @@ entity_config:
     expose: true
   group.downstairs_lights:
     expose: true
-  group.backyard_lights:
+  group.bedroom_table_lights:
     expose: true
+  group.outdoor_lights:
+    expose: true  
   group.holiday_lights:
     expose: true
     aliases:

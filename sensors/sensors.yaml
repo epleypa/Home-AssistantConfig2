@@ -26,7 +26,6 @@
     - type: processor_use
 
 - platform: uptime
-  unit_of_measurement: minutes
 
 - platform: rest
   name: 'WMATA'
@@ -79,5 +78,3 @@
 - platform: seventeentrack
   username: !secret 17track_email
   password: !secret 17track_pw
-
-- platform: badnest

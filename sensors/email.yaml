@@ -1,0 +1,26 @@
+- platform: imap_email_content
+  server: !secret imap_server
+  name: package_tracking
+  port: 993
+  username: !secret imap_email
+  password: !secret imap_password
+  senders:
+    - auto-reply@usps.com
+    - TrackingUpdates@fedex.com
+    - mcinfo@ups.com
+    - pkginfo@ups.com
+
+- platform: template
+  sensors:
+    imported_package:
+      friendly_name: Imported Tracking Number
+      value_template: >
+        {% if state_attr('sensor.package_tracking','subject')|regex_search("UPS", ignorecase=True) %}{{ state_attr('sensor.package_tracking','subject')|regex_findall_index("1Z[A-Z0-9]{16}") }}
+        {% else %}{{ state_attr('sensor.package_tracking','subject')|regex_findall_index("\d{5,}") }}
+        {% endif %}
+      attribute_templates:
+          slug: >
+            {% if state_attr('sensor.package_tracking','subject')|regex_search("USPS", ignorecase=True) %}USPS
+            {% elif state_attr('sensor.package_tracking','subject')|regex_search("FedEx", ignorecase=True) %}FedEx
+            {% elif state_attr('sensor.package_tracking','subject')|regex_search("UPS", ignorecase=True) %}UPS
+            {% endif %}

@@ -15,3 +15,7 @@
   services:
     - service: mobile_app_peter_sm_g981u
     - service: mobile_app_kelley_sm_g981u
+
+- name: discord
+  platform: discord
+  token: !secret discord_token

@@ -16,9 +16,17 @@ discovery:
 
 # Text to speech
 tts:
-  platform: google_translate
-#  language: 'en-us'
-  service_name: google_say
+  - platform: google_translate
+#   language: 'en-us'
+#   service_name: google_say
+    cache_dir: /tmp/tts
+
+  - platform: google_cloud
+    cache_dir: /tmp/tts
+    key_file: !secret google_key_file
+    language: en-US
+    gender: female
+    voice: en-US-Wavenet-F
 
 #media players
 media_player: !include media_players.yaml
@@ -40,12 +48,19 @@ logger:
   logs:
     camect: info
     plexwebsocket: fatal
+#    homeassistant.components.workday: debug
 #    homeassistant.components.webhook: debug
+
+zone:
+  - name: Home
+    latitude: !secret home_latitude
+    longitude: !secret home_longitude
+    radius: 50
+    icon: mdi:home
 
 notify: !include notify.yaml
 automation: !include automations.yaml
 scene: !include scenes.yaml
-zone: !include zones.yaml
 sensor: !include_dir_merge_list sensors/
 switch: !include_dir_merge_list switches/
 group: !include_dir_merge_named groups/
@@ -53,7 +68,7 @@ script: !include scripts.yaml
 input_boolean: !include input_boolean.yaml
 input_number: !include input_number.yaml
 input_select: !include input_select.yaml
-binary_sensor: !include binary_sensors.yaml #!include_dir_merge_list binary_sensors/
+binary_sensor: !include_dir_merge_list binary_sensors/
 light: !include lights.yaml
 
 #climate:
@@ -64,18 +79,18 @@ fan:
     fans:
       hvac_fan:
         friendly_name: "HVAC Fan"
-        value_template: "{% if is_state_attr('climate.upstairs_thermostat', 'fan_mode', 'on') %}on{% else %}off{% endif %}"
+        value_template: "{% if is_state_attr('climate.upstairs', 'fan_mode', 'on') %}on{% else %}off{% endif %}"
         turn_on:
           service: climate.set_fan_mode
           data:
-            entity_id: climate.upstairs_thermostat
+            entity_id: climate.upstairs
             fan_mode: 'on'
         turn_off:
           service: climate.set_fan_mode
           data:
-            entity_id: climate.upstairs_thermostat
-            fan_mode: 'auto'
-        speeds:
+            entity_id: climate.upstairs
+            fan_mode: 'off'
+        speeds: []
 
 #vendor-specific integrations
 ifttt:
@@ -84,34 +99,11 @@ google: #calendar
   client_id: !secret google_oath_client
   client_secret: !secret google_oath_secret
 google_assistant: !include google_assistant.yaml
-#nest:
-#  client_id: !secret nest_id
-#  client_secret: !secret nest_secret
-#  binary_sensors:
-#    monitored_conditions:
-#      - away
-#      - online
-#      - fan
-#      - is_using_emergency_heat
-#      - is_locked
-#      - has_leaf
-#      - motion_detected
-#      - person_detected
-#      - sound_detected
-#  sensors:
-#    monitored_conditions:
-#      - eta
-#      - security_state
-#      - humidity
-#      - temperature
-
-badnest:
-  issue_token: !secret badnest_issue_token
-  cookie: !secret badnest_cookie
-  region: us
-climate:
-  - platform: badnest
-    scan_interval: 10
+nest:
+  client_id: !secret nest_oath_client
+  client_secret: !secret nest_oath_secret
+  project_id: !secret nest_project_id
+  subscriber_id: !secret nest_subscriber_id
 
 camect: #custom component
   host: !secret camect_host
@@ -135,3 +127,5 @@ eufy_vacuum:
     access_token: !secret eufy_token
     id: !secret eufy_id
     type: T2118
+
+circadian_lighting:

@@ -3,45 +3,14 @@ downstairs_lights:
    entities:
       - group.living_room_lights
       - group.dining_room_lights
-      - group.backyard_lights
       - group.kitchen_lights
-      - light.tv_backlight
 
 living_room_lights:
    name: Living Room Lights
    entities:
       - switch.christmas_tree
       - light.living_room_lights
-
-living_room:
-   name: Living Room
-   icon: mdi:sofa
-   entities:
-      - sensor.broadlink_sensor_temperature
-      - group.living_room_lights
-      - device_tracker.silicondust_hdhomerun_prime
-      - media_player.living_room_home
-      - media_player.roku_5s56ag426734
-      - media_player.plex_web_chrome
-      - device_tracker.chromecast_livingroom
-      - device_tracker.broadlink_rmpro
-      - group.entertainment_center
-      - group.lr_tv_source
-      - group.cable_source
-
-entertainment_center:
-   name: Entertainment Center
-   entities:
-    #  - group.lr_tv_power
-      - switch.cable_power
-      - switch.tv_power
-
-# lr_tv_power:
-   # name: Living Room TV Power
-   # entities:
-      # - switch.lr_tv_power1
-      # - switch.lr_tv_power2
-      # - switch.lr_tv_power1
+      - light.tv_backlight
 
 dining_room_lights:
    name: Dining Room Lights
@@ -56,10 +25,16 @@ kitchen_lights:
       - light.kitchen_overhead_lights
       - switch.bar_lights
 
-backyard_lights:
-   name: Backyard Lights
+outdoor_lights:
+   name: Outdoor Lights
    entities:
-      - switch.backyard_wall_lights
+      - group.patio_lights
+      - switch.front_yard_lights
+
+patio_lights:
+   name: Patio Lights
+   entities:
+      - switch.patio_wall_lights
       - switch.party_lights
 
 holiday_lights:

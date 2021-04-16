@@ -12,13 +12,18 @@
                 ],
                 "id": "6c48bdcdd7c4483a98b763567743b7a5",
                 "name": "Peter",
-                "user_id": "4dea6e58fe1140c7a24ef3bf03a9e584"
+                "user_id": "4dea6e58fe1140c7a24ef3bf03a9e584",
+                "picture": "/api/image/serve/b86a9d797ecd183e25c30417d8eb7f2c/512x512"
             },
             {
-                "device_trackers": [],
+                "device_trackers": [
+                    "device_tracker.kelley_galaxy_s20_5g_tile",
+                    "device_tracker.kelley_keys"
+                ],
                 "id": "abd93aa045b14dd2a642a34c40bec196",
                 "name": "Kelley",
-                "user_id": null
+                "user_id": "97856349dd4d4b2688b73c8b15542e35",
+                "picture": "/api/image/serve/df185c57f57c51a7675a7488a6ae2ceb/512x512"
             }
         ]
     }

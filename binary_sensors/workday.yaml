@@ -1,0 +1,28 @@
+- platform: workday
+  name: "Workday"
+  country: US
+  workdays: [mon,tue,wed,thu,fri]
+  excludes: [sat,sun,holiday]
+  add_holidays:
+    - '2020-12-28'
+    - '2020-12-29'
+    - '2020-12-30'
+    - '2020-12-31'
+- platform: workday
+  name: "Worknight"
+  days_offset: 1
+  country: US
+  workdays: [mon,tue,wed,thu,fri]
+  excludes: [sat,sun,holiday]
+  add_holidays:
+    - '2020-12-28'
+    - '2020-12-29'
+    - '2020-12-30'
+    - '2020-12-31'
+
+- platform: template
+  sensors:
+    sleep_mode:
+      friendly_name: "Sleep Mode"
+      value_template: "{% if is_state('alarm_control_panel.10th_street', 'armed_home') and (now().strftime('%H:%M:%S') >= '10:00:00' or now().strftime('%H:%M:%S') <= '05:00:00')%}true{% else %}false{% endif %}"
+      icon_template: "{% if is_state('sensor.sleep_mode', 'on') %}mdi:sleep{% else %}mdi:sleep-off{% endif %}"

@@ -3,7 +3,7 @@ home_lights:
    entities:
       - group.upstairs_lights
       - group.downstairs_lights
-      - group.backyard_lights
+      - group.outdoor_lights
 #      - group.holiday_lights
 
 automations:
@@ -12,17 +12,6 @@ automations:
    entities:
      - group.all_automations
      - group.all_scripts
-
-weather:
-  name: Weather
-  icon: mdi:thermometer
-  entities:
-    - group.darksky
-    - group.wu
-    - sensor.yr_symbol
-    - sun.sun
-    - sensor.moon
-    - sensor.nws_alerts
 
 alarmclock:
   name: Wake Up
