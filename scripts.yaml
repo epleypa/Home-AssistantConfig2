@@ -115,3 +115,86 @@ goodnight:
     data: {}
     entity_id: group.holiday_lights
   mode: single
+cat_tv_beautiful_birds:
+  alias: Cat TV
+  sequence:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_select.cat_tv
+        state: Beautiful Birds
+      sequence:
+      - data:
+          media_content_type: cast
+          media_content_id: ' { "app_name": "youtube", "media_id": "BKKSMtB2g_w" }'
+        service: media_player.play_media
+        target:
+          entity_id: media_player.living_room_chromecast
+    - conditions:
+      - condition: state
+        entity_id: input_select.cat_tv
+        state: Baby Birds
+      sequence:
+      - data:
+          media_content_type: cast
+          media_content_id: ' { "app_name": "youtube", "media_id": "CD3YNLUgW8s" }'
+        service: media_player.play_media
+        target:
+          entity_id: media_player.living_room_chromecast
+    - conditions:
+      - condition: state
+        entity_id: input_select.cat_tv
+        state: Snow Birds
+      sequence:
+      - data:
+          media_content_type: cast
+          media_content_id: ' { "app_name": "youtube", "media_id": "6BBM-7URQhI" }'
+        service: media_player.play_media
+        target:
+          entity_id: media_player.living_room_chromecast
+    - conditions:
+      - condition: state
+        entity_id: input_select.cat_tv
+        state: Birds for Cats
+      sequence:
+      - data:
+          media_content_type: cast
+          media_content_id: ' { "app_name": "youtube", "media_id": "wOuJKGhmf3c" }'
+        service: media_player.play_media
+        target:
+          entity_id: media_player.living_room_chromecast
+    - conditions:
+      - condition: state
+        entity_id: input_select.cat_tv
+        state: Autumn Birds
+      sequence:
+      - data:
+          media_content_type: cast
+          media_content_id: ' { "app_name": "youtube", "media_id": "_pjVJbam2x4" }'
+        service: media_player.play_media
+        target:
+          entity_id: media_player.living_room_chromecast
+    - conditions:
+      - condition: state
+        entity_id: input_select.cat_tv
+        state: Summer Birds
+      sequence:
+      - data:
+          media_content_type: cast
+          media_content_id: ' { "app_name": "youtube", "media_id": "A1VaNx3gjQE" }'
+        service: media_player.play_media
+        target:
+          entity_id: media_player.living_room_chromecast
+    - conditions:
+      - condition: state
+        entity_id: input_select.cat_tv
+        state: Christmas Birds
+      sequence:
+      - data:
+          media_content_type: cast
+          media_content_id: ' { "app_name": "youtube", "media_id": "Rrans_4Otww" }'
+        service: media_player.play_media
+        target:
+          entity_id: media_player.living_room_chromecast
+    default: []
+  mode: single

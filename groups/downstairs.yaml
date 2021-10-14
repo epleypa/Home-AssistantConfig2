@@ -32,14 +32,15 @@ outdoor_lights:
       - switch.front_yard_lights
 
 patio_lights:
-   name: Patio Lights
+   name: Outdoor Lights
    entities:
       - switch.patio_wall_lights
       - switch.party_lights
+      - switch.front_yard_lights
 
 holiday_lights:
   name: Holiday Lights
   entities:
       - switch.christmas_tree_lights
       - switch.christmas_window_lights
-      - switch.patio_lights
+      - switch.front_yard_lights

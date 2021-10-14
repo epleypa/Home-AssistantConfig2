@@ -10,6 +10,11 @@ lovelace:
 http:
   ssl_certificate: !secret ssl_cert_loc
   ssl_key: !secret ssl_key_loc
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 172.0.0.0/8
+    - 127.0.0.1
+    - ::1
 
 # Discover some devices automatically
 discovery:
@@ -30,6 +35,7 @@ tts:
 
 #media players
 media_player: !include media_players.yaml
+media_extractor:
 
 #device tracking
 device_tracker: !include device_trackers.yaml
@@ -90,7 +96,7 @@ fan:
           data:
             entity_id: climate.upstairs
             fan_mode: 'off'
-        speeds: []
+#        speeds: []
 
 #vendor-specific integrations
 ifttt:
@@ -106,12 +112,12 @@ nest:
   subscriber_id: !secret nest_subscriber_id
 
 camect: #custom component
-  host: !secret camect_host
-  port: 443
-  username: !secret camect_un
-  password: !secret camect_pw
-  camera_ids: !secret camect_cameras
-#  id: !secret camect_home
+  - host: !secret camect_host
+    port: 443
+    username: !secret camect_un
+    password: !secret camect_pw
+    camera_ids: !secret camect_cameras
+#    id: !secret camect_home
 
 telegram_bot:
   - platform: polling

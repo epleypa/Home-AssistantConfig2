@@ -2,8 +2,9 @@
   "domain": "camect",
   "name": "Camect",
   "documentation": "https://github.com/camect/home-assistant-integration",
+  "version": "2021.03.04",
   "requirements": [
-    "camect-py==0.1.8"
+    "camect-py==0.1.10"
   ],
   "dependencies": [],
   "codeowners": [

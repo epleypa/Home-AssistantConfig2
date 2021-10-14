@@ -35,3 +35,9 @@ wmata:
     - sensor.wmata_gr_so
     - script.wmata_gr_no
     - script.wmata_gr_so
+
+family:
+  name: Family
+  entities:
+    - person.kelley
+    - person.peter
