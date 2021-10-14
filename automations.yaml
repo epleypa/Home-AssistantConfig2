@@ -64,37 +64,6 @@
     data: {}
     entity_id: media_player.living_room_tv
   mode: single
-- id: goodnight-work
-  alias: Goodnight
-  trigger:
-  - at: '23:35:00'
-    platform: time
-  - at: '1:05:00'
-    platform: time
-  condition:
-  - condition: or
-    conditions:
-    - condition: and
-      conditions:
-      - condition: state
-        entity_id: binary_sensor.worknight
-        state: 'on'
-      - after: '23:00:00'
-        condition: time
-    - condition: and
-      conditions:
-      - condition: state
-        entity_id: binary_sensor.worknight
-        state: 'off'
-      - after: '1:00:00'
-        condition: time
-  action:
-  - entity_id: group.home_lights, group.holiday_lights
-    service: homeassistant.turn_off
-  - data_template:
-      message: Goodnight!
-    service: telegram_bot.send_message
-  mode: single
 - id: fan
   alias: Fan
   trigger:
@@ -119,8 +88,7 @@
       minutes: 15
       seconds: 0
       milliseconds: 0
-  - service: fan.turn_on
-    data: {}
+  - service: fan.turn_off
     target:
       entity_id: fan.hvac_fan
   mode: single
@@ -226,8 +194,8 @@
 - id: ledmotion
   alias: LED Motion
   trigger:
-    platform: state
-    entity_id: binary_sensor.living_room_motion, binary_sensor.bedroom_motion
+  - platform: state
+    entity_id: binary_sensor.living_room_motion, binary_sensor.bedroom_motion, binary_sensor.office_motion
     to: 'on'
   condition:
   - condition: time
@@ -239,6 +207,7 @@
   - delay: 00:00:01
   - service: light.turn_off
     entity_id: light.living_room_led, light.office_led, light.bedroom_led
+  mode: single
 - id: motionless
   alias: Motionless
   trigger:
@@ -263,9 +232,9 @@
   alias: Plex Wake
   trigger:
   - platform: time_pattern
-    minutes: 0
+    minutes: /59
   condition:
-    condition: and
+  - condition: and
     conditions:
     - condition: time
       after: '18:58:00'
@@ -277,6 +246,7 @@
     data:
       name: Wake Plex
       message: has woke Neo
+  mode: single
 - id: ifttt_remote
   alias: IFTTT - Send Remote
   trigger:
@@ -474,17 +444,12 @@
     entity_id: binary_sensor.updater
     to: 'on'
   action:
-  - service: notify.telegram_peter
+  - service: notify.persistent_notification
     data:
       title: New Home Assistant Release
       message: Home Assistant {{ state_attr('binary_sensor.updater','newest_version')
         }} is now available
-  - service: ifttt.trigger
-    data_template:
-      event: Home-AssistantConfig
-      value1: '{{ state_attr(''binary_sensor.updater'',''newest_version'') }}'
-      value2: Home Assistant {{ states.binary_sensor.updater.attributes.newest_version
-        }} is now available.
+  mode: single
 - id: emergencyalert
   alias: Emergency Alert
   trigger:
@@ -547,6 +512,15 @@
     from: 'on'
     platform: state
     to: 'off'
+  - platform: state
+    entity_id: binary_sensor.trash
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.recycle
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.street_sweeping
+    to: 'on'
   condition:
   - condition: and
     conditions:
@@ -555,33 +529,52 @@
     - before: '23:00'
       condition: time
   action:
-  - data_template:
-      target: '814328602270498817'
-      message: ' {% if trigger.entity_id == ''binary_sensor.dryer_status'' %}The dryer
-        is done {% elif trigger.entity_id == ''binary_sensor.washer_status'' %}The
-        washer is done {% elif trigger.entity_id == ''binary_sensor.mailbox_contact''
-        %}The mail has arrived! {% endif %}'
-    service: notify.discord
-  - condition: state
-    entity_id: input_boolean.voice_notifications
-    state: 'on'
-  - entity_id: media_player.home_speakers
-    service: media_player.turn_on
-  - data_template:
-      entity_id: media_player.home_speakers
-      volume_level: 0.4
-    service: media_player.volume_set
-  - data_template:
-      cache: false
-      message: ' {% if trigger.entity_id == ''binary_sensor.dryer_status'' %}The dryer
-        is done {% elif trigger.entity_id == ''binary_sensor.washer_status'' %}The
-        washer is done {% elif trigger.entity_id == ''binary_sensor.mailbox_contact''
-        %}The mail has arrived! {% endif %}'
-    entity_id: media_player.home_speakers
-    service: tts.google_cloud_say
-  - delay: 00:01:00
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{% if trigger.entity_id == "binary_sensor.dryer_status" %}True{%
+          endif %}'
+      sequence:
+      - service: notify.discord
+        data:
+          message: The dryer is done
+          target: '814328602270498817'
+    - conditions:
+      - condition: template
+        value_template: '{% if trigger.entity_id == "binary_sensor.washer_status"
+          %}True{% endif %}'
+      sequence:
+      - service: notify.discord
+        data:
+          message: The washer is done
+          target: '814328602270498817'
+    - conditions:
+      - condition: template
+        value_template: '{% if trigger.entity_id == "binary_sensor.mailbox_contact"
+          %}True{% endif %}'
+      sequence:
+      - service: notify.discord
+        data:
+          message: The mail has arrived!
+          target: '814328602270498817'
+    - conditions:
+      - condition: template
+        value_template: '{% if trigger.entity_id == "binary_sensor.trash" or trigger.entity_id
+          == "binary_sensor.recycle" or trigger.entity_id == "binary_sensor.street_sweeping"
+          %}True{% endif %}'
+      sequence:
+      - service: notify.discord
+        data_template:
+          message: Tomorrow is {{ trigger.to_state.attributes.friendly_name }} day!
+          target: '814328602270498817'
+    default:
+    - service: notify.discord
+      data_template:
+        message: '{{ trigger.entity_id }} is on'
+        target: '814328602270498817'
   initial_state: false
-  mode: single
+  mode: queued
+  max: 10
 - id: system_log
   alias: Log Error to File
   trigger:
@@ -616,15 +609,16 @@
       value_template: '{% if state_attr(''weather.kdca_daynight'', ''wind_speed'')
         < 5 %}true{% else %}false{% endif %}'
   action:
-  - device_id: 2fd5c0e825524430afe20c0b49625d76
-    domain: switch
+  - type: turn_on
+    device_id: f0a5bdb86a5e49bebd0aece4f7ab1062
     entity_id: switch.patio_wall_lights
-    type: turn_on
-  - delay: 00:20:00
-  - device_id: 2fd5c0e825524430afe20c0b49625d76
     domain: switch
+  - delay: 00:{{ '{:02}'.format(range(10,20) | random | int) }}:00
+  - type: turn_off
+    device_id: f0a5bdb86a5e49bebd0aece4f7ab1062
     entity_id: switch.patio_wall_lights
-    type: turn_off
+    domain: switch
+  mode: single
 - id: '1588452474080'
   alias: Camect Motion
   description: ''
@@ -642,6 +636,18 @@
       - cat
     event_type: camect_event
     platform: event
+  - event_data:
+      cam_name: Office
+      detected_obj:
+      - cat
+    event_type: camect_event
+    platform: event
+  - event_data:
+      cam_name: Front Yard
+      detected_obj:
+      - cat
+    event_type: camect_event
+    platform: event
   condition:
   - condition: template
     value_template: '{% if trigger.event.data.cam_name != "" and ( as_timestamp(now())
@@ -654,9 +660,6 @@
         | lower }}.jpg
     service: camera.snapshot
   - delay: 00:00:01
-  - data_template:
-      message: '{{ trigger.event.data.cam_name }}'
-    service: notify.error_logfile
   - data_template:
       target: '812545796339400708'
       message: '{{ trigger.event.data.cam_name }} detected {{ trigger.event.data.detected_obj
@@ -678,19 +681,66 @@
   trigger:
   - event: sunrise
     platform: sun
+    id: sunrise
   - event: sunset
     platform: sun
+    id: sunset
+  - platform: time
+    at: '23:00:00'
+    id: goodnight
   condition: []
   action:
-  - data_template:
-      message: '{% if trigger.event == ''sunrise'' %} The sun is up {% else %} The
-        sun is down{% endif %}'
-    service: telegram_bot.send_message
-  - condition: sun
-    after: sunset
-  - service: homeassistant.turn_on
-    data: {}
-    entity_id: group.holiday_lights
+  - choose:
+    - conditions:
+      - condition: sun
+        after: sunrise
+      sequence: []
+    - conditions:
+      - condition: sun
+        after: sunset
+      sequence:
+      - service: homeassistant.turn_on
+        target:
+          entity_id: group.holiday_lights
+    default: []
+  - choose:
+    - conditions:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: person.peter
+          state: home
+      - condition: time
+        before: '23:00:00'
+      - condition: not
+        conditions:
+        - condition: trigger
+          id: sunrise
+      sequence:
+      - delay: 00:{{ '{:02}'.format(range(0,30) | random | int) }}:00
+      - service: homeassistant.turn_on
+        target:
+          entity_id:
+          - group.kitchen_lights
+          - group.living_room_lights
+          - light.bedroom_overhead_light
+    - conditions:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: person.peter
+          state: home
+      - condition: time
+        after: '23:00:00'
+      sequence:
+      - delay: 00:{{ '{:02}'.format(range(0,30) | random | int) }}:00
+      - service: homeassistant.turn_off
+        target:
+          entity_id:
+          - group.kitchen_lights
+          - group.living_room_lights
+          - light.bedroom_overhead_light
+    default: []
   mode: single
 - id: '1608091420017'
   alias: Doorbell
@@ -719,51 +769,6 @@
             name: Home Assistant
             icon_url: https://www.home-assistant.io/images/favicon-192x192-full.png
     service: notify.discord
-  - service: camera.play_stream
-    data:
-      media_player: media_player.living_room_chromecast
-      format: hls
-    entity_id: camera.front_door
-  - wait_template: 00:05:00
-  - service: media_player.media_stop
-    data: {}
-    entity_id: media_player.living_room_chromecast
-  mode: single
-- id: '1610314655926'
-  alias: 0New Automation
-  description: ''
-  trigger:
-  - platform: time
-    at: '16:45:00'
-  condition:
-  - condition: or
-    conditions:
-    - condition: and
-      conditions:
-      - condition: state
-        entity_id: binary_sensor.worknight
-        state: 'on'
-      - condition: time
-        weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
-        - sat
-        - sun
-        after: '16:00:00'
-    - condition: and
-      conditions:
-      - condition: state
-        entity_id: binary_sensor.workday
-        state: 'off'
-      - condition: time
-        after: '16:00:00'
-  action:
-  - service: telegram_bot.send_message
-    data:
-      message: test
   mode: single
 - id: '1612648017088'
   alias: Package Tracking Import
@@ -777,4 +782,34 @@
     data_template:
       tracking_number: '{{ states("sensor.imported_package") }}'
       slug: '{{ state_attr("sensor.imported_package","slug") }}'
+  mode: single
+- id: '1619127008629'
+  alias: 0AMZN Dash
+  description: ''
+  trigger:
+  - platform: event
+    event_type: amzn_tide
+  - platform: event
+    event_type: amzn_bounty
+  - platform: event
+    event_type: amzn_cascade
+  - platform: event
+    event_type: amzn_all
+  - platform: event
+    event_type: amzn_brita
+  - platform: event
+    event_type: amzn_nature
+  - platform: event
+    event_type: amzn_trojan
+  - platform: event
+    event_type: amzn_airborne
+  - platform: event
+    event_type: amzn_zyrtec
+  - platform: event
+    event_type: amzn_charmin
+  condition: []
+  action:
+  - service: notify.mobile_app_peter_sm_g981u
+    data:
+      message: '{{ trigger.event.event_type }}'
   mode: single

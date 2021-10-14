@@ -27,32 +27,32 @@
           {{ state_attr("zone.gym_14th", "latitude") }},{{ state_attr("zone.gym_14th", "longitude") }}
         {%- endif %}'
 
-- platform: google_travel_time
-  api_key: !secret google_homegraph_api
-  origin: sensor.via_origin
-  destination: sensor.via_destination
-  name: Via Driving
-  scan_interval: 21600
-  options:
-    mode: driving
-    avoid: tolls
-- platform: google_travel_time
-  api_key: !secret google_homegraph_api
-  origin: sensor.via_origin
-  destination: sensor.via_destination
-  name: Via Metro
-  scan_interval: 21600
-  options:
-    mode: transit
-    transit_mode: rail
-- platform: google_travel_time
-  api_key: !secret google_homegraph_api
-  origin: sensor.via_origin
-  destination: sensor.via_destination
-  name: Via Bus
-  scan_interval: 21600
-  options:
-    mode: transit
-    transit_mode: bus
+# - platform: google_travel_time
+#   api_key: !secret google_homegraph_api
+#   origin: sensor.via_origin
+#   destination: sensor.via_destination
+#   name: Via Driving
+#   scan_interval: 21600
+#   options:
+#     mode: driving
+#     avoid: tolls
+# - platform: google_travel_time
+#   api_key: !secret google_homegraph_api
+#   origin: sensor.via_origin
+#   destination: sensor.via_destination
+#   name: Via Metro
+#   scan_interval: 21600
+#   options:
+#     mode: transit
+#     transit_mode: rail
+# - platform: google_travel_time
+#   api_key: !secret google_homegraph_api
+#   origin: sensor.via_origin
+#   destination: sensor.via_destination
+#   name: Via Bus
+#   scan_interval: 21600
+#   options:
+#     mode: transit
+#     transit_mode: bus
 
 

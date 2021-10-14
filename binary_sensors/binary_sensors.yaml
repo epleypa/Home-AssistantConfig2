@@ -14,32 +14,37 @@
 - platform: template
   sensors:
     recycle:
-#      entity_id:
-#        - calendar.recycle
-#        - sensor.time
       friendly_name: "Recycle"
-      icon_template: mdi:recycle
+      icon_template: >
+        {{ state_attr('sensor.recycle', 'icon') }}
       value_template: >
-        {% set e = strptime(
-             states.calendar.recycle.attributes.start_time,
-             '%Y-%m-%d %H:%M:%S') %}
-        {{ e.strftime('%j')|int - now().strftime('%j')|int == 1 and now().hour >= 12 }}
+        {{ state_attr('sensor.recycle', 'days') <= 1 and now().hour >= 18 }}
+#        {% set e = strptime(
+#             states.calendar.recycle.attributes.start_time,
+#             '%Y-%m-%d %H:%M:%S') %}
+#        {{ e.strftime('%j')|int - now().strftime('%j')|int == 1 and now().hour >= 12 }}
     trash:
-#      entity_id:
-#        - calendar.trash
-#        - sensor.time
       friendly_name: "Trash"
-      icon_template: >-
-        {% if is_state("binary_sensor.trash", "on") %}
-          mdi:delete
-        {% else %}
-          mdi:delete-outline
-        {% endif %}
+#      icon_template: >-
+#        {% if is_state("binary_sensor.trash", "on") %}
+#          mdi:delete
+#        {% else %}
+#          mdi:delete-outline
+#        {% endif %}
+      icon_template: >
+        {{ state_attr('sensor.trash', 'icon') }}
       value_template: >
-        {% set e = strptime(
-             states.calendar.trash.attributes.start_time,
-             '%Y-%m-%d %H:%M:%S') %}
-        {{ e.strftime('%j')|int - now().strftime('%j')|int == 1 and now().hour >= 12 }}
+        {{ state_attr('sensor.trash', 'days') <= 1 and now().hour >= 18 }}
+#        {% set e = strptime(
+#             states.calendar.trash.attributes.start_time,
+#             '%Y-%m-%d %H:%M:%S') %}
+#        {{ e.strftime('%j')|int - now().strftime('%j')|int == 1 and now().hour >= 12 }}
+    street_sweeping:
+      friendly_name: "Street Sweeping"
+      icon_template: >
+        {{ state_attr('sensor.street_sweeping', 'icon') }}
+      value_template: >
+        {{ state_attr('sensor.street_sweeping', 'days') <= 1 and now().hour >= 18 }}
 
 - platform: template
   sensors:

@@ -73,6 +73,7 @@ zones.yaml
 .storage/*
 !.storage/lovelace
 !.storage/person
+!.storage/input_select
 shell/*
 core
 automation_archive

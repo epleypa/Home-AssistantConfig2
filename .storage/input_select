@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "key": "input_select",
+    "data": {
+        "items": [
+            {
+                "name": "Cat TV",
+                "options": [
+                    "Beautiful Birds",
+                    "Baby Birds",
+                    "Snow Birds",
+                    "Birds for Cats",
+                    "Autumn Birds",
+                    "Summer Birds",
+                    "Christmas Birds"
+                ],
+                "icon": "mdi:cat",
+                "id": "cat_tv"
+            }
+        ]
+    }
+}

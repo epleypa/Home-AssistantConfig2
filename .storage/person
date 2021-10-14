@@ -8,7 +8,8 @@
                     "device_tracker.tile_d97a13d00b4045c0",
                     "device_tracker.sm_t290",
                     "device_tracker.sm_g981u_2",
-                    "device_tracker.sm_g981u"
+                    "device_tracker.sm_g981u",
+                    "device_tracker.peters_iphone_7"
                 ],
                 "id": "6c48bdcdd7c4483a98b763567743b7a5",
                 "name": "Peter",
@@ -17,8 +18,7 @@
             },
             {
                 "device_trackers": [
-                    "device_tracker.kelley_galaxy_s20_5g_tile",
-                    "device_tracker.kelley_keys"
+                    "device_tracker.galaxy_s20_5g_2"
                 ],
                 "id": "abd93aa045b14dd2a642a34c40bec196",
                 "name": "Kelley",
