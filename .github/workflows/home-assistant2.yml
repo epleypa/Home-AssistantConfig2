@@ -1,0 +1,74 @@
+name: Home Assistant CI
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: 0 12 * * *
+
+jobs:
+  home-assistant:
+    name: "Home Assistant Core ${{ matrix.version }} Configuration Check"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: ["stable", "beta", "dev"]
+    steps:
+      - name: ⤵️ Check out configuration from GitHub
+        uses: actions/checkout@v2.3.4
+      - name: Add ble_monitor
+        run: |
+          git clone https://github.com/custom-components/ble_monitor.git ble_monitor/
+          cp -R ble_monitor/custom_components custom_components
+#          ls custom_components/ble_monitor
+      - name: Add camect
+        run: |
+          ls custom_components/camect
+#          git clone https://github.com/camect/home-assistant-integration.git camect/
+#          cp -R camect custom_components
+#          ls custom_components/camect
+      - name: Add circadian_lighting
+        run: |
+          git clone https://github.com/claytonjn/hass-circadian_lighting.git circadian_lighting/
+          cp -R circadian_lighting/custom_components/circadian_lighting custom_components
+#          ls custom_components/circadian_lighting
+      - name: Add eufy_vacuum
+        run: |
+          ls custom_components/eufy_vacuum
+#          git clone https://github.com/mitchellrj/eufy_robovac.git eufy_vacuum/
+#          cp -R eufy_vacuum/eufy_robovac custom_components
+#          mv custom_components/eufy_robovac custom_components/eufy_vacuum
+#          ls custom_components/eufy_vacuum
+      - name: Add eventsensor
+        run: |
+          git clone https://github.com/azogue/eventsensor.git eventsensor/
+          cp -R eventsensor/custom_components/eventsensor custom_components
+ #         ls custom_components/eventsensor
+      - name: Add garbage_collection
+        run: |
+          git clone https://github.com/bruxy70/Garbage-Collection.git garbage_collection/
+          cp -R garbage_collection/custom_components/garbage_collection custom_components
+#          ls custom_components/garbage_collection
+      - name: Add google_home
+        run: |
+          git clone https://github.com/leikoilja/ha-google-home.git google_home/
+          cp -R google_home/custom_components/google_home custom_components
+#          ls custom_components/google_home
+      - name: Add HACS
+        run: |
+          git clone https://github.com/hacs/integration.git hacs/
+          cp -R hacs/custom_components/hacs custom_components
+#          ls custom_components/hacs
+      - name: Add unifigateway
+        run: |
+          git clone https://github.com/custom-components/sensor.unifigateway.git unifigateway/
+          cp -R unifigateway/custom_components/unifigateway custom_components
+#          ls custom_components/unifigateway
+      - name: List Custom Components
+        run: ls custom_components
+      - name: Add Dummy Zones
+        run: cp ./travis/travis_zones.yaml zones.yaml
+      - name: 🚀 Run Home Assistant Configuration Check
+        uses: frenck/action-home-assistant@v1.1.1
+        with:
+          secrets: ./travis/travis_secrets.yaml
+          version: "${{ matrix.version }}"

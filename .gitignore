@@ -40,6 +40,15 @@ jspm_packages
 __pycache__
 *.pyc
 
+*.json
+
+# Custom Components
+custom_components/*
+!custom_components/camect
+!custom_components/camect/manifest.json
+!custom_components/eufy_vacuum
+!custom_components/eufy_vacuum/manifest.json
+
 # Other
 *.uuid
 *.conf
@@ -77,5 +86,4 @@ zones.yaml
 shell/*
 core
 automation_archive
-*.json
 .vscode/*
