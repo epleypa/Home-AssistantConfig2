@@ -68,7 +68,7 @@
   alias: Fan
   trigger:
   - platform: time_pattern
-    minutes: /45
+    hours: '1'
   - platform: state
     entity_id: fan.hvac_fan
     to: 'on'
@@ -702,13 +702,23 @@
       - service: homeassistant.turn_on
         target:
           entity_id: group.holiday_lights
+    - conditions:
+      - condition: time
+        after: '23:00:00'
+      - condition: state
+        entity_id: group.family
+        state: home
+      sequence:
+      - service: homeassistant.turn_off
+        target:
+          entity_id: group.holiday_lights
     default: []
   - choose:
     - conditions:
       - condition: not
         conditions:
         - condition: state
-          entity_id: person.peter
+          entity_id: group.family
           state: home
       - condition: time
         before: '23:00:00'
@@ -728,7 +738,7 @@
       - condition: not
         conditions:
         - condition: state
-          entity_id: person.peter
+          entity_id: group.family
           state: home
       - condition: time
         after: '23:00:00'
