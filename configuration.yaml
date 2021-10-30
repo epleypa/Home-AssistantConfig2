@@ -40,9 +40,10 @@ media_extractor:
 #device tracking
 device_tracker: !include device_trackers.yaml
 
-influxdb:
+#influxdb:
 
 recorder:
+  commit_interval: 10
   # exclude:
   #   domains:
   #   entities:

@@ -1,7 +1,7 @@
 name: Home Assistant CI
 on:
   push:
-  pull_request:
+#  pull_request:
   schedule:
     - cron: 0 12 * * *
 
