@@ -87,3 +87,4 @@ shell/*
 core
 automation_archive
 .vscode/*
+report/
