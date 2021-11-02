@@ -104,7 +104,7 @@
     entity_id: binary_sensor.workday
     state: 'on'
   action:
-  - service_template: '{% if now().strftime(''%H:%M:%S'') <= ''12:00:00'' %}input_boolean.turn_off
+  - service: '{% if now().strftime(''%H:%M:%S'') <= ''12:00:00'' %}input_boolean.turn_off
       {% else %}input_boolean.turn_on{% endif %}'
     entity_id: input_boolean.voice_notifications
   mode: single
@@ -116,10 +116,8 @@
   - platform: time
     at: '22:00:00'
   action:
-  - service_template: '{% if now().strftime(''%H:%M:%S'') >= ''12:00:00'' %}switch.turn_on
-      {% else %}switch.turn_off {% endif %}
-
-      '
+  - service: '{% if now().strftime(''%H:%M:%S'') >= ''12:00:00'' %}switch.turn_on
+      {% else %}switch.turn_off {% endif %}'
     entity_id: switch.bedroom_humidifier
 - id: ledweather
   alias: LED Weather
@@ -199,7 +197,7 @@
     to: 'on'
   condition:
   - condition: time
-    after: '6:00:00'
+    after: '06:00:00'
     before: '23:00:00'
   action:
   - service: light.turn_on
@@ -266,7 +264,7 @@
         {% endif %}'
       device: '{{ trigger.event.data.device|lower }}'
       entity_id: '{{ trigger.event.data.entity_id|lower }}'
-    service_template: '{{ trigger.event.data.service }}'
+    service: '{{ trigger.event.data.service }}'
 - id: ifttt_tracker
   alias: IFTTT - Device Tracker
   trigger:
@@ -282,7 +280,7 @@
   - data_template:
       dev_id: '{{ trigger.event.data.dev_id | lower | replace(" ","_") }}'
       location_name: '{{ trigger.event.data.location_name|lower }}'
-    service_template: '{{ trigger.event.data.service }}'
+    service: '{{ trigger.event.data.service }}'
   mode: single
 - id: ifttt
   alias: IFTTT Webhook
@@ -298,7 +296,7 @@
   action:
   - data_template:
       entity_id: '{{ trigger.event.data.entity_id|lower }}'
-    service_template: '{{ trigger.event.data.service }}'
+    service: '{{ trigger.event.data.service }}'
 - id: tvsource
   alias: Change TV Source
   trigger:
@@ -524,7 +522,7 @@
   condition:
   - condition: and
     conditions:
-    - after: '8:00'
+    - after: '08:00'
       condition: time
     - before: '23:00'
       condition: time
