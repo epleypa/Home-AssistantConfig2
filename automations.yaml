@@ -465,6 +465,10 @@
       value_template: '{% if ''_alarm'' in trigger.event.data.entity_id and trigger.event.data.new_state.state
         == ''on'' %}True{% endif %}'
   action:
+  - data_template:
+      message: '{{ trigger.event.data.new_state.attributes.friendly_name | replace("_",
+        "\_") }} is {{ trigger.event.data.new_state.state | replace("_", "\_") }}'
+    service: telegram_bot.send_message
   - entity_id: media_player.home_speakers
     service: media_player.turn_on
   - data_template:
@@ -697,17 +701,21 @@
       sequence:
       - service: homeassistant.turn_on
         target:
-          entity_id: group.holiday_lights
+          entity_id:
+          - group.holiday_lights
+          - light.tv_backlight
     - conditions:
-      - condition: trigger
-        id: goodnight
+      - condition: time
+        after: '23:00:00'
       - condition: state
         entity_id: group.family
         state: home
       sequence:
       - service: homeassistant.turn_off
         target:
-          entity_id: group.holiday_lights
+          entity_id:
+          - group.holiday_lights
+          - light.tv_backlight
     default: []
   - choose:
     - conditions:
@@ -716,12 +724,10 @@
         - condition: state
           entity_id: group.family
           state: home
+      - condition: time
+        before: '23:00:00'
       - condition: trigger
-        id: ''
-      - condition: not
-        conditions:
-        - condition: trigger
-          id: sunset
+        id: sunset
       sequence:
       - delay: 00:{{ '{:02}'.format(range(0,30) | random | int) }}:00
       - service: homeassistant.turn_on
@@ -736,8 +742,8 @@
         - condition: state
           entity_id: group.family
           state: home
-      - condition: trigger
-        id: goodnight
+      - condition: time
+        after: '23:00:00'
       sequence:
       - delay: 00:{{ '{:02}'.format(range(0,30) | random | int) }}:00
       - service: homeassistant.turn_off

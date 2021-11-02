@@ -326,11 +326,11 @@
                                             "entity": "switch.front_yard_lights"
                                         },
                                         {
-                                            "entity": "switch.christmas_tree_lights",
+                                            "entity": "switch.window_switch",
                                             "type": "entity-button"
                                         },
                                         {
-                                            "entity": "switch.christmas_window_lights",
+                                            "entity": "switch.christmas_tree_lights",
                                             "type": "entity-button"
                                         }
                                     ]

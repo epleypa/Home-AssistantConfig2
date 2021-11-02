@@ -42,5 +42,5 @@ holiday_lights:
   name: Holiday Lights
   entities:
       - switch.christmas_tree_lights
-      - switch.christmas_window_lights
+      - switch.window_switch
       - switch.front_yard_lights
