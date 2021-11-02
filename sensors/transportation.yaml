@@ -26,7 +26,6 @@
         {% elif is_state("input_select.destination", "Gym 14th St") -%}
           {{ state_attr("zone.gym_14th", "latitude") }},{{ state_attr("zone.gym_14th", "longitude") }}
         {%- endif %}'
-
 # - platform: google_travel_time
 #   api_key: !secret google_homegraph_api
 #   origin: sensor.via_origin
@@ -54,5 +53,3 @@
 #   options:
 #     mode: transit
 #     transit_mode: bus
-
-
