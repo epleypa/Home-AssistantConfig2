@@ -88,3 +88,4 @@ core
 automation_archive
 .vscode/*
 report/
+nest/event_media/*

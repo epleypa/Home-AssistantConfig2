@@ -10,7 +10,7 @@
     - name: 'Kitchen Camera'
       command_on: 'sh8yAAUUEggFFAUUBhQSCAYUEggFFBIIBhQSCAYUEggSCBIIBhQGFAUVBRQGFAUUEggSCAXBAAAAAAAA'
       command_off: 'shcyAAYUEggFFAYUBRQSCAYUEggGFBIIBhQSCAYUEggSCBIIBRQFFQUUBhQSCBIIBRQGFAbAAAAAAAAA'
-    - name: 'Dining Room Switch'
+    - name: 'Christmas Tree Lights'
       command_on: 'sggyAAYTEwcHEwYTBhMSBwcTEgcGExMHBhMTBwYTEwcGExMHBhMHExIHEgcGEwYTEwcSBwe8AAAAAAAA'
       command_off: 'sgkyAAYTEwcGEwYTBhMTBwYTEgcGExIHBhMSBwYTEgcGExIHBxMGExIHEgcSBxMHBhMGEwa9AAAAAAAA'
     - name: 'Window Switch'

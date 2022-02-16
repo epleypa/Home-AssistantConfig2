@@ -2,6 +2,8 @@
   "domain": "camect",
   "name": "Camect",
   "documentation": "https://github.com/camect/home-assistant-integration",
+  "issue_tracker": "https://github.com/camect/home-assistant-integration/issues",
+  "iot_class": "local_polling",
   "version": "2021.03.04",
   "requirements": [
     "camect-py==0.1.10"

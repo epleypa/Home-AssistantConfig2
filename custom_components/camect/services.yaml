@@ -1,6 +1,6 @@
 change_op_mode:
-  description: Change operation mode
+  description: Change the home mode of the camect.
   fields:
     mode:
-      description: The new operation mode.
-      example: home/away
+      description: The new home mode (home or away).
+      example: home

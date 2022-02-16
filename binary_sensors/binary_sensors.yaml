@@ -50,17 +50,17 @@
   sensors:
     washer_status:
         friendly_name: "Washer Cycle"
-        value_template: "{{ states('sensor.washer_power')|float > 5 }}"
+        value_template: "{{ states('sensor.washer_current_consumption')|float > 5 }}"
         icon_template: mdi:washing-machine
         delay_on:
           minutes: 5
         delay_off:
-          minutes: 3
+          minutes: 2
     dryer_status:
         friendly_name: "Dryer Cycle"
-        value_template: "{{ states('sensor.dryer_power')|float > 5 }}"
+        value_template: "{{ states('sensor.dryer_current_consumption')|float > 5 }}"
         icon_template: mdi:tumble-dryer
         delay_on:
           minutes: 5
         delay_off:
-          minutes: 3
+          minutes: 1

@@ -12,7 +12,8 @@
                     "Birds for Cats",
                     "Autumn Birds",
                     "Summer Birds",
-                    "Christmas Birds"
+                    "Christmas Birds",
+                    "Pumpkin Birds"
                 ],
                 "icon": "mdi:cat",
                 "id": "cat_tv"

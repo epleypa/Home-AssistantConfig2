@@ -8,7 +8,7 @@ downstairs_lights:
 living_room_lights:
    name: Living Room Lights
    entities:
-      - switch.christmas_tree
+      - switch.christmas_tree_lights
       - light.living_room_lights
       - light.tv_backlight
 
@@ -29,18 +29,23 @@ outdoor_lights:
    name: Outdoor Lights
    entities:
       - group.patio_lights
-      - switch.front_yard_lights
+      - group.front_lights
 
 patio_lights:
-   name: Outdoor Lights
+   name: Patio Lights
    entities:
       - switch.patio_wall_lights
       - switch.party_lights
-      - switch.front_yard_lights
+
+front_lights:
+  name: Front Lights
+  entities:
+      - switch.window_switch
+      - switch.front_yard_plug_1
+      - switch.front_yard_plug_2
 
 holiday_lights:
-  name: Holiday Lights
-  entities:
+   name: Holiday Lights
+   entities:
+      - group.front_lights
       - switch.christmas_tree_lights
-      - switch.window_switch
-      - switch.front_yard_lights

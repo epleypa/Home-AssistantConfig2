@@ -1,5 +1,6 @@
 {
     "version": 1,
+    "minor_version": 1,
     "key": "lovelace",
     "data": {
         "config": {
@@ -151,7 +152,7 @@
                                     "type": "entities",
                                     "entities": [
                                         {
-                                            "entity": "group.holiday_lights"
+                                            "entity": "group.front_lights"
                                         },
                                         {
                                             "entity": "group.patio_lights"
@@ -534,65 +535,6 @@
                     "title": "Security"
                 },
                 {
-                    "badges": [],
-                    "cards": [
-                        {
-                            "cards": [
-                                {
-                                    "cards": [
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "sensor.us_coronavirus_confirmed",
-                                                    "icon": "mdi:emoticon-neutral-outline",
-                                                    "name": "Confirmed"
-                                                },
-                                                {
-                                                    "entity": "sensor.us_coronavirus_current",
-                                                    "icon": "mdi:emoticon-frown-outline",
-                                                    "name": "Current"
-                                                },
-                                                {
-                                                    "entity": "sensor.us_coronavirus_recovered",
-                                                    "icon": "mdi:emoticon-happy-outline",
-                                                    "name": "Recovered"
-                                                },
-                                                {
-                                                    "entity": "sensor.us_coronavirus_deaths",
-                                                    "icon": "mdi:emoticon-dead-outline",
-                                                    "name": "Deaths"
-                                                }
-                                            ],
-                                            "type": "glance"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "entities": [
-                                        {
-                                            "entity": "sensor.us_coronavirus_current",
-                                            "hours_to_show": 90,
-                                            "name": "US Current"
-                                        },
-                                        {
-                                            "entity": "sensor.us_coronavirus_deaths",
-                                            "hours_to_show": 90,
-                                            "name": "US Deaths"
-                                        }
-                                    ],
-                                    "type": "history-graph"
-                                }
-                            ],
-                            "title": "COVID-19 United States",
-                            "type": "vertical-stack"
-                        }
-                    ],
-                    "icon": "mdi:biohazard",
-                    "path": "virus",
-                    "title": "Virus"
-                },
-                {
                     "icon": "mdi:film",
                     "title": "Living Room",
                     "badges": [],
@@ -706,20 +648,6 @@
                     "badges": [],
                     "cards": [
                         {
-                            "type": "custom:auto-entities",
-                            "card": {
-                                "type": "entities",
-                                "title": "Weather Station"
-                            },
-                            "filter": {
-                                "include": [
-                                    {
-                                        "entity_id": "sensor.fx175*"
-                                    }
-                                ]
-                            }
-                        },
-                        {
                             "entities": [
                                 {
                                     "entity": "sensor.living_room_temperature",
@@ -799,75 +727,27 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.master_bath_toliet_leak_sensor_temperature_measurement"
+                                    "entity": "sensor.upstairs_bath_toilet_leak_sensor_temperature_measurement"
                                 },
                                 {
-                                    "entity": "binary_sensor.master_bath_toliet_leak_sensor_water"
-                                },
-                                {
-                                    "entity": "sensor.master_bath_sink_leak_sensor_temperature_measurement"
-                                },
-                                {
-                                    "entity": "binary_sensor.master_bath_sink_leak_sensor_water"
+                                    "entity": "sensor.upstairs_bath_sink_leak_sensor_temperature_measurement"
                                 },
                                 {
                                     "entity": "sensor.half_bath_toliet_leak_sensor_temperature_measurement"
                                 },
                                 {
-                                    "entity": "binary_sensor.half_bath_toliet_leak_sensor_water"
-                                },
-                                {
                                     "entity": "sensor.half_bath_sink_leak_sensor_temperature_measurement"
                                 },
                                 {
-                                    "entity": "binary_sensor.half_bath_sink_leak_sensor_water"
-                                }
-                            ],
-                            "title": "Bathroom Sensors",
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.kitchen_leak_sensor_temperature_measurement"
-                                },
-                                {
-                                    "entity": "binary_sensor.kitchen_leak_sensor_water"
-                                }
-                            ],
-                            "title": "Kitchen Sensors",
-                            "type": "glance"
-                        },
-                        {
-                            "type": "glance",
-                            "entities": [
-                                {
                                     "entity": "sensor.ble_temperature_upstairs_bathroom"
-                                },
-                                {
-                                    "entity": "sensor.ble_temperature_bedroom"
-                                },
-                                {
-                                    "entity": "sensor.ble_temperature_dining_room"
-                                },
-                                {
-                                    "entity": "sensor.ble_temperature_office"
-                                },
-                                {
-                                    "entity": "sensor.ble_humidity_bedroom"
-                                },
-                                {
-                                    "entity": "sensor.ble_humidity_dining_room"
-                                },
-                                {
-                                    "entity": "sensor.ble_humidity_office"
                                 },
                                 {
                                     "entity": "sensor.ble_humidity_upstairs_bathroom"
                                 }
                             ],
-                            "title": "BLE",
-                            "state_color": false
+                            "title": "Bathroom Sensors",
+                            "type": "glance",
+                            "columns": 3
                         },
                         {
                             "type": "horizontal-stack",
@@ -931,77 +811,101 @@
                             ],
                             "refresh_interval": 0,
                             "hours_to_show": 2
-                        }
-                    ]
-                },
-                {
-                    "cards": [
-                        {
-                            "entities": [
-                                "sensor.wmata_gr_no",
-                                "sensor.wmata_gr_so",
-                                "script.wmata_gr_no",
-                                "script.wmata_gr_so"
-                            ],
-                            "title": "WMATA Info",
-                            "type": "entities"
                         },
                         {
-                            "entities": [
-                                "input_select.origin",
-                                "input_select.destination",
-                                "sensor.via_driving",
-                                "sensor.via_metro",
-                                "sensor.via_bus"
-                            ],
-                            "title": "Travel Time",
-                            "type": "entities"
+                            "type": "horizontal-stack",
+                            "title": "Upstairs Bathroom",
+                            "cards": [
+                                {
+                                    "type": "gauge",
+                                    "entity": "sensor.ble_temperature_upstairs_bathroom",
+                                    "max": 100,
+                                    "min": 0,
+                                    "severity": {
+                                        "green": 65,
+                                        "yellow": 74,
+                                        "red": 0
+                                    },
+                                    "name": "Temperature"
+                                },
+                                {
+                                    "type": "gauge",
+                                    "entity": "sensor.ble_humidity_upstairs_bathroom",
+                                    "min": 0,
+                                    "max": 100,
+                                    "severity": {
+                                        "green": 45,
+                                        "yellow": 70,
+                                        "red": 0
+                                    },
+                                    "name": "Humidity",
+                                    "needle": true
+                                }
+                            ]
                         },
                         {
-                            "type": "custom:auto-entities",
-                            "card": {
-                                "type": "entities",
-                                "title": "Packages"
-                            },
-                            "filter": {
-                                "include": [
-                                    {
-                                        "entity_id": "sensor.seventeentrack_package_*"
-                                    }
-                                ]
-                            }
+                            "type": "horizontal-stack",
+                            "title": "Office",
+                            "cards": [
+                                {
+                                    "type": "gauge",
+                                    "entity": "sensor.ble_temperature_office",
+                                    "max": 100,
+                                    "min": 0,
+                                    "severity": {
+                                        "green": 65,
+                                        "yellow": 74,
+                                        "red": 0
+                                    },
+                                    "name": "Temperature"
+                                },
+                                {
+                                    "type": "gauge",
+                                    "entity": "sensor.ble_humidity_office",
+                                    "min": 0,
+                                    "max": 100,
+                                    "severity": {
+                                        "green": 45,
+                                        "yellow": 70,
+                                        "red": 0
+                                    },
+                                    "name": "Humidity",
+                                    "needle": true
+                                }
+                            ]
                         },
                         {
-                            "entities": [
-                                "sensor.alarm_time",
-                                "group.alarmclock_settings"
-                            ],
-                            "title": "Wake Up",
-                            "type": "entities"
-                        },
-                        {
-                            "type": "entity",
-                            "entity": "sensor.aftership"
-                        },
-                        {
-                            "type": "custom:aftership-card",
-                            "entity": "sensor.aftership",
-                            "title": "Packages"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                "device_tracker.hs300",
-                                "switch.plug_1",
-                                "switch.plug_2",
-                                "switch.plug_3",
-                                "switch.plug_4",
-                                "switch.plug_5",
-                                "switch.plug_6"
+                            "type": "horizontal-stack",
+                            "title": "Bedroom",
+                            "cards": [
+                                {
+                                    "type": "gauge",
+                                    "entity": "sensor.ble_temperature_bedroom",
+                                    "max": 100,
+                                    "min": 0,
+                                    "severity": {
+                                        "green": 65,
+                                        "yellow": 74,
+                                        "red": 0
+                                    },
+                                    "name": "Temperature"
+                                },
+                                {
+                                    "type": "gauge",
+                                    "entity": "sensor.ble_humidity_bedroom",
+                                    "min": 0,
+                                    "max": 100,
+                                    "severity": {
+                                        "green": 45,
+                                        "yellow": 70,
+                                        "red": 0
+                                    },
+                                    "name": "Humidity",
+                                    "needle": true
+                                }
                             ]
                         }
-                    ],
-                    "title": "More"
+                    ]
                 },
                 {
                     "cards": [
@@ -1028,11 +932,11 @@
                                         {
                                             "entities": [
                                                 {
-                                                    "entity": "sensor.washer_power",
+                                                    "entity": "sensor.washer_current_consumption",
                                                     "name": "Washer"
                                                 },
                                                 {
-                                                    "entity": "sensor.dryer_power",
+                                                    "entity": "sensor.dryer_current_consumption",
                                                     "name": "Dryer"
                                                 }
                                             ],
@@ -1185,6 +1089,97 @@
                     ],
                     "icon": "mdi:led-on",
                     "title": "Sensors"
+                },
+                {
+                    "icon": "mdi:windsock",
+                    "title": "Weather",
+                    "path": "weather",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "custom:auto-entities",
+                            "card": {
+                                "type": "entities",
+                                "title": "Weather Station"
+                            },
+                            "filter": {
+                                "include": [
+                                    {
+                                        "entity_id": "sensor.fx175*"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "cards": [
+                        {
+                            "entities": [
+                                "sensor.wmata_gr_no",
+                                "sensor.wmata_gr_so",
+                                "script.wmata_gr_no",
+                                "script.wmata_gr_so"
+                            ],
+                            "title": "WMATA Info",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                "input_select.origin",
+                                "input_select.destination",
+                                "sensor.via_driving",
+                                "sensor.via_metro",
+                                "sensor.via_bus"
+                            ],
+                            "title": "Travel Time",
+                            "type": "entities"
+                        },
+                        {
+                            "type": "custom:auto-entities",
+                            "card": {
+                                "type": "entities",
+                                "title": "Packages"
+                            },
+                            "filter": {
+                                "include": [
+                                    {
+                                        "entity_id": "sensor.seventeentrack_package_*"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "entities": [
+                                "sensor.alarm_time",
+                                "group.alarmclock_settings"
+                            ],
+                            "title": "Wake Up",
+                            "type": "entities"
+                        },
+                        {
+                            "type": "entity",
+                            "entity": "sensor.aftership"
+                        },
+                        {
+                            "type": "custom:aftership-card",
+                            "entity": "sensor.aftership",
+                            "title": "Packages"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "device_tracker.hs300",
+                                "switch.plug_1",
+                                "switch.plug_2",
+                                "switch.plug_3",
+                                "switch.plug_4",
+                                "switch.plug_5",
+                                "switch.plug_6"
+                            ]
+                        }
+                    ],
+                    "title": "More"
                 }
             ]
         }

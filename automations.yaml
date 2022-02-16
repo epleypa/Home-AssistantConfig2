@@ -34,10 +34,6 @@
 - id: later
   alias: See You Later
   trigger:
-  - entity_id: group.family
-    for: 0:10:00
-    platform: state
-    to: not_home
   - entity_id: alarm_control_panel.10th_street
     platform: state
     to: armed_home
@@ -46,23 +42,9 @@
     platform: state
     to: armed_away
   action:
-  - choose:
-    - conditions:
-      - condition: state
-        entity_id: alarm_control_panel.10th_street
-        state: armed_home
-      sequence:
-      - service: homeassistant.turn_off
-        data: {}
-        target:
-          entity_id: group.downstairs_lights
-    default:
-    - service: homeassistant.turn_off
-      target:
-        entity_id: group.home_lights
-  - service: media_player.turn_off
-    data: {}
-    entity_id: media_player.living_room_tv
+  - service: homeassistant.turn_off
+    target:
+      entity_id: group.home_lights
   mode: single
 - id: fan
   alias: Fan
@@ -197,7 +179,7 @@
     to: 'on'
   condition:
   - condition: time
-    after: '06:00:00'
+    after: 06:00:00
     before: '23:00:00'
   action:
   - service: light.turn_on
@@ -522,9 +504,9 @@
   condition:
   - condition: and
     conditions:
-    - after: '08:00'
+    - after: 08:00
       condition: time
-    - before: '23:00'
+    - before: '23:00:00'
       condition: time
   action:
   - choose:
@@ -671,6 +653,7 @@
           author:
             name: Home Assistant
             icon_url: https://www.home-assistant.io/images/favicon-192x192-full.png
+          fields: []
     service: notify.discord
   mode: single
 - id: '1588452709021'
@@ -700,8 +683,8 @@
       - service: homeassistant.turn_on
         target:
           entity_id:
-          - group.holiday_lights
           - light.tv_backlight
+          - group.front_lights
     - conditions:
       - condition: time
         after: '23:00:00'
@@ -712,8 +695,7 @@
       - service: homeassistant.turn_off
         target:
           entity_id:
-          - group.holiday_lights
-          - light.tv_backlight
+          - group.front_lights
     default: []
   - choose:
     - conditions:
@@ -778,6 +760,7 @@
           author:
             name: Home Assistant
             icon_url: https://www.home-assistant.io/images/favicon-192x192-full.png
+          fields: '[]'
     service: notify.discord
   mode: single
 - id: '1612648017088'
