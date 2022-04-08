@@ -1,5 +1,5 @@
 all_lights:
-   name: Home Lights
+   name: All Lights
    entities:
       - group.home_lights
       - group.outdoor_lights

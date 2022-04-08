@@ -1,5 +1,6 @@
 {
     "version": 1,
+    "minor_version": 2,
     "key": "input_select",
     "data": {
         "items": [
@@ -17,6 +18,73 @@
                 ],
                 "icon": "mdi:cat",
                 "id": "cat_tv"
+            },
+            {
+                "name": "TV Source",
+                "options": [
+                    "cable",
+                    "roku",
+                    "chromecast",
+                    "switch",
+                    "xbox"
+                ],
+                "id": "living_room_tv_source"
+			},
+            {
+                "name": "Destination",
+                "options": [
+                    "Peter Tysons Office",
+                    "Peter DC Office",
+                    "Peter Client",
+                    "Gym Dupont",
+                    "Home",
+                    "Kelley Office"
+                ],
+                "id": "destination"
+			},
+            {
+                "name": "Origin",
+                "options": [
+                    "Peter Tysons Office",
+                    "Peter DC Office",
+                    "Peter Client",
+                    "Gym Dupont",
+                    "Home",
+                    "Kelley Office"
+                ],
+                "id": "origin"
+			},
+            {
+                "name": "Front Door Alert",
+                "options": [
+                    "idle",
+                    "camera_motion",
+                    "camera_person",
+                    "camera_sound",
+                    "doorbell_chime"
+                ],
+                "id": "238b3c51d11f99da1bd7bedd372f050a_alert"
+			},
+            {
+                "name": "Front Yard Alert",
+                "options": [
+                    "idle",
+                    "camera_motion",
+                    "camera_person",
+                    "camera_sound"
+                ],
+                "id": "16015c01b7a49cafbfcdb5d184a8b3a1_alert"
+			},
+            {
+                "name": "Backyard Alert",
+                "options": [
+                    "idle",
+                    "camera_motion",
+                    "camera_person",
+                    "camera_sound",
+                    "doorbell_chime"
+                ],
+                "id": "6124c7af4dc88ecfef3ebb42daa5ecf6_alert"
             }
         ]
     }

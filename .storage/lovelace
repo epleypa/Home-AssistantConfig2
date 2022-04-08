@@ -197,11 +197,20 @@
                                 {
                                     "cards": [
                                         {
-                                            "entity": "light.kitchen_overhead_lights",
+                                            "entity": "light.living_room_can_lights",
                                             "type": "light"
                                         },
                                         {
-                                            "entity": "light.living_room_lights",
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "entity": "group.living_room_center_light",
+                                            "icon": "mdi:lightbulb-group"
+                                        },
+                                        {
+                                            "entity": "light.tv_backlight",
+                                            "icon": "mdi:television-ambient-light",
                                             "type": "light"
                                         }
                                     ],
@@ -210,8 +219,7 @@
                                 {
                                     "cards": [
                                         {
-                                            "entity": "light.tv_backlight",
-                                            "icon": "mdi:television-ambient-light",
+                                            "entity": "light.kitchen_overhead_lights",
                                             "type": "light"
                                         },
                                         {
@@ -542,7 +550,7 @@
                         {
                             "cards": [
                                 {
-                                    "entity": "media_player.roku_streaming_stick",
+                                    "entity": "media_player.",
                                     "type": "media-control"
                                 },
                                 {

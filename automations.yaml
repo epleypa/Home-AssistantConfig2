@@ -22,14 +22,25 @@
       entity_id: input_boolean.alarmweekday
       state: 'off'
   action:
-  - service: switch.turn_on
-    entity_id: switch.bedroom_peter_light
-  - service: notify.telegram_peter
-    data:
+  - service: homeassistant.turn_on
+    data: {}
+    target:
+      entity_id:
+      - group.hallway_lights
+      - group.living_room_center_light
+  - service: notify.discord
+    data_template:
+      target: '814328602270498817'
       message: Time to start the day!
-  - delay: 00:45:00
-  - service: switch.turn_off
-    entity_id: switch.bedroom_peter_light
+      data:
+        embed:
+          title: Today's Forecast
+          description: '{{ state_attr(''weather.kdca_daynight'',''forecast'')[0][''detailed_description'']
+            }}'
+          thumbnail:
+            url: https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/US-NationalWeatherService-Logo.svg/1200px-US-NationalWeatherService-Logo.svg.png
+          footer:
+            text: NWS KDCA
   mode: single
 - id: later
   alias: See You Later
@@ -199,7 +210,11 @@
     for: 01:00:00
     platform: state
     to: 'off'
-  condition: []
+  condition:
+  - condition: time
+    after: 00:00:00
+  - condition: sun
+    before: sunset
   action:
   - data_template:
       entity_id: "{% if trigger.entity_id == 'binary_sensor.bedroom_motion' %}\n \
@@ -655,6 +670,32 @@
             icon_url: https://www.home-assistant.io/images/favicon-192x192-full.png
           fields: []
     service: notify.discord
+  - choose:
+    - conditions:
+      - condition: or
+        conditions:
+        - condition: sun
+          before: sunrise
+        - condition: sun
+          after: sunset
+      - condition: template
+        value_template: '{% if trigger.event.data.cam_name | lower == "backyard" %}True{%
+          endif %}'
+      sequence:
+      - service: homeassistant.turn_on
+        data: {}
+        target:
+          entity_id: group.patio_lights
+      - delay:
+          hours: 0
+          minutes: 3
+          seconds: 0
+          milliseconds: 0
+      - service: homeassistant.turn_off
+        data: {}
+        target:
+          entity_id: group.patio_lights
+    default: []
   mode: single
 - id: '1588452709021'
   alias: Sun
@@ -685,9 +726,11 @@
           entity_id:
           - light.tv_backlight
           - group.front_lights
+        data: {}
     - conditions:
       - condition: time
         after: '23:00:00'
+        before: 00:00:00
       - condition: state
         entity_id: group.family
         state: home
@@ -696,6 +739,9 @@
         target:
           entity_id:
           - group.front_lights
+          - light.hallway_laundry_light
+          - light.hallway_bathroom_light
+        data: {}
     default: []
   - choose:
     - conditions:
@@ -706,6 +752,7 @@
           state: home
       - condition: time
         before: '23:00:00'
+        after: 00:00:00
       - condition: trigger
         id: sunset
       sequence:
@@ -716,6 +763,8 @@
           - group.kitchen_lights
           - group.living_room_lights
           - light.bedroom_overhead_light
+          - group.hallway_lights
+        data: {}
     - conditions:
       - condition: not
         conditions:
@@ -724,6 +773,7 @@
           state: home
       - condition: time
         after: '23:00:00'
+        before: 00:00:00
       sequence:
       - delay: 00:{{ '{:02}'.format(range(0,30) | random | int) }}:00
       - service: homeassistant.turn_off
@@ -732,6 +782,8 @@
           - group.kitchen_lights
           - group.living_room_lights
           - light.bedroom_overhead_light
+          - group.hallway_lights
+        data: {}
     default: []
   mode: single
 - id: '1608091420017'
@@ -751,10 +803,22 @@
   - delay: 00:00:01
   - data_template:
       target: '812545796339400708'
+      message: Doorbell triggered
+    service: notify.discord
+  - service: notify.mobile_app_peter_sm_g981u
+    data:
+      message: Doorbell Pressed
+      title: Someone pressed the doorbell
+      data:
+        image: /api/nest/event_media/{{ trigger.event.data.device_id }}/{{ trigger.event.data.nest_event_id
+          }}/thumbnail
+  - data_template:
+      target: '812545796339400708'
       message: Someone is at the door!
       data:
         images:
-        - /config/www/doorbell.jpg
+        - /api/nest/event_media/{{ trigger.event.data.device_id }}/{{ trigger.event.data.nest_event_id
+          }}/thumbnail
         embed:
           description: Doorbell Camera
           author:

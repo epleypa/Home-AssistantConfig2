@@ -23,11 +23,15 @@ entity_config:
   group.bedroom_table_lights:
     expose: true
   group.outdoor_lights:
-    expose: true  
+    expose: true
   group.holiday_lights:
     expose: true
     aliases:
       - "Christmas Lights"
+  group.living_room_center_light:
+    expose: true
+  group.living_room_lights:
+    expose: true
 
   light.living_room_LED:
     expose: false

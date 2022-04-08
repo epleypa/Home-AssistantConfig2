@@ -136,3 +136,7 @@ eufy_vacuum:
     type: T2118
 
 circadian_lighting:
+
+spotify:
+  client_id: !secret spotify_client
+  client_secret: !secret spotify_secret

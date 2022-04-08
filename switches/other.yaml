@@ -15,6 +15,7 @@
     - light.hallway_laundry_light
     - light.office_light
     - light.storage_light
+    - group.living_room_center_light
 
 - platform: circadian_lighting
   name: Circadian Brightness

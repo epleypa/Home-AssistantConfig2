@@ -1,0 +1,27 @@
+{
+    "version": 1,
+    "minor_version": 1,
+    "key": "input_number",
+    "data": {
+        "items": [
+            {
+                "min": 0.0,
+                "max": 23.0,
+                "name": "Hour",
+                "icon": "mdi:timer",
+                "mode": "slider",
+                "step": 1.0,
+                "id": "alarmhour"
+            },
+            {
+                "min": 0.0,
+                "max": 59.0,
+                "name": "Minutes",
+                "icon": "mdi:timer",
+                "step": 5.0,
+                "mode": "slider",
+                "id": "alarmminutes"
+            }
+        ]
+    }
+}

@@ -9,8 +9,16 @@ living_room_lights:
    name: Living Room Lights
    entities:
       - switch.christmas_tree_lights
-      - light.living_room_lights
+      - light.living_room_can_lights
+      - group.living_room_center_light
       - light.tv_backlight
+
+living_room_center_light:
+   name: Living Room Center Lights
+   entities:
+      - light.living_room_light_1
+      - light.living_room_light_2
+      - light.living_room_light_3
 
 dining_room_lights:
    name: Dining Room Lights

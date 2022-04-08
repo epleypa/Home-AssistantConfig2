@@ -83,6 +83,8 @@ zones.yaml
 !.storage/lovelace
 !.storage/person
 !.storage/input_select
+!.storage/input_boolean
+!.storage/input_number
 shell/*
 core
 automation_archive
