@@ -68,7 +68,7 @@ jobs:
       - name: Add Dummy Zones
         run: cp ./travis/travis_zones.yaml zones.yaml
       - name: 🚀 Run Home Assistant Configuration Check
-        uses: frenck/action-home-assistant@v1.1.1
+        uses: frenck/action-home-assistant@v1.3
         with:
           secrets: ./travis/travis_secrets.yaml
           version: "${{ matrix.version }}"
