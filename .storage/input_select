@@ -29,7 +29,7 @@
                     "xbox"
                 ],
                 "id": "living_room_tv_source"
-			},
+            },
             {
                 "name": "Destination",
                 "options": [
@@ -41,7 +41,7 @@
                     "Kelley Office"
                 ],
                 "id": "destination"
-			},
+            },
             {
                 "name": "Origin",
                 "options": [
@@ -53,7 +53,7 @@
                     "Kelley Office"
                 ],
                 "id": "origin"
-			},
+            },
             {
                 "name": "Front Door Alert",
                 "options": [
@@ -64,7 +64,7 @@
                     "doorbell_chime"
                 ],
                 "id": "238b3c51d11f99da1bd7bedd372f050a_alert"
-			},
+            },
             {
                 "name": "Front Yard Alert",
                 "options": [
@@ -74,7 +74,7 @@
                     "camera_sound"
                 ],
                 "id": "16015c01b7a49cafbfcdb5d184a8b3a1_alert"
-			},
+            },
             {
                 "name": "Backyard Alert",
                 "options": [

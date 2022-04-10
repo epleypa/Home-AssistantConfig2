@@ -6,7 +6,8 @@
         "items": [
             {
                 "name": "TV Power",
-                "id": "tv_power"
+                "id": "tv_power",
+                "icon": "mdi:television"
             },
             {
                 "name": "Cable Power",
@@ -14,7 +15,8 @@
             },
             {
                 "name": "TV Mute",
-                "id": "tv_mute"
+                "id": "tv_mute",
+                "icon": "mdi:volume-mute"
             },
             {
                 "name": "Voice Notifications",
