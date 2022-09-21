@@ -90,3 +90,5 @@
 - platform: seventeentrack
   username: !secret 17track_email
   password: !secret 17track_pw
+
+- platform: bhyve

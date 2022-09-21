@@ -1,0 +1,54 @@
+blueprint:
+  name: Skip holiday
+  description: "This automation is triggered from the `garbage_collection` integration
+    by event `garbage_collection_loaded`, during the device state update. \nIt PROCESSES
+    DATA SENT WITH THE EVENT, and then FINISHES THE UPDATE. DO NOT CALL THIS SERVICE
+    MANUALLY, IT WON'T WORK (it won't have the data).\nAlso, make sure the INTEGRATION
+    IS CONFIGURED FOR `manual_update` (that will disable the state update by the integration
+    and pass it to this automation).\n\nIt loops through the calculated dates and
+    skips the events that fall on a public holiday.\n\nThe sensors are normally updated
+    once a day, or when Home Assistant starts. The update can be triggered by updating
+    the integration configuration (just hit configure and submit)."
+  domain: automation
+  source_url: https://github.com/bruxy70/Garbage-Collection/blob/master/blueprints/skip_holday.yaml
+  input:
+    garbage_collection_entity:
+      name: Garbage Collection Entity
+      description: Triggered by the event for this entity.
+      selector:
+        entity:
+          integration: garbage_collection
+          multiple: false
+    holiday_entity:
+      name: Holidays
+      description: Entity containing the holidays - an instance of Holidays custom
+        integration (available through HACS)
+      selector:
+        entity:
+          integration: holidays
+          multiple: false
+mode: parallel
+trigger:
+- platform: event
+  event_type: garbage_collection_loaded
+  event_data:
+    entity_id: !input garbage_collection_entity
+action:
+- variables:
+    holiday_entity: !input holiday_entity
+- alias: Iterate through the dates
+  repeat:
+    for_each: '{{ trigger.event.data.collection_dates }}'
+    sequence:
+    - alias: Is this date a public holiday?
+      condition: template
+      value_template: '{{ repeat.item in state_attr(holiday_entity,''holidays'') }}'
+    - alias: Remove the date
+      service: garbage_collection.remove_date
+      data:
+        entity_id: '{{ trigger.event.data.entity_id }}'
+        date: '{{ repeat.item }}'
+- alias: Update the garbage_collection entity
+  service: garbage_collection.update_state
+  data:
+    entity_id: '{{ trigger.event.data.entity_id }}'

@@ -129,7 +129,8 @@ cat_tv_beautiful_birds:
           media_content_id: ' { "app_name": "youtube", "media_id": "BKKSMtB2g_w" }'
         service: media_player.play_media
         target:
-          entity_id: media_player.living_room_chromecast
+          entity_id:
+          - media_player.living_room_androidtv
     - conditions:
       - condition: state
         entity_id: input_select.cat_tv
@@ -140,7 +141,7 @@ cat_tv_beautiful_birds:
           media_content_id: ' { "app_name": "youtube", "media_id": "CD3YNLUgW8s" }'
         service: media_player.play_media
         target:
-          entity_id: media_player.living_room_chromecast
+          entity_id: media_player.living_room_androidtv
     - conditions:
       - condition: state
         entity_id: input_select.cat_tv
@@ -151,7 +152,7 @@ cat_tv_beautiful_birds:
           media_content_id: ' { "app_name": "youtube", "media_id": "6BBM-7URQhI" }'
         service: media_player.play_media
         target:
-          entity_id: media_player.living_room_chromecast
+          entity_id: media_player.living_room_androidtv
     - conditions:
       - condition: state
         entity_id: input_select.cat_tv
@@ -162,7 +163,7 @@ cat_tv_beautiful_birds:
           media_content_id: ' { "app_name": "youtube", "media_id": "wOuJKGhmf3c" }'
         service: media_player.play_media
         target:
-          entity_id: media_player.living_room_chromecast
+          entity_id: media_player.living_room_androidtv
     - conditions:
       - condition: state
         entity_id: input_select.cat_tv
@@ -173,7 +174,7 @@ cat_tv_beautiful_birds:
           media_content_id: ' { "app_name": "youtube", "media_id": "_pjVJbam2x4" }'
         service: media_player.play_media
         target:
-          entity_id: media_player.living_room_chromecast
+          entity_id: media_player.living_room_androidtv
     - conditions:
       - condition: state
         entity_id: input_select.cat_tv
@@ -184,7 +185,7 @@ cat_tv_beautiful_birds:
           media_content_id: ' { "app_name": "youtube", "media_id": "A1VaNx3gjQE" }'
         service: media_player.play_media
         target:
-          entity_id: media_player.living_room_chromecast
+          entity_id: media_player.living_room_androidtv
     - conditions:
       - condition: state
         entity_id: input_select.cat_tv
@@ -195,7 +196,7 @@ cat_tv_beautiful_birds:
           media_content_id: ' { "app_name": "youtube", "media_id": "Rrans_4Otww" }'
         service: media_player.play_media
         target:
-          entity_id: media_player.living_room_chromecast
+          entity_id: media_player.living_room_androidtv
     - conditions:
       - condition: state
         entity_id: input_select.cat_tv
@@ -206,6 +207,17 @@ cat_tv_beautiful_birds:
           media_content_id: ' { "app_name": "youtube", "media_id": "qsOUbq0Aj1k" }'
         service: media_player.play_media
         target:
-          entity_id: media_player.living_room_chromecast
+          entity_id: media_player.living_room_androidtv
+    - conditions:
+      - condition: state
+        entity_id: input_select.cat_tv
+        state: Steller Jays
+      sequence:
+      - data:
+          media_content_type: cast
+          media_content_id: ' { "app_name": "youtube", "media_id": "jYBk-BVOnC4" }'
+        service: media_player.play_media
+        target:
+          entity_id: media_player.living_room_androidtv
     default: []
   mode: single

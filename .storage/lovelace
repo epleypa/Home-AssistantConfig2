@@ -1,1195 +1,1282 @@
 {
-    "version": 1,
-    "minor_version": 1,
-    "key": "lovelace",
-    "data": {
-        "config": {
-            "title": "Home",
-            "views": [
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace",
+  "data": {
+    "config": {
+      "title": "Home",
+      "views": [
+        {
+          "title": "Home",
+          "badges": [
+            {
+              "entity": "person.peter"
+            },
+            {
+              "entity": "person.kelley"
+            },
+            {
+              "entity": "device_tracker.toyota_corolla"
+            },
+            {
+              "entity": "sun.sun"
+            },
+            {
+              "entity": "sensor.moon"
+            }
+          ],
+          "cards": [
+            {
+              "aspect_ratio": "80%",
+              "type": "iframe",
+              "url": "https://embed.windy.com/embed2.html?lat=38.897&lon=-77.044&zoom=6&level=surface&overlay=rain&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&detailLat=38.900&detailLon=-77.040&metricWind=mph&metricTemp=%C2%B0F&radarRange=-1"
+            },
+            {
+              "entity": "weather.kdca_daynight",
+              "type": "weather-forecast"
+            },
+            {
+              "entities": [
                 {
-                    "title": "Home",
-                    "badges": [
-                        {
-                            "entity": "person.peter"
-                        },
-                        {
-                            "entity": "person.kelley"
-                        },
-                        {
-                            "entity": "device_tracker.toyota_corolla"
-                        },
-                        {
-                            "entity": "sun.sun"
-                        },
-                        {
-                            "entity": "sensor.moon"
-                        }
-                    ],
-                    "cards": [
-                        {
-                            "aspect_ratio": "80%",
-                            "type": "iframe",
-                            "url": "https://embed.windy.com/embed2.html?lat=38.897&lon=-77.044&zoom=6&level=surface&overlay=rain&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&detailLat=38.900&detailLon=-77.040&metricWind=mph&metricTemp=%C2%B0F&radarRange=-1"
-                        },
-                        {
-                            "entity": "weather.kdca_daynight",
-                            "type": "weather-forecast"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "fan.hvac_fan",
-                                    "secondary_info": "last-changed"
-                                },
-                                {
-                                    "entity": "vacuum.robovac",
-                                    "secondary_info": "last-changed"
-                                }
-                            ],
-                            "type": "entities"
-                        },
-                        {
-                            "entity": "climate.upstairs",
-                            "type": "thermostat"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.trash",
-                                    "name": "Trash Day"
-                                },
-                                {
-                                    "entity": "binary_sensor.recycle",
-                                    "name": "Recycle Day"
-                                },
-                                {
-                                    "entity": "binary_sensor.street_sweeping"
-                                },
-                                {
-                                    "entity": "binary_sensor.workday"
-                                },
-                                {
-                                    "entity": "binary_sensor.worknight"
-                                },
-                                {
-                                    "entity": "binary_sensor.sleep_mode"
-                                }
-                            ],
-                            "show_icon": true,
-                            "type": "glance",
-                            "state_color": true,
-                            "columns": 3
-                        },
-                        {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "camera_image": "camera.front_yard",
-                                            "entities": [
-                                                {
-                                                    "entity": "camera.front_yard"
-                                                }
-                                            ],
-                                            "title": "Front Yard",
-                                            "type": "picture-glance"
-                                        },
-                                        {
-                                            "camera_image": "camera.backyard",
-                                            "entities": [
-                                                {
-                                                    "entity": "camera.backyard"
-                                                }
-                                            ],
-                                            "title": "Backyard",
-                                            "type": "picture-glance"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "camera_image": "camera.front_door",
-                                    "entities": [
-                                        {
-                                            "entity": "camera.front_door"
-                                        },
-                                        {
-                                            "entity": "binary_sensor.front_door_camera_doorbell_chime",
-                                            "icon": "mdi:power"
-                                        }
-                                    ],
-                                    "title": "Front Door",
-                                    "type": "picture-glance"
-                                }
-                            ]
-                        }
-                    ]
+                  "entity": "fan.hvac_fan",
+                  "secondary_info": "last-changed"
                 },
                 {
-                    "icon": "mdi:ceiling-light",
-                    "panel": false,
-                    "title": "Lights",
-                    "cards": [
-                        {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "entities",
-                                    "entities": [
-                                        {
-                                            "entity": "group.upstairs_lights"
-                                        },
-                                        {
-                                            "entity": "group.downstairs_lights"
-                                        }
-                                    ],
-                                    "title": "Home Lights",
-                                    "show_header_toggle": true,
-                                    "state_color": true
-                                },
-                                {
-                                    "type": "entities",
-                                    "entities": [
-                                        {
-                                            "entity": "group.front_lights"
-                                        },
-                                        {
-                                            "entity": "group.patio_lights"
-                                        },
-                                        {
-                                            "entity": "group.hallway_lights"
-                                        },
-                                        {
-                                            "entity": "group.living_room_lights"
-                                        },
-                                        {
-                                            "entity": "group.dining_room_lights"
-                                        },
-                                        {
-                                            "entity": "group.kitchen_lights"
-                                        },
-                                        {
-                                            "entity": "group.bedroom_lights"
-                                        },
-                                        {
-                                            "entity": "group.office_lights"
-                                        }
-                                    ],
-                                    "state_color": true,
-                                    "show_header_toggle": false
-                                },
-                                {
-                                    "type": "entities",
-                                    "entities": [
-                                        {
-                                            "entity": "switch.circadian_lighting_circadian_lighting"
-                                        },
-                                        {
-                                            "entity": "switch.circadian_lighting_circadian_brightness"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "cards": [
-                                        {
-                                            "entity": "light.living_room_can_lights",
-                                            "type": "light"
-                                        },
-                                        {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            },
-                                            "entity": "group.living_room_center_light",
-                                            "icon": "mdi:lightbulb-group"
-                                        },
-                                        {
-                                            "entity": "light.tv_backlight",
-                                            "icon": "mdi:television-ambient-light",
-                                            "type": "light"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "cards": [
-                                        {
-                                            "entity": "light.kitchen_overhead_lights",
-                                            "type": "light"
-                                        },
-                                        {
-                                            "entity": "light.storage_light",
-                                            "type": "light"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "cards": [
-                                        {
-                                            "entity": "light.bedroom_overhead_light",
-                                            "type": "light"
-                                        },
-                                        {
-                                            "entity": "light.office_overhead_lights",
-                                            "type": "light"
-                                        },
-                                        {
-                                            "entity": "light.office_light",
-                                            "type": "light"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "cards": [
-                                        {
-                                            "entity": "light.hallway_stairs_light",
-                                            "type": "light"
-                                        },
-                                        {
-                                            "entity": "light.hallway_bathroom_light",
-                                            "type": "light"
-                                        },
-                                        {
-                                            "entity": "light.hallway_laundry_light",
-                                            "type": "light"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "cards": [
-                                        {
-                                            "entity": "switch.patio_wall_lights",
-                                            "icon": "mdi:coach-lamp",
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            },
-                                            "entity": "switch.party_lights",
-                                            "show_state": false
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "cards": [
-                                        {
-                                            "entity": "switch.kitchen_cabinet_lights",
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "switch.dining_room_light",
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "switch.bar_lights",
-                                            "type": "entity-button"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "cards": [
-                                        {
-                                            "entity": "switch.kelley_table_light",
-                                            "icon": "mdi:lamp",
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "switch.peter_table_light",
-                                            "icon": "mdi:lamp",
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "switch.bedroom_closet_lights",
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "switch.bedroom_humidifier",
-                                            "icon": "mdi:air-humidifier",
-                                            "type": "entity-button"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "type": "entity-button",
-                                            "entity": "switch.front_yard_lights"
-                                        },
-                                        {
-                                            "entity": "switch.window_switch",
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "switch.christmas_tree_lights",
-                                            "type": "entity-button"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        }
-                    ]
-                },
-                {
-                    "cards": [
-                        {
-                            "entity": "alarm_control_panel.10th_street",
-                            "type": "alarm-panel"
-                        },
-                        {
-                            "columns": 4,
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.front_door"
-                                },
-                                {
-                                    "entity": "binary_sensor.back_door"
-                                },
-                                {
-                                    "entity": "binary_sensor.bedroom_north_window"
-                                },
-                                {
-                                    "entity": "binary_sensor.bedroom_south_window"
-                                },
-                                {
-                                    "entity": "binary_sensor.office_north_window"
-                                },
-                                {
-                                    "entity": "binary_sensor.hall_attic_door"
-                                },
-                                {
-                                    "entity": "binary_sensor.bedroom_attic_door"
-                                },
-                                {
-                                    "entity": "binary_sensor.mailbox_contact"
-                                },
-                                {
-                                    "entity": "binary_sensor.main_floor_motion_sensor"
-                                },
-                                {
-                                    "entity": "binary_sensor.upstairs_motion_sensor"
-                                }
-                            ],
-                            "title": "Sensors",
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.smoke_alarm",
-                                    "name": "Smoke"
-                                },
-                                {
-                                    "entity": "binary_sensor.co_alarm",
-                                    "name": "CO"
-                                },
-                                {
-                                    "entity": "binary_sensor.half_bath_sink_leak_sensor_water",
-                                    "name": "Half Bath Sink"
-                                },
-                                {
-                                    "entity": "binary_sensor.kitchen_leak_sensor_water",
-                                    "name": "Kitchen Sink"
-                                },
-                                {
-                                    "entity": "binary_sensor.upstairs_bath_sink_leak_sensor_water",
-                                    "name": "Upstairs Bath Sink"
-                                },
-                                {
-                                    "entity": "binary_sensor.laundry_water_leak_sensor_water",
-                                    "name": "Laundry"
-                                },
-                                {
-                                    "entity": "binary_sensor.half_bath_toliet_leak_sensor_water",
-                                    "name": "Half Bath Toliet"
-                                },
-                                {
-                                    "entity": "binary_sensor.upstairs_bath_toilet_leak_sensor_water",
-                                    "name": "Upstairs Bath Toliet"
-                                }
-                            ],
-                            "title": "Alerts",
-                            "type": "glance"
-                        },
-                        {
-                            "camera_image": "camera.front_yard",
-                            "entities": [
-                                {
-                                    "entity": "camera.front_yard"
-                                },
-                                {
-                                    "entity": "binary_sensor.front_yard_camera_motion_detected"
-                                },
-                                {
-                                    "entity": "binary_sensor.front_yard_camera_person_detected"
-                                },
-                                {
-                                    "entity": "binary_sensor.front_yard_camera_sound_detected"
-                                }
-                            ],
-                            "title": "Front Yard",
-                            "type": "picture-glance"
-                        },
-                        {
-                            "camera_image": "camera.front_door",
-                            "entities": [
-                                {
-                                    "entity": "camera.front_door"
-                                },
-                                {
-                                    "entity": "binary_sensor.front_door_camera_motion_detected"
-                                },
-                                {
-                                    "entity": "binary_sensor.front_door_camera_person_detected"
-                                },
-                                {
-                                    "entity": "binary_sensor.front_door_camera_sound_detected"
-                                },
-                                {
-                                    "entity": "binary_sensor.front_door_camera_doorbell_chime",
-                                    "icon": "mdi:power"
-                                }
-                            ],
-                            "title": "Front Door",
-                            "type": "picture-glance"
-                        },
-                        {
-                            "camera_image": "camera.backyard",
-                            "entities": [
-                                {
-                                    "entity": "camera.backyard"
-                                },
-                                {
-                                    "entity": "binary_sensor.backyard_camera_motion_detected"
-                                },
-                                {
-                                    "entity": "binary_sensor.backyard_camera_person_detected"
-                                },
-                                {
-                                    "entity": "binary_sensor.backyard_camera_sound_detected"
-                                },
-                                {
-                                    "entity": "switch.patio_wall_lights"
-                                }
-                            ],
-                            "title": "Backyard",
-                            "type": "picture-glance"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "switch.kitchen_display_do_not_disturb"
-                                },
-                                {
-                                    "entity": "switch.living_room_speaker_do_not_disturb"
-                                },
-                                {
-                                    "entity": "switch.office_speaker_do_not_disturb"
-                                }
-                            ],
-                            "title": "Google Home TTS"
-                        },
-                        {
-                            "type": "picture-glance",
-                            "title": "Kitchen",
-                            "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
-                            "entities": [
-                                {
-                                    "entity": "camera.camect_kitchen"
-                                },
-                                {
-                                    "entity": "switch.kitchen_camera"
-                                }
-                            ],
-                            "camera_image": "camera.camect_kitchen"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "automation.camect_automation"
-                                },
-                                {
-                                    "entity": "automation.information_alert"
-                                },
-                                {
-                                    "entity": "automation.emergency_alert"
-                                }
-                            ],
-                            "title": "Alerts"
-                        }
-                    ],
-                    "icon": "mdi:shield",
-                    "title": "Security"
-                },
-                {
-                    "icon": "mdi:film",
-                    "title": "Living Room",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "cards": [
-                                {
-                                    "entity": "media_player.",
-                                    "type": "media-control"
-                                },
-                                {
-                                    "type": "media-control",
-                                    "entity": "media_player.roku_5s56ag426734"
-                                },
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "entity": "switch.neo",
-                                            "type": "entity-button"
-                                        },
-                                        {
-                                            "entity": "switch.trinity",
-                                            "type": "entity-button"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "entity": "media_player.bedroom_chromecast",
-                            "type": "media-control"
-                        },
-                        {
-                            "entity": "media_player.home_speakers",
-                            "type": "media-control"
-                        },
-                        {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "media-control",
-                                    "entity": "media_player.living_room_tv"
-                                },
-                                {
-                                    "type": "entities",
-                                    "entities": [
-                                        {
-                                            "entity": "switch.cable_power"
-                                        },
-                                        {
-                                            "entity": "input_boolean.tv_mute"
-                                        },
-                                        {
-                                            "entity": "input_select.living_room_tv_source"
-                                        },
-                                        {
-                                            "entity": "input_select.cable_channel"
-                                        },
-                                        {
-                                            "entity": "switch.cable_hd"
-                                        }
-                                    ],
-                                    "show_header_toggle": false
-                                }
-                            ]
-                        },
-                        {
-                            "entity": "media_player.kitchen_display",
-                            "type": "media-control"
-                        },
-                        {
-                            "entity": "media_player.living_room_speaker",
-                            "type": "media-control"
-                        },
-                        {
-                            "entity": "media_player.office_speaker",
-                            "type": "media-control"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "input_select.cat_tv"
-                                },
-                                {
-                                    "entity": "script.cat_tv_beautiful_birds",
-                                    "name": "Start Cat TV",
-                                    "icon": "hass:play"
-                                }
-                            ],
-                            "title": "Cat TV"
-                        },
-                        {
-                            "entity": "media_player.living_room_chromecast",
-                            "type": "media-control"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                "input_boolean.voice_notifications"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "title": "Climate",
-                    "path": "climate",
-                    "icon": "mdi:home-thermometer",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.living_room_temperature",
-                                    "name": "Temp"
-                                },
-                                {
-                                    "entity": "sensor.living_room_humidity",
-                                    "name": "Humidity"
-                                },
-                                {
-                                    "entity": "sensor.living_room_brightness",
-                                    "name": "Bright"
-                                },
-                                {
-                                    "entity": "binary_sensor.living_room_motion",
-                                    "name": "Motion"
-                                },
-                                {
-                                    "entity": "light.living_room_led",
-                                    "name": "LED"
-                                }
-                            ],
-                            "title": "Living Room Multisensor",
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.office_temperature",
-                                    "name": "Temp"
-                                },
-                                {
-                                    "entity": "sensor.office_humidity",
-                                    "name": "Humidity"
-                                },
-                                {
-                                    "entity": "sensor.office_brightness",
-                                    "name": "Bright"
-                                },
-                                {
-                                    "entity": "binary_sensor.office_motion",
-                                    "name": "Motion"
-                                },
-                                {
-                                    "entity": "light.office_led",
-                                    "name": "LED"
-                                }
-                            ],
-                            "title": "Office Multisensor",
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.bedroom_temperature",
-                                    "name": "Temp"
-                                },
-                                {
-                                    "entity": "sensor.bedroom_humidity",
-                                    "name": "Humidity"
-                                },
-                                {
-                                    "entity": "sensor.bedroom_brightness",
-                                    "name": "Bright"
-                                },
-                                {
-                                    "entity": "binary_sensor.bedroom_motion"
-                                },
-                                {
-                                    "entity": "light.bedroom_led",
-                                    "name": "LED"
-                                }
-                            ],
-                            "title": "Bedroom Multisensor",
-                            "type": "glance"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.upstairs_bath_toilet_leak_sensor_temperature_measurement"
-                                },
-                                {
-                                    "entity": "sensor.upstairs_bath_sink_leak_sensor_temperature_measurement"
-                                },
-                                {
-                                    "entity": "sensor.half_bath_toliet_leak_sensor_temperature_measurement"
-                                },
-                                {
-                                    "entity": "sensor.half_bath_sink_leak_sensor_temperature_measurement"
-                                },
-                                {
-                                    "entity": "sensor.ble_temperature_upstairs_bathroom"
-                                },
-                                {
-                                    "entity": "sensor.ble_humidity_upstairs_bathroom"
-                                }
-                            ],
-                            "title": "Bathroom Sensors",
-                            "type": "glance",
-                            "columns": 3
-                        },
-                        {
-                            "type": "horizontal-stack",
-                            "title": "Dining Room/Kitchen",
-                            "cards": [
-                                {
-                                    "type": "gauge",
-                                    "entity": "sensor.ble_temperature_dining_room",
-                                    "max": 100,
-                                    "min": 0,
-                                    "severity": {
-                                        "green": 65,
-                                        "yellow": 74,
-                                        "red": 0
-                                    },
-                                    "name": "Temperature"
-                                },
-                                {
-                                    "type": "gauge",
-                                    "entity": "sensor.ble_humidity_dining_room",
-                                    "min": 0,
-                                    "max": 100,
-                                    "severity": {
-                                        "green": 45,
-                                        "yellow": 70,
-                                        "red": 0
-                                    },
-                                    "name": "Humidity",
-                                    "needle": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "history-graph",
-                            "entities": [
-                                {
-                                    "entity": "sensor.ble_temperature_bedroom",
-                                    "name": "Bedroom"
-                                },
-                                {
-                                    "entity": "sensor.ble_temperature_office",
-                                    "name": "Office"
-                                },
-                                {
-                                    "entity": "sensor.ble_temperature_upstairs_bathroom",
-                                    "name": "Upstairs Bathroom"
-                                },
-                                {
-                                    "entity": "sensor.ble_temperature_dining_room",
-                                    "name": "Dining Room"
-                                },
-                                {
-                                    "entity": "sensor.living_room_temperature"
-                                },
-                                {
-                                    "entity": "sensor.bedroom_temperature"
-                                },
-                                {
-                                    "entity": "sensor.office_temperature"
-                                }
-                            ],
-                            "refresh_interval": 0,
-                            "hours_to_show": 2
-                        },
-                        {
-                            "type": "horizontal-stack",
-                            "title": "Upstairs Bathroom",
-                            "cards": [
-                                {
-                                    "type": "gauge",
-                                    "entity": "sensor.ble_temperature_upstairs_bathroom",
-                                    "max": 100,
-                                    "min": 0,
-                                    "severity": {
-                                        "green": 65,
-                                        "yellow": 74,
-                                        "red": 0
-                                    },
-                                    "name": "Temperature"
-                                },
-                                {
-                                    "type": "gauge",
-                                    "entity": "sensor.ble_humidity_upstairs_bathroom",
-                                    "min": 0,
-                                    "max": 100,
-                                    "severity": {
-                                        "green": 45,
-                                        "yellow": 70,
-                                        "red": 0
-                                    },
-                                    "name": "Humidity",
-                                    "needle": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "horizontal-stack",
-                            "title": "Office",
-                            "cards": [
-                                {
-                                    "type": "gauge",
-                                    "entity": "sensor.ble_temperature_office",
-                                    "max": 100,
-                                    "min": 0,
-                                    "severity": {
-                                        "green": 65,
-                                        "yellow": 74,
-                                        "red": 0
-                                    },
-                                    "name": "Temperature"
-                                },
-                                {
-                                    "type": "gauge",
-                                    "entity": "sensor.ble_humidity_office",
-                                    "min": 0,
-                                    "max": 100,
-                                    "severity": {
-                                        "green": 45,
-                                        "yellow": 70,
-                                        "red": 0
-                                    },
-                                    "name": "Humidity",
-                                    "needle": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "horizontal-stack",
-                            "title": "Bedroom",
-                            "cards": [
-                                {
-                                    "type": "gauge",
-                                    "entity": "sensor.ble_temperature_bedroom",
-                                    "max": 100,
-                                    "min": 0,
-                                    "severity": {
-                                        "green": 65,
-                                        "yellow": 74,
-                                        "red": 0
-                                    },
-                                    "name": "Temperature"
-                                },
-                                {
-                                    "type": "gauge",
-                                    "entity": "sensor.ble_humidity_bedroom",
-                                    "min": 0,
-                                    "max": 100,
-                                    "severity": {
-                                        "green": 45,
-                                        "yellow": 70,
-                                        "red": 0
-                                    },
-                                    "name": "Humidity",
-                                    "needle": true
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "cards": [
-                        {
-                            "cards": [
-                                {
-                                    "cards": [
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "binary_sensor.washer_status"
-                                                },
-                                                {
-                                                    "entity": "binary_sensor.dryer_status"
-                                                }
-                                            ],
-                                            "type": "glance"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "cards": [
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "sensor.washer_current_consumption",
-                                                    "name": "Washer"
-                                                },
-                                                {
-                                                    "entity": "sensor.dryer_current_consumption",
-                                                    "name": "Dryer"
-                                                }
-                                            ],
-                                            "hours_to_show": 12,
-                                            "refresh_interval": 0,
-                                            "type": "history-graph"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                }
-                            ],
-                            "title": "Laundry",
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "cards": [
-                                {
-                                    "cards": [
-                                        {
-                                            "entities": [
-                                                {
-                                                    "entity": "sensor.brother_mfc_j880dw"
-                                                },
-                                                {
-                                                    "entity": "sensor.brother_mfc_j880dw_uptime",
-                                                    "name": "Uptime"
-                                                }
-                                            ],
-                                            "type": "glance"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                },
-                                {
-                                    "cards": [
-                                        {
-                                            "entity": "sensor.brother_mfc_j880dw_bk",
-                                            "max": 100,
-                                            "min": 0,
-                                            "name": "Black",
-                                            "severity": {
-                                                "green": 40,
-                                                "red": 0,
-                                                "yellow": 10
-                                            },
-                                            "type": "gauge"
-                                        },
-                                        {
-                                            "entity": "sensor.brother_mfc_j880dw_c",
-                                            "max": 100,
-                                            "min": 0,
-                                            "name": "Cyan",
-                                            "severity": {
-                                                "green": 40,
-                                                "red": 0,
-                                                "yellow": 10
-                                            },
-                                            "type": "gauge"
-                                        },
-                                        {
-                                            "entity": "sensor.brother_mfc_j880dw_m",
-                                            "max": 100,
-                                            "min": 0,
-                                            "name": "Magenta",
-                                            "severity": {
-                                                "green": 40,
-                                                "red": 0,
-                                                "yellow": 10
-                                            },
-                                            "type": "gauge"
-                                        },
-                                        {
-                                            "entity": "sensor.brother_mfc_j880dw_y",
-                                            "max": 100,
-                                            "min": 0,
-                                            "name": "Yellow",
-                                            "severity": {
-                                                "green": 40,
-                                                "red": 0,
-                                                "yellow": 10
-                                            },
-                                            "type": "gauge"
-                                        }
-                                    ],
-                                    "type": "horizontal-stack"
-                                }
-                            ],
-                            "title": "Brother MFC-J880DW",
-                            "type": "vertical-stack"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "device_tracker.verizon_g1100"
-                                },
-                                {
-                                    "entity": "device_tracker.uap"
-                                },
-                                {
-                                    "entity": "device_tracker.neo"
-                                },
-                                {
-                                    "entity": "device_tracker.defiant"
-                                },
-                                {
-                                    "entity": "device_tracker.trinity"
-                                },
-                                {
-                                    "entity": "device_tracker.brother_printer"
-                                },
-                                {
-                                    "entity": "device_tracker.uap_ac_pro"
-                                },
-                                {
-                                    "entity": "device_tracker.usg"
-                                },
-                                {
-                                    "entity": "device_tracker.verizon_mi424wr"
-                                }
-                            ],
-                            "type": "glance"
-                        },
-                        {
-                            "type": "custom:battery-state-card",
-                            "title": "Battery Status",
-                            "sort_by_level": "asc",
-                            "filter": {
-                                "include": [
-                                    {
-                                        "name": "entity_id",
-                                        "value": "sensor.*battery*"
-                                    }
-                                ],
-                                "exclude": [
-                                    {
-                                        "name": "entity_id",
-                                        "value": "sensor.*state*"
-                                    },
-                                    {
-                                        "name": "entity_id",
-                                        "value": "sensor.*health*"
-                                    },
-                                    {
-                                        "name": "entity_id",
-                                        "value": "sensor.*temperature*"
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "icon": "mdi:led-on",
-                    "title": "Sensors"
-                },
-                {
-                    "icon": "mdi:windsock",
-                    "title": "Weather",
-                    "path": "weather",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "custom:auto-entities",
-                            "card": {
-                                "type": "entities",
-                                "title": "Weather Station"
-                            },
-                            "filter": {
-                                "include": [
-                                    {
-                                        "entity_id": "sensor.fx175*"
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                },
-                {
-                    "cards": [
-                        {
-                            "entities": [
-                                "sensor.wmata_gr_no",
-                                "sensor.wmata_gr_so",
-                                "script.wmata_gr_no",
-                                "script.wmata_gr_so"
-                            ],
-                            "title": "WMATA Info",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                "input_select.origin",
-                                "input_select.destination",
-                                "sensor.via_driving",
-                                "sensor.via_metro",
-                                "sensor.via_bus"
-                            ],
-                            "title": "Travel Time",
-                            "type": "entities"
-                        },
-                        {
-                            "type": "custom:auto-entities",
-                            "card": {
-                                "type": "entities",
-                                "title": "Packages"
-                            },
-                            "filter": {
-                                "include": [
-                                    {
-                                        "entity_id": "sensor.seventeentrack_package_*"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "entities": [
-                                "sensor.alarm_time",
-                                "group.alarmclock_settings"
-                            ],
-                            "title": "Wake Up",
-                            "type": "entities"
-                        },
-                        {
-                            "type": "entity",
-                            "entity": "sensor.aftership"
-                        },
-                        {
-                            "type": "custom:aftership-card",
-                            "entity": "sensor.aftership",
-                            "title": "Packages"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                "device_tracker.hs300",
-                                "switch.plug_1",
-                                "switch.plug_2",
-                                "switch.plug_3",
-                                "switch.plug_4",
-                                "switch.plug_5",
-                                "switch.plug_6"
-                            ]
-                        }
-                    ],
-                    "title": "More"
+                  "entity": "vacuum.robovac",
+                  "secondary_info": "last-changed"
                 }
-            ]
+              ],
+              "type": "entities"
+            },
+            {
+              "entity": "climate.upstairs",
+              "type": "thermostat"
+            },
+            {
+              "entities": [
+                {
+                  "entity": "binary_sensor.trash",
+                  "name": "Trash Day"
+                },
+                {
+                  "entity": "binary_sensor.recycle",
+                  "name": "Recycle Day"
+                },
+                {
+                  "entity": "binary_sensor.street_sweeping"
+                },
+                {
+                  "entity": "binary_sensor.workday"
+                },
+                {
+                  "entity": "binary_sensor.worknight"
+                },
+                {
+                  "entity": "binary_sensor.sleep_mode"
+                }
+              ],
+              "show_icon": true,
+              "type": "glance",
+              "state_color": true,
+              "columns": 3
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "camera_image": "camera.front_yard",
+                      "entities": [
+                        {
+                          "entity": "camera.front_yard"
+                        }
+                      ],
+                      "title": "Front Yard",
+                      "type": "picture-glance"
+                    },
+                    {
+                      "camera_image": "camera.backyard",
+                      "entities": [
+                        {
+                          "entity": "camera.backyard"
+                        }
+                      ],
+                      "title": "Backyard",
+                      "type": "picture-glance"
+                    }
+                  ]
+                },
+                {
+                  "camera_image": "camera.front_door",
+                  "entities": [
+                    {
+                      "entity": "camera.front_door"
+                    },
+                    {
+                      "entity": "binary_sensor.front_door_camera_doorbell_chime",
+                      "icon": "mdi:power"
+                    }
+                  ],
+                  "title": "Front Door",
+                  "type": "picture-glance"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "icon": "mdi:ceiling-light",
+          "panel": false,
+          "title": "Lights",
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "group.upstairs_lights"
+                    },
+                    {
+                      "entity": "group.downstairs_lights"
+                    }
+                  ],
+                  "title": "Home Lights",
+                  "show_header_toggle": true,
+                  "state_color": true
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "group.front_lights"
+                    },
+                    {
+                      "entity": "group.patio_lights"
+                    },
+                    {
+                      "entity": "group.hallway_lights"
+                    },
+                    {
+                      "entity": "group.living_room_lights"
+                    },
+                    {
+                      "entity": "group.dining_room_lights"
+                    },
+                    {
+                      "entity": "group.kitchen_lights"
+                    },
+                    {
+                      "entity": "group.bedroom_lights"
+                    },
+                    {
+                      "entity": "group.office_lights"
+                    }
+                  ],
+                  "state_color": true,
+                  "show_header_toggle": false
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "switch.circadian_lighting_circadian_lighting"
+                    },
+                    {
+                      "entity": "switch.circadian_lighting_circadian_brightness"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "cards": [
+                {
+                  "cards": [
+                    {
+                      "entity": "light.living_room_can_lights",
+                      "type": "light"
+                    },
+                    {
+                      "type": "button",
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "entity": "group.living_room_center_light",
+                      "icon": "mdi:lightbulb-group"
+                    },
+                    {
+                      "entity": "light.tv_backlight",
+                      "icon": "mdi:television-ambient-light",
+                      "type": "light"
+                    }
+                  ],
+                  "type": "horizontal-stack"
+                },
+                {
+                  "cards": [
+                    {
+                      "entity": "light.kitchen_overhead_lights",
+                      "type": "light"
+                    },
+                    {
+                      "entity": "light.storage_light",
+                      "type": "light"
+                    },
+                    {
+                      "entity": "light.bedroom_overhead_light",
+                      "type": "light"
+                    }
+                  ],
+                  "type": "horizontal-stack"
+                },
+                {
+                  "cards": [
+                    {
+                      "entity": "light.office_strip",
+                      "type": "light"
+                    },
+                    {
+                      "entity": "light.office_overhead_lights",
+                      "type": "light"
+                    },
+                    {
+                      "entity": "light.office_light",
+                      "type": "light"
+                    }
+                  ],
+                  "type": "horizontal-stack"
+                },
+                {
+                  "cards": [
+                    {
+                      "entity": "light.hallway_stairs_light",
+                      "type": "light"
+                    },
+                    {
+                      "entity": "light.hallway_bathroom_light",
+                      "type": "light"
+                    },
+                    {
+                      "entity": "light.hallway_laundry_light",
+                      "type": "light"
+                    }
+                  ],
+                  "type": "horizontal-stack"
+                }
+              ],
+              "type": "vertical-stack"
+            },
+            {
+              "cards": [
+                {
+                  "cards": [
+                    {
+                      "entity": "switch.patio_wall_lights",
+                      "icon": "mdi:coach-lamp",
+                      "type": "entity-button"
+                    },
+                    {
+                      "type": "button",
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "entity": "switch.party_lights",
+                      "show_state": false
+                    }
+                  ],
+                  "type": "horizontal-stack"
+                },
+                {
+                  "cards": [
+                    {
+                      "entity": "switch.kitchen_cabinet_lights",
+                      "type": "entity-button"
+                    },
+                    {
+                      "entity": "switch.dining_room_light",
+                      "type": "entity-button"
+                    },
+                    {
+                      "entity": "switch.bar_lights",
+                      "type": "entity-button"
+                    }
+                  ],
+                  "type": "horizontal-stack"
+                },
+                {
+                  "cards": [
+                    {
+                      "entity": "switch.kelley_table_light",
+                      "icon": "mdi:lamp",
+                      "type": "entity-button"
+                    },
+                    {
+                      "entity": "switch.peter_table_light",
+                      "icon": "mdi:lamp",
+                      "type": "entity-button"
+                    },
+                    {
+                      "entity": "switch.bedroom_closet_lights",
+                      "type": "entity-button"
+                    },
+                    {
+                      "entity": "switch.bedroom_humidifier",
+                      "icon": "mdi:air-humidifier",
+                      "type": "entity-button"
+                    }
+                  ],
+                  "type": "horizontal-stack"
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "entity-button",
+                      "entity": "switch.front_yard_lights"
+                    },
+                    {
+                      "entity": "switch.window_switch",
+                      "type": "entity-button"
+                    },
+                    {
+                      "entity": "switch.christmas_tree_lights",
+                      "type": "entity-button"
+                    }
+                  ]
+                }
+              ],
+              "type": "vertical-stack"
+            }
+          ]
+        },
+        {
+          "cards": [
+            {
+              "entity": "alarm_control_panel.10th_street",
+              "type": "alarm-panel"
+            },
+            {
+              "columns": 4,
+              "entities": [
+                {
+                  "entity": "binary_sensor.front_door"
+                },
+                {
+                  "entity": "binary_sensor.back_door"
+                },
+                {
+                  "entity": "binary_sensor.bedroom_north_window"
+                },
+                {
+                  "entity": "binary_sensor.bedroom_south_window"
+                },
+                {
+                  "entity": "binary_sensor.office_north_window"
+                },
+                {
+                  "entity": "binary_sensor.hall_attic_door"
+                },
+                {
+                  "entity": "binary_sensor.bedroom_attic_door"
+                },
+                {
+                  "entity": "binary_sensor.mailbox_contact"
+                },
+                {
+                  "entity": "binary_sensor.main_floor_motion_sensor"
+                },
+                {
+                  "entity": "binary_sensor.upstairs_motion_sensor"
+                }
+              ],
+              "title": "Sensors",
+              "type": "glance"
+            },
+            {
+              "entities": [
+                {
+                  "entity": "binary_sensor.smoke_alarm",
+                  "name": "Smoke"
+                },
+                {
+                  "entity": "binary_sensor.co_alarm",
+                  "name": "CO"
+                },
+                {
+                  "entity": "binary_sensor.half_bath_sink_leak_sensor_water",
+                  "name": "Half Bath Sink"
+                },
+                {
+                  "entity": "binary_sensor.kitchen_leak_sensor_water",
+                  "name": "Kitchen Sink"
+                },
+                {
+                  "entity": "binary_sensor.upstairs_bath_sink_leak_sensor_water",
+                  "name": "Upstairs Bath Sink"
+                },
+                {
+                  "entity": "binary_sensor.laundry_water_leak_sensor_water",
+                  "name": "Laundry"
+                },
+                {
+                  "entity": "binary_sensor.half_bath_toliet_leak_sensor_water",
+                  "name": "Half Bath Toliet"
+                },
+                {
+                  "entity": "binary_sensor.upstairs_bath_toilet_leak_sensor_water",
+                  "name": "Upstairs Bath Toliet"
+                }
+              ],
+              "title": "Alerts",
+              "type": "glance"
+            },
+            {
+              "camera_image": "camera.front_yard",
+              "entities": [
+                {
+                  "entity": "camera.front_yard"
+                },
+                {
+                  "entity": "binary_sensor.front_yard_camera_motion_detected"
+                },
+                {
+                  "entity": "binary_sensor.front_yard_camera_person_detected"
+                },
+                {
+                  "entity": "binary_sensor.front_yard_camera_sound_detected"
+                }
+              ],
+              "title": "Front Yard",
+              "type": "picture-glance"
+            },
+            {
+              "camera_image": "camera.front_door",
+              "entities": [
+                {
+                  "entity": "camera.front_door"
+                },
+                {
+                  "entity": "binary_sensor.front_door_camera_motion_detected"
+                },
+                {
+                  "entity": "binary_sensor.front_door_camera_person_detected"
+                },
+                {
+                  "entity": "binary_sensor.front_door_camera_sound_detected"
+                },
+                {
+                  "entity": "binary_sensor.front_door_camera_doorbell_chime",
+                  "icon": "mdi:power"
+                }
+              ],
+              "title": "Front Door",
+              "type": "picture-glance"
+            },
+            {
+              "camera_image": "camera.backyard",
+              "entities": [
+                {
+                  "entity": "camera.backyard"
+                },
+                {
+                  "entity": "binary_sensor.backyard_camera_motion_detected"
+                },
+                {
+                  "entity": "binary_sensor.backyard_camera_person_detected"
+                },
+                {
+                  "entity": "binary_sensor.backyard_camera_sound_detected"
+                },
+                {
+                  "entity": "switch.patio_wall_lights"
+                }
+              ],
+              "title": "Backyard",
+              "type": "picture-glance"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "switch.kitchen_display_do_not_disturb"
+                },
+                {
+                  "entity": "switch.living_room_speaker_do_not_disturb"
+                },
+                {
+                  "entity": "switch.office_speaker_do_not_disturb"
+                }
+              ],
+              "title": "Google Home TTS"
+            },
+            {
+              "type": "picture-glance",
+              "title": "Kitchen",
+              "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+              "entities": [
+                {
+                  "entity": "camera.camect_kitchen"
+                },
+                {
+                  "entity": "switch.kitchen_camera"
+                }
+              ],
+              "camera_image": "camera.camect_kitchen"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "automation.camect_automation"
+                },
+                {
+                  "entity": "automation.information_alert"
+                },
+                {
+                  "entity": "automation.emergency_alert"
+                }
+              ],
+              "title": "Alerts"
+            },
+            {
+              "type": "grid",
+              "square": false,
+              "columns": 1,
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "sensor.alley_detected_person_name",
+                      "name": "Detected Person Name"
+                    },
+                    {
+                      "entity": "binary_sensor.alley_global_motion_sensor",
+                      "name": "Global Motion Sensor"
+                    },
+                    {
+                      "entity": "binary_sensor.alley_motion_sensor",
+                      "name": "Motion Sensor"
+                    }
+                  ],
+                  "title": "Alley"
+                },
+                {
+                  "type": "grid",
+                  "square": false,
+                  "cards": [
+                    {
+                      "type": "conditional",
+                      "conditions": [
+                        {
+                          "entity": "binary_sensor.alley_streaming_sensor",
+                          "state": "False"
+                        }
+                      ],
+                      "card": {
+                        "type": "picture-entity",
+                        "entity": "camera.alley",
+                        "tap_action": {
+                          "action": "call-service",
+                          "service": "camera.turn_on",
+                          "target": {
+                            "entity_id": "camera.alley"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "conditional",
+                      "conditions": [
+                        {
+                          "entity": "binary_sensor.alley_streaming_sensor",
+                          "state": "True"
+                        }
+                      ],
+                      "card": {
+                        "type": "vertical-stack",
+                        "cards": [
+                          {
+                            "type": "custom:webrtc-camera",
+                            "entity": "camera.alley"
+                          },
+                          {
+                            "type": "button",
+                            "name": "Stop Streaming",
+                            "show_state": false,
+                            "show_icon": false,
+                            "tap_action": {
+                              "action": "call-service",
+                              "service": "camera.turn_off",
+                              "target": {
+                                "entity_id": "camera.alley"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "columns": 1
+                }
+              ]
+            }
+          ],
+          "icon": "mdi:shield",
+          "title": "Security"
+        },
+        {
+          "icon": "mdi:film",
+          "title": "Living Room",
+          "badges": [],
+          "cards": [
+            {
+              "cards": [
+                {
+                  "entity": "media_player.living_room_tv",
+                  "type": "media-control"
+                },
+                {
+                  "type": "media-control",
+                  "entity": "media_player.bedroom_androidtv"
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "entity": "switch.neo",
+                      "type": "entity-button"
+                    },
+                    {
+                      "entity": "switch.trinity",
+                      "type": "entity-button"
+                    }
+                  ]
+                }
+              ],
+              "type": "vertical-stack"
+            },
+            {
+              "entity": "media_player.bedroom_chromecast",
+              "type": "media-control"
+            },
+            {
+              "entity": "media_player.home_speakers",
+              "type": "media-control"
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "media-control",
+                  "entity": "media_player.living_room_tv"
+                },
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "switch.cable_power"
+                    },
+                    {
+                      "entity": "input_boolean.tv_mute"
+                    },
+                    {
+                      "entity": "input_select.living_room_tv_source"
+                    },
+                    {
+                      "entity": "input_select.cable_channel"
+                    },
+                    {
+                      "entity": "switch.cable_hd"
+                    }
+                  ],
+                  "show_header_toggle": false
+                }
+              ]
+            },
+            {
+              "entity": "media_player.kitchen_display",
+              "type": "media-control"
+            },
+            {
+              "entity": "media_player.living_room_speaker",
+              "type": "media-control"
+            },
+            {
+              "entity": "media_player.office_speaker",
+              "type": "media-control"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "input_select.cat_tv"
+                },
+                {
+                  "entity": "script.cat_tv_beautiful_birds",
+                  "name": "Start Cat TV",
+                  "icon": "hass:play"
+                }
+              ],
+              "title": "Cat TV"
+            },
+            {
+              "entity": "media_player.living_room_chromecast",
+              "type": "media-control"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                "input_boolean.voice_notifications"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Climate",
+          "path": "climate",
+          "icon": "mdi:home-thermometer",
+          "badges": [],
+          "cards": [
+            {
+              "entities": [
+                {
+                  "entity": "sensor.living_room_temperature",
+                  "name": "Temp"
+                },
+                {
+                  "entity": "sensor.living_room_humidity",
+                  "name": "Humidity"
+                },
+                {
+                  "entity": "sensor.living_room_brightness",
+                  "name": "Bright"
+                },
+                {
+                  "entity": "binary_sensor.living_room_motion",
+                  "name": "Motion"
+                },
+                {
+                  "entity": "light.living_room_led",
+                  "name": "LED"
+                }
+              ],
+              "title": "Living Room Multisensor",
+              "type": "glance"
+            },
+            {
+              "entities": [
+                {
+                  "entity": "sensor.office_temperature",
+                  "name": "Temp"
+                },
+                {
+                  "entity": "sensor.office_humidity",
+                  "name": "Humidity"
+                },
+                {
+                  "entity": "sensor.office_brightness",
+                  "name": "Bright"
+                },
+                {
+                  "entity": "binary_sensor.office_motion",
+                  "name": "Motion"
+                },
+                {
+                  "entity": "light.office_led",
+                  "name": "LED"
+                }
+              ],
+              "title": "Office Multisensor",
+              "type": "glance"
+            },
+            {
+              "entities": [
+                {
+                  "entity": "sensor.bedroom_temperature",
+                  "name": "Temp"
+                },
+                {
+                  "entity": "sensor.bedroom_humidity",
+                  "name": "Humidity"
+                },
+                {
+                  "entity": "sensor.bedroom_brightness",
+                  "name": "Bright"
+                },
+                {
+                  "entity": "binary_sensor.bedroom_motion"
+                },
+                {
+                  "entity": "light.bedroom_led",
+                  "name": "LED"
+                }
+              ],
+              "title": "Bedroom Multisensor",
+              "type": "glance"
+            },
+            {
+              "entities": [
+                {
+                  "entity": "sensor.upstairs_bath_toilet_leak_sensor_temperature_measurement"
+                },
+                {
+                  "entity": "sensor.upstairs_bath_sink_leak_sensor_temperature_measurement"
+                },
+                {
+                  "entity": "sensor.half_bath_toliet_leak_sensor_temperature_measurement"
+                },
+                {
+                  "entity": "sensor.half_bath_sink_leak_sensor_temperature_measurement"
+                },
+                {
+                  "entity": "sensor.ble_temperature_upstairs_bathroom"
+                },
+                {
+                  "entity": "sensor.ble_humidity_upstairs_bathroom"
+                }
+              ],
+              "title": "Bathroom Sensors",
+              "type": "glance",
+              "columns": 3
+            },
+            {
+              "type": "horizontal-stack",
+              "title": "Dining Room/Kitchen",
+              "cards": [
+                {
+                  "type": "gauge",
+                  "entity": "sensor.ble_temperature_dining_room",
+                  "max": 100,
+                  "min": 0,
+                  "severity": {
+                    "green": 65,
+                    "yellow": 74,
+                    "red": 0
+                  },
+                  "name": "Temperature"
+                },
+                {
+                  "type": "gauge",
+                  "entity": "sensor.ble_humidity_dining_room",
+                  "min": 0,
+                  "max": 100,
+                  "severity": {
+                    "green": 45,
+                    "yellow": 70,
+                    "red": 0
+                  },
+                  "name": "Humidity",
+                  "needle": true
+                }
+              ]
+            },
+            {
+              "type": "history-graph",
+              "entities": [
+                {
+                  "entity": "sensor.ble_temperature_bedroom",
+                  "name": "Bedroom"
+                },
+                {
+                  "entity": "sensor.ble_temperature_office",
+                  "name": "Office"
+                },
+                {
+                  "entity": "sensor.ble_temperature_upstairs_bathroom",
+                  "name": "Upstairs Bathroom"
+                },
+                {
+                  "entity": "sensor.ble_temperature_dining_room",
+                  "name": "Dining Room"
+                },
+                {
+                  "entity": "sensor.living_room_temperature"
+                },
+                {
+                  "entity": "sensor.bedroom_temperature"
+                },
+                {
+                  "entity": "sensor.office_temperature"
+                }
+              ],
+              "refresh_interval": 0,
+              "hours_to_show": 2
+            },
+            {
+              "type": "horizontal-stack",
+              "title": "Upstairs Bathroom",
+              "cards": [
+                {
+                  "type": "gauge",
+                  "entity": "sensor.ble_temperature_upstairs_bathroom",
+                  "max": 100,
+                  "min": 0,
+                  "severity": {
+                    "green": 65,
+                    "yellow": 74,
+                    "red": 0
+                  },
+                  "name": "Temperature"
+                },
+                {
+                  "type": "gauge",
+                  "entity": "sensor.ble_humidity_upstairs_bathroom",
+                  "min": 0,
+                  "max": 100,
+                  "severity": {
+                    "green": 45,
+                    "yellow": 70,
+                    "red": 0
+                  },
+                  "name": "Humidity",
+                  "needle": true
+                }
+              ]
+            },
+            {
+              "type": "horizontal-stack",
+              "title": "Office",
+              "cards": [
+                {
+                  "type": "gauge",
+                  "entity": "sensor.ble_temperature_office",
+                  "max": 100,
+                  "min": 0,
+                  "severity": {
+                    "green": 65,
+                    "yellow": 74,
+                    "red": 0
+                  },
+                  "name": "Temperature"
+                },
+                {
+                  "type": "gauge",
+                  "entity": "sensor.ble_humidity_office",
+                  "min": 0,
+                  "max": 100,
+                  "severity": {
+                    "green": 45,
+                    "yellow": 70,
+                    "red": 0
+                  },
+                  "name": "Humidity",
+                  "needle": true
+                }
+              ]
+            },
+            {
+              "type": "horizontal-stack",
+              "title": "Bedroom",
+              "cards": [
+                {
+                  "type": "gauge",
+                  "entity": "sensor.ble_temperature_bedroom",
+                  "max": 100,
+                  "min": 0,
+                  "severity": {
+                    "green": 65,
+                    "yellow": 74,
+                    "red": 0
+                  },
+                  "name": "Temperature"
+                },
+                {
+                  "type": "gauge",
+                  "entity": "sensor.ble_humidity_bedroom",
+                  "min": 0,
+                  "max": 100,
+                  "severity": {
+                    "green": 45,
+                    "yellow": 70,
+                    "red": 0
+                  },
+                  "name": "Humidity",
+                  "needle": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cards": [
+            {
+              "cards": [
+                {
+                  "cards": [
+                    {
+                      "entities": [
+                        {
+                          "entity": "binary_sensor.washer_status"
+                        },
+                        {
+                          "entity": "binary_sensor.dryer_status"
+                        }
+                      ],
+                      "type": "glance"
+                    }
+                  ],
+                  "type": "horizontal-stack"
+                },
+                {
+                  "cards": [
+                    {
+                      "entities": [
+                        {
+                          "entity": "sensor.washer_current_consumption",
+                          "name": "Washer"
+                        },
+                        {
+                          "entity": "sensor.dryer_current_consumption",
+                          "name": "Dryer"
+                        }
+                      ],
+                      "hours_to_show": 12,
+                      "refresh_interval": 0,
+                      "type": "history-graph"
+                    }
+                  ],
+                  "type": "horizontal-stack"
+                }
+              ],
+              "title": "Laundry",
+              "type": "vertical-stack"
+            },
+            {
+              "cards": [
+                {
+                  "cards": [
+                    {
+                      "entities": [
+                        {
+                          "entity": "sensor.brother_mfc_j880dw"
+                        },
+                        {
+                          "entity": "sensor.brother_mfc_j880dw_uptime",
+                          "name": "Uptime"
+                        }
+                      ],
+                      "type": "glance"
+                    }
+                  ],
+                  "type": "horizontal-stack"
+                },
+                {
+                  "cards": [
+                    {
+                      "entity": "sensor.brother_mfc_j880dw_bk",
+                      "max": 100,
+                      "min": 0,
+                      "name": "Black",
+                      "severity": {
+                        "green": 40,
+                        "red": 0,
+                        "yellow": 10
+                      },
+                      "type": "gauge"
+                    },
+                    {
+                      "entity": "sensor.brother_mfc_j880dw_c",
+                      "max": 100,
+                      "min": 0,
+                      "name": "Cyan",
+                      "severity": {
+                        "green": 40,
+                        "red": 0,
+                        "yellow": 10
+                      },
+                      "type": "gauge"
+                    },
+                    {
+                      "entity": "sensor.brother_mfc_j880dw_m",
+                      "max": 100,
+                      "min": 0,
+                      "name": "Magenta",
+                      "severity": {
+                        "green": 40,
+                        "red": 0,
+                        "yellow": 10
+                      },
+                      "type": "gauge"
+                    },
+                    {
+                      "entity": "sensor.brother_mfc_j880dw_y",
+                      "max": 100,
+                      "min": 0,
+                      "name": "Yellow",
+                      "severity": {
+                        "green": 40,
+                        "red": 0,
+                        "yellow": 10
+                      },
+                      "type": "gauge"
+                    }
+                  ],
+                  "type": "horizontal-stack"
+                }
+              ],
+              "title": "Brother MFC-J880DW",
+              "type": "vertical-stack"
+            },
+            {
+              "entities": [
+                {
+                  "entity": "device_tracker.verizon_g1100"
+                },
+                {
+                  "entity": "device_tracker.uap"
+                },
+                {
+                  "entity": "device_tracker.neo"
+                },
+                {
+                  "entity": "device_tracker.defiant"
+                },
+                {
+                  "entity": "device_tracker.trinity"
+                },
+                {
+                  "entity": "device_tracker.brother_printer"
+                },
+                {
+                  "entity": "device_tracker.uap_ac_pro"
+                },
+                {
+                  "entity": "device_tracker.usg"
+                },
+                {
+                  "entity": "device_tracker.verizon_mi424wr"
+                }
+              ],
+              "type": "glance"
+            },
+            {
+              "type": "custom:battery-state-card",
+              "title": "Battery Status",
+              "sort_by_level": "asc",
+              "filter": {
+                "include": [
+                  {
+                    "name": "entity_id",
+                    "value": "sensor.*battery*"
+                  }
+                ],
+                "exclude": [
+                  {
+                    "name": "entity_id",
+                    "value": "sensor.*state*"
+                  },
+                  {
+                    "name": "entity_id",
+                    "value": "sensor.*health*"
+                  },
+                  {
+                    "name": "entity_id",
+                    "value": "sensor.*temperature*"
+                  }
+                ]
+              }
+            }
+          ],
+          "icon": "mdi:led-on",
+          "title": "Sensors"
+        },
+        {
+          "icon": "mdi:windsock",
+          "title": "Weather",
+          "path": "weather",
+          "badges": [],
+          "cards": [
+            {
+              "type": "custom:auto-entities",
+              "card": {
+                "type": "entities",
+                "title": "Weather Station"
+              },
+              "filter": {
+                "include": [
+                  {
+                    "entity_id": "sensor.fx175*"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "cards": [
+            {
+              "entities": [
+                "sensor.wmata_gr_no",
+                "sensor.wmata_gr_so",
+                "script.wmata_gr_no",
+                "script.wmata_gr_so"
+              ],
+              "title": "WMATA Info",
+              "type": "entities"
+            },
+            {
+              "entities": [
+                "input_select.origin",
+                "input_select.destination",
+                "sensor.via_driving",
+                "sensor.via_metro",
+                "sensor.via_bus"
+              ],
+              "title": "Travel Time",
+              "type": "entities"
+            },
+            {
+              "type": "custom:auto-entities",
+              "card": {
+                "type": "entities",
+                "title": "Packages"
+              },
+              "filter": {
+                "include": [
+                  {
+                    "entity_id": "sensor.seventeentrack_package_*"
+                  }
+                ]
+              }
+            },
+            {
+              "entities": [
+                "sensor.alarm_time",
+                "group.alarmclock_settings"
+              ],
+              "title": "Wake Up",
+              "type": "entities"
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.aftership"
+            },
+            {
+              "type": "custom:aftership-card",
+              "entity": "sensor.aftership",
+              "title": "Packages"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                "device_tracker.hs300",
+                "switch.plug_1",
+                "switch.plug_2",
+                "switch.plug_3",
+                "switch.plug_4",
+                "switch.plug_5",
+                "switch.plug_6"
+              ]
+            }
+          ],
+          "title": "More"
         }
+      ]
     }
+  }
 }

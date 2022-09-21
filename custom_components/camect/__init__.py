@@ -25,6 +25,9 @@ DEFAULT_PORT = 8443
 DEFAULT_USERNAME = 'admin'
 DOMAIN = 'camect'
 SERVICE_CHANGE_OP_MODE = 'change_op_mode'
+SERVICE_DISABLE_CAMERA_ALERT = 'disable_camera_alert'
+SERVICE_ENABLE_CAMERA_ALERT = 'enable_camera_alert'
+CAMERA_IDS = 'camera'
 
 CONFIG_SCHEMA = vol.Schema({
     DOMAIN: vol.Schema(vol.All([{
@@ -42,6 +45,10 @@ CHANGE_OP_MODE_SCHEMA = vol.Schema({
     vol.Required(ATTR_MODE): cv.string
 })
 
+CAMERA_ALERT_SCHEMA = vol.Schema({
+    vol.Required(CAMERA_IDS, default=[]): vol.All(
+        cv.ensure_list_csv, [cv.string])
+})
 
 def setup(hass, config):
     """Set up the Camect component."""
@@ -72,5 +79,19 @@ def setup(hass, config):
     hass.services.register(
         DOMAIN, SERVICE_CHANGE_OP_MODE, handle_change_op_mode_service,
         schema=CHANGE_OP_MODE_SCHEMA)
+
+    def handle_disable_camera_alert(call):
+        camera = call.data.get(CAMERA_IDS)
+        home.disable_alert(camera, "HomeAssistant")
+    hass.services.register(
+        DOMAIN, SERVICE_DISABLE_CAMERA_ALERT, handle_disable_camera_alert,
+        schema=CAMERA_ALERT_SCHEMA)
+
+    def handle_enable_camera_alert(call):
+        camera = call.data.get(CAMERA_IDS)
+        home.enable_alert(camera, "HomeAssistant")
+    hass.services.register(
+        DOMAIN, SERVICE_ENABLE_CAMERA_ALERT, handle_enable_camera_alert,
+        schema=CAMERA_ALERT_SCHEMA)
 
     return True

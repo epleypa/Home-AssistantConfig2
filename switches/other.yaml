@@ -14,6 +14,7 @@
     - light.hallway_bathroom_light
     - light.hallway_laundry_light
     - light.office_light
+    - light.office_strip
     - light.storage_light
     - group.living_room_center_light
 
@@ -32,3 +33,5 @@
 #     - light.hallway_stairs_light
 #     - light.hallway_bathroom_light
 #     - light.hallway_laundry_light
+
+- platform: bhyve

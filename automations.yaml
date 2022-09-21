@@ -18,6 +18,7 @@
         - wed
         - thu
         - fri
+        before: 00:00:00
     - condition: state
       entity_id: input_boolean.alarmweekday
       state: 'off'
@@ -28,6 +29,7 @@
       entity_id:
       - group.hallway_lights
       - group.living_room_center_light
+      - light.office_strip
   - service: notify.discord
     data_template:
       target: '814328602270498817'
@@ -65,6 +67,10 @@
   - platform: state
     entity_id: fan.hvac_fan
     to: 'on'
+    for:
+      hours: 1
+      minutes: 0
+      seconds: 0
   condition:
   - condition: and
     conditions:
@@ -84,6 +90,7 @@
   - service: fan.turn_off
     target:
       entity_id: fan.hvac_fan
+    data: {}
   mode: single
 - id: workday
   alias: Workday
@@ -217,9 +224,9 @@
     before: sunset
   action:
   - data_template:
-      entity_id: "{% if trigger.entity_id == 'binary_sensor.bedroom_motion' %}\n \
-        \ group.bedroom_lights\n{% elif trigger.entity_id == 'binary_sensor.living_room_motion'\
-        \ %}\n  group.living_room_lights\n{% endif %}\n"
+      entity_id: "{% if trigger.entity_id == 'binary_sensor.bedroom_motion' %}\n  group.bedroom_lights\n{%
+        elif trigger.entity_id == 'binary_sensor.living_room_motion' %}\n  group.living_room_lights\n{%
+        endif %}\n"
     service: homeassistant.turn_off
   mode: single
   max: 10
@@ -688,7 +695,7 @@
           entity_id: group.patio_lights
       - delay:
           hours: 0
-          minutes: 3
+          minutes: 11
           seconds: 0
           milliseconds: 0
       - service: homeassistant.turn_off
@@ -870,3 +877,27 @@
     data:
       message: '{{ trigger.event.event_type }}'
   mode: single
+- id: '1660015056840'
+  alias: 'Holiday in week: Trash'
+  description: ''
+  use_blueprint:
+    path: bruxy70/holiday_in_week.yaml
+    input:
+      garbage_collection_entity: sensor.trash
+      holiday_entity: calendar.holidays
+- id: '1660015263871'
+  alias: 'Holiday in week: Recycle'
+  description: ''
+  use_blueprint:
+    path: bruxy70/holiday_in_week.yaml
+    input:
+      garbage_collection_entity: sensor.recycle
+      holiday_entity: calendar.holidays
+- id: '1660015290791'
+  alias: 'Skip holiday: Street Sweeping'
+  description: ''
+  use_blueprint:
+    path: bruxy70/skip_holday.yaml
+    input:
+      garbage_collection_entity: sensor.street_sweeping
+      holiday_entity: calendar.holidays

@@ -4,6 +4,7 @@ homeassistant:
     - /tmp
 
 default_config:
+api:
 
 lovelace:
 
@@ -55,7 +56,7 @@ logger:
   logs:
     camect: info
     plexwebsocket: fatal
-#    homeassistant.components.workday: debug
+#    custom_components.eufy_security: debug
 #    homeassistant.components.webhook: debug
 
 zone:
@@ -102,15 +103,7 @@ fan:
 #vendor-specific integrations
 ifttt:
   key: !secret ifttt_key
-google: #calendar
-  client_id: !secret google_oath_client
-  client_secret: !secret google_oath_secret
 google_assistant: !include google_assistant.yaml
-nest:
-  client_id: !secret nest_oath_client
-  client_secret: !secret nest_oath_secret
-  project_id: !secret nest_project_id
-  subscriber_id: !secret nest_subscriber_id
 
 camect: #custom component
   - host: !secret camect_host
@@ -137,6 +130,6 @@ eufy_vacuum:
 
 circadian_lighting:
 
-spotify:
-  client_id: !secret spotify_client
-  client_secret: !secret spotify_secret
+bhyve:
+  username: !secret bhyve_username
+  password: !secret bhyve_password

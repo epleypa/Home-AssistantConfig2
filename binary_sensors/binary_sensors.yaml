@@ -64,3 +64,5 @@
           minutes: 5
         delay_off:
           minutes: 1
+
+- platform: bhyve
