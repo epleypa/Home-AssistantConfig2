@@ -14,7 +14,7 @@ jobs:
         version: ["stable", "beta", "dev"]
     steps:
       - name: ⤵️ Check out configuration from GitHub
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
       - name: Add ble_monitor
         run: |
           git clone https://github.com/custom-components/ble_monitor.git ble_monitor/
@@ -68,7 +68,7 @@ jobs:
       - name: Add Dummy Zones
         run: cp ./travis/travis_zones.yaml zones.yaml
       - name: 🚀 Run Home Assistant Configuration Check
-        uses: frenck/action-home-assistant@v1.1.1
+        uses: frenck/action-home-assistant@v1.3
         with:
           secrets: ./travis/travis_secrets.yaml
           version: "${{ matrix.version }}"
