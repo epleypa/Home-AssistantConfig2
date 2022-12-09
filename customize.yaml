@@ -4,10 +4,8 @@ switch.cable_power:
   friendly_name: Cable
 sensor.wmata_gr_no:
   icon: mdi:train
-  icon_color: rgb(0,128,0)
 sensor.wmata_gr_so:
   icon: mdi:train
-  icon_color: rgb(0,128,0)
 script.wmata_gr_no:
   friendly_name: Next Green Line Northbound
   initial: false

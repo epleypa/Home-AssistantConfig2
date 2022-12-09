@@ -60,4 +60,4 @@ entity_config:
     expose: false
 
   alarm_control_panel.10th_street:
-    expose: true
+    expose: false

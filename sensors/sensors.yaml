@@ -11,14 +11,6 @@
       friendly_name: 'Time'
       value_template: '{{ "%0.02d:%0.02d" | format(states("input_number.alarmhour") | int, states("input_number.alarmminutes") | int) }}'
 
-- platform: moon
-
-# - platform: speedtest
-  # monitored_conditions:
-    # - ping
-    # - download
-    # - upload
-
 - platform: systemmonitor
   resources:
     - type: last_boot
@@ -37,7 +29,6 @@
     - wan
     - alerts
     - firmware
-- platform: uptime
 
 - platform: rest
   name: 'WMATA'

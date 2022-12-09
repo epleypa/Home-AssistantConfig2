@@ -1,12 +1,12 @@
 - platform: broadlink
   mac: '78:0F:77:B9:62:85'
   switches:
-    - name: 'Kelley Table Light'
-      command_on: 'sgkyAAcTEwgGEwcTBxMSBwYTEwcGFBIHBxMTBxIHEgcHExIIBhMGEwcTBhMGEwYTEgcSBwa9AAAAAAAA'
-      command_off: 'sgkyAAcSEwcHEwcTBxMTBgcTEwYHExMHBxMTBhMHEwYHExMGBxMHEwcTBxMTBhMHBxIHEwe8AAAAAAAA'
-    - name: 'Peter Table Light'
-      command_on: 'sgwyAAcTEwcGEwcTBxMTBwcTEwcHExMHEwcTBwYTEwcHExMHBhMGEwcTBhMHEwcTEwcTBwa9AAAAAAAA'
-      command_off: 'sg4yAAcTEwcGEwcTBxMTBwcTEwcHExMHEwcTBgcTEwcHExMHBxMHEwcTBxMTBxMGBxMHEwe9AAAAAAAA'
+    # - name: 'Kelley Table Light'
+      # command_on: 'sgkyAAcTEwgGEwcTBxMSBwYTEwcGFBIHBxMTBxIHEgcHExIIBhMGEwcTBhMGEwYTEgcSBwa9AAAAAAAA'
+      # command_off: 'sgkyAAcSEwcHEwcTBxMTBgcTEwYHExMHBxMTBhMHEwYHExMGBxMHEwcTBxMTBhMHBxIHEwe8AAAAAAAA'
+    # - name: 'Peter Table Light'
+      # command_on: 'sgwyAAcTEwcGEwcTBxMTBwcTEwcHExMHEwcTBwYTEwcHExMHBhMGEwcTBhMHEwcTEwcTBwa9AAAAAAAA'
+      # command_off: 'sg4yAAcTEwcGEwcTBxMTBwcTEwcHExMHEwcTBgcTEwcHExMHBxMHEwcTBxMTBxMGBxMHEwe9AAAAAAAA'
     - name: 'Kitchen Camera'
       command_on: 'sh8yAAUUEggFFAUUBhQSCAYUEggFFBIIBhQSCAYUEggSCBIIBhQGFAUVBRQGFAUUEggSCAXBAAAAAAAA'
       command_off: 'shcyAAYUEggFFAYUBRQSCAYUEggGFBIIBhQSCAYUEggSCBIIBRQFFQUUBhQSCBIIBRQGFAbAAAAAAAAA'
