@@ -15,10 +15,10 @@ jobs:
     steps:
       - name: ⤵️ Check out configuration from GitHub
         uses: actions/checkout@v3
-      - name: Add ble_monitor
+      - name: Add bhyve
         run: |
           git clone https://github.com/sebr/bhyve-home-assistant.git bhyve-home-assistant/
-          cp -R bhyve-home-assistant/custom_components custom_components
+          cp -R bhyve-home-assistant/custom_components/bhyve custom_components
 #          ls custom_components/bhyve
       - name: Add camect
         run: |
