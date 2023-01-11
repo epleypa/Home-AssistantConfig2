@@ -103,8 +103,23 @@
                   "secondary_info": "last-changed"
                 },
                 {
-                  "entity": "vacuum.robovac",
-                  "secondary_info": "last-changed"
+                  "type": "attribute",
+                  "entity": "vacuum.marvin",
+                  "attribute": "status",
+                  "hold_action": {
+                    "action": "call-service",
+                    "service": "vacuum.start_pause",
+                    "target": {
+                      "entity_id": "vacuum.marvin"
+                    }
+                  },
+                  "double_tap_action": {
+                    "action": "call-service",
+                    "service": "vacuum.return_to_base",
+                    "target": {
+                      "entity_id": "vacuum.marvin"
+                    }
+                  }
                 }
               ],
               "type": "entities"

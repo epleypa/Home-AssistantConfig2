@@ -13,8 +13,8 @@ install:
   - mv camect custom_components
   - git clone https://github.com/custom-components/circadian_lighting.git circadian_lighting/
   - mv circadian_lighting/custom_components custom_components
-  - git clone https://github.com/custom-components/eufy_vacuum.git eufy_vacuum/
-  - mv eufy_vacuum/custom_components custom_components
+  - git clone https://github.com/bmccluskey/robovac.git robovac/
+  - mv robovac/custom_components/robovac custom_components
   - git clone https://github.com/custom-components/eventsensor.git eventsensor/
   - mv eventsensor/custom_components custom_components
   - git clone https://github.com/custom-components/garbage_collection.git garbage_collection/

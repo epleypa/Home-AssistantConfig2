@@ -30,13 +30,11 @@ jobs:
           git clone https://github.com/claytonjn/hass-circadian_lighting.git circadian_lighting/
           cp -R circadian_lighting/custom_components/circadian_lighting custom_components
 #          ls custom_components/circadian_lighting
-      - name: Add eufy_vacuum
+      - name: Add eufy_robovac
         run: |
-          ls custom_components/eufy_vacuum
-#          git clone https://github.com/mitchellrj/eufy_robovac.git eufy_vacuum/
-#          cp -R eufy_vacuum/eufy_robovac custom_components
-#          mv custom_components/eufy_robovac custom_components/eufy_vacuum
-#          ls custom_components/eufy_vacuum
+          git clone https://github.com/bmccluskey/robovac.git robovac/
+          cp -R robovac/custom_components/robovac custom_components
+#          ls custom_components/robovac
       - name: Add eventsensor
         run: |
           git clone https://github.com/azogue/eventsensor.git eventsensor/

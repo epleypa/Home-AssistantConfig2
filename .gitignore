@@ -44,10 +44,10 @@ __pycache__
 
 # Custom Components
 custom_components/*
-!custom_components/camect
-!custom_components/camect/manifest.json
-!custom_components/eufy_vacuum
-!custom_components/eufy_vacuum/manifest.json
+#!custom_components/camect
+#!custom_components/camect/manifest.json
+#!custom_components/eufy_vacuum
+#!custom_components/eufy_vacuum/manifest.json
 
 # Other
 *.uuid
