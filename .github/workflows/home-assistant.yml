@@ -17,14 +17,13 @@ jobs:
         uses: actions/checkout@v3
       - name: Add ble_monitor
         run: |
-          git clone https://github.com/custom-components/ble_monitor.git ble_monitor/
-          cp -R ble_monitor/custom_components custom_components
-#          ls custom_components/ble_monitor
+          git clone https://github.com/sebr/bhyve-home-assistant.git bhyve-home-assistant/
+          cp -R bhyve-home-assistant/custom_components custom_components
+#          ls custom_components/bhyve
       - name: Add camect
         run: |
-          ls custom_components/camect
-#          git clone https://github.com/camect/home-assistant-integration.git camect/
-#          cp -R camect custom_components
+          git clone https://github.com/camect/home-assistant-integration.git camect/
+          cp -R camect custom_components
 #          ls custom_components/camect
       - name: Add circadian_lighting
         run: |
