@@ -45,3 +45,11 @@ family:
   entities:
     - person.kelley
     - person.peter
+
+holiday_lights:
+   name: Holiday Lights
+   entities:
+      - group.front_lights
+      - switch.christmas_tree_lights
+      - switch.upstairs_snowflake_lights
+      - switch.downstairs_snowflake_lights

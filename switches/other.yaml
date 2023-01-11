@@ -10,19 +10,18 @@
 - platform: circadian_lighting
   name: Circadian Lighting
   lights_ct:
-    - light.hallway_stairs_light
-    - light.hallway_bathroom_light
-    - light.hallway_laundry_light
-    - light.office_light
     - light.office_strip
-    - light.storage_light
-    - group.living_room_center_light
+#    - light.storage_light
+#    - group.living_room_center_light
 
 - platform: circadian_lighting
   name: Circadian Brightness
   lights_brightness:
     - light.bedroom_overhead_light
-#    - light.office_overhead_lights
+    - light.hallway_stairs_light
+    - light.hallway_bathroom_light
+    - light.hallway_laundry_light
+    - group.living_room_center_light
 
 # - platform: circadian_lighting
 #   name: Circadian Sleep

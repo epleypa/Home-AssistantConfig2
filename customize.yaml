@@ -1,7 +1,5 @@
 media_player.living_room_tv:
   device_class: tv
-switch.cable_power:
-  friendly_name: Cable
 sensor.wmata_gr_no:
   icon: mdi:train
 sensor.wmata_gr_so:
@@ -14,7 +12,7 @@ script.wmata_gr_so:
   friendly_name: Next Green Line Southbound
   initial: false
   icon: mdi:speaker-wireless
-switch.christmas_tree_light:
+switch.christmas_tree_lights:
   icon: mdi:pine-tree
 binary_sensor.front_door:
   device_class: door

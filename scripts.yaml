@@ -221,3 +221,16 @@ cat_tv_beautiful_birds:
           entity_id: media_player.living_room_androidtv
     default: []
   mode: single
+new_script:
+  alias: Bluetoothctl Power Restart
+  sequence:
+  - service: shell_command.bluetoothctl_off
+    data: {}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - service: shell_command.bluetoothctl_on
+    data: {}
+  mode: single

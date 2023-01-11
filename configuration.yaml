@@ -130,6 +130,36 @@ eufy_vacuum:
 
 circadian_lighting:
 
+amcrest:
+  - host: 192.168.1.231
+    name: Amcrest Dining Room
+    username: !secret amcrest_un
+    password: !secret amcrest_pw
+    binary_sensors:
+      - motion_detected
+      - audio_detected
+      - online
+    sensors:
+      - ptz_preset
+    switches:
+      - privacy_mode
+  - host: 192.168.1.232
+    name: Amcrest Office
+    username: !secret amcrest_un
+    password: !secret amcrest_pw
+    binary_sensors:
+      - motion_detected
+      - audio_detected
+      - online
+    sensors:
+      - ptz_preset
+    switches:
+      - privacy_mode
+
 bhyve:
   username: !secret bhyve_username
   password: !secret bhyve_password
+
+shell_command:
+  bluetoothctl_off: bluetoothctl power off
+  bluetoothctl_on: bluetoothctl power on

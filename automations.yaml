@@ -19,16 +19,17 @@
         - thu
         - fri
         before: 00:00:00
+        after: 00:00:00
     - condition: state
       entity_id: input_boolean.alarmweekday
       state: 'off'
   action:
-  - service: homeassistant.turn_on
-    data: {}
+  - service: light.turn_on
+    data:
+      brightness_pct: 25
     target:
       entity_id:
       - group.hallway_lights
-      - group.living_room_center_light
       - light.office_strip
   - service: notify.discord
     data_template:
@@ -43,6 +44,18 @@
             url: https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/US-NationalWeatherService-Logo.svg/1200px-US-NationalWeatherService-Logo.svg.png
           footer:
             text: NWS KDCA
+  - delay:
+      hours: 0
+      minutes: 30
+      seconds: 0
+      milliseconds: 0
+  - service: light.turn_on
+    data:
+      brightness_pct: 100
+    target:
+      entity_id:
+      - group.hallway_lights
+      - light.office_strip
   mode: single
 - id: later
   alias: See You Later
@@ -523,6 +536,14 @@
   - platform: state
     entity_id: binary_sensor.street_sweeping
     to: 'on'
+  - platform: state
+    entity_id:
+    - switch.amcrest_dining_room_privacy_mode
+    id: privacy_dining_room
+  - platform: state
+    entity_id:
+    - switch.amcrest_office_privacy_mode
+    id: privacy_office
   condition:
   - condition: and
     conditions:
@@ -530,6 +551,7 @@
       condition: time
     - before: '23:00:00'
       condition: time
+      after: 00:00:00
   action:
   - choose:
     - conditions:
@@ -733,6 +755,7 @@
           entity_id:
           - light.tv_backlight
           - group.front_lights
+          - group.holiday_lights
         data: {}
     - conditions:
       - condition: time
@@ -749,6 +772,15 @@
           - light.hallway_laundry_light
           - light.hallway_bathroom_light
         data: {}
+      - delay:
+          hours: 0
+          minutes: 30
+          seconds: 0
+          milliseconds: 0
+      - service: homeassistant.turn_off
+        data: {}
+        target:
+          entity_id: group.holiday_lights
     default: []
   - choose:
     - conditions:
@@ -771,6 +803,7 @@
           - group.living_room_lights
           - light.bedroom_overhead_light
           - group.hallway_lights
+          - group.holiday_lights
         data: {}
     - conditions:
       - condition: not
@@ -790,6 +823,7 @@
           - group.living_room_lights
           - light.bedroom_overhead_light
           - group.hallway_lights
+          - group.holiday_lights
         data: {}
     default: []
   mode: single
@@ -810,28 +844,16 @@
   - delay: 00:00:01
   - data_template:
       target: '812545796339400708'
-      message: Doorbell triggered
-    service: notify.discord
-  - service: notify.mobile_app_peter_sm_g981u
-    data:
-      message: Doorbell Pressed
-      title: Someone pressed the doorbell
-      data:
-        image: /api/nest/event_media/{{ trigger.event.data.device_id }}/{{ trigger.event.data.nest_event_id
-          }}/thumbnail
-  - data_template:
-      target: '812545796339400708'
       message: Someone is at the door!
       data:
         images:
-        - /api/nest/event_media/{{ trigger.event.data.device_id }}/{{ trigger.event.data.nest_event_id
-          }}/thumbnail
+        - /config/www/doorbell.jpg
         embed:
           description: Doorbell Camera
           author:
             name: Home Assistant
             icon_url: https://www.home-assistant.io/images/favicon-192x192-full.png
-          fields: '[]'
+          fields: []
     service: notify.discord
   mode: single
 - id: '1612648017088'
@@ -877,7 +899,58 @@
     data:
       message: '{{ trigger.event.event_type }}'
   mode: single
-- id: '1660015056840'
+- id: '1673365170897'
+  alias: Amcrest Privacy Mode
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - group.family
+    to: home
+    id: family_home
+  - platform: time
+    at: 00:00:00
+    id: goodnight
+  - platform: time
+    at: 07:00:00
+    id: goodmorning
+  - platform: state
+    entity_id:
+    - group.family
+    id: family_away
+    from: home
+  condition: []
+  action:
+  - if:
+    - condition: or
+      conditions:
+      - condition: trigger
+        id: goodnight
+      - condition: trigger
+        id: family_away
+    then:
+    - service: switch.turn_off
+      data: {}
+      target:
+        entity_id:
+        - switch.amcrest_dining_room_privacy_mode
+        - switch.amcrest_office_privacy_mode
+  - if:
+    - condition: or
+      conditions:
+      - condition: trigger
+        id: goodmorning
+      - condition: trigger
+        id: family_home
+    then:
+    - service: switch.turn_on
+      data: {}
+      target:
+        entity_id:
+        - switch.amcrest_dining_room_privacy_mode
+        - switch.amcrest_office_privacy_mode
+  mode: single
+- id: '1673367236715'
   alias: 'Holiday in week: Trash'
   description: ''
   use_blueprint:
@@ -885,19 +958,19 @@
     input:
       garbage_collection_entity: sensor.trash
       holiday_entity: calendar.holidays
-- id: '1660015263871'
-  alias: 'Holiday in week: Recycle'
-  description: ''
-  use_blueprint:
-    path: bruxy70/holiday_in_week.yaml
-    input:
-      garbage_collection_entity: sensor.recycle
-      holiday_entity: calendar.holidays
-- id: '1660015290791'
+- id: '1673369676358'
   alias: 'Skip holiday: Street Sweeping'
   description: ''
   use_blueprint:
     path: bruxy70/skip_holday.yaml
     input:
       garbage_collection_entity: sensor.street_sweeping
+      holiday_entity: calendar.holidays
+- id: '1673369708455'
+  alias: 'Holiday in week: Recycle'
+  description: ''
+  use_blueprint:
+    path: bruxy70/holiday_in_week.yaml
+    input:
+      garbage_collection_entity: sensor.recycle
       holiday_entity: calendar.holidays

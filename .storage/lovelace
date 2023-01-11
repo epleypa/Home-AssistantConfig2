@@ -23,6 +23,67 @@
             },
             {
               "entity": "sensor.moon"
+            },
+            {
+              "type": "entity-filter",
+              "state_filter": [
+                "on",
+                "home"
+              ],
+              "entities": [
+                {
+                  "entity": "binary_sensor.trash",
+                  "name": "Trash Day"
+                },
+                {
+                  "entity": "binary_sensor.recycle",
+                  "name": "Recycle Day"
+                },
+                {
+                  "entity": "binary_sensor.street_sweeping"
+                },
+                {
+                  "entity": "binary_sensor.workday"
+                },
+                {
+                  "entity": "binary_sensor.worknight"
+                },
+                {
+                  "entity": "binary_sensor.sleep_mode"
+                },
+                {
+                  "entity": "binary_sensor.smoke_alarm",
+                  "name": "Smoke"
+                },
+                {
+                  "entity": "binary_sensor.co_alarm",
+                  "name": "CO"
+                },
+                {
+                  "entity": "binary_sensor.half_bath_sink_leak_sensor_water",
+                  "name": "Half Bath Sink"
+                },
+                {
+                  "entity": "binary_sensor.kitchen_leak_sensor_water",
+                  "name": "Kitchen Sink"
+                },
+                {
+                  "entity": "binary_sensor.upstairs_bath_sink_leak_sensor_water",
+                  "name": "Upstairs Bath Sink"
+                },
+                {
+                  "entity": "binary_sensor.laundry_water_leak_sensor_water",
+                  "name": "Laundry"
+                },
+                {
+                  "entity": "binary_sensor.half_bath_toliet_leak_sensor_water",
+                  "name": "Half Bath Toliet"
+                },
+                {
+                  "entity": "binary_sensor.upstairs_bath_toilet_leak_sensor_water",
+                  "name": "Upstairs Bath Toliet"
+                }
+              ]
             }
           ],
           "cards": [
@@ -51,34 +112,6 @@
             {
               "entity": "climate.upstairs",
               "type": "thermostat"
-            },
-            {
-              "entities": [
-                {
-                  "entity": "binary_sensor.trash",
-                  "name": "Trash Day"
-                },
-                {
-                  "entity": "binary_sensor.recycle",
-                  "name": "Recycle Day"
-                },
-                {
-                  "entity": "binary_sensor.street_sweeping"
-                },
-                {
-                  "entity": "binary_sensor.workday"
-                },
-                {
-                  "entity": "binary_sensor.worknight"
-                },
-                {
-                  "entity": "binary_sensor.sleep_mode"
-                }
-              ],
-              "show_icon": true,
-              "type": "glance",
-              "state_color": true,
-              "columns": 3
             },
             {
               "type": "vertical-stack",
@@ -174,6 +207,9 @@
                     },
                     {
                       "entity": "group.office_lights"
+                    },
+                    {
+                      "entity": "group.holiday_lights"
                     }
                   ],
                   "state_color": true,
@@ -275,6 +311,8 @@
                 {
                   "cards": [
                     {
+                      "show_name": true,
+                      "show_icon": true,
                       "entity": "switch.patio_wall_lights",
                       "icon": "mdi:coach-lamp",
                       "type": "entity-button"
@@ -335,16 +373,43 @@
                   "type": "horizontal-stack",
                   "cards": [
                     {
+                      "show_name": true,
+                      "show_icon": true,
                       "type": "entity-button",
                       "entity": "switch.front_yard_lights"
                     },
                     {
                       "entity": "switch.window_switch",
                       "type": "entity-button"
-                    },
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
                     {
+                      "show_name": true,
+                      "show_icon": true,
                       "entity": "switch.christmas_tree_lights",
                       "type": "entity-button"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "button",
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "entity": "switch.downstairs_snowflake_lights"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "button",
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "entity": "switch.upstairs_snowflake_lights"
                     }
                   ]
                 }
@@ -514,20 +579,6 @@
               "title": "Google Home TTS"
             },
             {
-              "type": "picture-glance",
-              "title": "Kitchen",
-              "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
-              "entities": [
-                {
-                  "entity": "camera.camect_kitchen"
-                },
-                {
-                  "entity": "switch.kitchen_camera"
-                }
-              ],
-              "camera_image": "camera.camect_kitchen"
-            },
-            {
               "type": "entities",
               "entities": [
                 {
@@ -622,6 +673,188 @@
                     }
                   ],
                   "columns": 1
+                }
+              ]
+            },
+            {
+              "camera_view": "auto",
+              "type": "picture-glance",
+              "title": "Kitchen",
+              "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
+              "entities": [
+                {
+                  "entity": "binary_sensor.amcrest_dining_room_motion_detected"
+                },
+                {
+                  "entity": "binary_sensor.amcrest_dining_room_audio_detected"
+                },
+                {
+                  "entity": "switch.amcrest_dining_room_privacy_mode"
+                },
+                {
+                  "entity": "sensor.amcrest_dining_room_ptz_preset"
+                }
+              ],
+              "camera_image": "camera.amcrest_dining_room",
+              "entity": "binary_sensor.amcrest_dining_room_online"
+            },
+            {
+              "camera_view": "auto",
+              "type": "picture-elements",
+              "title": "Office",
+              "camera_image": "camera.amcrest_office",
+              "elements": [
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-up",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "25px",
+                    "bottom": "50px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "up"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-down",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "25px",
+                    "bottom": "0px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "down"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-left",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "50px",
+                    "bottom": "25px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "left"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-right",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "0px",
+                    "bottom": "25px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "right"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-top-left",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "50px",
+                    "bottom": "50px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "left_up"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-top-right",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "0px",
+                    "bottom": "50px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "right_up"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-bottom-left",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "50px",
+                    "bottom": "0px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "left_down"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-bottom-right",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "0px",
+                    "bottom": "0px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "right_down"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:eye",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "bottom": "25px",
+                    "right": "25px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "switch.toggle",
+                    "target": {
+                      "entity_id": "switch.amcrest_office_privacy_mode"
+                    }
+                  }
                 }
               ]
             }
@@ -850,7 +1083,6 @@
               "cards": [
                 {
                   "type": "gauge",
-                  "entity": "sensor.ble_temperature_dining_room",
                   "max": 100,
                   "min": 0,
                   "severity": {
@@ -858,11 +1090,12 @@
                     "yellow": 74,
                     "red": 0
                   },
-                  "name": "Temperature"
+                  "name": "Temperature",
+                  "entity": "sensor.dining_room_climate_sensor_temperature"
                 },
                 {
                   "type": "gauge",
-                  "entity": "sensor.ble_humidity_dining_room",
+                  "entity": "sensor.dining_room_climate_sensor_humidity",
                   "min": 0,
                   "max": 100,
                   "severity": {
@@ -879,22 +1112,6 @@
               "type": "history-graph",
               "entities": [
                 {
-                  "entity": "sensor.ble_temperature_bedroom",
-                  "name": "Bedroom"
-                },
-                {
-                  "entity": "sensor.ble_temperature_office",
-                  "name": "Office"
-                },
-                {
-                  "entity": "sensor.ble_temperature_upstairs_bathroom",
-                  "name": "Upstairs Bathroom"
-                },
-                {
-                  "entity": "sensor.ble_temperature_dining_room",
-                  "name": "Dining Room"
-                },
-                {
                   "entity": "sensor.living_room_temperature"
                 },
                 {
@@ -902,6 +1119,18 @@
                 },
                 {
                   "entity": "sensor.office_temperature"
+                },
+                {
+                  "entity": "sensor.bathroom_climate_sensor_temperature"
+                },
+                {
+                  "entity": "sensor.office_climate_sensor_temperature"
+                },
+                {
+                  "entity": "sensor.bedroom_climate_sensor_temperature"
+                },
+                {
+                  "entity": "sensor.dining_room_climate_sensor_temperature"
                 }
               ],
               "refresh_interval": 0,
@@ -913,7 +1142,6 @@
               "cards": [
                 {
                   "type": "gauge",
-                  "entity": "sensor.ble_temperature_upstairs_bathroom",
                   "max": 100,
                   "min": 0,
                   "severity": {
@@ -921,11 +1149,11 @@
                     "yellow": 74,
                     "red": 0
                   },
-                  "name": "Temperature"
+                  "name": "Temperature",
+                  "entity": "sensor.bathroom_climate_sensor_temperature"
                 },
                 {
                   "type": "gauge",
-                  "entity": "sensor.ble_humidity_upstairs_bathroom",
                   "min": 0,
                   "max": 100,
                   "severity": {
@@ -934,7 +1162,8 @@
                     "red": 0
                   },
                   "name": "Humidity",
-                  "needle": true
+                  "needle": true,
+                  "entity": "sensor.bathroom_climate_sensor_humidity"
                 }
               ]
             },
@@ -944,7 +1173,6 @@
               "cards": [
                 {
                   "type": "gauge",
-                  "entity": "sensor.ble_temperature_office",
                   "max": 100,
                   "min": 0,
                   "severity": {
@@ -952,11 +1180,11 @@
                     "yellow": 74,
                     "red": 0
                   },
-                  "name": "Temperature"
+                  "name": "Temperature",
+                  "entity": "sensor.office_climate_sensor_temperature"
                 },
                 {
                   "type": "gauge",
-                  "entity": "sensor.ble_humidity_office",
                   "min": 0,
                   "max": 100,
                   "severity": {
@@ -965,7 +1193,8 @@
                     "red": 0
                   },
                   "name": "Humidity",
-                  "needle": true
+                  "needle": true,
+                  "entity": "sensor.office_climate_sensor_humidity"
                 }
               ]
             },
@@ -975,7 +1204,6 @@
               "cards": [
                 {
                   "type": "gauge",
-                  "entity": "sensor.ble_temperature_bedroom",
                   "max": 100,
                   "min": 0,
                   "severity": {
@@ -983,11 +1211,11 @@
                     "yellow": 74,
                     "red": 0
                   },
-                  "name": "Temperature"
+                  "name": "Temperature",
+                  "entity": "sensor.bedroom_climate_sensor_temperature"
                 },
                 {
                   "type": "gauge",
-                  "entity": "sensor.ble_humidity_bedroom",
                   "min": 0,
                   "max": 100,
                   "severity": {
@@ -996,7 +1224,8 @@
                     "red": 0
                   },
                   "name": "Humidity",
-                  "needle": true
+                  "needle": true,
+                  "entity": "sensor.bedroom_climate_sensor_humidity"
                 }
               ]
             }

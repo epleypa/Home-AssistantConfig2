@@ -51,9 +51,3 @@ front_lights:
       - switch.window_switch
       - switch.front_yard_plug_1
       - switch.front_yard_plug_2
-
-holiday_lights:
-   name: Holiday Lights
-   entities:
-      - group.front_lights
-      - switch.christmas_tree_lights

@@ -91,9 +91,15 @@ class Camera(camera.Camera):
         """Return a link to the camera feed as entity picture."""
         return None
 
-    def camera_image(self, width = None, height = None):
+    def camera_image(self, width = None, height = None) -> bytes:
         """Return a still image response from the camera."""
-        return self._home.snapshot_camera(self._device_id)
+        # The Camect library doesn't handle width or height being None so we override
+        # those parameters with the image dimensions previously reported by Camect
+        if width is None:
+            width = self._width
+        if height is None:
+            height = self._height
+        return self._home.snapshot_camera(self._device_id, width, height)
 
     @property
     def extra_state_attributes(self):
