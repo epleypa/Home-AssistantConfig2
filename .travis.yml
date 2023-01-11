@@ -25,5 +25,7 @@ install:
   - mv hacs/custom_components custom_components
   - git clone https://github.com/custom-components/unifigateway.git unifigateway/
   - mv unifigateway/custom_components custom_components
+  - git clone https://github.com/sebr/bhyve-home-assistant.git bhyve-home-assistant/
+  - mv bhyve-home-assistant/custom_components custom_components
 script:
   - hass -c . --script check_config
