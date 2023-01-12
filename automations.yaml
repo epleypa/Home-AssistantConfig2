@@ -456,14 +456,18 @@
   alias: Update Available
   trigger:
   - platform: state
-    entity_id: binary_sensor.updater
+    entity_id:
+    - binary_sensor.docker_hub_update_available
     to: 'on'
   action:
   - service: notify.persistent_notification
     data:
       title: New Home Assistant Release
-      message: Home Assistant {{ state_attr('binary_sensor.updater','newest_version')
-        }} is now available
+      message: Home Assistant {{ states('sensor.docker_hub_version') }} is now available
+  - service: notify.discord
+    data_template:
+      message: Home Assistant {{ states('sensor.docker_hub_version') }} is now available
+      target: '814328602270498817'
   mode: single
 - id: emergencyalert
   alias: Emergency Alert
@@ -549,6 +553,7 @@
     conditions:
     - after: 08:00
       condition: time
+      before: 00:00:00
     - before: '23:00:00'
       condition: time
       after: 00:00:00
@@ -594,7 +599,8 @@
     default:
     - service: notify.discord
       data_template:
-        message: '{{ trigger.entity_id }} is on'
+        message: '{{ state_attr(trigger.event.data.entity_id, ''friendly_name'') }}
+          is on'
         target: '814328602270498817'
   initial_state: false
   mode: queued

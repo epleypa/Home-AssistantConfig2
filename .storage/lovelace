@@ -509,6 +509,12 @@
                 {
                   "entity": "binary_sensor.upstairs_bath_toilet_leak_sensor_water",
                   "name": "Upstairs Bath Toliet"
+                },
+                {
+                  "entity": "switch.amcrest_dining_room_privacy_mode"
+                },
+                {
+                  "entity": "switch.amcrest_office_privacy_mode"
                 }
               ],
               "title": "Alerts",

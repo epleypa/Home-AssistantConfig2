@@ -120,14 +120,6 @@ telegram_bot:
       - !secret telegram_id_peter
       - !secret telegram_id_kelley
 
-#eufy_vacuum:
-#  devices:
-#  - name: Robovac
-#    address: !secret eufy_ip
-#    access_token: !secret eufy_token
-#    id: !secret eufy_id
-#    type: T2118
-
 circadian_lighting:
 
 amcrest:
