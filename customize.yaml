@@ -28,3 +28,5 @@ binary_sensor.home_away:
   icon: mdi:shield-home
 alarm_control_panel.10th_street:
   code_arm_required: false
+device_tracker.toyota_corolla:
+  entity_picture: https://cdn.jdpower.com/ChromeImageGallery/ColorMatched/White/640/cc_2010TOY005a_640/cc_2010TOY005a_640_8T7.jpg

@@ -700,7 +700,6 @@
             {
               "camera_view": "auto",
               "type": "picture-glance",
-              "title": "Kitchen",
               "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
               "entities": [
                 {
@@ -716,8 +715,9 @@
                   "entity": "sensor.amcrest_dining_room_ptz_preset"
                 }
               ],
-              "camera_image": "camera.amcrest_dining_room",
-              "entity": "binary_sensor.amcrest_dining_room_online"
+              "camera_image": "camera.amcrest_dining_room_3",
+              "entity": "binary_sensor.amcrest_dining_room_online",
+              "title": "Dining Room"
             },
             {
               "camera_view": "auto",

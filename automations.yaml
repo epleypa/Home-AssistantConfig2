@@ -129,9 +129,9 @@
   - platform: time
     at: '22:00:00'
   action:
-  - service: '{% if now().strftime(''%H:%M:%S'') >= ''12:00:00'' %}switch.turn_on
-      {% else %}switch.turn_off {% endif %}'
-    entity_id: switch.bedroom_humidifier
+  - service: '{% if now().strftime(''%H:%M:%S'') >= ''12:00:00'' %}humidifier.turn_on
+      {% else %}humidifier.turn_off {% endif %}'
+    entity_id: humidifier.bedroom_humidifier
 - id: ledweather
   alias: LED Weather
   trigger:
@@ -461,7 +461,7 @@
     to: 'on'
   action:
   - service: notify.persistent_notification
-    data:
+    data_template:
       title: New Home Assistant Release
       message: Home Assistant {{ states('sensor.docker_hub_version') }} is now available
   - service: notify.discord
@@ -551,7 +551,7 @@
   condition:
   - condition: and
     conditions:
-    - after: 08:00
+    - after: 08:00:00
       condition: time
       before: 00:00:00
     - before: '23:00:00'
@@ -599,8 +599,7 @@
     default:
     - service: notify.discord
       data_template:
-        message: '{{ state_attr(trigger.event.data.entity_id, ''friendly_name'') }}
-          is on'
+        message: '{{ trigger.to_state.attributes.friendly_name }} is on'
         target: '814328602270498817'
   initial_state: false
   mode: queued
