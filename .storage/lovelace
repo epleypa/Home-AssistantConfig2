@@ -297,6 +297,10 @@
                     {
                       "entity": "light.office_light",
                       "type": "light"
+                    },
+                    {
+                      "type": "light",
+                      "entity": "light.office_lamp"
                     }
                   ],
                   "type": "horizontal-stack"
@@ -377,7 +381,9 @@
                       "type": "entity-button"
                     },
                     {
-                      "entity": "switch.bedroom_humidifier",
+                      "show_name": true,
+                      "show_icon": true,
+                      "entity": "humidifier.bedroom_humidifier",
                       "icon": "mdi:air-humidifier",
                       "type": "entity-button"
                     }
@@ -699,28 +705,6 @@
             },
             {
               "camera_view": "auto",
-              "type": "picture-glance",
-              "image": "https://demo.home-assistant.io/stub_config/kitchen.png",
-              "entities": [
-                {
-                  "entity": "binary_sensor.amcrest_dining_room_motion_detected"
-                },
-                {
-                  "entity": "binary_sensor.amcrest_dining_room_audio_detected"
-                },
-                {
-                  "entity": "switch.amcrest_dining_room_privacy_mode"
-                },
-                {
-                  "entity": "sensor.amcrest_dining_room_ptz_preset"
-                }
-              ],
-              "camera_image": "camera.amcrest_dining_room_3",
-              "entity": "binary_sensor.amcrest_dining_room_online",
-              "title": "Dining Room"
-            },
-            {
-              "camera_view": "auto",
               "type": "picture-elements",
               "title": "Office",
               "camera_image": "camera.amcrest_office",
@@ -878,6 +862,166 @@
                   }
                 }
               ]
+            },
+            {
+              "camera_view": "auto",
+              "type": "picture-elements",
+              "title": "Dining Room",
+              "camera_image": "camera.amcrest_dining_room",
+              "elements": [
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-up",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "25px",
+                    "bottom": "50px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "up"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-down",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "25px",
+                    "bottom": "0px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "down"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-left",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "50px",
+                    "bottom": "25px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "left"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-right",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "0px",
+                    "bottom": "25px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "right"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-top-left",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "50px",
+                    "bottom": "50px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "left_up"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-top-right",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "0px",
+                    "bottom": "50px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "right_up"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-bottom-left",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "50px",
+                    "bottom": "0px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "left_down"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-bottom-right",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "0px",
+                    "bottom": "0px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "right_down"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:eye",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "bottom": "25px",
+                    "right": "25px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "switch.toggle",
+                    "target": {
+                      "entity_id": "switch.amcrest_dining_room_privacy_mode"
+                    }
+                  }
+                }
+              ]
             }
           ],
           "icon": "mdi:shield",
@@ -921,36 +1065,6 @@
             {
               "entity": "media_player.home_speakers",
               "type": "media-control"
-            },
-            {
-              "type": "vertical-stack",
-              "cards": [
-                {
-                  "type": "media-control",
-                  "entity": "media_player.living_room_tv"
-                },
-                {
-                  "type": "entities",
-                  "entities": [
-                    {
-                      "entity": "switch.cable_power"
-                    },
-                    {
-                      "entity": "input_boolean.tv_mute"
-                    },
-                    {
-                      "entity": "input_select.living_room_tv_source"
-                    },
-                    {
-                      "entity": "input_select.cable_channel"
-                    },
-                    {
-                      "entity": "switch.cable_hd"
-                    }
-                  ],
-                  "show_header_toggle": false
-                }
-              ]
             },
             {
               "entity": "media_player.kitchen_display",

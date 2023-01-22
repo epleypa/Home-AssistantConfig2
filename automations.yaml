@@ -548,15 +548,7 @@
     entity_id:
     - switch.amcrest_office_privacy_mode
     id: privacy_office
-  condition:
-  - condition: and
-    conditions:
-    - after: 08:00:00
-      condition: time
-      before: 00:00:00
-    - before: '23:00:00'
-      condition: time
-      after: 00:00:00
+  condition: []
   action:
   - choose:
     - conditions:
@@ -599,7 +591,8 @@
     default:
     - service: notify.discord
       data_template:
-        message: '{{ trigger.to_state.attributes.friendly_name }} is on'
+        message: '{{ trigger.to_state.attributes.friendly_name }} is {{ trigger.to_state.state
+          }}'
         target: '814328602270498817'
   initial_state: false
   mode: queued
