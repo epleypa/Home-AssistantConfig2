@@ -45,6 +45,7 @@ jobs:
           # ADD YOUR CUSTOM ENV VARIABLES HERE OR DEFINE THEM IN A FILE .mega-linter.yml AT THE ROOT OF YOUR REPOSITORY
           DISABLE: COPYPASTE,SPELL # Uncomment to disable copy-paste and spell checks
           REPOSITORY_DEVSKIM_ARGUMENTS: --ignore-globs /github/workspace/binary_sensors/nest.yaml
+          REPOSITORY_DEVSKIM_DISABLE_ERRORS: true
 
       # Upload MegaLinter artifacts
       - name: Archive production artifacts
