@@ -42,6 +42,8 @@ __pycache__
 
 *.json
 
+megalinter-reports/*
+
 # Custom Components
 custom_components/*
 #!custom_components/camect
