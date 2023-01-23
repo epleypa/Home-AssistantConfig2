@@ -39,8 +39,8 @@ bedroom_table_lights:
     - switch.peter_table_light
 
 bedroom_lights:
-  name: Bedroom Lights
-  entities:
-    - group.bedroom_table_lights
-    - light.bedroom_overhead_light
-    - switch.bedroom_closet_lights
+   name: Bedroom Lights
+   entities:
+      - group.bedroom_table_lights
+      - light.bedroom_overhead_light
+      - switch.bedroom_closet_lights
