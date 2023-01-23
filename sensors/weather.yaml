@@ -27,13 +27,20 @@
     - apparent_temperature_low
     - precip_intensity_max
 
-# - platform: rest
-    # name: 'NWS Alerts'
-    # resource: https://api.weather.gov/alerts/active/zone/mdz504
-    # method: GET
-    # headers:
-      # User-Agent: 'Home Assistant (https://github.com/epleypa/Home-AssistantConfig)'
-    # value_template: '{{ value_json.features|count }}'
-    # json_attributes:
-      # - title
-      # - features
+- platform: rest
+  name: 'NWS Alerts'
+  resource: https://api.weather.gov/alerts/active/zone/mdz504
+  method: GET
+  headers:
+    User-Agent: 'Home Assistant (https://github.com/epleypa/Home-AssistantConfig)'
+    Accept: application/geo+json
+  scan_interval: 60
+  value_template: >
+    {% if value_json.features[0] is defined %}
+      {{ value_json['features'][0]['properties'].description }}
+    {% else %}
+      None
+    {% endif %}
+  json_attributes:
+    - title
+    - features
