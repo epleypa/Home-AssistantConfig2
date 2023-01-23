@@ -93,3 +93,4 @@ automation_archive
 .vscode/*
 report/
 nest/event_media/*
+go2rtc-1.0.0
