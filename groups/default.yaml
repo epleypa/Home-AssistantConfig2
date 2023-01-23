@@ -1,21 +1,21 @@
 all_lights:
-   name: All Lights
-   entities:
-      - group.home_lights
-      - group.outdoor_lights
+  name: All Lights
+  entities:
+    - group.home_lights
+    - group.outdoor_lights
 
 home_lights:
-   name: Home Lights
-   entities:
-      - group.upstairs_lights
-      - group.downstairs_lights
+  name: Home Lights
+  entities:
+    - group.upstairs_lights
+    - group.downstairs_lights
 
 automations:
-   name: Automations
-   icon: mdi:playlist-check
-   entities:
-     - group.all_automations
-     - group.all_scripts
+  name: Automations
+  icon: mdi:playlist-check
+  entities:
+    - group.all_automations
+    - group.all_scripts
 
 alarmclock:
   name: Wake Up
@@ -47,9 +47,9 @@ family:
     - person.peter
 
 holiday_lights:
-   name: Holiday Lights
-   entities:
-      - group.front_lights
-      - switch.christmas_tree_lights
-      - switch.upstairs_snowflake_lights
-      - switch.downstairs_snowflake_lights
+  name: Holiday Lights
+  entities:
+    - group.front_lights
+    - switch.christmas_tree_lights
+    - switch.upstairs_snowflake_lights
+    - switch.downstairs_snowflake_lights
