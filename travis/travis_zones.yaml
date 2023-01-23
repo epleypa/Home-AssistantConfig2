@@ -1,0 +1,9 @@
+- name: Tysons Office
+  latitude: 0
+  longitude: -0
+  icon: mdi:worker
+
+- name: Gym
+  latitude: 0
+  longitude: -0
+  icon: mdi:dumbbell
