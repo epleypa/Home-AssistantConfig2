@@ -1,53 +1,53 @@
 downstairs_lights:
-   name: Downstairs Lights
-   entities:
-      - group.living_room_lights
-      - group.dining_room_lights
-      - group.kitchen_lights
+  name: Downstairs Lights
+  entities:
+    - group.living_room_lights
+    - group.dining_room_lights
+    - group.kitchen_lights
 
 living_room_lights:
-   name: Living Room Lights
-   entities:
-      - switch.christmas_tree_lights
-      - light.living_room_can_lights
-      - group.living_room_center_light
-      - light.tv_backlight
+  name: Living Room Lights
+  entities:
+    - switch.christmas_tree_lights
+    - light.living_room_can_lights
+    - group.living_room_center_light
+    - light.tv_backlight
 
 living_room_center_light:
-   name: Living Room Center Lights
-   entities:
-      - light.living_room_light_1
-      - light.living_room_light_2
-      - light.living_room_light_3
+  name: Living Room Center Lights
+  entities:
+    - light.living_room_light_1
+    - light.living_room_light_2
+    - light.living_room_light_3
 
 dining_room_lights:
-   name: Dining Room Lights
-   entities:
-      - switch.dining_room_light
-      - light.storage_light
+  name: Dining Room Lights
+  entities:
+    - switch.dining_room_light
+    - light.storage_light
 
 kitchen_lights:
-   name: Kitchen Lights
-   entities:
-      - switch.kitchen_cabinet_lights
-      - light.kitchen_overhead_lights
-      - switch.bar_lights
+  name: Kitchen Lights
+  entities:
+    - switch.kitchen_cabinet_lights
+    - light.kitchen_overhead_lights
+    - switch.bar_lights
 
 outdoor_lights:
-   name: Outdoor Lights
-   entities:
-      - group.patio_lights
-      - group.front_lights
+  name: Outdoor Lights
+  entities:
+    - group.patio_lights
+    - group.front_lights
 
 patio_lights:
-   name: Patio Lights
-   entities:
-      - switch.patio_wall_lights
-      - switch.party_lights
+  name: Patio Lights
+  entities:
+    - switch.patio_wall_lights
+    - switch.party_lights
 
 front_lights:
   name: Front Lights
   entities:
-      - switch.window_switch
-      - switch.front_yard_plug_1
-      - switch.front_yard_plug_2
+    - switch.window_switch
+    - switch.front_yard_plug_1
+    - switch.front_yard_plug_2

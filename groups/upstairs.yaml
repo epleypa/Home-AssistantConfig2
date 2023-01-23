@@ -1,46 +1,46 @@
 upstairs_lights:
-   name: Upstairs Lights
-   entities:
-      - group.office_lights
-      - group.bedroom_lights
-      - group.hallway_lights
+  name: Upstairs Lights
+  entities:
+    - group.office_lights
+    - group.bedroom_lights
+    - group.hallway_lights
 
 hallway_lights:
-   name: Hallway Lights
-   entities:
-      - light.hallway_stairs_light
-      - light.hallway_bathroom_light
-      - light.hallway_laundry_light
+  name: Hallway Lights
+  entities:
+    - light.hallway_stairs_light
+    - light.hallway_bathroom_light
+    - light.hallway_laundry_light
 
 office:
-   name: Office
-   icon: mdi:desktop-tower
-   entities:
-      - switch.neo
-      - switch.trinity
-      - group.office_lights
-      - device_tracker.brotherprinter
-      - group.computers
-      - device_tracker.FIOSrouter
-      - device_tracker.linksys22446
+  name: Office
+  icon: mdi:desktop-tower
+  entities:
+    - switch.neo
+    - switch.trinity
+    - group.office_lights
+    - device_tracker.brotherprinter
+    - group.computers
+    - device_tracker.FIOSrouter
+    - device_tracker.linksys22446
 
 office_lights:
-   name: Office Lights
-   entities:
-      - light.office_light
-      - light.office_overhead_lights
-      - light.office_strip
-      - light.office_lamp
+  name: Office Lights
+  entities:
+    - light.office_light
+    - light.office_overhead_lights
+    - light.office_strip
+    - light.office_lamp
 
 bedroom_table_lights:
-   name: Bedroom Table Lights
-   entities:
-      - switch.kelley_table_light
-      - switch.peter_table_light
+  name: Bedroom Table Lights
+  entities:
+    - switch.kelley_table_light
+    - switch.peter_table_light
 
 bedroom_lights:
-   name: Bedroom Lights
-   entities:
-      - group.bedroom_table_lights
-      - light.bedroom_overhead_light
-      - switch.bedroom_closet_lights
+  name: Bedroom Lights
+  entities:
+    - group.bedroom_table_lights
+    - light.bedroom_overhead_light
+    - switch.bedroom_closet_lights
