@@ -46,7 +46,7 @@ jobs:
           DISABLE: COPYPASTE,SPELL # Uncomment to disable copy-paste and spell checks
           # REPOSITORY_DEVSKIM_ARGUMENTS: --ignore-globs /github/workspace/binary_sensors/nest.yaml
           # REPOSITORY_DEVSKIM_DISABLE_ERRORS: true
-          FILTER_REGEX_EXCLUDE: (blueprints/|automations\.yaml|binary_sensors/nest\.yaml)
+          FILTER_REGEX_EXCLUDE: (blueprints/|automations\.yaml|scripts\.yaml|binary_sensors/nest\.yaml)
           GITHUB_COMMENT_REPORTER: true
 
       # Upload MegaLinter artifacts

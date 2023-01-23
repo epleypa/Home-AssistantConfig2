@@ -12,7 +12,6 @@ last_motion_entity: sensor.template_last_motion
 last_motion_class: last-motion
 
 groups:
-
 - name: Sensors
   entities:
      -  sensor.dark_sky_temperature
@@ -28,7 +27,6 @@ groups:
     else
       return "temp-high";
     '
-
 - name: Lights
   entities:
      - light.hallway
@@ -44,7 +42,6 @@ groups:
   action:
     domain: homeassistant   # This optional parameter allows you to use other services such as homeassistant.toggle like here.
     service: toggle
-
 - name: Switches
   entities:
      - switch.doorbell
@@ -53,7 +50,6 @@ groups:
       class: 'doorbell-on'
     - state: 'off'
       class: 'doorbell-off'
-
 - name: NVR
   entities:
      - binary_sensor.blue_iris_nvr
@@ -63,7 +59,6 @@ groups:
       class: 'danger-text'
     - state: 'on'
       class: 'success-text'
-
 - name: Alarm Panel
   entities:
      - alarm_control_panel.alarm
@@ -74,7 +69,6 @@ groups:
       class: 'alarm-armed'
     - state: 'disarmed'
       class: 'alarm-disarmed'
-
 - name: Binary sensors
   entities:
     - binary_sensor.front_hallway
@@ -91,7 +85,6 @@ groups:
       from_state: 'on'
       to_state: 'off'
       duration: 10
-
 - name: Cameras
   entities:
     - camera.hallway
@@ -101,7 +94,6 @@ groups:
   states:
     - state: 'idle'
       class: 'camera-idle'
-
 #        - name: thermostat_temp
 #          entities:
 #            - climate.downstairs

@@ -89,12 +89,14 @@ arm_away:
   - service: alarm_control_panel.alarm_arm_away
     data:
       entity_id: alarm_control_panel.10th_street
+  mode: single
 arm_home:
   alias: Arm Home
   sequence:
   - data:
       entity_id: alarm_control_panel.10th_street
     service: alarm_control_panel.alarm_arm_home
+  mode: single
 remote_command:
   alias: Remote Command
   sequence:
