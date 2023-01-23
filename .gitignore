@@ -41,6 +41,7 @@ __pycache__
 *.pyc
 
 *.json
+!.prettierrc.json
 
 megalinter-reports/*
 

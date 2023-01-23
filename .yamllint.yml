@@ -1,4 +1,0 @@
-rules:
-  new-lines:
-    level: warning
-    type: unix
