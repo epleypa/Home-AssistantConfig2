@@ -43,7 +43,7 @@ Below are the instructions for updating containers:
 * You can also remove the old dangling images: `docker image prune`
 
 
-## Amazon Dash (https://github.com/Nekmo/amazon-dash)
+## Amazon Dash (<https://github.com/Nekmo/amazon-dash>)
 ```
 docker build -t amazon-dash -f Dockerfile https://github.com/Nekmo/amazon-dash.git
 
