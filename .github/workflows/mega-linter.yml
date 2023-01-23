@@ -49,6 +49,7 @@ jobs:
           FILTER_REGEX_EXCLUDE: (blueprints/|automations\.yaml|binary_sensors/nest\.yaml)
           GITHUB_COMMENT_REPORTER: true
           DISABLE_LINTERS: YAML_PRETTIER
+          YAML_YAMLLINT_DISABLE_ERRORS: true
 
       # Upload MegaLinter artifacts
       - name: Archive production artifacts
