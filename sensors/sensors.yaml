@@ -1,14 +1,14 @@
 - platform: time_date
   display_options:
-  - 'time'
-  - 'date'
-  - 'time_utc'
-  - 'beat'
+    - "time"
+    - "date"
+    - "time_utc"
+    - "beat"
 
 - platform: template
   sensors:
     alarm_time:
-      friendly_name: 'Time'
+      friendly_name: "Time"
       value_template: '{{ "%0.02d:%0.02d" | format(states("input_number.alarmhour") | int, states("input_number.alarmminutes") | int) }}'
 
 - platform: systemmonitor
@@ -31,12 +31,12 @@
     - firmware
 
 - platform: rest
-  name: 'WMATA'
+  name: "WMATA"
   resource: https://api.wmata.com/StationPrediction.svc/json/GetPrediction/E03
   method: GET
   headers:
     api_key: !secret wmata_api
-  value_template: '{{ value_json.Trains[0].LocationName }}'
+  value_template: "{{ value_json.Trains[0].LocationName }}"
   json_attributes:
     - Trains
   scan_interval: 150
@@ -53,7 +53,7 @@
         {% else %}, {{ train.Min }},
         {% endif %}
         {% endfor %}'
-      unit_of_measurement: 'minutes'
+      unit_of_measurement: "minutes"
     wmata_gr_so:
       friendly_name: "Green Line Southbound"
       value_template: '
@@ -64,17 +64,17 @@
         {% else %}, {{ train.Min }},
         {% endif %}
         {% endfor %}'
-      unit_of_measurement: 'minutes'
+      unit_of_measurement: "minutes"
     washer_power:
-        friendly_name: "Washer Power"
-        value_template: "{{ state_attr('switch.washer','current_power_w') | default('0') }}"
-        unit_of_measurement: "W"
-        icon_template: mdi:washing-machine
+      friendly_name: "Washer Power"
+      value_template: "{{ state_attr('switch.washer','current_power_w') | default('0') }}"
+      unit_of_measurement: "W"
+      icon_template: mdi:washing-machine
     dryer_power:
-        friendly_name: "Dryer Power"
-        value_template: "{{ state_attr('switch.dryer','current_power_w') | default('0') }}"
-        unit_of_measurement: "W"
-        icon_template: mdi:tumble-dryer
+      friendly_name: "Dryer Power"
+      value_template: "{{ state_attr('switch.dryer','current_power_w') | default('0') }}"
+      unit_of_measurement: "W"
+      icon_template: mdi:tumble-dryer
 
 - platform: aftership
   api_key: !secret aftership_api

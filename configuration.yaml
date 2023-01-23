@@ -23,8 +23,8 @@ discovery:
 # Text to speech
 tts:
   - platform: google_translate
-#   language: 'en-us'
-#   service_name: google_say
+    #   language: 'en-us'
+    #   service_name: google_say
     cache_dir: /tmp/tts
 
   - platform: google_cloud
@@ -92,12 +92,12 @@ fan:
           service: climate.set_fan_mode
           data:
             entity_id: climate.upstairs
-            fan_mode: 'on'
+            fan_mode: "on"
         turn_off:
           service: climate.set_fan_mode
           data:
             entity_id: climate.upstairs
-            fan_mode: 'off'
+            fan_mode: "off"
 #        speeds: []
 
 #vendor-specific integrations
