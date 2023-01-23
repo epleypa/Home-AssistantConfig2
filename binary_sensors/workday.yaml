@@ -1,24 +1,24 @@
 - platform: workday
   name: "Workday"
   country: US
-  workdays: [mon,tue,wed,thu,fri]
-  excludes: [sat,sun,holiday]
+  workdays: [mon, tue, wed, thu, fri]
+  excludes: [sat, sun, holiday]
   add_holidays:
-    - '2020-12-28'
-    - '2020-12-29'
-    - '2020-12-30'
-    - '2020-12-31'
+    - "2020-12-28"
+    - "2020-12-29"
+    - "2020-12-30"
+    - "2020-12-31"
 - platform: workday
   name: "Worknight"
   days_offset: 1
   country: US
-  workdays: [mon,tue,wed,thu,fri]
-  excludes: [sat,sun,holiday]
+  workdays: [mon, tue, wed, thu, fri]
+  excludes: [sat, sun, holiday]
   add_holidays:
-    - '2020-12-28'
-    - '2020-12-29'
-    - '2020-12-30'
-    - '2020-12-31'
+    - "2020-12-28"
+    - "2020-12-29"
+    - "2020-12-30"
+    - "2020-12-31"
 
 - platform: template
   sensors:

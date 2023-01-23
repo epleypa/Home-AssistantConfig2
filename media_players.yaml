@@ -33,11 +33,11 @@
       service: input_select.select_option
       data_template:
         entity_id: input_select.living_room_tv_source
-        option: '{{ source }}'
+        option: "{{ source }}"
 
   attributes:
     state: switch.tv_power
     is_volume_muted: switch.tv_mute
-#    volume_level: media_player.MEDIA_PLAYER_NAME|volume_level
+    #    volume_level: media_player.MEDIA_PLAYER_NAME|volume_level
     source: input_select.living_room_tv_source
     source_list: input_select.living_room_tv_source|options

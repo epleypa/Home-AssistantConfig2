@@ -28,11 +28,11 @@
     - precip_intensity_max
 
 - platform: rest
-  name: 'NWS Alerts'
+  name: "NWS Alerts"
   resource: https://api.weather.gov/alerts/active/zone/mdz504
   method: GET
   headers:
-    User-Agent: 'Home Assistant (https://github.com/epleypa/Home-AssistantConfig)'
+    User-Agent: "Home Assistant (https://github.com/epleypa/Home-AssistantConfig)"
     Accept: application/geo+json
   scan_interval: 60
   value_template: >
