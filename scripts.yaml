@@ -1,236 +1,239 @@
 wmata_gr_no:
   sequence:
-  - service: media_player.turn_on
-    entity_id: media_player.living_room_home
-  - service: tts.google_say
-    data_template:
-      cache: false
+    - service: media_player.turn_on
       entity_id: media_player.living_room_home
-      message: the next metro train heading north from u street is in {{ states('sensor.wmata_md')
-        }} minutes
+    - service: tts.google_say
+      data_template:
+        cache: false
+        entity_id: media_player.living_room_home
+        message:
+          the next metro train heading north from u street is in {{ states('sensor.wmata_md')
+          }} minutes
 wmata_gr_so:
   sequence:
-  - service: media_player.turn_on
-    entity_id: media_player.living_room_home
-  - service: tts.google_say
-    data_template:
-      cache: false
+    - service: media_player.turn_on
       entity_id: media_player.living_room_home
-      message: the next metro train heading south from u street is in {{ states('sensor.wmata_dc')
-        }} minutes
+    - service: tts.google_say
+      data_template:
+        cache: false
+        entity_id: media_player.living_room_home
+        message:
+          the next metro train heading south from u street is in {{ states('sensor.wmata_dc')
+          }} minutes
 chromecast:
   sequence:
-  - service: switch.turn_on
-    entity_id: switch.tv_power
-  - service: switch.turn_on
-    entity_id: switch.neo
-  - delay: 00:00:10
-  - service: notify.pushbullet
-    data:
-      message: Switching to Chromecast
-  - service: remote.send_command
-    data:
-      entity_id: remote.broadlink
-      device: television
-      command: hdmi4
+    - service: switch.turn_on
+      entity_id: switch.tv_power
+    - service: switch.turn_on
+      entity_id: switch.neo
+    - delay: 00:00:10
+    - service: notify.pushbullet
+      data:
+        message: Switching to Chromecast
+    - service: remote.send_command
+      data:
+        entity_id: remote.broadlink
+        device: television
+        command: hdmi4
 roku:
   sequence:
-  - service: switch.turn_on
-    entity_id: switch.tv_power
-  - service: switch.turn_on
-    entity_id: switch.neo
-  - delay: 00:00:10
-  - service: notify.pushbullet
-    data:
-      message: Switching to Roku
-  - service: remote.send_command
-    data:
-      entity_id: remote.broadlink
-      device: television
-      command: hdmi3
+    - service: switch.turn_on
+      entity_id: switch.tv_power
+    - service: switch.turn_on
+      entity_id: switch.neo
+    - delay: 00:00:10
+    - service: notify.pushbullet
+      data:
+        message: Switching to Roku
+    - service: remote.send_command
+      data:
+        entity_id: remote.broadlink
+        device: television
+        command: hdmi3
 plex:
   sequence:
-  - entity_id: switch.tv_power
-    service: switch.turn_on
-  - entity_id: switch.neo
-    service: switch.turn_on
-  - delay: 00:00:10
-  - data:
-      message: Switching to Plex on Roku
-    service: telegram_bot.send_message
-  - data:
-      source: Plex - Stream for Free
-    entity_id: media_player.roku_streaming_stick
-    service: media_player.select_source
-  - data:
-      command: hdmi3
-      device: television
-      entity_id: remote.broadlink
-    service: remote.send_command
+    - entity_id: switch.tv_power
+      service: switch.turn_on
+    - entity_id: switch.neo
+      service: switch.turn_on
+    - delay: 00:00:10
+    - data:
+        message: Switching to Plex on Roku
+      service: telegram_bot.send_message
+    - data:
+        source: Plex - Stream for Free
+      entity_id: media_player.roku_streaming_stick
+      service: media_player.select_source
+    - data:
+        command: hdmi3
+        device: television
+        entity_id: remote.broadlink
+      service: remote.send_command
   mode: single
 cable:
   sequence:
-  - service: switch.turn_on
-    entity_id: switch.tv_power
-  - service: switch.turn_on
-    entity_id: switch.cable_power
-  - delay: 00:00:10
-  - service: notify.pushbullet
-    data:
-      message: Switching to Cable
-  - service: remote.send_command
-    data:
-      entity_id: remote.broadlink
-      device: television
-      command: cm2
+    - service: switch.turn_on
+      entity_id: switch.tv_power
+    - service: switch.turn_on
+      entity_id: switch.cable_power
+    - delay: 00:00:10
+    - service: notify.pushbullet
+      data:
+        message: Switching to Cable
+    - service: remote.send_command
+      data:
+        entity_id: remote.broadlink
+        device: television
+        command: cm2
 arm_away:
   alias: Arm Away
   sequence:
-  - service: alarm_control_panel.alarm_arm_away
-    data:
-      entity_id: alarm_control_panel.10th_street
+    - service: alarm_control_panel.alarm_arm_away
+      data:
+        entity_id: alarm_control_panel.10th_street
 arm_home:
   alias: Arm Home
   sequence:
-  - data:
-      entity_id: alarm_control_panel.10th_street
-    service: alarm_control_panel.alarm_arm_home
+    - data:
+        entity_id: alarm_control_panel.10th_street
+      service: alarm_control_panel.alarm_arm_home
 remote_command:
   alias: Remote Command
   sequence:
     service: remote.send_command
     data_template:
-      entity_id: '{{ trigger.event.data.entity_id|lower }}'
-      device: '{{ trigger.event.data.device|lower }}'
-      command: '''{% set source = trigger.event.data.command|lower %} {% if source
+      entity_id: "{{ trigger.event.data.entity_id|lower }}"
+      device: "{{ trigger.event.data.device|lower }}"
+      command:
+        '''{% set source = trigger.event.data.command|lower %} {% if source
         == "cable" %}cm2 {% elif source == "roku" %}hdmi3 {% elif source == "chromecast"
         %}hdmi4 {% elif source == "switch" %}hdmi1 {% elif source == "xbox" %}hdmi2
         {% endif %}'''
 goodnight:
   alias: Goodnight
   sequence:
-  - service: script.arm_home
-    data: {}
-  - service: homeassistant.turn_off
-    data: {}
-    entity_id: group.holiday_lights
+    - service: script.arm_home
+      data: {}
+    - service: homeassistant.turn_off
+      data: {}
+      entity_id: group.holiday_lights
   mode: single
 cat_tv_beautiful_birds:
   alias: Cat TV
   sequence:
-  - choose:
-    - conditions:
-      - condition: state
-        entity_id: input_select.cat_tv
-        state: Beautiful Birds
-      sequence:
-      - data:
-          media_content_type: cast
-          media_content_id: ' { "app_name": "youtube", "media_id": "BKKSMtB2g_w" }'
-        service: media_player.play_media
-        target:
-          entity_id:
-          - media_player.living_room_androidtv
-    - conditions:
-      - condition: state
-        entity_id: input_select.cat_tv
-        state: Baby Birds
-      sequence:
-      - data:
-          media_content_type: cast
-          media_content_id: ' { "app_name": "youtube", "media_id": "CD3YNLUgW8s" }'
-        service: media_player.play_media
-        target:
-          entity_id: media_player.living_room_androidtv
-    - conditions:
-      - condition: state
-        entity_id: input_select.cat_tv
-        state: Snow Birds
-      sequence:
-      - data:
-          media_content_type: cast
-          media_content_id: ' { "app_name": "youtube", "media_id": "6BBM-7URQhI" }'
-        service: media_player.play_media
-        target:
-          entity_id: media_player.living_room_androidtv
-    - conditions:
-      - condition: state
-        entity_id: input_select.cat_tv
-        state: Birds for Cats
-      sequence:
-      - data:
-          media_content_type: cast
-          media_content_id: ' { "app_name": "youtube", "media_id": "wOuJKGhmf3c" }'
-        service: media_player.play_media
-        target:
-          entity_id: media_player.living_room_androidtv
-    - conditions:
-      - condition: state
-        entity_id: input_select.cat_tv
-        state: Autumn Birds
-      sequence:
-      - data:
-          media_content_type: cast
-          media_content_id: ' { "app_name": "youtube", "media_id": "_pjVJbam2x4" }'
-        service: media_player.play_media
-        target:
-          entity_id: media_player.living_room_androidtv
-    - conditions:
-      - condition: state
-        entity_id: input_select.cat_tv
-        state: Summer Birds
-      sequence:
-      - data:
-          media_content_type: cast
-          media_content_id: ' { "app_name": "youtube", "media_id": "A1VaNx3gjQE" }'
-        service: media_player.play_media
-        target:
-          entity_id: media_player.living_room_androidtv
-    - conditions:
-      - condition: state
-        entity_id: input_select.cat_tv
-        state: Christmas Birds
-      sequence:
-      - data:
-          media_content_type: cast
-          media_content_id: ' { "app_name": "youtube", "media_id": "Rrans_4Otww" }'
-        service: media_player.play_media
-        target:
-          entity_id: media_player.living_room_androidtv
-    - conditions:
-      - condition: state
-        entity_id: input_select.cat_tv
-        state: Pumpkin Birds
-      sequence:
-      - data:
-          media_content_type: cast
-          media_content_id: ' { "app_name": "youtube", "media_id": "qsOUbq0Aj1k" }'
-        service: media_player.play_media
-        target:
-          entity_id: media_player.living_room_androidtv
-    - conditions:
-      - condition: state
-        entity_id: input_select.cat_tv
-        state: Steller Jays
-      sequence:
-      - data:
-          media_content_type: cast
-          media_content_id: ' { "app_name": "youtube", "media_id": "jYBk-BVOnC4" }'
-        service: media_player.play_media
-        target:
-          entity_id: media_player.living_room_androidtv
-    default: []
+    - choose:
+        - conditions:
+            - condition: state
+              entity_id: input_select.cat_tv
+              state: Beautiful Birds
+          sequence:
+            - data:
+                media_content_type: cast
+                media_content_id: ' { "app_name": "youtube", "media_id": "BKKSMtB2g_w" }'
+              service: media_player.play_media
+              target:
+                entity_id:
+                  - media_player.living_room_androidtv
+        - conditions:
+            - condition: state
+              entity_id: input_select.cat_tv
+              state: Baby Birds
+          sequence:
+            - data:
+                media_content_type: cast
+                media_content_id: ' { "app_name": "youtube", "media_id": "CD3YNLUgW8s" }'
+              service: media_player.play_media
+              target:
+                entity_id: media_player.living_room_androidtv
+        - conditions:
+            - condition: state
+              entity_id: input_select.cat_tv
+              state: Snow Birds
+          sequence:
+            - data:
+                media_content_type: cast
+                media_content_id: ' { "app_name": "youtube", "media_id": "6BBM-7URQhI" }'
+              service: media_player.play_media
+              target:
+                entity_id: media_player.living_room_androidtv
+        - conditions:
+            - condition: state
+              entity_id: input_select.cat_tv
+              state: Birds for Cats
+          sequence:
+            - data:
+                media_content_type: cast
+                media_content_id: ' { "app_name": "youtube", "media_id": "wOuJKGhmf3c" }'
+              service: media_player.play_media
+              target:
+                entity_id: media_player.living_room_androidtv
+        - conditions:
+            - condition: state
+              entity_id: input_select.cat_tv
+              state: Autumn Birds
+          sequence:
+            - data:
+                media_content_type: cast
+                media_content_id: ' { "app_name": "youtube", "media_id": "_pjVJbam2x4" }'
+              service: media_player.play_media
+              target:
+                entity_id: media_player.living_room_androidtv
+        - conditions:
+            - condition: state
+              entity_id: input_select.cat_tv
+              state: Summer Birds
+          sequence:
+            - data:
+                media_content_type: cast
+                media_content_id: ' { "app_name": "youtube", "media_id": "A1VaNx3gjQE" }'
+              service: media_player.play_media
+              target:
+                entity_id: media_player.living_room_androidtv
+        - conditions:
+            - condition: state
+              entity_id: input_select.cat_tv
+              state: Christmas Birds
+          sequence:
+            - data:
+                media_content_type: cast
+                media_content_id: ' { "app_name": "youtube", "media_id": "Rrans_4Otww" }'
+              service: media_player.play_media
+              target:
+                entity_id: media_player.living_room_androidtv
+        - conditions:
+            - condition: state
+              entity_id: input_select.cat_tv
+              state: Pumpkin Birds
+          sequence:
+            - data:
+                media_content_type: cast
+                media_content_id: ' { "app_name": "youtube", "media_id": "qsOUbq0Aj1k" }'
+              service: media_player.play_media
+              target:
+                entity_id: media_player.living_room_androidtv
+        - conditions:
+            - condition: state
+              entity_id: input_select.cat_tv
+              state: Steller Jays
+          sequence:
+            - data:
+                media_content_type: cast
+                media_content_id: ' { "app_name": "youtube", "media_id": "jYBk-BVOnC4" }'
+              service: media_player.play_media
+              target:
+                entity_id: media_player.living_room_androidtv
+      default: []
   mode: single
 new_script:
   alias: Bluetoothctl Power Restart
   sequence:
-  - service: shell_command.bluetoothctl_off
-    data: {}
-  - delay:
-      hours: 0
-      minutes: 0
-      seconds: 5
-      milliseconds: 0
-  - service: shell_command.bluetoothctl_on
-    data: {}
+    - service: shell_command.bluetoothctl_off
+      data: {}
+    - delay:
+        hours: 0
+        minutes: 0
+        seconds: 5
+        milliseconds: 0
+    - service: shell_command.bluetoothctl_on
+      data: {}
   mode: single

@@ -1,22 +1,22 @@
 cable_channel:
   name: "Cable Channels"
   options:
-  - 109 CSPAN
-  - 110 CSPAN2
-  - 111 CSPAN3
-  - 504 NBC
-  - 505 Fox
-  - 507 ABC
-  - 509 CBS
-  - 550 USA
-  - 553 FX
-  - 600 CNN
-  - 603 MSNBC
-  - 664 Food Network
-  - 665 HGTV
-  - 683 TruTV
-  - 690 Comedy Central
-  - 699 Freeform
-  - 741 TV Land
-  - 752 Nickelodeon
-  - 780 Disney
+    - 109 CSPAN
+    - 110 CSPAN2
+    - 111 CSPAN3
+    - 504 NBC
+    - 505 Fox
+    - 507 ABC
+    - 509 CBS
+    - 550 USA
+    - 553 FX
+    - 600 CNN
+    - 603 MSNBC
+    - 664 Food Network
+    - 665 HGTV
+    - 683 TruTV
+    - 690 Comedy Central
+    - 699 Freeform
+    - 741 TV Land
+    - 752 Nickelodeon
+    - 780 Disney
