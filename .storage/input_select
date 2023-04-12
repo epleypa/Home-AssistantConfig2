@@ -33,24 +33,48 @@
             {
                 "name": "Destination",
                 "options": [
-                    "Peter Tysons Office",
-                    "Peter DC Office",
-                    "Peter Client",
-                    "Gym Dupont",
+                    "DCA",
+                    "Grocery AdMo",
+                    "Gym Logan",
+                    "Gym U St",
+                    "Grocery NoMa",
                     "Home",
-                    "Kelley Office"
+                    "IAD",
+                    "Kelley Office",
+                    "Library MLK",
+                    "Library Shaw",
+                    "Meridian Hill Park",
+                    "Tidal Basin",
+                    "National Mall",
+                    "National Zoo",
+                    "Nats Park",
+                    "Peter DC Office",
+                    "Peter NJ Office",
+                    "Union Station"
                 ],
                 "id": "destination"
             },
             {
                 "name": "Origin",
                 "options": [
-                    "Peter Tysons Office",
-                    "Peter DC Office",
-                    "Peter Client",
-                    "Gym Dupont",
+                    "DCA",
+                    "Grocery AdMo",
+                    "Gym Logan",
+                    "Gym U St",
+                    "Grocery NoMa",
                     "Home",
-                    "Kelley Office"
+                    "IAD",
+                    "Kelley Office",
+                    "Library MLK",
+                    "Library Shaw",
+                    "Meridian Hill Park",
+                    "Tidal Basin",
+                    "National Mall",
+                    "National Zoo",
+                    "Nats Park",
+                    "Peter DC Office",
+                    "Peter NJ Office",
+                    "Union Station"
                 ],
                 "id": "origin"
             },

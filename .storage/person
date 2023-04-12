@@ -6,9 +6,8 @@
     "items": [
       {
         "device_trackers": [
-          "device_tracker.tile_d97a13d00b4045c0",
-          "device_tracker.pixel_7_2",
-          "device_tracker.galaxy_watch4_yyzf"
+          "device_tracker.galaxy_watch4_yyzf",
+          "device_tracker.peter_sm_s911u"
         ],
         "id": "6c48bdcdd7c4483a98b763567743b7a5",
         "name": "Peter",
@@ -17,8 +16,7 @@
       },
       {
         "device_trackers": [
-          "device_tracker.galaxy_s20_5g_2",
-          "device_tracker.keys"
+          "device_tracker.kelley_sm_s911u"
         ],
         "id": "abd93aa045b14dd2a642a34c40bec196",
         "name": "Kelley",

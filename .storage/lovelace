@@ -433,6 +433,38 @@
                       "entity": "switch.upstairs_snowflake_lights"
                     }
                   ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "button",
+                      "tap_action": {
+                        "action": "more-info"
+                      },
+                      "entity": "cover.blind_tilt_c477"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "button",
+                      "tap_action": {
+                        "action": "more-info"
+                      },
+                      "entity": "cover.blind_tilt_27fe"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "button",
+                      "tap_action": {
+                        "action": "more-info"
+                      },
+                      "entity": "cover.blind_tilt_ffa9"
+                    }
+                  ]
                 }
               ],
               "type": "vertical-stack"
@@ -1585,11 +1617,24 @@
             },
             {
               "entities": [
-                "input_select.origin",
-                "input_select.destination",
-                "sensor.via_driving",
-                "sensor.via_metro",
-                "sensor.via_bus"
+                {
+                  "entity": "input_select.origin"
+                },
+                {
+                  "entity": "input_select.destination"
+                },
+                {
+                  "entity": "sensor.via_driving"
+                },
+                {
+                  "entity": "sensor.via_metro"
+                },
+                {
+                  "entity": "sensor.via_bus"
+                },
+                {
+                  "entity": "input_boolean.update_route"
+                }
               ],
               "title": "Travel Time",
               "type": "entities"

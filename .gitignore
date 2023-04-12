@@ -94,5 +94,6 @@ automation_archive
 .vscode/*
 report/
 nest/event_media/*
-go2rtc-1.0.0
+go2rtc-*
 rtsp2webrtc_v5_aarch64
+backups/*

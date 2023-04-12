@@ -136,19 +136,19 @@
   alias: LED Weather
   trigger:
   - platform: state
-    entity_id: sensor.dark_sky_icon
+    entity_id: weather.kdca_daynight
   action:
   - service: light.turn_on
     entity_id: light.living_room_led, light.office_led, light.bedroom_led
     data_template:
-      color_name: '{% if "clear" in states.sensor.dark_sky_icon.state %}yellow {%-elif
-        "cloudy" in states.sensor.dark_sky_icon.state %}purple {%-elif "overcast"
-        in states.sensor.dark_sky_icon.state %}purple {%-elif "fog" in states.sensor.dark_sky_icon.state
-        %}blue {%-elif "rain" in states.sensor.dark_sky_icon.state %}blue {%-elif
-        "wind" in states.sensor.dark_sky_icon.state %}cyan {%-elif "ice" in states.sensor.dark_sky_icon.state
-        %}cyan {%-elif "snow" in states.sensor.dark_sky_icon.state %}cyan {%-elif
-        "thunderstorm" in states.sensor.dark_sky_icon.state %}red {%-elif "hail" in
-        states.sensor.dark_sky_icon.state %}cyan {%-elif "tornado" in states.sensor.dark_sky_icon.state
+      color_name: '{% if "clear" in states.weather.kdca_daynight.state %}yellow {%-elif
+        "cloudy" in states.weather.kdca_daynight.state %}purple {%-elif "overcast"
+        in states.weather.kdca_daynight.state %}purple {%-elif "fog" in states.weather.kdca_daynight.state
+        %}blue {%-elif "rain" in states.weather.kdca_daynight.state %}blue {%-elif
+        "wind" in states.weather.kdca_daynight.state %}cyan {%-elif "ice" in states.weather.kdca_daynight.state
+        %}cyan {%-elif "snow" in states.weather.kdca_daynight.state %}cyan {%-elif
+        "thunderstorm" in states.weather.kdca_daynight.state %}red {%-elif "hail" in
+        states.weather.kdca_daynight.state %}cyan {%-elif "tornado" in states.weather.kdca_daynight.state
         %}red {%-else %}white {% endif %}'
   - service: light.turn_off
     entity_id: light.living_room_led, light.office_led, light.bedroom_led
@@ -417,15 +417,19 @@
     - wed
     - thu
     - fri
+    before: 00:00:00
+    after: 00:00:00
   action:
   - service: input_select.select_option
     data_template:
       entity_id: input_select.origin
-      option: ' {% if now().hour|int < 12 %}Peter Client {% else %}Home {% endif %}'
+      option: ' {% if now().hour|int > 12 %}Peter DC Office {% else %}Home {% endif
+        %}'
   - service: input_select.select_option
     data_template:
       entity_id: input_select.destination
-      option: ' {% if now().hour|int < 12 %}Home {% else %}Peter Client {% endif %}'
+      option: ' {% if now().hour|int > 12 %}Home {% else %}Peter DC Office {% endif
+        %}'
   - service: input_boolean.turn_on
     entity_id: input_boolean.update_route
   - delay: 00:45
@@ -437,7 +441,7 @@
   - platform: time_pattern
     minutes: /2
   condition:
-    condition: or
+  - condition: or
     conditions:
     - condition: state
       entity_id: input_boolean.update_route
@@ -452,6 +456,7 @@
   - service: homeassistant.update_entity
     data:
       entity_id: sensor.via_bus
+  mode: restart
 - id: updateavailable
   alias: Update Available
   trigger:
@@ -548,6 +553,14 @@
     entity_id:
     - switch.amcrest_office_privacy_mode
     id: privacy_office
+  - platform: zone
+    entity_id: person.peter
+    zone: zone.peter_dc_office
+    event: leave
+  - platform: zone
+    entity_id: person.kelley
+    zone: zone.kelley_office
+    event: leave
   condition: []
   action:
   - choose:
@@ -587,6 +600,16 @@
       - service: notify.discord
         data_template:
           message: Tomorrow is {{ trigger.to_state.attributes.friendly_name }} day!
+          target: '814328602270498817'
+    - conditions:
+      - condition: template
+        value_template: '{% if trigger.entity_id == "person.peter" or trigger.entity_id
+          == "person.kelley" %}True{% endif %}'
+      sequence:
+      - service: notify.discord
+        data_template:
+          message: '{{ trigger.to_state.attributes.friendly_name }} has left {{ trigger.from_state.state
+            }}'
           target: '814328602270498817'
     default:
     - service: notify.discord
@@ -836,22 +859,25 @@
   condition: []
   action:
   - data_template:
-      entity_id: camera.front_door
+      entity_id: camera.camect_front_door
       filename: /config/www/doorbell.jpg
     service: camera.snapshot
   - delay: 00:00:01
   - data_template:
       target: '812545796339400708'
       message: Someone is at the door!
-      data:
-        images:
-        - /config/www/doorbell.jpg
+      data_template:
+        images: /config/www/doorbell.jpg
         embed:
           description: Doorbell Camera
           author:
             name: Home Assistant
             icon_url: https://www.home-assistant.io/images/favicon-192x192-full.png
-          fields: []
+          fields:
+          - name: nest_event_id
+            value:
+              "{{ trigger.event.data.nest_event_id }}"
+            inline: false
     service: notify.discord
   mode: single
 - id: '1612648017088'
@@ -917,6 +943,16 @@
     - group.family
     id: family_away
     from: home
+  - platform: state
+    entity_id:
+    - alarm_control_panel.10th_street
+    to: disarmed
+    id: disarmed
+  - platform: state
+    entity_id:
+    - alarm_control_panel.10th_street
+    from: disarmed
+    id: armed
   condition: []
   action:
   - if:
@@ -926,6 +962,8 @@
         id: goodnight
       - condition: trigger
         id: family_away
+      - condition: trigger
+        id: armed
     then:
     - service: switch.turn_off
       data: {}
@@ -940,6 +978,8 @@
         id: goodmorning
       - condition: trigger
         id: family_home
+      - condition: trigger
+        id: disarmed
     then:
     - service: switch.turn_on
       data: {}
@@ -947,7 +987,7 @@
         entity_id:
         - switch.amcrest_dining_room_privacy_mode
         - switch.amcrest_office_privacy_mode
-  mode: single
+  mode: restart
 - id: '1673367236715'
   alias: 'Holiday in week: Trash'
   description: ''
@@ -972,3 +1012,38 @@
     input:
       garbage_collection_entity: sensor.recycle
       holiday_entity: calendar.holidays
+- id: '1675640672790'
+  alias: Tag Bedroom Overhead On/Off is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 43caf5a0-95a5-414b-8fc7-bf0bf80e5128
+  condition: []
+  action:
+  - service: homeassistant.toggle
+    data: {}
+    target:
+      entity_id: light.bedroom_overhead_light
+  mode: single
+- id: backup
+  alias: Backup
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:01
+  condition:
+  - condition: or
+    conditions:
+    - condition: template
+      value_template: '{{ now().day == 1 }}'
+    - condition: template
+      value_template: '{{ now().day == 15 }}'
+  action:
+  - service: backup.create
+    data: {}
+  - service: notify.discord
+    data_template:
+      message: Backup completed and took {{ (((now()-trigger.event.time_fired).total_seconds()
+        | round(0))/60 | round(2)) }} minutes
+      target: '814328602270498817'
+  mode: single
