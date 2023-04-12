@@ -149,8 +149,8 @@ amcrest:
       - privacy_mode
 
 # bhyve:
-  # username: !secret bhyve_username
-  # password: !secret bhyve_password
+# username: !secret bhyve_username
+# password: !secret bhyve_password
 
 shell_command:
   bluetoothctl_off: bluetoothctl power off
