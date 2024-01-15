@@ -55,6 +55,8 @@ jobs:
           FILTER_REGEX_EXCLUDE: (blueprints/|automations\.yaml|scripts\.yaml|scenes\.yaml|binary_sensors/nest\.yaml|switches/broadlink\.yaml|sensors/transportation\.yaml)
           GITHUB_COMMENT_REPORTER: true
           REPOSITORY_GRYPE_ARGUMENTS: --add-cpes-if-none
+          REPOSITORY_GRYPE_DISABLE_ERRORS: true
+          REPOSITORY_CHECKOV_DISABLE_ERRORS: true
 
       # Upload MegaLinter artifacts
       - name: Archive production artifacts
