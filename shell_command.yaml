@@ -1,0 +1,2 @@
+# go to backup direcotory, list files by date, filter result list to hide the first 4 results (show from nr.5) and remove remaining
+purge_backups: cd /config/backups/ && ls -A1t | tail -n +5 | xargs rm -v

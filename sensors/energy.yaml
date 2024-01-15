@@ -1,0 +1,73 @@
+- platform: template
+  sensors:
+    hvac_status:
+      friendly_name: "Upstairs HVAC Status" 
+      value_template: >-
+        {%- if is_state('climate.upstairs', 'off') %}
+          off
+        {% elif is_state_attr('climate.upstairs', 'hvac_action', 'idle') %}
+          idle
+        {% elif is_state_attr('climate.upstairs', 'hvac_action', 'fan') %}
+          fan
+        {% elif is_state_attr('climate.upstairs', 'hvac_action', 'cooling') %}
+          cooling
+        {% elif is_state_attr('climate.upstairs', 'hvac_action', 'heating') %}
+          heating
+        {% else %}
+          unknown
+        {%- endif %}
+      icon_template: >-
+        {% if is_state('sensor.hvac_status',"idle") %}
+          mdi:power-on
+        {% elif is_state('sensor.hvac_status',"cool") %}
+          mdi:snowflake
+        {% elif is_state('sensor.hvac_status',"heat") %}
+          mdi:fire
+        {% else %}
+          mdi:octagon
+        {% endif %}
+
+- platform: history_stats
+  name: Daily Heat ON time
+  entity_id: sensor.hvac_status
+  state: 'heating'
+  type: time
+  start: '{{ now().replace(hour=0, minute=0, second=0, microsecond=0) }}'
+  end: '{{ now() }}' 
+- platform: history_stats
+  name: Monthly Heat ON time
+  entity_id: sensor.hvac_status
+  state: 'heating'
+  type: time
+  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0).replace(day=1) }}'
+  end: '{{ now() }}' 
+
+- platform: history_stats
+  name: Daily AC ON time
+  entity_id: sensor.hvac_status
+  state: 'cooling'
+  type: time
+  start: '{{ now().replace(hour=0, minute=0, second=0, microsecond=0) }}'
+  end: '{{ now() }}' 
+- platform: history_stats
+  name: Monthly AC ON time
+  entity_id: sensor.hvac_status
+  state: 'cooling'
+  type: time
+  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0).replace(day=1) }}'
+  end: '{{ now() }}' 
+
+- platform: history_stats
+  name: Daily Fan ON time
+  entity_id: sensor.hvac_status
+  state: 'fan'
+  type: time
+  start: '{{ now().replace(hour=0, minute=0, second=0, microsecond=0) }}'
+  end: '{{ now() }}' 
+- platform: history_stats
+  name: Monthly Fan ON time
+  entity_id: sensor.hvac_status
+  state: 'fan'
+  type: time
+  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0).replace(day=1) }}'
+  end: '{{ now() }}' 

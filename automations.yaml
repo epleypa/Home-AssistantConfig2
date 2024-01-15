@@ -147,8 +147,8 @@
         %}blue {%-elif "rain" in states.weather.kdca_daynight.state %}blue {%-elif
         "wind" in states.weather.kdca_daynight.state %}cyan {%-elif "ice" in states.weather.kdca_daynight.state
         %}cyan {%-elif "snow" in states.weather.kdca_daynight.state %}cyan {%-elif
-        "thunderstorm" in states.weather.kdca_daynight.state %}red {%-elif "hail" in
-        states.weather.kdca_daynight.state %}cyan {%-elif "tornado" in states.weather.kdca_daynight.state
+        "thunderstorm" in states.weather.kdca_daynight.state %}red {%-elif "hail"
+        in states.weather.kdca_daynight.state %}cyan {%-elif "tornado" in states.weather.kdca_daynight.state
         %}red {%-else %}white {% endif %}'
   - service: light.turn_off
     entity_id: light.living_room_led, light.office_led, light.bedroom_led
@@ -157,6 +157,7 @@
   trigger:
   - event: start
     platform: homeassistant
+    id: start
   - event_data:
       domain: automation
       service: reload
@@ -198,9 +199,19 @@
       - light.storage_light
       - light.office_light
       - light.tv_backlight
+    data: {}
   - data: {}
     entity_id: automation.information_alert
     service: automation.turn_on
+  - if:
+    - condition: trigger
+      id:
+      - start
+    then:
+    - service: notify.discord
+      data:
+        message: Home Assistant has Restarted
+        target: '814328602270498817'
   mode: single
 - id: ledmotion
   alias: LED Motion
@@ -561,6 +572,11 @@
     entity_id: person.kelley
     zone: zone.kelley_office
     event: leave
+  - platform: state
+    entity_id:
+    - switch.peter_table_light
+    - switch.kelley_table_light
+    to: unavailable
   condition: []
   action:
   - choose:
@@ -672,11 +688,10 @@
       cam_name: Backyard
       detected_obj:
       - person
-      - cat
     event_type: camect_event
     platform: event
   - event_data:
-      cam_name: Kitchen
+      cam_name: Dining Room
       detected_obj:
       - cat
     event_type: camect_event
@@ -693,6 +708,12 @@
       - cat
     event_type: camect_event
     platform: event
+  - event_data:
+      cam_name: Backyard
+      detected_obj:
+      - cat
+    event_type: camect_event
+    platform: event
   condition:
   - condition: template
     value_template: '{% if trigger.event.data.cam_name != "" and ( as_timestamp(now())
@@ -700,9 +721,10 @@
       |int(0) ) > 900 %}True{% endif %}'
   action:
   - data_template:
-      entity_id: camera.camect_{{ trigger.event.data.cam_name | lower }}
-      filename: /config/www/{{ trigger.event.data.cam_name | lower }}_{{ trigger.event.data.detected_obj
-        | lower }}.jpg
+      entity_id: camera.camect_{{ trigger.event.data.cam_name | lower | replace ("
+        ", "_") }}
+      filename: /config/www/{{ trigger.event.data.cam_name | lower | replace (" ",
+        "_") }}_{{ trigger.event.data.detected_obj | lower }}.jpg
     service: camera.snapshot
   - delay: 00:00:01
   - data_template:
@@ -711,8 +733,8 @@
         | replace("[", "") | replace("]", "") | replace("''", "")}}'
       data:
         images:
-        - /config/www/{{ trigger.event.data.cam_name | lower }}_{{trigger.event.data.detected_obj
-          | lower }}.jpg
+        - /config/www/{{ trigger.event.data.cam_name | lower | replace (" ", "_")
+          }}_{{trigger.event.data.detected_obj | lower }}.jpg
         embed:
           description: '{{ trigger.event.data.cam_name }} Camera'
           author:
@@ -760,6 +782,14 @@
   - platform: time
     at: '23:00:00'
     id: goodnight
+  - platform: state
+    entity_id:
+    - group.hallway_lights
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+    to: 'on'
   condition: []
   action:
   - choose:
@@ -780,8 +810,8 @@
         data: {}
     - conditions:
       - condition: time
-        after: '23:00:00'
-        before: 00:00:00
+        after: '21:00:00'
+        before: 08:00:00
       - condition: state
         entity_id: group.family
         state: home
@@ -875,8 +905,7 @@
             icon_url: https://www.home-assistant.io/images/favicon-192x192-full.png
           fields:
           - name: nest_event_id
-            value:
-              "{{ trigger.event.data.nest_event_id }}"
+            value: '{{ trigger.event.data.nest_event_id }}'
             inline: false
     service: notify.discord
   mode: single
@@ -975,11 +1004,17 @@
     - condition: or
       conditions:
       - condition: trigger
-        id: goodmorning
-      - condition: trigger
         id: family_home
       - condition: trigger
         id: disarmed
+      - condition: and
+        conditions:
+        - condition: trigger
+          id:
+          - goodmorning
+        - condition: state
+          entity_id: group.family
+          state: home
     then:
     - service: switch.turn_on
       data: {}
@@ -988,30 +1023,6 @@
         - switch.amcrest_dining_room_privacy_mode
         - switch.amcrest_office_privacy_mode
   mode: restart
-- id: '1673367236715'
-  alias: 'Holiday in week: Trash'
-  description: ''
-  use_blueprint:
-    path: bruxy70/holiday_in_week.yaml
-    input:
-      garbage_collection_entity: sensor.trash
-      holiday_entity: calendar.holidays
-- id: '1673369676358'
-  alias: 'Skip holiday: Street Sweeping'
-  description: ''
-  use_blueprint:
-    path: bruxy70/skip_holday.yaml
-    input:
-      garbage_collection_entity: sensor.street_sweeping
-      holiday_entity: calendar.holidays
-- id: '1673369708455'
-  alias: 'Holiday in week: Recycle'
-  description: ''
-  use_blueprint:
-    path: bruxy70/holiday_in_week.yaml
-    input:
-      garbage_collection_entity: sensor.recycle
-      holiday_entity: calendar.holidays
 - id: '1675640672790'
   alias: Tag Bedroom Overhead On/Off is scanned
   description: ''
@@ -1046,4 +1057,107 @@
       message: Backup completed and took {{ (((now()-trigger.event.time_fired).total_seconds()
         | round(0))/60 | round(2)) }} minutes
       target: '814328602270498817'
+  mode: single
+- &id001
+  id: '1683830929478'
+  alias: Tag Office Light Strip Toggle
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: a75efc06-51f5-46ef-bb9e-455c8a871050
+  condition: []
+  action:
+  - service: light.toggle
+    data: {}
+    target:
+      device_id: d1205c6f345891abf6cd332b16a8963d
+  mode: single
+- *id001
+- id: '1696126117145'
+  alias: Tag Indoor Cameras Off is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: e0774fcd-d221-4232-b64f-eb017ab24884
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id:
+      - switch.amcrest_office_privacy_mode
+      - switch.amcrest_dining_room_privacy_mode
+  mode: single
+- id: '1696442097979'
+  alias: Alley Motion
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.alley_motion_detected
+    to: 'on'
+  - platform: state
+    entity_id:
+    - binary_sensor.alley_person_detected
+    to: 'on'
+  condition: []
+  action:
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - service: downloader.download_file
+    data_template:
+      overwrite: true
+      filename: alley_motion.jpg
+      url: https://hass.peterepley.com{{ state_attr('image.alley_event_image', 'entity_picture')
+        }}
+  - data_template:
+      target: '812545796339400708'
+      message: Alley Motion Detected
+      data:
+        images:
+        - /config/www/alley_motion.jpg
+        embed:
+          description: Alley Camera
+          author:
+            name: Home Assistant
+            icon_url: https://www.home-assistant.io/images/favicon-192x192-full.png
+          fields: []
+    service: notify.discord
+  - choose:
+    - conditions:
+      - condition: or
+        conditions:
+        - condition: sun
+          before: sunrise
+        - condition: sun
+          after: sunset
+      sequence:
+      - service: homeassistant.turn_on
+        data: {}
+        target:
+          entity_id: group.patio_lights
+      - delay:
+          hours: 0
+          minutes: 11
+          seconds: 0
+          milliseconds: 0
+      - service: homeassistant.turn_off
+        data: {}
+        target:
+          entity_id: group.patio_lights
+    default: []
+  mode: single
+- id: '1705291929945'
+  alias: Unavailable
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.peter_table_light
+    to: unavailable
+  condition: []
+  action: []
   mode: single

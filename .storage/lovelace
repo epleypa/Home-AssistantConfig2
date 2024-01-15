@@ -97,88 +97,36 @@
               "type": "weather-forecast"
             },
             {
-              "entities": [
-                {
-                  "entity": "fan.hvac_fan",
-                  "secondary_info": "last-changed"
-                },
-                {
-                  "type": "attribute",
-                  "entity": "vacuum.marvin",
-                  "attribute": "status",
-                  "hold_action": {
-                    "action": "call-service",
-                    "service": "vacuum.start_pause",
-                    "target": {
-                      "entity_id": "vacuum.marvin"
-                    }
-                  },
-                  "double_tap_action": {
-                    "action": "call-service",
-                    "service": "vacuum.return_to_base",
-                    "target": {
-                      "entity_id": "vacuum.marvin"
-                    }
-                  }
-                }
-              ],
-              "type": "entities"
-            },
-            {
               "entity": "climate.upstairs",
-              "type": "thermostat"
-            },
-            {
-              "type": "vertical-stack",
-              "cards": [
+              "type": "thermostat",
+              "features": [
                 {
-                  "type": "horizontal-stack",
-                  "cards": [
-                    {
-                      "camera_image": "camera.front_yard",
-                      "entities": [
-                        {
-                          "entity": "camera.front_yard"
-                        }
-                      ],
-                      "title": "Front Yard",
-                      "type": "picture-glance"
-                    },
-                    {
-                      "camera_image": "camera.backyard",
-                      "entities": [
-                        {
-                          "entity": "camera.backyard"
-                        }
-                      ],
-                      "title": "Backyard",
-                      "type": "picture-glance"
-                    }
+                  "type": "climate-hvac-modes",
+                  "hvac_modes": [
+                    "heat",
+                    "cool",
+                    "heat_cool",
+                    "off"
                   ]
                 },
                 {
-                  "camera_image": "camera.front_door",
-                  "entities": [
-                    {
-                      "entity": "camera.front_door"
-                    },
-                    {
-                      "entity": "binary_sensor.front_door_camera_doorbell_chime",
-                      "icon": "mdi:power"
-                    }
-                  ],
-                  "title": "Front Door",
-                  "type": "picture-glance"
+                  "type": "climate-preset-modes",
+                  "style": "dropdown",
+                  "preset_modes": [
+                    "none",
+                    "eco"
+                  ]
+                },
+                {
+                  "type": "climate-fan-modes",
+                  "style": "dropdown",
+                  "fan_modes": [
+                    "on",
+                    "off"
+                  ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "icon": "mdi:ceiling-light",
-          "panel": false,
-          "title": "Lights",
-          "cards": [
+            },
             {
               "type": "vertical-stack",
               "cards": [
@@ -243,6 +191,107 @@
                 }
               ]
             },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "camera_view": "auto",
+                      "camera_image": "camera.front_yard",
+                      "entities": [
+                        {
+                          "entity": "camera.front_yard"
+                        }
+                      ],
+                      "title": "Front Yard",
+                      "type": "picture-glance"
+                    },
+                    {
+                      "camera_view": "auto",
+                      "camera_image": "camera.front_door",
+                      "entities": [
+                        {
+                          "entity": "camera.front_door"
+                        },
+                        {
+                          "entity": "binary_sensor.front_door_camera_doorbell_chime",
+                          "icon": "mdi:power"
+                        }
+                      ],
+                      "title": "Front Door",
+                      "type": "picture-glance"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "camera_view": "auto",
+                      "camera_image": "camera.amcrest_dining_room",
+                      "entities": [
+                        {
+                          "entity": "camera.amcrest_dining_room"
+                        },
+                        {
+                          "entity": "switch.amcrest_dining_room_privacy_mode"
+                        }
+                      ],
+                      "title": "Dining Room",
+                      "type": "picture-glance"
+                    },
+                    {
+                      "camera_image": "camera.amcrest_office",
+                      "entities": [
+                        {
+                          "entity": "camera.amcrest_office"
+                        },
+                        {
+                          "entity": "switch.amcrest_office_privacy_mode"
+                        }
+                      ],
+                      "title": "Office",
+                      "type": "picture-glance"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "camera_view": "auto",
+                      "camera_image": "camera.alley",
+                      "entities": [
+                        {
+                          "entity": "camera.alley"
+                        }
+                      ],
+                      "title": "Alley",
+                      "type": "picture-glance"
+                    },
+                    {
+                      "camera_image": "camera.backyard",
+                      "entities": [
+                        {
+                          "entity": "camera.backyard"
+                        }
+                      ],
+                      "title": "Backyard",
+                      "type": "picture-glance"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "icon": "mdi:ceiling-light",
+          "panel": false,
+          "title": "Lights",
+          "cards": [
             {
               "cards": [
                 {
@@ -444,7 +493,7 @@
                       "tap_action": {
                         "action": "more-info"
                       },
-                      "entity": "cover.blind_tilt_c477"
+                      "entity": "cover.living_room_blinds"
                     },
                     {
                       "show_name": true,
@@ -496,10 +545,10 @@
                   "entity": "binary_sensor.office_north_window"
                 },
                 {
-                  "entity": "binary_sensor.hall_attic_door"
+                  "entity": "binary_sensor.hall_attic_other"
                 },
                 {
-                  "entity": "binary_sensor.bedroom_attic_door"
+                  "entity": "binary_sensor.bedroom_attic_other"
                 },
                 {
                   "entity": "binary_sensor.mailbox_contact"
@@ -559,70 +608,6 @@
               "type": "glance"
             },
             {
-              "camera_image": "camera.front_yard",
-              "entities": [
-                {
-                  "entity": "camera.front_yard"
-                },
-                {
-                  "entity": "binary_sensor.front_yard_camera_motion_detected"
-                },
-                {
-                  "entity": "binary_sensor.front_yard_camera_person_detected"
-                },
-                {
-                  "entity": "binary_sensor.front_yard_camera_sound_detected"
-                }
-              ],
-              "title": "Front Yard",
-              "type": "picture-glance"
-            },
-            {
-              "camera_image": "camera.front_door",
-              "entities": [
-                {
-                  "entity": "camera.front_door"
-                },
-                {
-                  "entity": "binary_sensor.front_door_camera_motion_detected"
-                },
-                {
-                  "entity": "binary_sensor.front_door_camera_person_detected"
-                },
-                {
-                  "entity": "binary_sensor.front_door_camera_sound_detected"
-                },
-                {
-                  "entity": "binary_sensor.front_door_camera_doorbell_chime",
-                  "icon": "mdi:power"
-                }
-              ],
-              "title": "Front Door",
-              "type": "picture-glance"
-            },
-            {
-              "camera_image": "camera.backyard",
-              "entities": [
-                {
-                  "entity": "camera.backyard"
-                },
-                {
-                  "entity": "binary_sensor.backyard_camera_motion_detected"
-                },
-                {
-                  "entity": "binary_sensor.backyard_camera_person_detected"
-                },
-                {
-                  "entity": "binary_sensor.backyard_camera_sound_detected"
-                },
-                {
-                  "entity": "switch.patio_wall_lights"
-                }
-              ],
-              "title": "Backyard",
-              "type": "picture-glance"
-            },
-            {
               "type": "entities",
               "entities": [
                 {
@@ -651,409 +636,6 @@
                 }
               ],
               "title": "Alerts"
-            },
-            {
-              "type": "grid",
-              "square": false,
-              "columns": 1,
-              "cards": [
-                {
-                  "type": "entities",
-                  "entities": [
-                    {
-                      "entity": "sensor.alley_detected_person_name",
-                      "name": "Detected Person Name"
-                    },
-                    {
-                      "entity": "binary_sensor.alley_global_motion_sensor",
-                      "name": "Global Motion Sensor"
-                    },
-                    {
-                      "entity": "binary_sensor.alley_motion_sensor",
-                      "name": "Motion Sensor"
-                    }
-                  ],
-                  "title": "Alley"
-                },
-                {
-                  "type": "grid",
-                  "square": false,
-                  "cards": [
-                    {
-                      "type": "conditional",
-                      "conditions": [
-                        {
-                          "entity": "binary_sensor.alley_streaming_sensor",
-                          "state": "False"
-                        }
-                      ],
-                      "card": {
-                        "type": "picture-entity",
-                        "entity": "camera.alley",
-                        "tap_action": {
-                          "action": "call-service",
-                          "service": "camera.turn_on",
-                          "target": {
-                            "entity_id": "camera.alley"
-                          }
-                        }
-                      }
-                    },
-                    {
-                      "type": "conditional",
-                      "conditions": [
-                        {
-                          "entity": "binary_sensor.alley_streaming_sensor",
-                          "state": "True"
-                        }
-                      ],
-                      "card": {
-                        "type": "vertical-stack",
-                        "cards": [
-                          {
-                            "type": "custom:webrtc-camera",
-                            "entity": "camera.alley"
-                          },
-                          {
-                            "type": "button",
-                            "name": "Stop Streaming",
-                            "show_state": false,
-                            "show_icon": false,
-                            "tap_action": {
-                              "action": "call-service",
-                              "service": "camera.turn_off",
-                              "target": {
-                                "entity_id": "camera.alley"
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "columns": 1
-                }
-              ]
-            },
-            {
-              "camera_view": "auto",
-              "type": "picture-elements",
-              "title": "Office",
-              "camera_image": "camera.amcrest_office",
-              "elements": [
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-up",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "25px",
-                    "bottom": "50px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_office",
-                      "movement": "up"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-down",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "25px",
-                    "bottom": "0px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_office",
-                      "movement": "down"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-left",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "50px",
-                    "bottom": "25px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_office",
-                      "movement": "left"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-right",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "0px",
-                    "bottom": "25px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_office",
-                      "movement": "right"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-top-left",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "50px",
-                    "bottom": "50px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_office",
-                      "movement": "left_up"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-top-right",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "0px",
-                    "bottom": "50px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_office",
-                      "movement": "right_up"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-bottom-left",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "50px",
-                    "bottom": "0px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_office",
-                      "movement": "left_down"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-bottom-right",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "0px",
-                    "bottom": "0px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_office",
-                      "movement": "right_down"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:eye",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "bottom": "25px",
-                    "right": "25px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "switch.toggle",
-                    "target": {
-                      "entity_id": "switch.amcrest_office_privacy_mode"
-                    }
-                  }
-                }
-              ]
-            },
-            {
-              "camera_view": "auto",
-              "type": "picture-elements",
-              "title": "Dining Room",
-              "camera_image": "camera.amcrest_dining_room",
-              "elements": [
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-up",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "25px",
-                    "bottom": "50px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_dining_room",
-                      "movement": "up"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-down",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "25px",
-                    "bottom": "0px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_dining_room",
-                      "movement": "down"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-left",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "50px",
-                    "bottom": "25px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_dining_room",
-                      "movement": "left"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-right",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "0px",
-                    "bottom": "25px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_dining_room",
-                      "movement": "right"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-top-left",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "50px",
-                    "bottom": "50px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_dining_room",
-                      "movement": "left_up"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-top-right",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "0px",
-                    "bottom": "50px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_dining_room",
-                      "movement": "right_up"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-bottom-left",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "50px",
-                    "bottom": "0px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_dining_room",
-                      "movement": "left_down"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:arrow-bottom-right",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "right": "0px",
-                    "bottom": "0px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "amcrest.ptz_control",
-                    "data": {
-                      "entity_id": "camera.amcrest_dining_room",
-                      "movement": "right_down"
-                    }
-                  }
-                },
-                {
-                  "type": "icon",
-                  "icon": "mdi:eye",
-                  "style": {
-                    "background": "rgba(255, 255, 255, 0.25)",
-                    "bottom": "25px",
-                    "right": "25px"
-                  },
-                  "tap_action": {
-                    "action": "call-service",
-                    "service": "switch.toggle",
-                    "target": {
-                      "entity_id": "switch.amcrest_dining_room_privacy_mode"
-                    }
-                  }
-                }
-              ]
             }
           ],
           "icon": "mdi:shield",
@@ -1125,7 +707,7 @@
               "title": "Cat TV"
             },
             {
-              "entity": "media_player.living_room_chromecast",
+              "entity": "media_player.living_room_androidtv",
               "type": "media-control"
             },
             {
@@ -1604,6 +1186,42 @@
           ]
         },
         {
+          "icon": "mdi:chart-line",
+          "title": "Charts",
+          "path": "charts",
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                "sensor.daily_ac_on_time",
+                "sensor.daily_fan_on_time",
+                "sensor.daily_heat_on_time",
+                "sensor.monthly_ac_on_time",
+                "sensor.monthly_fan_on_time",
+                "sensor.monthly_heat_on_time"
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                "sensor.current_bill_electric_cost_to_date",
+                "sensor.current_bill_electric_forecasted_cost",
+                "sensor.current_bill_electric_forecasted_usage",
+                "sensor.current_bill_electric_usage_to_date",
+                "sensor.typical_monthly_electric_cost",
+                "sensor.typical_monthly_electric_usage"
+              ],
+              "title": "ELEC account 3001580884"
+            },
+            {
+              "type": "area",
+              "area": "7768ca911a9b4aaebad501317499a426",
+              "show_camera": false
+            }
+          ]
+        },
+        {
           "cards": [
             {
               "entities": [
@@ -1684,6 +1302,475 @@
             }
           ],
           "title": "More"
+        },
+        {
+          "title": "Cameras",
+          "path": "cameras",
+          "icon": "mdi:video",
+          "badges": [],
+          "cards": [
+            {
+              "camera_image": "camera.front_door",
+              "entities": [
+                {
+                  "entity": "camera.front_door"
+                },
+                {
+                  "entity": "binary_sensor.front_door_camera_motion_detected"
+                },
+                {
+                  "entity": "binary_sensor.front_door_camera_person_detected"
+                },
+                {
+                  "entity": "binary_sensor.front_door_camera_sound_detected"
+                },
+                {
+                  "entity": "binary_sensor.front_door_camera_doorbell_chime",
+                  "icon": "mdi:power"
+                }
+              ],
+              "title": "Front Door",
+              "type": "picture-glance"
+            },
+            {
+              "camera_image": "camera.front_yard",
+              "entities": [
+                {
+                  "entity": "camera.front_yard"
+                },
+                {
+                  "entity": "binary_sensor.front_yard_camera_motion_detected"
+                },
+                {
+                  "entity": "binary_sensor.front_yard_camera_person_detected"
+                },
+                {
+                  "entity": "binary_sensor.front_yard_camera_sound_detected"
+                }
+              ],
+              "title": "Front Yard",
+              "type": "picture-glance"
+            },
+            {
+              "camera_image": "camera.backyard",
+              "entities": [
+                {
+                  "entity": "camera.backyard"
+                },
+                {
+                  "entity": "binary_sensor.backyard_camera_motion_detected"
+                },
+                {
+                  "entity": "binary_sensor.backyard_camera_person_detected"
+                },
+                {
+                  "entity": "binary_sensor.backyard_camera_sound_detected"
+                },
+                {
+                  "entity": "switch.patio_wall_lights"
+                }
+              ],
+              "title": "Backyard",
+              "type": "picture-glance"
+            },
+            {
+              "type": "grid",
+              "square": false,
+              "columns": 1,
+              "cards": [
+                {
+                  "type": "entities",
+                  "entities": [
+                    {
+                      "entity": "binary_sensor.alley_motion_detected"
+                    },
+                    {
+                      "entity": "binary_sensor.alley_person_detected"
+                    }
+                  ],
+                  "title": "Alley"
+                },
+                {
+                  "type": "grid",
+                  "square": false,
+                  "cards": [
+                    {
+                      "type": "conditional",
+                      "conditions": [
+                        {
+                          "entity": "sensor.alley_stream_status",
+                          "state": "StreamStatus.IDLE"
+                        }
+                      ],
+                      "card": {
+                        "type": "picture-entity",
+                        "entity": "camera.alley",
+                        "tap_action": {
+                          "action": "call-service",
+                          "service": "camera.turn_on",
+                          "target": {
+                            "entity_id": "camera.alley"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "conditional",
+                      "conditions": [
+                        {
+                          "entity": "sensor.alley_stream_status",
+                          "state": "StreamStatus.STREAMING"
+                        }
+                      ],
+                      "card": {
+                        "type": "vertical-stack",
+                        "cards": [
+                          {
+                            "type": "custom:webrtc-camera",
+                            "entity": "camera.alley"
+                          },
+                          {
+                            "type": "button",
+                            "name": "Stop Streaming",
+                            "show_state": false,
+                            "show_icon": false,
+                            "tap_action": {
+                              "action": "call-service",
+                              "service": "camera.turn_off",
+                              "target": {
+                                "entity_id": "camera.alley"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "columns": 1
+                }
+              ]
+            },
+            {
+              "camera_view": "auto",
+              "type": "picture-elements",
+              "title": "Dining Room",
+              "camera_image": "camera.amcrest_dining_room",
+              "elements": [
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-up",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "25px",
+                    "bottom": "50px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "up"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-down",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "25px",
+                    "bottom": "0px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "down"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-left",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "50px",
+                    "bottom": "25px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "left"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-right",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "0px",
+                    "bottom": "25px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "right"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-top-left",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "50px",
+                    "bottom": "50px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "left_up"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-top-right",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "0px",
+                    "bottom": "50px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "right_up"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-bottom-left",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "50px",
+                    "bottom": "0px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "left_down"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-bottom-right",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "0px",
+                    "bottom": "0px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_dining_room",
+                      "movement": "right_down"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:eye",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "bottom": "25px",
+                    "right": "25px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "switch.toggle",
+                    "target": {
+                      "entity_id": "switch.amcrest_dining_room_privacy_mode"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "camera_view": "auto",
+              "type": "picture-elements",
+              "title": "Office",
+              "camera_image": "camera.amcrest_office",
+              "elements": [
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-up",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "25px",
+                    "bottom": "50px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "up"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-down",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "25px",
+                    "bottom": "0px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "down"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-left",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "50px",
+                    "bottom": "25px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "left"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-right",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "0px",
+                    "bottom": "25px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "right"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-top-left",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "50px",
+                    "bottom": "50px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "left_up"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-top-right",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "0px",
+                    "bottom": "50px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "right_up"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-bottom-left",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "50px",
+                    "bottom": "0px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "left_down"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:arrow-bottom-right",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "right": "0px",
+                    "bottom": "0px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "amcrest.ptz_control",
+                    "data": {
+                      "entity_id": "camera.amcrest_office",
+                      "movement": "right_down"
+                    }
+                  }
+                },
+                {
+                  "type": "icon",
+                  "icon": "mdi:eye",
+                  "style": {
+                    "background": "rgba(255, 255, 255, 0.25)",
+                    "bottom": "25px",
+                    "right": "25px"
+                  },
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "switch.toggle",
+                    "target": {
+                      "entity_id": "switch.amcrest_office_privacy_mode"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }

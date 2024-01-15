@@ -30,6 +30,7 @@ office_lights:
     - light.office_light
     - light.office_overhead_lights
     - light.office_strip
+    - light.office_strip_2
     - light.office_lamp
 
 bedroom_table_lights:
