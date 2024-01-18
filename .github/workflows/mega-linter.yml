@@ -70,7 +70,7 @@ jobs:
             mega-linter.log
 
       # Authenticating with GitHub App generated tokens
-      - uses: tibdex/github-app-token@v1
+      - uses: tibdex/github-app-token@v2
         name: Get epleypa-bot Token
         id: generate-token
         with:
