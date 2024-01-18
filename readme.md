@@ -4,8 +4,8 @@ Home Assistant Configuration
 Home Assistant is a home automation platform running on Python 3. It is able to track and control all devices at home and offer a platform for automating control.
 
 Check out [home-assistant.io](https://home-assistant.io)
-
-
+<br /><br /><img src="https://brands.home-assistant.io/_/homeassistant/icon.png" />
+<br /><br />
 
 Integrations Utilized
 =================================================================================
@@ -14,6 +14,7 @@ Integrations Utilized
    <tr>
       <th>Logo</th>
       <th>Integration</th>
+      <th>Type</th>
   </tr>
   <tr>
       <td><a href="https://www.home-assistant.io/integrations/amcrest">
@@ -21,6 +22,9 @@ Integrations Utilized
       </td>
       <td>
          Amcrest 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -30,6 +34,9 @@ Integrations Utilized
       <td>
          Orbit B-hyve 
       </td>
+      <td>
+         HACS
+      </td>
    </tr>
    <tr>
       <td><a href="https://github.com/codefoodpixels/robovac">
@@ -37,6 +44,9 @@ Integrations Utilized
       </td>
       <td>
          Eufy Robovac 
+      </td>
+      <td>
+         HACS
       </td>
    </tr>
    <tr>
@@ -46,6 +56,9 @@ Integrations Utilized
       <td>
          Sun 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/uptime">
@@ -53,6 +66,9 @@ Integrations Utilized
       </td>
       <td>
          Uptime 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -62,6 +78,9 @@ Integrations Utilized
       <td>
          Total Connect 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://github.com/azogue/eventsensor">
@@ -69,6 +88,9 @@ Integrations Utilized
       </td>
       <td>
          Event sensor 
+      </td>
+      <td>
+         HACS
       </td>
    </tr>
    <tr>
@@ -78,6 +100,9 @@ Integrations Utilized
       <td>
          Moon 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/tplink">
@@ -85,6 +110,9 @@ Integrations Utilized
       </td>
       <td>
          TP-Link Kasa Smart 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -94,6 +122,9 @@ Integrations Utilized
       <td>
          IMAP 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/broadlink">
@@ -101,6 +132,9 @@ Integrations Utilized
       </td>
       <td>
          Broadlink 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -110,6 +144,9 @@ Integrations Utilized
       <td>
          Plex Media Server 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/github">
@@ -117,6 +154,9 @@ Integrations Utilized
       </td>
       <td>
          GitHub 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -126,6 +166,9 @@ Integrations Utilized
       <td>
          Opower 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/google_travel_time">
@@ -133,6 +176,9 @@ Integrations Utilized
       </td>
       <td>
          Google Maps Travel Time 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -142,6 +188,9 @@ Integrations Utilized
       <td>
          Google Assistant 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/nws">
@@ -149,6 +198,9 @@ Integrations Utilized
       </td>
       <td>
          National Weather Service (NWS) 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -158,6 +210,9 @@ Integrations Utilized
       <td>
          Version 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://github.com/mandarons/ha-bouncie">
@@ -165,6 +220,9 @@ Integrations Utilized
       </td>
       <td>
          Bouncie 
+      </td>
+      <td>
+         HACS
       </td>
    </tr>
    <tr>
@@ -174,6 +232,9 @@ Integrations Utilized
       <td>
          SmartThings 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/systemmonitor">
@@ -181,6 +242,9 @@ Integrations Utilized
       </td>
       <td>
          System Monitor 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -190,6 +254,9 @@ Integrations Utilized
       <td>
          UniFi Network 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/local_calendar">
@@ -197,6 +264,9 @@ Integrations Utilized
       </td>
       <td>
          Local Calendar 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -206,6 +276,9 @@ Integrations Utilized
       <td>
          AfterShip 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/tile">
@@ -213,6 +286,9 @@ Integrations Utilized
       </td>
       <td>
          Tile 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -222,6 +298,9 @@ Integrations Utilized
       <td>
          HACS 
       </td>
+      <td>
+         HACS
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/nest">
@@ -229,6 +308,9 @@ Integrations Utilized
       </td>
       <td>
          Google Nest 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -238,6 +320,9 @@ Integrations Utilized
       <td>
          Workday 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/ipp">
@@ -245,6 +330,9 @@ Integrations Utilized
       </td>
       <td>
          Internet Printing Protocol (IPP) 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -254,6 +342,9 @@ Integrations Utilized
       <td>
          Xbox 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/mobile_app">
@@ -261,6 +352,9 @@ Integrations Utilized
       </td>
       <td>
          Mobile App 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -270,6 +364,9 @@ Integrations Utilized
       <td>
          Google Calendar 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/bluetooth">
@@ -277,6 +374,9 @@ Integrations Utilized
       </td>
       <td>
          Bluetooth 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -286,6 +386,9 @@ Integrations Utilized
       <td>
          ESPHome 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/spotify">
@@ -293,6 +396,9 @@ Integrations Utilized
       </td>
       <td>
          Spotify 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -302,6 +408,9 @@ Integrations Utilized
       <td>
          Eufy Security 
       </td>
+      <td>
+         HACS
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/seventeentrack">
@@ -309,18 +418,9 @@ Integrations Utilized
       </td>
       <td>
          17TRACK 
-         seventeentrack
-         2.64 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/counter">
-         <img src="https://brands.home-assistant.io/_/counter/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Counter 
-         counter
-         2.62 s 
+         Native
       </td>
    </tr>
    <tr>
@@ -330,6 +430,9 @@ Integrations Utilized
       <td>
          Google Cast 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/ambient_station">
@@ -337,6 +440,9 @@ Integrations Utilized
       </td>
       <td>
          Ambient Weather Station 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -346,6 +452,9 @@ Integrations Utilized
       <td>
          Camect 
       </td>
+      <td>
+         HACS
+      </td>
    </tr>
    <tr>
       <td><a href="https://github.com/custom-components/sensor.unifigateway">
@@ -353,6 +462,9 @@ Integrations Utilized
       </td>
       <td>
          UniFi Gateway 
+      </td>
+      <td>
+         HACS
       </td>
    </tr>
    <tr>
@@ -362,6 +474,9 @@ Integrations Utilized
       <td>
          Google Assistant SDK 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://github.com/claytonjn/hass-circadian_lighting">
@@ -369,6 +484,9 @@ Integrations Utilized
       </td>
       <td>
          Circadian Lighting 
+      </td>
+      <td>
+         HACS
       </td>
    </tr>
    <tr>
@@ -378,6 +496,9 @@ Integrations Utilized
       <td>
          Tag 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/discord">
@@ -385,6 +506,9 @@ Integrations Utilized
       </td>
       <td>
          Discord 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -394,6 +518,9 @@ Integrations Utilized
       <td>
          FFmpeg 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://zachowj.github.io/node-red-contrib-home-assistant-websocket/guide/custom_integration/">
@@ -402,6 +529,9 @@ Integrations Utilized
       <td>
          Node-RED Companion 
       </td>
+      <td>
+         HACS
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/vesync">
@@ -409,8 +539,9 @@ Integrations Utilized
       </td>
       <td>
          VeSync 
-         vesync
-         1.22 s 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -420,6 +551,9 @@ Integrations Utilized
       <td>
          Downloader 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/tts">
@@ -427,6 +561,9 @@ Integrations Utilized
       </td>
       <td>
          Text-to-speech (TTS) 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -436,6 +573,9 @@ Integrations Utilized
       <td>
          Shell Command 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/rest">
@@ -443,6 +583,9 @@ Integrations Utilized
       </td>
       <td>
          RESTful 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -452,6 +595,9 @@ Integrations Utilized
       <td>
          Universal media player 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/switchbot">
@@ -459,6 +605,9 @@ Integrations Utilized
       </td>
       <td>
          SwitchBot Bluetooth 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -468,6 +617,9 @@ Integrations Utilized
       <td>
          Xiaomi BLE 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://github.com/bruxy70/Holidays/">
@@ -475,6 +627,9 @@ Integrations Utilized
       </td>
       <td>
          Holidays 
+      </td>
+      <td>
+         HACS
       </td>
    </tr>
    <tr>
@@ -484,6 +639,9 @@ Integrations Utilized
       <td>
          Media Extractor 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/ifttt">
@@ -491,6 +649,9 @@ Integrations Utilized
       </td>
       <td>
          IFTTT 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -500,6 +661,9 @@ Integrations Utilized
       <td>
          Oral-B 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/default_config">
@@ -507,6 +671,9 @@ Integrations Utilized
       </td>
       <td>
          Default Config 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -516,6 +683,9 @@ Integrations Utilized
       <td>
          Wake on LAN 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/fan">
@@ -523,6 +693,9 @@ Integrations Utilized
       </td>
       <td>
          Fan 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -532,6 +705,9 @@ Integrations Utilized
       <td>
          Telegram bot 
       </td>
+      <td>
+         Native
+      </td>
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/thread">
@@ -539,8 +715,9 @@ Integrations Utilized
       </td>
       <td>
          Thread 
-         thread
-         0.00 s 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
    <tr>
@@ -549,6 +726,9 @@ Integrations Utilized
       </td>
       <td>
          File Upload 
+      </td>
+      <td>
+         Native
       </td>
    </tr>
 </table>
