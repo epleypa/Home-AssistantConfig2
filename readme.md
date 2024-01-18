@@ -21,7 +21,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/amcrest/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Amcrest 
+         Amcrest
       </td>
       <td>
          Native
@@ -32,7 +32,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/bhyve/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Orbit B-hyve 
+         Orbit B-hyve
       </td>
       <td>
          HACS
@@ -43,7 +43,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/robovac/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Eufy Robovac 
+         Eufy Robovac
       </td>
       <td>
          HACS
@@ -54,7 +54,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/sun/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Sun 
+         Sun
       </td>
       <td>
          Native
@@ -65,7 +65,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/uptime/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Uptime 
+         Uptime
       </td>
       <td>
          Native
@@ -76,7 +76,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/totalconnect/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Total Connect 
+         Total Connect
       </td>
       <td>
          Native
@@ -87,7 +87,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/eventsensor/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Event sensor 
+         Event sensor
       </td>
       <td>
          HACS
@@ -98,7 +98,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/moon/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Moon 
+         Moon
       </td>
       <td>
          Native
@@ -109,7 +109,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/tplink/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         TP-Link Kasa Smart 
+         TP-Link Kasa Smart
       </td>
       <td>
          Native
@@ -120,7 +120,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/imap/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         IMAP 
+         IMAP
       </td>
       <td>
          Native
@@ -131,7 +131,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/broadlink/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Broadlink 
+         Broadlink
       </td>
       <td>
          Native
@@ -142,7 +142,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/plex/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Plex Media Server 
+         Plex Media Server
       </td>
       <td>
          Native
@@ -153,7 +153,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/github/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         GitHub 
+         GitHub
       </td>
       <td>
          Native
@@ -164,7 +164,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/opower/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Opower 
+         Opower
       </td>
       <td>
          Native
@@ -175,7 +175,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/google_travel_time/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Google Maps Travel Time 
+         Google Maps Travel Time
       </td>
       <td>
          Native
@@ -186,7 +186,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/google_assistant/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Google Assistant 
+         Google Assistant
       </td>
       <td>
          Native
@@ -197,7 +197,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/nws/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         National Weather Service (NWS) 
+         National Weather Service (NWS)
       </td>
       <td>
          Native
@@ -208,7 +208,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/version/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Version 
+         Version
       </td>
       <td>
          Native
@@ -219,7 +219,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/bouncie/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Bouncie 
+         Bouncie
       </td>
       <td>
          HACS
@@ -230,7 +230,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/smartthings/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         SmartThings 
+         SmartThings
       </td>
       <td>
          Native
@@ -241,7 +241,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/systemmonitor/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         System Monitor 
+         System Monitor
       </td>
       <td>
          Native
@@ -252,7 +252,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/unifi/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         UniFi Network 
+         UniFi Network
       </td>
       <td>
          Native
@@ -263,7 +263,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/local_calendar/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Local Calendar 
+         Local Calendar
       </td>
       <td>
          Native
@@ -274,7 +274,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/aftership/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         AfterShip 
+         AfterShip
       </td>
       <td>
          Native
@@ -285,7 +285,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/tile/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Tile 
+         Tile
       </td>
       <td>
          Native
@@ -296,7 +296,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/hacs/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         HACS 
+         HACS
       </td>
       <td>
          HACS
@@ -307,7 +307,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/nest/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Google Nest 
+         Google Nest
       </td>
       <td>
          Native
@@ -318,7 +318,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/workday/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Workday 
+         Workday
       </td>
       <td>
          Native
@@ -329,7 +329,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/ipp/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Internet Printing Protocol (IPP) 
+         Internet Printing Protocol (IPP)
       </td>
       <td>
          Native
@@ -340,7 +340,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/xbox/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Xbox 
+         Xbox
       </td>
       <td>
          Native
@@ -351,7 +351,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/mobile_app/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Mobile App 
+         Mobile App
       </td>
       <td>
          Native
@@ -362,7 +362,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/google/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Google Calendar 
+         Google Calendar
       </td>
       <td>
          Native
@@ -373,7 +373,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/bluetooth/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Bluetooth 
+         Bluetooth
       </td>
       <td>
          Native
@@ -384,7 +384,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/esphome/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         ESPHome 
+         ESPHome
       </td>
       <td>
          Native
@@ -395,7 +395,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/spotify/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Spotify 
+         Spotify
       </td>
       <td>
          Native
@@ -406,7 +406,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/eufy_security/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Eufy Security 
+         Eufy Security
       </td>
       <td>
          HACS
@@ -417,7 +417,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/seventeentrack/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         17TRACK 
+         17TRACK
       </td>
       <td>
          Native
@@ -428,7 +428,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/cast/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Google Cast 
+         Google Cast
       </td>
       <td>
          Native
@@ -439,7 +439,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/ambient_station/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Ambient Weather Station 
+         Ambient Weather Station
       </td>
       <td>
          Native
@@ -450,7 +450,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/camect/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Camect 
+         Camect
       </td>
       <td>
          HACS
@@ -461,7 +461,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/unifigateway/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         UniFi Gateway 
+         UniFi Gateway
       </td>
       <td>
          HACS
@@ -472,7 +472,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/google_assistant_sdk/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Google Assistant SDK 
+         Google Assistant SDK
       </td>
       <td>
          Native
@@ -483,7 +483,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/circadian_lighting/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Circadian Lighting 
+         Circadian Lighting
       </td>
       <td>
          HACS
@@ -494,7 +494,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/tag/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Tag 
+         Tag
       </td>
       <td>
          Native
@@ -505,7 +505,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/discord/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Discord 
+         Discord
       </td>
       <td>
          Native
@@ -516,7 +516,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/ffmpeg/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         FFmpeg 
+         FFmpeg
       </td>
       <td>
          Native
@@ -527,7 +527,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/nodered/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Node-RED Companion 
+         Node-RED Companion
       </td>
       <td>
          HACS
@@ -538,7 +538,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/vesync/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         VeSync 
+         VeSync
       </td>
       <td>
          Native
@@ -549,7 +549,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/downloader/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Downloader 
+         Downloader
       </td>
       <td>
          Native
@@ -560,7 +560,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/tts/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Text-to-speech (TTS) 
+         Text-to-speech (TTS)
       </td>
       <td>
          Native
@@ -571,7 +571,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/shell_command/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Shell Command 
+         Shell Command
       </td>
       <td>
          Native
@@ -582,7 +582,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/rest/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         RESTful 
+         RESTful
       </td>
       <td>
          Native
@@ -593,7 +593,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/universal/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Universal media player 
+         Universal media player
       </td>
       <td>
          Native
@@ -604,7 +604,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/switchbot/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         SwitchBot Bluetooth 
+         SwitchBot Bluetooth
       </td>
       <td>
          Native
@@ -615,7 +615,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/xiaomi_ble/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Xiaomi BLE 
+         Xiaomi BLE
       </td>
       <td>
          Native
@@ -626,7 +626,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/holidays/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Holidays 
+         Holidays
       </td>
       <td>
          HACS
@@ -637,7 +637,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/media_extractor/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Media Extractor 
+         Media Extractor
       </td>
       <td>
          Native
@@ -648,7 +648,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/ifttt/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         IFTTT 
+         IFTTT
       </td>
       <td>
          Native
@@ -659,7 +659,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/oralb/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Oral-B 
+         Oral-B
       </td>
       <td>
          Native
@@ -670,7 +670,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/default_config/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Default Config 
+         Default Config
       </td>
       <td>
          Native
@@ -681,7 +681,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/wake_on_lan/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Wake on LAN 
+         Wake on LAN
       </td>
       <td>
          Native
@@ -692,7 +692,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/fan/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Fan 
+         Fan
       </td>
       <td>
          Native
@@ -703,7 +703,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/telegram_bot/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Telegram bot 
+         Telegram bot
       </td>
       <td>
          Native
@@ -714,7 +714,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/thread/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         Thread 
+         Thread
       </td>
       <td>
          Native
@@ -725,7 +725,7 @@ Integrations Utilized
          <img src="https://brands.home-assistant.io/_/file_upload/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
-         File Upload 
+         File Upload
       </td>
       <td>
          Native
