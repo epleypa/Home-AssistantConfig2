@@ -14,9 +14,10 @@ Integrations Utilized
    <tr>
       <th>Logo</th>
       <th>Integration</th>
+  </tr>
   <tr>
       <td><a href="https://www.home-assistant.io/integrations/amcrest">
-         <img src="https://brands.home-assistant.io/_/amcrest/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/amcrest/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Amcrest 
@@ -26,7 +27,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://github.com/sebr/bhyve-home-assistant/blob/main/README.md">
-         <img src="https://brands.home-assistant.io/_/bhyve/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/bhyve/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Orbit B-hyve 
@@ -36,7 +37,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://github.com/codefoodpixels/robovac">
-         <img src="https://brands.home-assistant.io/_/robovac/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/robovac/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Eufy Robovac 
@@ -46,7 +47,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/sun">
-         <img src="https://brands.home-assistant.io/_/sun/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/sun/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Sun 
@@ -56,7 +57,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/uptime">
-         <img src="https://brands.home-assistant.io/_/uptime/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/uptime/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Uptime 
@@ -66,7 +67,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/totalconnect">
-         <img src="https://brands.home-assistant.io/_/totalconnect/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/totalconnect/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Total Connect 
@@ -76,7 +77,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://github.com/azogue/eventsensor">
-         <img src="https://brands.home-assistant.io/_/eventsensor/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/eventsensor/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Event sensor 
@@ -86,7 +87,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/moon">
-         <img src="https://brands.home-assistant.io/_/moon/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/moon/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Moon 
@@ -96,7 +97,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/tplink">
-         <img src="https://brands.home-assistant.io/_/tplink/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/tplink/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          TP-Link Kasa Smart 
@@ -106,7 +107,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/imap">
-         <img src="https://brands.home-assistant.io/_/imap/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/imap/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          IMAP 
@@ -116,7 +117,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/broadlink">
-         <img src="https://brands.home-assistant.io/_/broadlink/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/broadlink/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Broadlink 
@@ -126,7 +127,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/plex">
-         <img src="https://brands.home-assistant.io/_/plex/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/plex/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Plex Media Server 
@@ -136,7 +137,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/github">
-         <img src="https://brands.home-assistant.io/_/github/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/github/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          GitHub 
@@ -146,7 +147,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/opower">
-         <img src="https://brands.home-assistant.io/_/opower/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/opower/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Opower 
@@ -156,7 +157,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/google_travel_time">
-         <img src="https://brands.home-assistant.io/_/google_travel_time/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/google_travel_time/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Google Maps Travel Time 
@@ -166,7 +167,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/google_assistant">
-         <img src="https://brands.home-assistant.io/_/google_assistant/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/google_assistant/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Google Assistant 
@@ -176,7 +177,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/nws">
-         <img src="https://brands.home-assistant.io/_/nws/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/nws/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          National Weather Service (NWS) 
@@ -186,7 +187,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/version">
-         <img src="https://brands.home-assistant.io/_/version/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/version/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Version 
@@ -196,7 +197,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://github.com/mandarons/ha-bouncie">
-         <img src="https://brands.home-assistant.io/_/bouncie/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/bouncie/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Bouncie 
@@ -206,7 +207,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/smartthings">
-         <img src="https://brands.home-assistant.io/_/smartthings/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/smartthings/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          SmartThings 
@@ -216,7 +217,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/systemmonitor">
-         <img src="https://brands.home-assistant.io/_/systemmonitor/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/systemmonitor/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          System Monitor 
@@ -226,7 +227,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/unifi">
-         <img src="https://brands.home-assistant.io/_/unifi/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/unifi/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          UniFi Network 
@@ -236,7 +237,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/local_calendar">
-         <img src="https://brands.home-assistant.io/_/local_calendar/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/local_calendar/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Local Calendar 
@@ -246,7 +247,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/aftership">
-         <img src="https://brands.home-assistant.io/_/aftership/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/aftership/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          AfterShip 
@@ -256,7 +257,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/tile">
-         <img src="https://brands.home-assistant.io/_/tile/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/tile/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Tile 
@@ -266,7 +267,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://hacs.xyz/docs/configuration/start">
-         <img src="https://brands.home-assistant.io/_/hacs/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/hacs/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          HACS 
@@ -276,7 +277,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/nest">
-         <img src="https://brands.home-assistant.io/_/nest/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/nest/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Google Nest 
@@ -286,7 +287,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/workday">
-         <img src="https://brands.home-assistant.io/_/workday/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/workday/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Workday 
@@ -296,7 +297,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/ipp">
-         <img src="https://brands.home-assistant.io/_/ipp/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/ipp/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Internet Printing Protocol (IPP) 
@@ -306,7 +307,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/xbox">
-         <img src="https://brands.home-assistant.io/_/xbox/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/xbox/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Xbox 
@@ -316,7 +317,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/mobile_app">
-         <img src="https://brands.home-assistant.io/_/mobile_app/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/mobile_app/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Mobile App 
@@ -326,7 +327,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/notify">
-         <img src="https://brands.home-assistant.io/_/notify/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/notify/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Notifications 
@@ -336,7 +337,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/google">
-         <img src="https://brands.home-assistant.io/_/google/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/google/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Google Calendar 
@@ -346,7 +347,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/bluetooth">
-         <img src="https://brands.home-assistant.io/_/bluetooth/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/bluetooth/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Bluetooth 
@@ -356,7 +357,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/ssdp">
-         <img src="https://brands.home-assistant.io/_/ssdp/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/ssdp/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Simple Service Discovery Protocol (SSDP) 
@@ -366,7 +367,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/zone">
-         <img src="https://brands.home-assistant.io/_/zone/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/zone/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Zone 
@@ -376,7 +377,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/device_tracker">
-         <img src="https://brands.home-assistant.io/_/device_tracker/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/device_tracker/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Device tracker 
@@ -386,7 +387,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/scene">
-         <img src="https://brands.home-assistant.io/_/scene/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/scene/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Scene 
@@ -396,7 +397,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/esphome">
-         <img src="https://brands.home-assistant.io/_/esphome/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/esphome/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          ESPHome 
@@ -406,7 +407,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/spotify">
-         <img src="https://brands.home-assistant.io/_/spotify/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/spotify/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Spotify 
@@ -416,7 +417,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/input_boolean">
-         <img src="https://brands.home-assistant.io/_/input_boolean/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/input_boolean/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Input boolean 
@@ -426,7 +427,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/input_number">
-         <img src="https://brands.home-assistant.io/_/input_number/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/input_number/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Input number 
@@ -436,7 +437,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/input_select">
-         <img src="https://brands.home-assistant.io/_/input_select/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/input_select/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Input select 
@@ -446,7 +447,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://github.com/fuatakgun/eufy_security">
-         <img src="https://brands.home-assistant.io/_/eufy_security/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/eufy_security/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Eufy Security 
@@ -456,7 +457,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/homeassistant">
-         <img src="https://brands.home-assistant.io/_/homeassistant/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/homeassistant/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Home Assistant Core Integration 
@@ -466,7 +467,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/timer">
-         <img src="https://brands.home-assistant.io/_/timer/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/timer/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Timer 
@@ -476,7 +477,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/input_button">
-         <img src="https://brands.home-assistant.io/_/input_button/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/input_button/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Input button 
@@ -486,7 +487,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/seventeentrack">
-         <img src="https://brands.home-assistant.io/_/seventeentrack/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/seventeentrack/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          17TRACK 
@@ -496,7 +497,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/counter">
-         <img src="https://brands.home-assistant.io/_/counter/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/counter/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Counter 
@@ -506,7 +507,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/cast">
-         <img src="https://brands.home-assistant.io/_/cast/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/cast/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Google Cast 
@@ -516,7 +517,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/application_credentials">
-         <img src="https://brands.home-assistant.io/_/application_credentials/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/application_credentials/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Application Credentials 
@@ -526,7 +527,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/input_text">
-         <img src="https://brands.home-assistant.io/_/input_text/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/input_text/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Input text 
@@ -536,7 +537,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/ambient_station">
-         <img src="https://brands.home-assistant.io/_/ambient_station/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/ambient_station/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Ambient Weather Station 
@@ -546,7 +547,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://github.com/camect/home-assistant-integration">
-         <img src="https://brands.home-assistant.io/_/camect/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/camect/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Camect 
@@ -556,7 +557,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/search">
-         <img src="https://brands.home-assistant.io/_/search/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/search/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Search 
@@ -566,7 +567,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://github.com/custom-components/sensor.unifigateway">
-         <img src="https://brands.home-assistant.io/_/unifigateway/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/unifigateway/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          UniFi Gateway 
@@ -576,7 +577,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/group">
-         <img src="https://brands.home-assistant.io/_/group/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/group/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Group 
@@ -586,7 +587,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/google_assistant_sdk">
-         <img src="https://brands.home-assistant.io/_/google_assistant_sdk/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/google_assistant_sdk/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Google Assistant SDK 
@@ -596,7 +597,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://github.com/claytonjn/hass-circadian_lighting">
-         <img src="https://brands.home-assistant.io/_/circadian_lighting/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/circadian_lighting/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Circadian Lighting 
@@ -606,7 +607,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/tag">
-         <img src="https://brands.home-assistant.io/_/tag/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/tag/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Tag 
@@ -616,7 +617,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/discord">
-         <img src="https://brands.home-assistant.io/_/discord/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/discord/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Discord 
@@ -626,7 +627,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/schedule">
-         <img src="https://brands.home-assistant.io/_/schedule/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/schedule/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Schedule 
@@ -636,7 +637,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/input_datetime">
-         <img src="https://brands.home-assistant.io/_/input_datetime/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/input_datetime/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Input datetime 
@@ -646,7 +647,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/ffmpeg">
-         <img src="https://brands.home-assistant.io/_/ffmpeg/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/ffmpeg/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          FFmpeg 
@@ -656,7 +657,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://zachowj.github.io/node-red-contrib-home-assistant-websocket/guide/custom_integration/">
-         <img src="https://brands.home-assistant.io/_/nodered/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/nodered/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Node-RED Companion 
@@ -666,7 +667,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/automation">
-         <img src="https://brands.home-assistant.io/_/automation/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/automation/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Automation 
@@ -676,7 +677,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/vesync">
-         <img src="https://brands.home-assistant.io/_/vesync/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/vesync/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          VeSync 
@@ -686,7 +687,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/template">
-         <img src="https://brands.home-assistant.io/_/template/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/template/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Template 
@@ -696,7 +697,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/media_source">
-         <img src="https://brands.home-assistant.io/_/media_source/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/media_source/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Media Source 
@@ -706,7 +707,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/logbook">
-         <img src="https://brands.home-assistant.io/_/logbook/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/logbook/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Logbook 
@@ -716,7 +717,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/history_stats">
-         <img src="https://brands.home-assistant.io/_/history_stats/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/history_stats/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          History Stats 
@@ -726,7 +727,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/trace">
-         <img src="https://brands.home-assistant.io/_/trace/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/trace/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Trace 
@@ -736,7 +737,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/system_health">
-         <img src="https://brands.home-assistant.io/_/system_health/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/system_health/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          System Health 
@@ -746,7 +747,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/conversation">
-         <img src="https://brands.home-assistant.io/_/conversation/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/conversation/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Conversation 
@@ -756,7 +757,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/downloader">
-         <img src="https://brands.home-assistant.io/_/downloader/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/downloader/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Downloader 
@@ -766,7 +767,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/light">
-         <img src="https://brands.home-assistant.io/_/light/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/light/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Light 
@@ -776,7 +777,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/tts">
-         <img src="https://brands.home-assistant.io/_/tts/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/tts/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Text-to-speech (TTS) 
@@ -786,7 +787,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/shell_command">
-         <img src="https://brands.home-assistant.io/_/shell_command/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/shell_command/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Shell Command 
@@ -796,7 +797,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/rest">
-         <img src="https://brands.home-assistant.io/_/rest/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/rest/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          RESTful 
@@ -806,7 +807,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/universal">
-         <img src="https://brands.home-assistant.io/_/universal/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/universal/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Universal media player 
@@ -816,7 +817,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/switchbot">
-         <img src="https://brands.home-assistant.io/_/switchbot/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/switchbot/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          SwitchBot Bluetooth 
@@ -826,7 +827,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/homeassistant_alerts">
-         <img src="https://brands.home-assistant.io/_/homeassistant_alerts/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/homeassistant_alerts/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Home Assistant Alerts 
@@ -836,7 +837,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/xiaomi_ble">
-         <img src="https://brands.home-assistant.io/_/xiaomi_ble/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/xiaomi_ble/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Xiaomi BLE 
@@ -846,7 +847,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://github.com/bruxy70/Holidays/">
-         <img src="https://brands.home-assistant.io/_/holidays/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/holidays/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Holidays 
@@ -856,7 +857,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/binary_sensor">
-         <img src="https://brands.home-assistant.io/_/binary_sensor/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/binary_sensor/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Binary sensor 
@@ -866,7 +867,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/media_extractor">
-         <img src="https://brands.home-assistant.io/_/media_extractor/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/media_extractor/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Media Extractor 
@@ -876,7 +877,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/history">
-         <img src="https://brands.home-assistant.io/_/history/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/history/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          History 
@@ -886,7 +887,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/hardware">
-         <img src="https://brands.home-assistant.io/_/hardware/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/hardware/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Hardware 
@@ -896,7 +897,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/ifttt">
-         <img src="https://brands.home-assistant.io/_/ifttt/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/ifttt/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          IFTTT 
@@ -906,7 +907,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/script">
-         <img src="https://brands.home-assistant.io/_/script/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/script/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Script 
@@ -916,7 +917,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/energy">
-         <img src="https://brands.home-assistant.io/_/energy/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/energy/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Energy 
@@ -926,7 +927,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/config">
-         <img src="https://brands.home-assistant.io/_/config/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/config/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Configuration 
@@ -936,7 +937,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/oralb">
-         <img src="https://brands.home-assistant.io/_/oralb/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/oralb/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Oral-B 
@@ -946,7 +947,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/device_automation">
-         <img src="https://brands.home-assistant.io/_/device_automation/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/device_automation/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Device Automation 
@@ -956,7 +957,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/diagnostics">
-         <img src="https://brands.home-assistant.io/_/diagnostics/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/diagnostics/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Diagnostics 
@@ -966,7 +967,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/alarm_control_panel">
-         <img src="https://brands.home-assistant.io/_/alarm_control_panel/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/alarm_control_panel/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Alarm control panel 
@@ -976,7 +977,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/stream">
-         <img src="https://brands.home-assistant.io/_/stream/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/stream/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Stream 
@@ -986,7 +987,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/repairs">
-         <img src="https://brands.home-assistant.io/_/repairs/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/repairs/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Repairs 
@@ -996,7 +997,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/default_config">
-         <img src="https://brands.home-assistant.io/_/default_config/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/default_config/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Default Config 
@@ -1006,7 +1007,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/assist_pipeline">
-         <img src="https://brands.home-assistant.io/_/assist_pipeline/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/assist_pipeline/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Assist pipeline 
@@ -1016,7 +1017,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/map">
-         <img src="https://brands.home-assistant.io/_/map/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/map/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Map 
@@ -1026,7 +1027,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/my">
-         <img src="https://brands.home-assistant.io/_/my/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/my/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          My Home Assistant 
@@ -1036,7 +1037,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/wake_word">
-         <img src="https://brands.home-assistant.io/_/wake_word/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/wake_word/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Wake-word detection 
@@ -1046,7 +1047,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/recorder">
-         <img src="https://brands.home-assistant.io/_/recorder/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/recorder/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Recorder 
@@ -1056,7 +1057,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/wake_on_lan">
-         <img src="https://brands.home-assistant.io/_/wake_on_lan/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/wake_on_lan/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Wake on LAN 
@@ -1066,7 +1067,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/api">
-         <img src="https://brands.home-assistant.io/_/api/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/api/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Home Assistant API 
@@ -1076,7 +1077,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/auth">
-         <img src="https://brands.home-assistant.io/_/auth/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/auth/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Auth 
@@ -1086,7 +1087,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/cloud">
-         <img src="https://brands.home-assistant.io/_/cloud/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/cloud/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Home Assistant Cloud 
@@ -1096,7 +1097,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/update">
-         <img src="https://brands.home-assistant.io/_/update/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/update/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Update 
@@ -1106,7 +1107,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/stt">
-         <img src="https://brands.home-assistant.io/_/stt/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/stt/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Speech-to-text (STT) 
@@ -1116,7 +1117,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/http">
-         <img src="https://brands.home-assistant.io/_/http/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/http/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          HTTP 
@@ -1126,7 +1127,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/blueprint">
-         <img src="https://brands.home-assistant.io/_/blueprint/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/blueprint/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Blueprint 
@@ -1136,7 +1137,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/time_date">
-         <img src="https://brands.home-assistant.io/_/time_date/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/time_date/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Time &amp; Date 
@@ -1146,7 +1147,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/switch">
-         <img src="https://brands.home-assistant.io/_/switch/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/switch/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Switch 
@@ -1156,7 +1157,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/select">
-         <img src="https://brands.home-assistant.io/_/select/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/select/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Select 
@@ -1166,7 +1167,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/media_player">
-         <img src="https://brands.home-assistant.io/_/media_player/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/media_player/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Media player 
@@ -1176,7 +1177,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/fan">
-         <img src="https://brands.home-assistant.io/_/fan/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/fan/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Fan 
@@ -1186,7 +1187,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/zeroconf">
-         <img src="https://brands.home-assistant.io/_/zeroconf/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/zeroconf/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Zero-configuration networking (zeroconf) 
@@ -1196,7 +1197,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/weather">
-         <img src="https://brands.home-assistant.io/_/weather/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/weather/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Weather 
@@ -1206,7 +1207,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/sensor">
-         <img src="https://brands.home-assistant.io/_/sensor/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/sensor/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Sensor 
@@ -1216,7 +1217,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/remote">
-         <img src="https://brands.home-assistant.io/_/remote/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/remote/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Remote 
@@ -1226,7 +1227,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/camera">
-         <img src="https://brands.home-assistant.io/_/camera/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/camera/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Camera 
@@ -1236,7 +1237,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/climate">
-         <img src="https://brands.home-assistant.io/_/climate/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/climate/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Climate 
@@ -1246,7 +1247,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/number">
-         <img src="https://brands.home-assistant.io/_/number/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/number/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Number 
@@ -1256,7 +1257,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/image">
-         <img src="https://brands.home-assistant.io/_/image/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/image/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Image 
@@ -1266,7 +1267,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/vacuum">
-         <img src="https://brands.home-assistant.io/_/vacuum/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/vacuum/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Vacuum 
@@ -1276,7 +1277,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/humidifier">
-         <img src="https://brands.home-assistant.io/_/humidifier/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/humidifier/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Humidifier 
@@ -1286,7 +1287,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/system_log">
-         <img src="https://brands.home-assistant.io/_/system_log/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/system_log/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          System Log 
@@ -1296,7 +1297,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/cover">
-         <img src="https://brands.home-assistant.io/_/cover/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/cover/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Cover 
@@ -1306,7 +1307,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/lovelace">
-         <img src="https://brands.home-assistant.io/_/lovelace/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/lovelace/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Dashboards 
@@ -1316,7 +1317,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/image_upload">
-         <img src="https://brands.home-assistant.io/_/image_upload/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/image_upload/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Image Upload 
@@ -1326,7 +1327,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/frontend">
-         <img src="https://brands.home-assistant.io/_/frontend/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/frontend/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Home Assistant Frontend 
@@ -1336,7 +1337,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/person">
-         <img src="https://brands.home-assistant.io/_/person/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/person/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Person 
@@ -1346,7 +1347,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/button">
-         <img src="https://brands.home-assistant.io/_/button/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/button/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Button 
@@ -1356,7 +1357,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/analytics">
-         <img src="https://brands.home-assistant.io/_/analytics/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/analytics/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Analytics 
@@ -1366,7 +1367,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/calendar">
-         <img src="https://brands.home-assistant.io/_/calendar/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/calendar/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Calendar 
@@ -1376,7 +1377,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/telegram_bot">
-         <img src="https://brands.home-assistant.io/_/telegram_bot/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/telegram_bot/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Telegram bot 
@@ -1386,7 +1387,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/logger">
-         <img src="https://brands.home-assistant.io/_/logger/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/logger/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Logger 
@@ -1396,7 +1397,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/lock">
-         <img src="https://brands.home-assistant.io/_/lock/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/lock/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Lock 
@@ -1406,7 +1407,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/network">
-         <img src="https://brands.home-assistant.io/_/network/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/network/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Network Configuration 
@@ -1416,7 +1417,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/webhook">
-         <img src="https://brands.home-assistant.io/_/webhook/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/webhook/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Webhook 
@@ -1426,7 +1427,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/backup">
-         <img src="https://brands.home-assistant.io/_/backup/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/backup/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Backup 
@@ -1436,7 +1437,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/thread">
-         <img src="https://brands.home-assistant.io/_/thread/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/thread/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Thread 
@@ -1446,7 +1447,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/onboarding">
-         <img src="https://brands.home-assistant.io/_/onboarding/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/onboarding/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Home Assistant Onboarding 
@@ -1456,7 +1457,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/usb">
-         <img src="https://brands.home-assistant.io/_/usb/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/usb/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          USB Discovery 
@@ -1466,7 +1467,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/file_upload">
-         <img src="https://brands.home-assistant.io/_/file_upload/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/file_upload/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          File Upload 
@@ -1476,7 +1477,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/persistent_notification">
-         <img src="https://brands.home-assistant.io/_/persistent_notification/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/persistent_notification/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Persistent Notification 
@@ -1486,7 +1487,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/dhcp">
-         <img src="https://brands.home-assistant.io/_/dhcp/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/dhcp/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          DHCP Discovery 
@@ -1496,7 +1497,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/websocket_api">
-         <img src="https://brands.home-assistant.io/_/websocket_api/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/websocket_api/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Home Assistant WebSocket API 
@@ -1506,7 +1507,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/bluetooth_adapters">
-         <img src="https://brands.home-assistant.io/_/bluetooth_adapters/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/bluetooth_adapters/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Bluetooth Adapters 
@@ -1516,7 +1517,7 @@ Integrations Utilized
    </tr>
    <tr>
       <td><a href="https://www.home-assistant.io/integrations/homeassistant_hardware">
-         <img src="https://brands.home-assistant.io/_/homeassistant_hardware/icon.png"></a>
+         <img src="https://brands.home-assistant.io/_/homeassistant_hardware/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Home Assistant Hardware 
