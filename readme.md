@@ -21,8 +21,6 @@ Integrations Utilized
       </td>
       <td>
          Amcrest 
-         amcrest
-         102.82 s 
       </td>
    </tr>
    <tr>
@@ -31,8 +29,6 @@ Integrations Utilized
       </td>
       <td>
          Orbit B-hyve 
-         bhyve
-         25.71 s 
       </td>
    </tr>
    <tr>
@@ -41,8 +37,6 @@ Integrations Utilized
       </td>
       <td>
          Eufy Robovac 
-         robovac
-         25.05 s 
       </td>
    </tr>
    <tr>
@@ -51,8 +45,6 @@ Integrations Utilized
       </td>
       <td>
          Sun 
-         sun
-         24.69 s 
       </td>
    </tr>
    <tr>
@@ -61,8 +53,6 @@ Integrations Utilized
       </td>
       <td>
          Uptime 
-         uptime
-         24.69 s 
       </td>
    </tr>
    <tr>
@@ -71,8 +61,6 @@ Integrations Utilized
       </td>
       <td>
          Total Connect 
-         totalconnect
-         24.61 s 
       </td>
    </tr>
    <tr>
@@ -81,8 +69,6 @@ Integrations Utilized
       </td>
       <td>
          Event sensor 
-         eventsensor
-         24.49 s 
       </td>
    </tr>
    <tr>
@@ -91,8 +77,6 @@ Integrations Utilized
       </td>
       <td>
          Moon 
-         moon
-         24.27 s 
       </td>
    </tr>
    <tr>
@@ -101,8 +85,6 @@ Integrations Utilized
       </td>
       <td>
          TP-Link Kasa Smart 
-         tplink
-         23.78 s 
       </td>
    </tr>
    <tr>
@@ -111,8 +93,6 @@ Integrations Utilized
       </td>
       <td>
          IMAP 
-         imap
-         23.53 s 
       </td>
    </tr>
    <tr>
@@ -121,8 +101,6 @@ Integrations Utilized
       </td>
       <td>
          Broadlink 
-         broadlink
-         23.31 s 
       </td>
    </tr>
    <tr>
@@ -131,8 +109,6 @@ Integrations Utilized
       </td>
       <td>
          Plex Media Server 
-         plex
-         22.14 s 
       </td>
    </tr>
    <tr>
@@ -141,8 +117,6 @@ Integrations Utilized
       </td>
       <td>
          GitHub 
-         github
-         21.56 s 
       </td>
    </tr>
    <tr>
@@ -151,8 +125,6 @@ Integrations Utilized
       </td>
       <td>
          Opower 
-         opower
-         20.78 s 
       </td>
    </tr>
    <tr>
@@ -161,8 +133,6 @@ Integrations Utilized
       </td>
       <td>
          Google Maps Travel Time 
-         google_travel_time
-         19.97 s 
       </td>
    </tr>
    <tr>
@@ -171,8 +141,6 @@ Integrations Utilized
       </td>
       <td>
          Google Assistant 
-         google_assistant
-         19.60 s 
       </td>
    </tr>
    <tr>
@@ -181,8 +149,6 @@ Integrations Utilized
       </td>
       <td>
          National Weather Service (NWS) 
-         nws
-         16.86 s 
       </td>
    </tr>
    <tr>
@@ -191,8 +157,6 @@ Integrations Utilized
       </td>
       <td>
          Version 
-         version
-         16.73 s 
       </td>
    </tr>
    <tr>
@@ -201,8 +165,6 @@ Integrations Utilized
       </td>
       <td>
          Bouncie 
-         bouncie
-         16.41 s 
       </td>
    </tr>
    <tr>
@@ -211,8 +173,6 @@ Integrations Utilized
       </td>
       <td>
          SmartThings 
-         smartthings
-         14.42 s 
       </td>
    </tr>
    <tr>
@@ -221,8 +181,6 @@ Integrations Utilized
       </td>
       <td>
          System Monitor 
-         systemmonitor
-         14.28 s 
       </td>
    </tr>
    <tr>
@@ -231,8 +189,6 @@ Integrations Utilized
       </td>
       <td>
          UniFi Network 
-         unifi
-         13.62 s 
       </td>
    </tr>
    <tr>
@@ -241,8 +197,6 @@ Integrations Utilized
       </td>
       <td>
          Local Calendar 
-         local_calendar
-         13.57 s 
       </td>
    </tr>
    <tr>
@@ -251,8 +205,6 @@ Integrations Utilized
       </td>
       <td>
          AfterShip 
-         aftership
-         12.84 s 
       </td>
    </tr>
    <tr>
@@ -261,8 +213,6 @@ Integrations Utilized
       </td>
       <td>
          Tile 
-         tile
-         12.69 s 
       </td>
    </tr>
    <tr>
@@ -271,8 +221,6 @@ Integrations Utilized
       </td>
       <td>
          HACS 
-         hacs
-         12.35 s 
       </td>
    </tr>
    <tr>
@@ -281,8 +229,6 @@ Integrations Utilized
       </td>
       <td>
          Google Nest 
-         nest
-         10.73 s 
       </td>
    </tr>
    <tr>
@@ -291,8 +237,6 @@ Integrations Utilized
       </td>
       <td>
          Workday 
-         workday
-         10.21 s 
       </td>
    </tr>
    <tr>
@@ -301,8 +245,6 @@ Integrations Utilized
       </td>
       <td>
          Internet Printing Protocol (IPP) 
-         ipp
-         8.50 s 
       </td>
    </tr>
    <tr>
@@ -311,8 +253,6 @@ Integrations Utilized
       </td>
       <td>
          Xbox 
-         xbox
-         7.89 s 
       </td>
    </tr>
    <tr>
@@ -321,18 +261,6 @@ Integrations Utilized
       </td>
       <td>
          Mobile App 
-         mobile_app
-         7.25 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/notify">
-         <img src="https://brands.home-assistant.io/_/notify/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Notifications 
-         notify
-         7.12 s 
       </td>
    </tr>
    <tr>
@@ -341,8 +269,6 @@ Integrations Utilized
       </td>
       <td>
          Google Calendar 
-         google
-         6.02 s 
       </td>
    </tr>
    <tr>
@@ -351,48 +277,6 @@ Integrations Utilized
       </td>
       <td>
          Bluetooth 
-         bluetooth
-         5.98 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/ssdp">
-         <img src="https://brands.home-assistant.io/_/ssdp/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Simple Service Discovery Protocol (SSDP) 
-         ssdp
-         5.54 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/zone">
-         <img src="https://brands.home-assistant.io/_/zone/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Zone 
-         zone
-         5.10 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/device_tracker">
-         <img src="https://brands.home-assistant.io/_/device_tracker/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Device tracker 
-         device_tracker
-         5.05 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/scene">
-         <img src="https://brands.home-assistant.io/_/scene/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Scene 
-         scene
-         5.00 s 
       </td>
    </tr>
    <tr>
@@ -401,8 +285,6 @@ Integrations Utilized
       </td>
       <td>
          ESPHome 
-         esphome
-         4.56 s 
       </td>
    </tr>
    <tr>
@@ -411,38 +293,6 @@ Integrations Utilized
       </td>
       <td>
          Spotify 
-         spotify
-         4.46 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/input_boolean">
-         <img src="https://brands.home-assistant.io/_/input_boolean/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Input boolean 
-         input_boolean
-         4.01 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/input_number">
-         <img src="https://brands.home-assistant.io/_/input_number/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Input number 
-         input_number
-         3.68 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/input_select">
-         <img src="https://brands.home-assistant.io/_/input_select/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Input select 
-         input_select
-         3.51 s 
       </td>
    </tr>
    <tr>
@@ -451,38 +301,6 @@ Integrations Utilized
       </td>
       <td>
          Eufy Security 
-         eufy_security
-         3.37 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/homeassistant">
-         <img src="https://brands.home-assistant.io/_/homeassistant/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Home Assistant Core Integration 
-         homeassistant
-         3.12 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/timer">
-         <img src="https://brands.home-assistant.io/_/timer/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Timer 
-         timer
-         3.06 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/input_button">
-         <img src="https://brands.home-assistant.io/_/input_button/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Input button 
-         input_button
-         3.06 s 
       </td>
    </tr>
    <tr>
@@ -511,28 +329,6 @@ Integrations Utilized
       </td>
       <td>
          Google Cast 
-         cast
-         2.61 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/application_credentials">
-         <img src="https://brands.home-assistant.io/_/application_credentials/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Application Credentials 
-         application_credentials
-         2.60 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/input_text">
-         <img src="https://brands.home-assistant.io/_/input_text/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Input text 
-         input_text
-         2.53 s 
       </td>
    </tr>
    <tr>
@@ -541,8 +337,6 @@ Integrations Utilized
       </td>
       <td>
          Ambient Weather Station 
-         ambient_station
-         2.40 s 
       </td>
    </tr>
    <tr>
@@ -551,18 +345,6 @@ Integrations Utilized
       </td>
       <td>
          Camect 
-         camect
-         2.35 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/search">
-         <img src="https://brands.home-assistant.io/_/search/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Search 
-         search
-         2.21 s 
       </td>
    </tr>
    <tr>
@@ -571,18 +353,6 @@ Integrations Utilized
       </td>
       <td>
          UniFi Gateway 
-         unifigateway
-         2.15 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/group">
-         <img src="https://brands.home-assistant.io/_/group/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Group 
-         group
-         2.06 s 
       </td>
    </tr>
    <tr>
@@ -591,8 +361,6 @@ Integrations Utilized
       </td>
       <td>
          Google Assistant SDK 
-         google_assistant_sdk
-         1.91 s 
       </td>
    </tr>
    <tr>
@@ -601,8 +369,6 @@ Integrations Utilized
       </td>
       <td>
          Circadian Lighting 
-         circadian_lighting
-         1.81 s 
       </td>
    </tr>
    <tr>
@@ -611,8 +377,6 @@ Integrations Utilized
       </td>
       <td>
          Tag 
-         tag
-         1.77 s 
       </td>
    </tr>
    <tr>
@@ -621,28 +385,6 @@ Integrations Utilized
       </td>
       <td>
          Discord 
-         discord
-         1.55 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/schedule">
-         <img src="https://brands.home-assistant.io/_/schedule/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Schedule 
-         schedule
-         1.54 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/input_datetime">
-         <img src="https://brands.home-assistant.io/_/input_datetime/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Input datetime 
-         input_datetime
-         1.53 s 
       </td>
    </tr>
    <tr>
@@ -651,8 +393,6 @@ Integrations Utilized
       </td>
       <td>
          FFmpeg 
-         ffmpeg
-         1.37 s 
       </td>
    </tr>
    <tr>
@@ -661,18 +401,6 @@ Integrations Utilized
       </td>
       <td>
          Node-RED Companion 
-         nodered
-         1.36 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/automation">
-         <img src="https://brands.home-assistant.io/_/automation/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Automation 
-         automation
-         1.24 s 
       </td>
    </tr>
    <tr>
@@ -686,93 +414,11 @@ Integrations Utilized
       </td>
    </tr>
    <tr>
-      <td><a href="https://www.home-assistant.io/integrations/template">
-         <img src="https://brands.home-assistant.io/_/template/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Template 
-         template
-         1.18 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/media_source">
-         <img src="https://brands.home-assistant.io/_/media_source/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Media Source 
-         media_source
-         1.06 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/logbook">
-         <img src="https://brands.home-assistant.io/_/logbook/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Logbook 
-         logbook
-         1.03 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/history_stats">
-         <img src="https://brands.home-assistant.io/_/history_stats/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         History Stats 
-         history_stats
-         0.96 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/trace">
-         <img src="https://brands.home-assistant.io/_/trace/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Trace 
-         trace
-         0.91 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/system_health">
-         <img src="https://brands.home-assistant.io/_/system_health/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         System Health 
-         system_health
-         0.91 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/conversation">
-         <img src="https://brands.home-assistant.io/_/conversation/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Conversation 
-         conversation
-         0.88 s 
-      </td>
-   </tr>
-   <tr>
       <td><a href="https://www.home-assistant.io/integrations/downloader">
          <img src="https://brands.home-assistant.io/_/downloader/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          Downloader 
-         downloader
-         0.86 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/light">
-         <img src="https://brands.home-assistant.io/_/light/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Light 
-         light
-         0.83 s 
       </td>
    </tr>
    <tr>
@@ -781,8 +427,6 @@ Integrations Utilized
       </td>
       <td>
          Text-to-speech (TTS) 
-         tts
-         0.69 s 
       </td>
    </tr>
    <tr>
@@ -791,8 +435,6 @@ Integrations Utilized
       </td>
       <td>
          Shell Command 
-         shell_command
-         0.68 s 
       </td>
    </tr>
    <tr>
@@ -801,8 +443,6 @@ Integrations Utilized
       </td>
       <td>
          RESTful 
-         rest
-         0.65 s 
       </td>
    </tr>
    <tr>
@@ -811,8 +451,6 @@ Integrations Utilized
       </td>
       <td>
          Universal media player 
-         universal
-         0.63 s 
       </td>
    </tr>
    <tr>
@@ -821,18 +459,6 @@ Integrations Utilized
       </td>
       <td>
          SwitchBot Bluetooth 
-         switchbot
-         0.63 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/homeassistant_alerts">
-         <img src="https://brands.home-assistant.io/_/homeassistant_alerts/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Home Assistant Alerts 
-         homeassistant_alerts
-         0.60 s 
       </td>
    </tr>
    <tr>
@@ -841,8 +467,6 @@ Integrations Utilized
       </td>
       <td>
          Xiaomi BLE 
-         xiaomi_ble
-         0.59 s 
       </td>
    </tr>
    <tr>
@@ -851,18 +475,6 @@ Integrations Utilized
       </td>
       <td>
          Holidays 
-         holidays
-         0.52 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/binary_sensor">
-         <img src="https://brands.home-assistant.io/_/binary_sensor/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Binary sensor 
-         binary_sensor
-         0.50 s 
       </td>
    </tr>
    <tr>
@@ -871,28 +483,6 @@ Integrations Utilized
       </td>
       <td>
          Media Extractor 
-         media_extractor
-         0.47 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/history">
-         <img src="https://brands.home-assistant.io/_/history/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         History 
-         history
-         0.46 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/hardware">
-         <img src="https://brands.home-assistant.io/_/hardware/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Hardware 
-         hardware
-         0.42 s 
       </td>
    </tr>
    <tr>
@@ -901,38 +491,6 @@ Integrations Utilized
       </td>
       <td>
          IFTTT 
-         ifttt
-         0.39 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/script">
-         <img src="https://brands.home-assistant.io/_/script/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Script 
-         script
-         0.37 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/energy">
-         <img src="https://brands.home-assistant.io/_/energy/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Energy 
-         energy
-         0.35 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/config">
-         <img src="https://brands.home-assistant.io/_/config/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Configuration 
-         config
-         0.33 s 
       </td>
    </tr>
    <tr>
@@ -941,58 +499,6 @@ Integrations Utilized
       </td>
       <td>
          Oral-B 
-         oralb
-         0.33 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/device_automation">
-         <img src="https://brands.home-assistant.io/_/device_automation/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Device Automation 
-         device_automation
-         0.32 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/diagnostics">
-         <img src="https://brands.home-assistant.io/_/diagnostics/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Diagnostics 
-         diagnostics
-         0.30 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/alarm_control_panel">
-         <img src="https://brands.home-assistant.io/_/alarm_control_panel/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Alarm control panel 
-         alarm_control_panel
-         0.29 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/stream">
-         <img src="https://brands.home-assistant.io/_/stream/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Stream 
-         stream
-         0.27 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/repairs">
-         <img src="https://brands.home-assistant.io/_/repairs/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Repairs 
-         repairs
-         0.27 s 
       </td>
    </tr>
    <tr>
@@ -1001,58 +507,6 @@ Integrations Utilized
       </td>
       <td>
          Default Config 
-         default_config
-         0.23 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/assist_pipeline">
-         <img src="https://brands.home-assistant.io/_/assist_pipeline/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Assist pipeline 
-         assist_pipeline
-         0.21 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/map">
-         <img src="https://brands.home-assistant.io/_/map/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Map 
-         map
-         0.18 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/my">
-         <img src="https://brands.home-assistant.io/_/my/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         My Home Assistant 
-         my
-         0.10 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/wake_word">
-         <img src="https://brands.home-assistant.io/_/wake_word/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Wake-word detection 
-         wake_word
-         0.10 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/recorder">
-         <img src="https://brands.home-assistant.io/_/recorder/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Recorder 
-         recorder
-         0.10 s 
       </td>
    </tr>
    <tr>
@@ -1061,118 +515,6 @@ Integrations Utilized
       </td>
       <td>
          Wake on LAN 
-         wake_on_lan
-         0.10 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/api">
-         <img src="https://brands.home-assistant.io/_/api/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Home Assistant API 
-         api
-         0.08 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/auth">
-         <img src="https://brands.home-assistant.io/_/auth/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Auth 
-         auth
-         0.08 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/cloud">
-         <img src="https://brands.home-assistant.io/_/cloud/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Home Assistant Cloud 
-         cloud
-         0.08 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/update">
-         <img src="https://brands.home-assistant.io/_/update/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Update 
-         update
-         0.07 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/stt">
-         <img src="https://brands.home-assistant.io/_/stt/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Speech-to-text (STT) 
-         stt
-         0.07 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/http">
-         <img src="https://brands.home-assistant.io/_/http/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         HTTP 
-         http
-         0.06 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/blueprint">
-         <img src="https://brands.home-assistant.io/_/blueprint/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Blueprint 
-         blueprint
-         0.06 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/time_date">
-         <img src="https://brands.home-assistant.io/_/time_date/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Time &amp; Date 
-         time_date
-         0.06 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/switch">
-         <img src="https://brands.home-assistant.io/_/switch/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Switch 
-         switch
-         0.04 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/select">
-         <img src="https://brands.home-assistant.io/_/select/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Select 
-         select
-         0.04 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/media_player">
-         <img src="https://brands.home-assistant.io/_/media_player/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Media player 
-         media_player
-         0.04 s 
       </td>
    </tr>
    <tr>
@@ -1181,198 +523,6 @@ Integrations Utilized
       </td>
       <td>
          Fan 
-         fan
-         0.04 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/zeroconf">
-         <img src="https://brands.home-assistant.io/_/zeroconf/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Zero-configuration networking (zeroconf) 
-         zeroconf
-         0.03 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/weather">
-         <img src="https://brands.home-assistant.io/_/weather/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Weather 
-         weather
-         0.03 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/sensor">
-         <img src="https://brands.home-assistant.io/_/sensor/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Sensor 
-         sensor
-         0.03 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/remote">
-         <img src="https://brands.home-assistant.io/_/remote/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Remote 
-         remote
-         0.02 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/camera">
-         <img src="https://brands.home-assistant.io/_/camera/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Camera 
-         camera
-         0.02 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/climate">
-         <img src="https://brands.home-assistant.io/_/climate/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Climate 
-         climate
-         0.02 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/number">
-         <img src="https://brands.home-assistant.io/_/number/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Number 
-         number
-         0.02 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/image">
-         <img src="https://brands.home-assistant.io/_/image/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Image 
-         image
-         0.02 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/vacuum">
-         <img src="https://brands.home-assistant.io/_/vacuum/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Vacuum 
-         vacuum
-         0.01 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/humidifier">
-         <img src="https://brands.home-assistant.io/_/humidifier/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Humidifier 
-         humidifier
-         0.01 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/system_log">
-         <img src="https://brands.home-assistant.io/_/system_log/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         System Log 
-         system_log
-         0.01 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/cover">
-         <img src="https://brands.home-assistant.io/_/cover/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Cover 
-         cover
-         0.01 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/lovelace">
-         <img src="https://brands.home-assistant.io/_/lovelace/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Dashboards 
-         lovelace
-         0.01 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/image_upload">
-         <img src="https://brands.home-assistant.io/_/image_upload/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Image Upload 
-         image_upload
-         0.01 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/frontend">
-         <img src="https://brands.home-assistant.io/_/frontend/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Home Assistant Frontend 
-         frontend
-         0.01 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/person">
-         <img src="https://brands.home-assistant.io/_/person/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Person 
-         person
-         0.01 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/button">
-         <img src="https://brands.home-assistant.io/_/button/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Button 
-         button
-         0.01 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/analytics">
-         <img src="https://brands.home-assistant.io/_/analytics/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Analytics 
-         analytics
-         0.01 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/calendar">
-         <img src="https://brands.home-assistant.io/_/calendar/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Calendar 
-         calendar
-         0.01 s 
       </td>
    </tr>
    <tr>
@@ -1381,58 +531,6 @@ Integrations Utilized
       </td>
       <td>
          Telegram bot 
-         telegram_bot
-         0.00 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/logger">
-         <img src="https://brands.home-assistant.io/_/logger/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Logger 
-         logger
-         0.00 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/lock">
-         <img src="https://brands.home-assistant.io/_/lock/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Lock 
-         lock
-         0.00 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/network">
-         <img src="https://brands.home-assistant.io/_/network/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Network Configuration 
-         network
-         0.00 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/webhook">
-         <img src="https://brands.home-assistant.io/_/webhook/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Webhook 
-         webhook
-         0.00 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/backup">
-         <img src="https://brands.home-assistant.io/_/backup/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Backup 
-         backup
-         0.00 s 
       </td>
    </tr>
    <tr>
@@ -1446,83 +544,11 @@ Integrations Utilized
       </td>
    </tr>
    <tr>
-      <td><a href="https://www.home-assistant.io/integrations/onboarding">
-         <img src="https://brands.home-assistant.io/_/onboarding/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Home Assistant Onboarding 
-         onboarding
-         0.00 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/usb">
-         <img src="https://brands.home-assistant.io/_/usb/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         USB Discovery 
-         usb
-         0.00 s 
-      </td>
-   </tr>
-   <tr>
       <td><a href="https://www.home-assistant.io/integrations/file_upload">
          <img src="https://brands.home-assistant.io/_/file_upload/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>
          File Upload 
-         file_upload
-         0.00 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/persistent_notification">
-         <img src="https://brands.home-assistant.io/_/persistent_notification/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Persistent Notification 
-         persistent_notification
-         0.00 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/dhcp">
-         <img src="https://brands.home-assistant.io/_/dhcp/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         DHCP Discovery 
-         dhcp
-         0.00 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/websocket_api">
-         <img src="https://brands.home-assistant.io/_/websocket_api/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Home Assistant WebSocket API 
-         websocket_api
-         0.00 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/bluetooth_adapters">
-         <img src="https://brands.home-assistant.io/_/bluetooth_adapters/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Bluetooth Adapters 
-         bluetooth_adapters
-         0.00 s 
-      </td>
-   </tr>
-   <tr>
-      <td><a href="https://www.home-assistant.io/integrations/homeassistant_hardware">
-         <img src="https://brands.home-assistant.io/_/homeassistant_hardware/icon.png" style="width:100px;height:100px;"></a>
-      </td>
-      <td>
-         Home Assistant Hardware 
-         homeassistant_hardware
-         0.00 s 
       </td>
    </tr>
 </table>
