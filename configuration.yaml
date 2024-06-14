@@ -105,14 +105,6 @@ ifttt:
   key: !secret ifttt_key
 google_assistant: !include google_assistant.yaml
 
-camect: #custom component
-  - host: !secret camect_host
-    port: 443
-    username: !secret camect_un
-    password: !secret camect_pw
-    camera_ids: !secret camect_cameras
-#    id: !secret camect_home
-
 telegram_bot:
   - platform: polling
     api_key: !secret telegram_api

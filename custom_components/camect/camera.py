@@ -1,97 +1,131 @@
-"""Support for streaming any camera supported by Camect using WebRTC."""
-import asyncio
-import logging
-from typing import Dict
+"""Support for cameras connected to a Camect Hub."""
+# Lots borrowed from https://github.com/camect/home-assistant-integration/blob/master/camect/camera.py
 
-import aiohttp
-from aiohttp import web
-import async_timeout
+from __future__ import annotations
+
+import logging
+from typing import TYPE_CHECKING
 
 from homeassistant.components import camera
+from homeassistant.config_entries import ConfigEntry
+from homeassistant.const import (
+    ATTR_IDENTIFIERS,
+    ATTR_MANUFACTURER,
+    ATTR_MODEL,
+    ATTR_NAME,
+    ATTR_VIA_DEVICE,
+)
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers.entity import DeviceInfo
+from homeassistant.helpers.entity_platform import AddEntitiesCallback
+
+from .const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
-DOMAIN = 'camect'
+
+if TYPE_CHECKING:
+    from .binary_sensor import CameraMotionSensor
+    from .camecthub import CamectHub
+    from .switch import CameraAlertSwitch
 
 
-def setup_platform(hass, config, add_entities, data):
-    """Add an entity for every camera from Camect Home."""
-    component = hass.data[camera.DOMAIN]
-    hass.http.register_view(CamectWebsocketView(component))
-
-    cams = []
-    homes = hass.data[DOMAIN]
-    for i, home_data in enumerate(data):
-        home = homes[i]
-        camect_site = home.get_cloud_url('')
-        cam_jsons = home.list_cameras()
-        cam_ids = home_data[0]
-        home_id = home_data[1]
-        if cam_jsons:
-            for cj in cam_jsons:
-                if not cam_ids or cj['id'] in cam_ids:
-                    cams.append(Camera(home_id, home, cj, camect_site))
-    add_entities(cams, True)
-    return True
+async def async_setup_entry(
+    hass: HomeAssistant,
+    config_entry: ConfigEntry,
+    async_add_entities: AddEntitiesCallback,
+) -> None:
+    """Set up the cameras connected to this Camect Hub."""
+    hub: CamectHub = hass.data[DOMAIN][config_entry.entry_id]
+    hub_cameras = await hass.async_add_executor_job(hub.api.list_cameras)
+    async_add_entities(Camera(hub, camect_camera) for camect_camera in hub_cameras)
 
 
 class Camera(camera.Camera):
-    """An implementation of a camera supported by Camect Home."""
+    """An implementation of a camera supported by Camect Hub."""
 
-    def __init__(self, home_id: str, home, json: Dict[str, str], camect_site: str):
-        """Initialize a camera supported by Camect Home."""
-        super(Camera, self).__init__()
-        self._home_id = home_id
-        self._home = home
-        self._device_id = json['id']
-        if self._home_id:
-            self._id = '{}_{}{}'.format(DOMAIN, self._home_id, self._device_id)
-        else:
-            self._id = '{}_{}'.format(DOMAIN, self._device_id)
-        self.entity_id = '{}.{}'.format(camera.DOMAIN, self._id)
-        self._name = json['name']
-        self._make = json['make'] or ''
-        self._model = json['model'] or ''
-        self._url = json['url']
-        self._width = int(json['width'])
-        self._height = int(json['height'])
-        self._camect_site = camect_site
+    def __init__(self, hub: CamectHub, json: dict[str, str]) -> None:
+        """Initialize a camera supported by Camect Hub."""
+        super().__init__()
+        self.hub = hub
+        self.api = hub.api
+        self.device_id = json["id"]
+        self._id = f"{DOMAIN}_{hub.hub_id}_{json['id']}"
+        self.entity_id = f"{camera.DOMAIN}.{self._id}"
+        self._name = json["name"]
+        self._make = json["make"] or ""
+        self._model = json["model"] or ""
+        self._url = json["url"]
+        self._width = int(json["width"])
+        self._height = int(json["height"])
+        self.is_alert_disabled = json["is_alert_disabled"]
+        self._disabled = json["disabled"]
+        self.alert_switch: list[CameraAlertSwitch] = []
+        self.motion_sensor: list[CameraMotionSensor] = []
+        self.last_motion = None
+        self.last_detected_obj = ""
+        self.offline = False
+
+        hub.cameras.append(self)
 
     @property
-    def name(self):
+    def name(self) -> str:
         """Return the name of this camera."""
         return self._name
 
     @property
-    def brand(self):
+    def brand(self) -> str:
         """Return the camera brand."""
         return self._make
 
     @property
-    def model(self):
+    def model(self) -> str:
         """Return the camera model."""
         return self._model
 
     @property
-    def is_recording(self):
+    def device_info(self) -> DeviceInfo:
+        """Information about this entity/device."""
+        return {
+            ATTR_IDENTIFIERS: {(DOMAIN, self.entity_id)},
+            ATTR_NAME: self._name,
+            ATTR_MODEL: self._model,
+            ATTR_MANUFACTURER: self._make,
+            ATTR_VIA_DEVICE: (DOMAIN, self.hub.id),
+        }
+
+    @property
+    def is_streaming(self) -> bool:
+        """Return true if the device is streaming."""
+        return not self._disabled and not self.offline
+
+    @property
+    def is_recording(self) -> bool:
         """Return true if the device is recording."""
-        return True
+        return not self._disabled and not self.offline
 
     @property
-    def is_on(self):
+    def is_on(self) -> bool:
         """Return true if on."""
-        return True
+        return not self._disabled and not self.offline
 
     @property
-    def unique_id(self):
+    def unique_id(self) -> str:
         """Return a unique ID."""
         return self._id
 
     @property
-    def entity_picture(self):
-        """Return a link to the camera feed as entity picture."""
-        return None
+    def available(self) -> bool:
+        """Return True if camera and is enabled."""
+        return not self._disabled and not self.offline
 
-    def camera_image(self, width = None, height = None) -> bytes:
+    @property
+    def motion_detection_enabled(self) -> bool:
+        """Return True if camera alerts are enabled."""
+        return not self.is_alert_disabled
+
+    def camera_image(
+        self, width: int | None = None, height: int | None = None
+    ) -> bytes:
         """Return a still image response from the camera."""
         # The Camect library doesn't handle width or height being None so we override
         # those parameters with the image dimensions previously reported by Camect
@@ -99,56 +133,23 @@ class Camera(camera.Camera):
             width = self._width
         if height is None:
             height = self._height
-        return self._home.snapshot_camera(self._device_id, width, height)
+        return self.api.snapshot_camera(self.device_id, width, height)
+
+    async def async_update(self) -> None:
+        """Ensure the camera info is kept up-to-date."""
+        cam_json = await self.hass.async_add_executor_job(self.hub.api.list_cameras)
+        for json in cam_json:
+            if json["id"] in self.device_id:
+                self._name = json["name"]
+                self._make = json["make"] or ""
+                self._model = json["model"] or ""
+                self._url = json["url"]
+                self._width = int(json["width"])
+                self._height = int(json["height"])
+                self.is_alert_disabled = json["is_alert_disabled"]
+                self._disabled = json["disabled"]
 
     @property
-    def extra_state_attributes(self):
-        """Return the state attributes."""
-        return {
-            'device_id': self._device_id,
-            'device_url': self._url,
-            'video_width': self._width,
-            'video_height': self._height,
-            'camect_site': self._camect_site,
-            'ws_url': '/api/camect_proxy/websocket/' + self.entity_id,
-        }
-
-    @property
-    def should_poll(self):
-        """No need for the poll."""
-        return False
-
-    def home(self):
-        return self._home
-
-
-class CamectWebsocketView(camera.CameraView):
-    """Camect view to proxy Websocket to home."""
-
-    url = '/api/camect_proxy/websocket/{entity_id}'
-    name = 'api:camect:websocket'
-
-    async def handle(self, request, camera):
-        """Serve Camect Websocket."""
-        ha_ws = web.WebSocketResponse()
-        await ha_ws.prepare(request)
-
-        home = camera.home()
-        ws_url = home.get_unsecure_websocket_url()
-        if not ws_url:
-            raise web.HTTPInternalServerError()
-        session = aiohttp.ClientSession()
-        camect_ws = await session.ws_connect(ws_url, ssl=False)
-
-        async def forward(src, dst):
-            async for msg in src:
-                if msg.type == aiohttp.WSMsgType.BINARY:
-                    await dst.send_bytes(msg.data)
-                else:
-                    _LOGGER.warning(
-                        "Received invalid message type: %s", msg.type)
-        await asyncio.gather(
-            forward(ha_ws, camect_ws), forward(camect_ws, ha_ws))
-
-        ha_ws.close()
-        camect_ws.close()
+    def should_poll(self) -> bool:
+        """We do want to poll so HA stays in sync with Camect."""
+        return True

@@ -1,15 +1,16 @@
 {
   "domain": "camect",
   "name": "Camect",
-  "documentation": "https://github.com/camect/home-assistant-integration",
-  "issue_tracker": "https://github.com/camect/home-assistant-integration/issues",
-  "iot_class": "local_polling",
-  "version": "2021.03.04",
+  "config_flow": true,
+  "documentation": "https://github.com/Fr3d/camect-ha",
+  "issue_tracker": "https://github.com/Fr3d/camect-ha/issues",
+  "version": "1.0.0",
   "requirements": [
-    "camect-py==0.1.10"
+    "camect-py==0.2.0"
   ],
   "dependencies": [],
   "codeowners": [
-    "@camect"
-  ]
+    "@Fr3d"
+  ],
+  "iot_class": "local_push"
 }

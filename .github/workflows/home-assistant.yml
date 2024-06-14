@@ -20,11 +20,6 @@ jobs:
           git clone https://github.com/sebr/bhyve-home-assistant.git bhyve-home-assistant/
           cp -R bhyve-home-assistant/custom_components/bhyve custom_components
           # ls custom_components/bhyve
-      - name: Add camect
-        run: |
-          git clone https://github.com/camect/home-assistant-integration.git camect/
-          cp -R camect custom_components
-          # ls custom_components/camect
       - name: Add circadian_lighting
         run: |
           git clone https://github.com/claytonjn/hass-circadian_lighting.git circadian_lighting/
@@ -40,11 +35,6 @@ jobs:
           git clone https://github.com/azogue/eventsensor.git eventsensor/
           cp -R eventsensor/custom_components/eventsensor custom_components
           # ls custom_components/eventsensor
-      - name: Add garbage_collection
-        run: |
-          git clone https://github.com/bruxy70/Garbage-Collection.git garbage_collection/
-          cp -R garbage_collection/custom_components/garbage_collection custom_components
-          # ls custom_components/garbage_collection
       - name: Add google_home
         run: |
           git clone https://github.com/leikoilja/ha-google-home.git google_home/

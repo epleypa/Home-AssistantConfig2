@@ -1,97 +1,48 @@
-"""
-Support for Camect Home.
+"""The Camect integration."""
+from __future__ import annotations
 
-Example configuration.yaml entry:
-camect:
-    - host: camect.local
-      port: 443
-      username: admin
-      password: XXXXX
-      camera_ids: aaa,bbbb
-      id: (optional)  // provide this if you have multiple Camect devices so you can
-                      // tell which camera is from which Camect device.
-"""
-import voluptuous as vol
+from homeassistant.config_entries import ConfigEntry
+from homeassistant.const import Platform
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers import device_registry as dr
 
-from homeassistant.components import camera
-from homeassistant.const import (
-    CONF_HOST, CONF_ID, CONF_PASSWORD, CONF_PORT, CONF_USERNAME)
-from homeassistant.helpers import config_validation as cv, discovery
+from .camecthub import CamectHub
+from .const import ATTR_CAMECT_MAKE, ATTR_CAMECT_MODEL, DOMAIN
 
-ATTR_MODE = 'mode'
-CONF_CAMERA_IDS = 'camera_ids'
-DEFAULT_HOST = 'camect.local'
-DEFAULT_PORT = 8443
-DEFAULT_USERNAME = 'admin'
-DOMAIN = 'camect'
-SERVICE_CHANGE_OP_MODE = 'change_op_mode'
-SERVICE_DISABLE_CAMERA_ALERT = 'disable_camera_alert'
-SERVICE_ENABLE_CAMERA_ALERT = 'enable_camera_alert'
-CAMERA_IDS = 'camera'
-
-CONFIG_SCHEMA = vol.Schema({
-    DOMAIN: vol.Schema(vol.All([{
-        vol.Optional(CONF_HOST, default=DEFAULT_HOST): cv.string,
-        vol.Optional(CONF_PORT, default=DEFAULT_PORT): cv.port,
-        vol.Optional(CONF_USERNAME, default=DEFAULT_USERNAME): cv.string,
-        vol.Required(CONF_PASSWORD): cv.string,
-        vol.Optional(CONF_ID): cv.string,
-        vol.Optional(CONF_CAMERA_IDS, default=[]): vol.All(
-            cv.ensure_list_csv, [cv.string]),
-    }], vol.Length(min=1))),
-}, extra=vol.ALLOW_EXTRA)
-
-CHANGE_OP_MODE_SCHEMA = vol.Schema({
-    vol.Required(ATTR_MODE): cv.string
-})
-
-CAMERA_ALERT_SCHEMA = vol.Schema({
-    vol.Required(CAMERA_IDS, default=[]): vol.All(
-        cv.ensure_list_csv, [cv.string])
-})
-
-def setup(hass, config):
-    """Set up the Camect component."""
-    import camect
-
-    # Create camect.Home instances.
-    homes = []
-    data = []
-    for conf in config[DOMAIN]:
-        host = conf.get(CONF_HOST)
-        port = conf.get(CONF_PORT)
-        home = camect.Home('{}:{}'.format(host, port),
-            conf.get(CONF_USERNAME), conf.get(CONF_PASSWORD))
-        home.add_event_listener(lambda evt: hass.bus.fire('camect_event', evt))
-        homes.append(home)
-        data.append((conf.get(CONF_CAMERA_IDS), conf.get(CONF_ID)))
-    hass.data[DOMAIN] = homes
-    discovery.load_platform(hass, camera.DOMAIN, DOMAIN, data, config)
+PLATFORMS: list[Platform] = [Platform.CAMERA, Platform.SWITCH, Platform.BINARY_SENSOR]
 
 
-    # Register service.
-    def handle_change_op_mode_service(call):
-        mode = call.data.get(ATTR_MODE).upper()
-        if mode in ('HOME', 'DEFAULT'):
-            home.set_mode(mode)
-        elif mode == 'AWAY':
-            home.set_mode('DEFAULT')
-    hass.services.register(
-        DOMAIN, SERVICE_CHANGE_OP_MODE, handle_change_op_mode_service,
-        schema=CHANGE_OP_MODE_SCHEMA)
+async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
+    """Set up the Camect integration from a config entry."""
 
-    def handle_disable_camera_alert(call):
-        camera = call.data.get(CAMERA_IDS)
-        home.disable_alert(camera, "HomeAssistant")
-    hass.services.register(
-        DOMAIN, SERVICE_DISABLE_CAMERA_ALERT, handle_disable_camera_alert,
-        schema=CAMERA_ALERT_SCHEMA)
+    hub = CamectHub(hass, entry)
+    if not await hub.async_initialize_hub(hass):
+        return False
 
-    def handle_enable_camera_alert(call):
-        camera = call.data.get(CAMERA_IDS)
-        home.enable_alert(camera, "HomeAssistant")
-    hass.services.register(
-        DOMAIN, SERVICE_ENABLE_CAMERA_ALERT, handle_enable_camera_alert,
-        schema=CAMERA_ALERT_SCHEMA)
+    device_registry = dr.async_get(hass)
+    device_registry.async_get_or_create(
+        config_entry_id=entry.entry_id,
+        identifiers={
+            (DOMAIN, hub.id),
+        },
+        manufacturer=ATTR_CAMECT_MAKE,
+        name=hub.info["name"],
+        model=ATTR_CAMECT_MODEL,
+        sw_version="1.0",
+    )
+
+    await hass.config_entries.async_forward_entry_setups(entry, [Platform.CAMERA])
+    await hass.config_entries.async_forward_entry_setups(entry, [Platform.SWITCH])
+    await hass.config_entries.async_forward_entry_setups(
+        entry, [Platform.BINARY_SENSOR]
+    )
 
     return True
+
+
+async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
+    """Unload a config entry."""
+    if unload_ok := await hass.config_entries.async_unload_platforms(entry, PLATFORMS):
+        hass.data[DOMAIN].pop(entry.entry_id)
+
+    return unload_ok
