@@ -123,7 +123,7 @@ telegram_bot:
 circadian_lighting:
 
 amcrest:
-  - host: 192.168.1.231
+  - host: !secret amcrest_host_diningroom
     name: Amcrest Dining Room
     username: !secret amcrest_un
     password: !secret amcrest_pw
@@ -135,7 +135,7 @@ amcrest:
       - ptz_preset
     switches:
       - privacy_mode
-  - host: 192.168.1.232
+  - host: !secret amcrest_host_office
     name: Amcrest Office
     username: !secret amcrest_un
     password: !secret amcrest_pw

@@ -30,20 +30,6 @@
     target:
       entity_id:
       - group.hallway_lights
-      - light.office_strip
-  - service: notify.discord
-    data_template:
-      target: '814328602270498817'
-      message: Time to start the day!
-      data:
-        embed:
-          title: Today's Forecast
-          description: '{{ state_attr(''weather.kdca_daynight'',''forecast'')[0][''detailed_description'']
-            }}'
-          thumbnail:
-            url: https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/US-NationalWeatherService-Logo.svg/1200px-US-NationalWeatherService-Logo.svg.png
-          footer:
-            text: NWS KDCA
   - delay:
       hours: 0
       minutes: 30
@@ -55,7 +41,55 @@
     target:
       entity_id:
       - group.hallway_lights
-      - light.office_strip
+      - group.office_lights
+      - light.under_bed_lights
+  - service: notify.discord
+    data_template:
+      target: '814328602270498817'
+      message: "{# Deliveries Sentence #}\n  {% macro deliveries_sentence() -%}\n
+        \       {%- if states(\"sensor.mail_usps_mail\")|int(0) == 0 -%}\n          No\n
+        \       {%- else -%}\n          {{states(\"sensor.mail_usps_mail\")|int(0)}}\n
+        \       {%- endif -%}\n      {{' '}} \n        {%- if states(\"sensor.mail_usps_mail\")|int(0)
+        == 0 -%}\n          mail\n        {%- elif states(\"sensor.mail_usps_mail\")|int(0)
+        == 1 -%}\n          piece of mail\n        {%- else -%}\n          pieces
+        of mail\n        {%- endif -%}\n      {{' '}}will be delivered.{{' '}} \n
+        \       {%- if states(\"sensor.mail_packages_in_transit\")|int(0) == 0 -%}\n
+        \         No\n        {%- else -%}\n          {{states(\"sensor.mail_packages_in_transit\")|int(0)}}\n
+        \       {%- endif -%}\n      {{' '}} \n        {%- if states(\"sensor.mail_packages_in_transit\")|int(0)
+        == 1 -%}\n          package is\n        {%- else -%}\n          packages are\n
+        \       {%- endif -%}\n      {{' '}}in transit.{{' '}}\n  {%- endmacro %}\n{{deliveries_sentence()}}"
+      data:
+        embed:
+          title: Package Status
+          description: "{# Deliveries Sentence #}\n  {% macro deliveries_sentence()
+            -%}\n        {%- if states(\"sensor.mail_usps_mail\")|int(0) == 0 -%}\n
+            \         No\n        {%- else -%}\n          {{states(\"sensor.mail_usps_mail\")|int(0)}}\n
+            \       {%- endif -%}\n      {{' '}} \n        {%- if states(\"sensor.mail_usps_mail\")|int(0)
+            == 1 -%}\n          letter\n        {%- else -%}\n          letters\n
+            \       {%- endif -%}\n      {{' '}}will be delivered.{{' '}} \n        {%-
+            if states(\"sensor.mail_usps_delivering\")|int(0) == 0 -%}\n          No\n
+            \       {%- else -%}\n          {{states(\"sensor.mail_usps_delivering\")|int(0)}}\n
+            \       {%- endif -%}\n      {{' '}} \n        {%- if states(\"sensor.mail_usps_delivering\")|int(0)
+            == 1 -%}\n          USPS package\n        {%- else -%}\n          USPS
+            packages\n        {%- endif -%}\n      {{' '}}\n{{''}}\n        {%- if
+            states(\"sensor.mail_fedex_delivering\")|int(0) == 0 -%}\n          No\n
+            \       {%- else -%}\n          {{states(\"sensor.mail_fedex_delivering\")|int(0)}}\n
+            \       {%- endif -%}\n      {{' '}} \n        {%- if states(\"sensor.mail_fedex_delivering\")|int(0)
+            == 1 -%}\n          FedEx package\n        {%- else -%}\n          Fedex
+            packages\n        {%- endif -%}\n      {{' '}}\n{{''}}\n      {%- if states(\"sensor.mail_ups_delivering\")|int(0)
+            == 0 -%}\n          No\n        {%- else -%}\n          {{states(\"sensor.mail_ups_delivering\")|int(0)}}\n
+            \       {%- endif -%}\n      {{' '}} \n        {%- if states(\"sensor.mail_ups_delivering\")|int(0)
+            == 1 -%}\n          UPS package\n        {%- else -%}\n          UPS packages\n
+            \       {%- endif -%}\n      {{' '}}\n{{''}}\n      {%- if states(\"sensor.mail_amazon_packages\")|int(0)
+            == 0 -%}\n          No\n        {%- else -%}\n          {{states(\"sensor.mail_amazon_packages\")|int(0)}}\n
+            \       {%- endif -%}\n      {{' '}} \n        {%- if states(\"sensor.mail_amazon_packages\")|int(0)
+            == 1 -%}\n          Amazon package\n        {%- else -%}\n          Amazon
+            packages\n        {%- endif -%}\n      {{' '}}{{' '}}\n  {%- endmacro
+            %}\n{{deliveries_sentence()}}"
+          thumbnail:
+            url: https://brands.home-assistant.io/mail_and_packages/logo.png
+          footer:
+            text: Mail and Packages
   mode: single
 - id: later
   alias: See You Later
@@ -76,7 +110,7 @@
   alias: Fan
   trigger:
   - platform: time_pattern
-    hours: '1'
+    hours: /1
   - platform: state
     entity_id: fan.hvac_fan
     to: 'on'
@@ -714,6 +748,19 @@
       - cat
     event_type: camect_event
     platform: event
+  - event_data:
+      cam_name: Front Door
+      detected_obj:
+      - cat
+    event_type: camect_event
+    platform: event
+  - event_data:
+      cam_name: Front Door
+      detected_obj:
+      - person
+    event_type: camect_event
+    platform: event
+    enabled: false
   condition:
   - condition: template
     value_template: '{% if trigger.event.data.cam_name != "" and ( as_timestamp(now())
@@ -807,6 +854,7 @@
           - light.tv_backlight
           - group.front_lights
           - group.holiday_lights
+          - light.under_bed_lights
         data: {}
     - conditions:
       - condition: time
@@ -982,7 +1030,15 @@
     - alarm_control_panel.10th_street
     from: disarmed
     id: armed
-  condition: []
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: alarm_control_panel.10th_street
+      state: unavailable
+    - condition: state
+      entity_id: alarm_control_panel.10th_street
+      state: unknown
   action:
   - if:
     - condition: or
@@ -1000,6 +1056,11 @@
         entity_id:
         - switch.amcrest_dining_room_privacy_mode
         - switch.amcrest_office_privacy_mode
+    - service: alarm_control_panel.alarm_arm_away
+      metadata: {}
+      data: {}
+      target:
+        device_id: fa72deb95f10377f1f021123e1f54026
   - if:
     - condition: or
       conditions:
@@ -1022,6 +1083,11 @@
         entity_id:
         - switch.amcrest_dining_room_privacy_mode
         - switch.amcrest_office_privacy_mode
+    - service: alarm_control_panel.alarm_disarm
+      metadata: {}
+      data: {}
+      target:
+        device_id: fa72deb95f10377f1f021123e1f54026
   mode: restart
 - id: '1675640672790'
   alias: Tag Bedroom Overhead On/Off is scanned
@@ -1070,7 +1136,10 @@
   - service: light.toggle
     data: {}
     target:
-      device_id: d1205c6f345891abf6cd332b16a8963d
+      device_id:
+      - d1205c6f345891abf6cd332b16a8963d
+      - 3b70e075d4f3a226381eb231d6c331fe
+      - 3b2327cbac3a69e8ebef9276606eadca
   mode: single
 - *id001
 - id: '1696126117145'
@@ -1150,14 +1219,165 @@
           entity_id: group.patio_lights
     default: []
   mode: single
-- id: '1705291929945'
-  alias: Unavailable
+- id: '1705613818940'
+  alias: Blink Camera
   description: ''
   trigger:
   - platform: state
     entity_id:
-    - switch.peter_table_light
-    to: unavailable
+    - binary_sensor.cat_bed_camera_motion
+    to: 'on'
+    id: catbed
+  - platform: state
+    entity_id:
+    - binary_sensor.bedroom_camera_motion
+    to: 'on'
+    id: bedroom
+  action:
+  - service: blink.save_video
+    target:
+      entity_id: '{%- if trigger.id == ''catbed'' -%}camera.cat_bed_camera{%- else
+        -%}camera.bedroom_camera{%- endif -%}'
+    data:
+      filename: /config/www/videos/blink_video_{{ now().strftime('%Y%m%d_%H%M') }}.mp4
+  - delay: 00:00:01
+    enabled: false
+  - data_template:
+      target: '812545796339400708'
+      message: '{%- if trigger.id == ''catbed'' -%}Cat Bed{%- else -%}Bedroom{%- endif
+        -%} Camera detected motion'
+      data:
+        images:
+        - /config/www/videos/blink_video_{{ now().strftime('%Y%m%d_%H%M') }}.mp4
+        embed:
+          description: '{%- if trigger.id == ''catbed'' -%}Cat Bed{%- else -%}Bedroom{%-
+            endif -%}'
+          author:
+            name: Home Assistant
+            icon_url: https://www.home-assistant.io/images/favicon-192x192-full.png
+          fields: []
+    service: notify.discord
+  mode: single
+- id: '1705632083918'
+  alias: 0Test Nest
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 16015c01b7a49cafbfcdb5d184a8b3a1
+    domain: nest
+    type: camera_motion
+  - platform: device
+    device_id: 238b3c51d11f99da1bd7bedd372f050a
+    domain: nest
+    type: camera_motion
+  - platform: device
+    device_id: 16015c01b7a49cafbfcdb5d184a8b3a1
+    domain: nest
+    type: camera_sound
+  - platform: device
+    device_id: 16015c01b7a49cafbfcdb5d184a8b3a1
+    domain: nest
+    type: camera_person
+  - platform: device
+    device_id: 6124c7af4dc88ecfef3ebb42daa5ecf6
+    domain: nest
+    type: camera_motion
+  - platform: device
+    device_id: 238b3c51d11f99da1bd7bedd372f050a
+    domain: nest
+    type: camera_person
   condition: []
-  action: []
+  action:
+  - service: notify.discord
+    metadata: {}
+    data:
+      target: '812545796339400708'
+      message: test camera
+      data:
+        images:
+        - /api/nest/event_media/{{ trigger.event.data.device_id }}/{{ trigger.event.data.nest_event_id
+          }}/thumbnail
+  - service: notify.mobile_app_peter_sm_s911u
+    data:
+      data:
+        image: /api/nest/event_media/{{ trigger.event.data.device_id }}/{{ trigger.event.data.nest_event_id
+          }}/thumbnail
+      message: test camera
+  mode: single
+- id: '1710214521979'
+  alias: Weather Light
+  description: ''
+  trigger:
+  - entity_id:
+    - weather.kdca_daynight
+    platform: state
+  condition: []
+  action:
+  - variables:
+      color_options:
+        clear-night: white
+        sunny: yellow
+        cloudy: purple
+        partlycloudy: purple
+        fog: yellowgreen
+        rainy: blue
+        windy: darkorange
+        snowy: cyan
+        lightning: red
+        hail: aquamarine
+        windy-variant: lightsalmon
+        lightning-rainy: crimson
+      color: '{{ color_options.get(states(''weather.kdca_daynight'')) }}'
+  - alias: Save current light State to Scene
+    service: scene.create
+    data:
+      scene_id: before
+      snapshot_entities:
+      - light.living_room_led
+      - light.office_led
+      - light.bedroom_led
+      - light.under_bed_lights
+      - light.govee_gaming_light_strip_g1
+      - light.office_lamp
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - alias: Flash light color based on weather condition
+    service: light.turn_on
+    data:
+      color_name: '{{color}}'
+      brightness_pct: 100
+      flash: long
+    target:
+      entity_id:
+      - light.living_room_led
+      - light.office_led
+      - light.bedroom_led
+      - light.under_bed_lights
+      - light.govee_gaming_light_strip_g1
+      - light.office_lamp
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 3
+      milliseconds: 0
+  - alias: Return light to white
+    service: light.turn_on
+    data:
+      color_name: white
+      brightness_pct: 100
+      flash: long
+    target:
+      entity_id:
+      - light.living_room_led
+      - light.office_led
+      - light.bedroom_led
+      - light.under_bed_lights
+      - light.govee_gaming_light_strip_g1
+      - light.office_lamp
+  - alias: Return light to previous state
+    entity_id: scene.before
+    service: scene.turn_on
   mode: single

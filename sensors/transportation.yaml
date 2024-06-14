@@ -68,28 +68,28 @@
 
 - platform: template
   sensors:
-    wmata_gr_no:
-      friendly_name: "Green Line Northbound"
-      value_template: '
-        {% set trains = states.sensor.wmata.attributes.Trains %}
-        {% for train in trains if train.DestinationCode == "E10" %}
-        {% if loop.first %}{{ train.Min }}
-        {% elif loop.last %} and {{ train.Min }}
-        {% else %}, {{ train.Min }},
-        {% endif %}
-        {% endfor %}'
-      unit_of_measurement: "minutes"
-    wmata_gr_so:
-      friendly_name: "Green Line Southbound"
-      value_template: '
-        {% set trains = states.sensor.wmata.attributes.Trains %}
-        {% for train in trains if train.DestinationCode == "F11" %}
-        {% if loop.first %}{{ train.Min }}
-        {% elif loop.last %} and {{ train.Min }}
-        {% else %}, {{ train.Min }},
-        {% endif %}
-        {% endfor %}'
-      unit_of_measurement: "minutes"
+    # wmata_gr_no:
+      # friendly_name: "Green Line Northbound"
+      # value_template: '
+        # {% set trains = states.sensor.wmata.attributes.Trains %}
+        # {% for train in trains if train.DestinationCode == "E10" %}
+        # {% if loop.first %}{{ train.Min }}
+        # {% elif loop.last %} and {{ train.Min }}
+        # {% else %}, {{ train.Min }},
+        # {% endif %}
+        # {% endfor %}'
+      # unit_of_measurement: "minutes"
+    # wmata_gr_so:
+      # friendly_name: "Green Line Southbound"
+      # value_template: '
+        # {% set trains = states.sensor.wmata.attributes.Trains %}
+        # {% for train in trains if train.DestinationCode == "F11" %}
+        # {% if loop.first %}{{ train.Min }}
+        # {% elif loop.last %} and {{ train.Min }}
+        # {% else %}, {{ train.Min }},
+        # {% endif %}
+        # {% endfor %}'
+      # unit_of_measurement: "minutes"
     washer_power:
       friendly_name: "Washer Power"
       value_template: "{{ state_attr('switch.washer','current_power_w') | default('0') }}"
@@ -101,6 +101,6 @@
       unit_of_measurement: "W"
       icon_template: mdi:tumble-dryer
 
-- platform: seventeentrack
-  username: !secret 17track_email
-  password: !secret 17track_pw
+# - platform: seventeentrack
+  # username: !secret 17track_email
+  # password: !secret 17track_pw

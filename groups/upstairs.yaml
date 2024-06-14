@@ -4,6 +4,7 @@ upstairs_lights:
     - group.office_lights
     - group.bedroom_lights
     - group.hallway_lights
+    - group.bathroom_lights
 
 hallway_lights:
   name: Hallway Lights
@@ -29,9 +30,10 @@ office_lights:
   entities:
     - light.office_light
     - light.office_overhead_lights
-    - light.office_strip
-    - light.office_strip_2
+    - light.office_right_strip
+    - light.office_left_strip
     - light.office_lamp
+    - light.office_gaming_strip
 
 bedroom_table_lights:
   name: Bedroom Table Lights
@@ -45,3 +47,11 @@ bedroom_lights:
     - group.bedroom_table_lights
     - light.bedroom_overhead_light
     - switch.bedroom_closet_lights
+    - light.under_bed_lights
+
+bathroom_lights:
+  name: Bathroom Lights
+  entities:
+    - light.bathroom_left_light
+    - light.bathroom_center_light
+    - light.bathroom_right_light

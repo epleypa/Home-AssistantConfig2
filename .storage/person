@@ -7,7 +7,8 @@
       {
         "device_trackers": [
           "device_tracker.peter_sm_s911u",
-          "device_tracker.peter_watch4"
+          "device_tracker.peter_watch4",
+          "device_tracker.galaxy_watch4_yyzf"
         ],
         "id": "6c48bdcdd7c4483a98b763567743b7a5",
         "name": "Peter",
@@ -16,7 +17,7 @@
       },
       {
         "device_trackers": [
-          "device_tracker.kelley_sm_s911u"
+          "device_tracker.sm_s921u1"
         ],
         "id": "abd93aa045b14dd2a642a34c40bec196",
         "name": "Kelley",
