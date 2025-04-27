@@ -30,7 +30,7 @@ kitchen_lights:
   name: Kitchen Lights
   entities:
     - switch.kitchen_cabinet_lights
-    - light.kitchen_overhead_lights
+    - light.kitchen_can_lights
     - switch.bar_lights
 
 outdoor_lights:

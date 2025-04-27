@@ -180,3 +180,623 @@
       entity_only: true
     group.bedroom_lights:
       entity_only: true
+- id: '1730843951068'
+  name: US Election
+  entities:
+    light.living_room_light_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 237.6
+      - 100
+      rgb_color:
+      - 0
+      - 10
+      - 255
+      xy_color:
+      - 0.136
+      - 0.041
+      friendly_name: Living Room Light 1
+      supported_features: 32
+      state: 'on'
+    light.living_room_light_2:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 6024
+      color_temp: 166
+      hs_color:
+      - 31.007
+      - 6.862
+      rgb_color:
+      - 255
+      - 246
+      - 237
+      xy_color:
+      - 0.339
+      - 0.338
+      friendly_name: Living Room Light 2
+      supported_features: 32
+      state: 'on'
+    light.living_room_light_3:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      friendly_name: Living Room Light 3
+      supported_features: 32
+      state: 'on'
+    light.hallway_stairs_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      friendly_name: Hallway Stairs Light
+      supported_features: 32
+      state: 'on'
+    light.hallway_bathroom_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 6097
+      color_temp: 164
+      hs_color:
+      - 31.908
+      - 6.078
+      rgb_color:
+      - 255
+      - 247
+      - 239
+      xy_color:
+      - 0.337
+      - 0.337
+      friendly_name: Hallway Bathroom Light
+      supported_features: 32
+      state: 'on'
+    light.hallway_laundry_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 237.6
+      - 100
+      rgb_color:
+      - 0
+      - 10
+      - 255
+      xy_color:
+      - 0.136
+      - 0.041
+      friendly_name: Hallway Laundry Light
+      supported_features: 32
+      state: 'on'
+    switch.party_lights:
+      friendly_name: Party Lights
+      state: 'on'
+    switch.circadian_lighting_circadian_brightness:
+      hs_color:
+      - 28.681
+      - 71.373
+      brightness: 99.95696169517741
+      colortemp: 2500
+      icon: mdi:theme-light-dark
+      friendly_name: Circadian Brightness
+      state: 'off'
+    switch.circadian_lighting_circadian_lighting:
+      hs_color:
+      - 28.681
+      - 71.373
+      brightness: 99.95696169517741
+      colortemp: 2500
+      icon: mdi:theme-light-dark
+      friendly_name: Circadian Lighting
+      state: 'off'
+    light.storage_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 237.6
+      - 100
+      rgb_color:
+      - 0
+      - 10
+      - 255
+      xy_color:
+      - 0.136
+      - 0.041
+      friendly_name: Storage Light
+      supported_features: 32
+      state: 'on'
+  metadata:
+    light.living_room_light_1:
+      entity_only: true
+    light.living_room_light_2:
+      entity_only: true
+    light.living_room_light_3:
+      entity_only: true
+    light.hallway_stairs_light:
+      entity_only: true
+    light.hallway_bathroom_light:
+      entity_only: true
+    light.hallway_laundry_light:
+      entity_only: true
+    switch.party_lights:
+      entity_only: true
+    switch.circadian_lighting_circadian_brightness:
+      entity_only: true
+    switch.circadian_lighting_circadian_lighting:
+      entity_only: true
+    light.storage_light:
+      entity_only: true
+  icon: mdi:vote
+- id: '1734992868166'
+  name: Christmas
+  entities:
+    light.office_left_strip:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9000
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - brightness
+      - color_temp
+      - onoff
+      - rgb
+      color_mode: color_temp
+      brightness: 196
+      color_temp_kelvin: 0
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      icon: mdi:led-strip-variant
+      friendly_name: Office Left Strip
+      supported_features: 0
+      state: 'on'
+    switch.office_left_strip_gradient_toggle:
+      friendly_name: Office Left Strip Gradient Toggle
+      state: unknown
+    light.office_right_strip:
+      min_color_temp_kelvin: 2500
+      max_color_temp_kelvin: 9000
+      min_mireds: 111
+      max_mireds: 400
+      effect_list:
+      - 'Off'
+      - Aurora
+      - Bubbling Cauldron
+      - Candy Cane
+      - Christmas
+      - Flicker
+      - Hanukkah
+      - Haunted Mansion
+      - Icicle
+      - Lightning
+      - Ocean
+      - Rainbow
+      - Raindrop
+      - Spring
+      - Valentines
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect: 'off'
+      color_mode: hs
+      brightness: 207
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 120
+      - 100
+      rgb_color:
+      - 0
+      - 255
+      - 0
+      xy_color:
+      - 0.172
+      - 0.747
+      friendly_name: Office Right Strip
+      supported_features: 36
+      state: 'on'
+    light.office_gaming_strip:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9000
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - brightness
+      - color_temp
+      - onoff
+      - rgb
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 0
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      icon: mdi:television-ambient-light
+      friendly_name: Office Gaming Strip
+      supported_features: 0
+      state: 'on'
+    switch.office_gaming_strip_gradient_toggle:
+      friendly_name: Office Gaming Strip Gradient Toggle
+      state: unknown
+    light.office_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      friendly_name: Office Light
+      supported_features: 32
+      state: 'on'
+    light.under_bed_lights:
+      effect_list:
+      - 'Off'
+      - Aurora
+      - Bubbling Cauldron
+      - Candy Cane
+      - Christmas
+      - Flicker
+      - Hanukkah
+      - Haunted Mansion
+      - Icicle
+      - Lightning
+      - Ocean
+      - Rainbow
+      - Raindrop
+      - Spring
+      - Valentines
+      supported_color_modes:
+      - hs
+      effect: 'off'
+      color_mode: hs
+      brightness: 255
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      icon: mdi:led-strip-variant
+      friendly_name: Under Bed Lights
+      supported_features: 36
+      state: 'on'
+    light.hallway_laundry_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      friendly_name: Hallway Laundry Light
+      supported_features: 32
+      state: 'on'
+    light.hallway_stairs_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 118.8
+      - 100
+      rgb_color:
+      - 5
+      - 255
+      - 0
+      xy_color:
+      - 0.173
+      - 0.746
+      friendly_name: Hallway Stairs Light
+      supported_features: 32
+      state: 'on'
+    light.storage_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 180
+      - 100
+      rgb_color:
+      - 0
+      - 255
+      - 255
+      xy_color:
+      - 0.151
+      - 0.343
+      friendly_name: Storage Light
+      supported_features: 32
+      state: 'on'
+    light.tv_backlight:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 118.8
+      - 100
+      rgb_color:
+      - 5
+      - 255
+      - 0
+      xy_color:
+      - 0.173
+      - 0.746
+      friendly_name: TV Backlight
+      supported_features: 32
+      state: 'on'
+    switch.christmas_tree_lights:
+      assumed_state: true
+      device_class: switch
+      friendly_name: Christmas Tree Lights
+      icon: mdi:pine-tree
+      state: 'on'
+    switch.circadian_lighting_circadian_lighting:
+      hs_color:
+      - 28.681
+      - 71.373
+      brightness: 77.14179330216344
+      colortemp: 2500
+      icon: mdi:theme-light-dark
+      friendly_name: Circadian Lighting
+      state: 'off'
+    light.living_room_light_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 207
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 118.8
+      - 100
+      rgb_color:
+      - 5
+      - 255
+      - 0
+      xy_color:
+      - 0.173
+      - 0.746
+      friendly_name: Living Room Light 1
+      supported_features: 32
+      state: 'on'
+    light.living_room_light_2:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 207
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 176.4
+      - 96
+      rgb_color:
+      - 10
+      - 255
+      - 240
+      xy_color:
+      - 0.153
+      - 0.366
+      friendly_name: Living Room Light 2
+      supported_features: 32
+      state: 'on'
+    light.living_room_light_3:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 207
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      friendly_name: Living Room Light 3
+      supported_features: 32
+      state: 'on'
+    light.living_room_can_lights:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      icon: mdi:light-recessed
+      friendly_name: Living Room Can Lights
+      supported_features: 32
+      state: 'off'
+    switch.dining_room_light:
+      friendly_name: Dining Room Light
+      state: 'off'
+    switch.bar_lights:
+      friendly_name: Bar Lights
+      state: 'on'
+    light.office_can_lights:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      icon: mdi:light-recessed
+      friendly_name: Office Can Lights
+      supported_features: 32
+      state: 'off'
+    light.office_lamp:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      friendly_name: Office Lamp
+      supported_features: 32
+      state: 'on'
+  metadata:
+    switch.christmas_tree_lights:
+      entity_only: true
+    switch.circadian_lighting_circadian_lighting:
+      entity_only: true
+  icon: mdi:pine-tree

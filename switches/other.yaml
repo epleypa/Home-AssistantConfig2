@@ -20,7 +20,7 @@
   lights_brightness:
     - light.office_left_strip
     - light.office_right_strip
-    - light.bedroom_overhead_light
+#    - light.bedroom_overhead_light
     - group.living_room_center_light
 
 # - platform: circadian_lighting

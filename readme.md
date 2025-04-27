@@ -446,7 +446,7 @@ Integrations Utilized
       </td>
    </tr>
    <tr>
-      <td><a href="https://github.com/camect/home-assistant-integration">
+      <td><a href="https://github.com/Fr3d/camect-ha">
          <img src="https://brands.home-assistant.io/_/camect/icon.png" style="width:100px;height:100px;"></a>
       </td>
       <td>

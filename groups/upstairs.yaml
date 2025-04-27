@@ -29,7 +29,7 @@ office_lights:
   name: Office Lights
   entities:
     - light.office_light
-    - light.office_overhead_lights
+    - light.office_can_lights
     - light.office_right_strip
     - light.office_left_strip
     - light.office_lamp

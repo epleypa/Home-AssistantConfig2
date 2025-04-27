@@ -333,7 +333,8 @@
                   "cards": [
                     {
                       "entity": "light.living_room_can_lights",
-                      "type": "light"
+                      "type": "light",
+                      "icon": "mdi:light-recessed"
                     },
                     {
                       "type": "button",
@@ -354,8 +355,9 @@
                 {
                   "cards": [
                     {
-                      "entity": "light.kitchen_overhead_lights",
-                      "type": "light"
+                      "entity": "light.kitchen_can_lights",
+                      "type": "light",
+                      "icon": "mdi:light-recessed"
                     },
                     {
                       "entity": "light.storage_light",
@@ -363,7 +365,8 @@
                     },
                     {
                       "entity": "light.bedroom_overhead_light",
-                      "type": "light"
+                      "type": "light",
+                      "icon": "mdi:chandelier"
                     },
                     {
                       "type": "light",
@@ -376,8 +379,9 @@
                 {
                   "cards": [
                     {
-                      "entity": "light.office_overhead_lights",
-                      "type": "light"
+                      "entity": "light.office_can_lights",
+                      "type": "light",
+                      "icon": "mdi:light-recessed"
                     },
                     {
                       "entity": "light.office_light",
@@ -427,6 +431,23 @@
                     }
                   ],
                   "type": "horizontal-stack"
+                },
+                {
+                  "cards": [
+                    {
+                      "entity": "light.bathroom_left_light",
+                      "type": "light"
+                    },
+                    {
+                      "entity": "light.bathroom_center_light",
+                      "type": "light"
+                    },
+                    {
+                      "entity": "light.bathroom_right_light",
+                      "type": "light"
+                    }
+                  ],
+                  "type": "horizontal-stack"
                 }
               ],
               "type": "vertical-stack"
@@ -443,12 +464,15 @@
                       "type": "entity-button"
                     },
                     {
+                      "show_name": true,
+                      "show_icon": true,
                       "type": "button",
                       "tap_action": {
                         "action": "toggle"
                       },
                       "entity": "switch.party_lights",
-                      "show_state": false
+                      "show_state": false,
+                      "icon": "mdi:string-lights"
                     }
                   ],
                   "type": "horizontal-stack"
@@ -460,8 +484,11 @@
                       "type": "entity-button"
                     },
                     {
+                      "show_name": true,
+                      "show_icon": true,
                       "entity": "switch.dining_room_light",
-                      "type": "entity-button"
+                      "type": "entity-button",
+                      "icon": "mdi:chandelier"
                     },
                     {
                       "entity": "switch.bar_lights",
@@ -496,7 +523,13 @@
                       "show_name": true,
                       "show_icon": true,
                       "type": "entity-button",
-                      "entity": "switch.front_yard_lights"
+                      "entity": "switch.front_yard_plug_1"
+                    },
+                    {
+                      "show_name": true,
+                      "show_icon": true,
+                      "type": "entity-button",
+                      "entity": "switch.front_yard_plug_2"
                     },
                     {
                       "entity": "switch.window_switch",
@@ -756,23 +789,23 @@
               ]
             },
             {
-              "camera_image": "camera.front_door",
+              "camera_view": "auto",
+              "camera_image": "camera.g4_doorbell_pro_high_resolution_channel",
               "entities": [
                 {
-                  "entity": "camera.front_door"
+                  "entity": "binary_sensor.g4_doorbell_pro_person_detected"
                 },
                 {
-                  "entity": "binary_sensor.front_door_camera_motion_detected"
+                  "entity": "binary_sensor.g4_doorbell_pro_package_detected"
                 },
                 {
-                  "entity": "binary_sensor.front_door_camera_person_detected"
+                  "entity": "binary_sensor.g4_doorbell_pro_animal_detected"
                 },
                 {
-                  "entity": "binary_sensor.front_door_camera_sound_detected"
+                  "entity": "binary_sensor.g4_doorbell_pro_motion"
                 },
                 {
-                  "entity": "binary_sensor.front_door_camera_doorbell_chime",
-                  "icon": "mdi:power"
+                  "entity": "binary_sensor.g4_doorbell_pro_object_detected"
                 }
               ],
               "title": "Front Door",
@@ -896,7 +929,7 @@
               "camera_view": "auto",
               "type": "picture-elements",
               "title": "Dining Room",
-              "camera_image": "camera.amcrest_dining_room",
+              "camera_image": "camera.dining_room",
               "elements": [
                 {
                   "type": "icon",
@@ -910,7 +943,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_dining_room",
+                      "entity_id": "camera.dining_room",
                       "movement": "up"
                     }
                   }
@@ -927,7 +960,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_dining_room",
+                      "entity_id": "camera.dining_room",
                       "movement": "down"
                     }
                   }
@@ -944,7 +977,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_dining_room",
+                      "entity_id": "camera.dining_room",
                       "movement": "left"
                     }
                   }
@@ -961,7 +994,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_dining_room",
+                      "entity_id": "camera.dining_room",
                       "movement": "right"
                     }
                   }
@@ -978,7 +1011,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_dining_room",
+                      "entity_id": "camera.dining_room",
                       "movement": "left_up"
                     }
                   }
@@ -995,7 +1028,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_dining_room",
+                      "entity_id": "camera.dining_room",
                       "movement": "right_up"
                     }
                   }
@@ -1012,7 +1045,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_dining_room",
+                      "entity_id": "camera.dining_room",
                       "movement": "left_down"
                     }
                   }
@@ -1029,7 +1062,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_dining_room",
+                      "entity_id": "camera.dining_room",
                       "movement": "right_down"
                     }
                   }
@@ -1046,7 +1079,7 @@
                     "action": "call-service",
                     "service": "switch.toggle",
                     "target": {
-                      "entity_id": "switch.amcrest_dining_room_privacy_mode"
+                      "entity_id": "switch.dining_room_privacy_mode"
                     }
                   }
                 }
@@ -1056,7 +1089,7 @@
               "camera_view": "auto",
               "type": "picture-elements",
               "title": "Office",
-              "camera_image": "camera.amcrest_office",
+              "camera_image": "camera.office",
               "elements": [
                 {
                   "type": "icon",
@@ -1070,7 +1103,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_office",
+                      "entity_id": "camera.office",
                       "movement": "up"
                     }
                   }
@@ -1087,7 +1120,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_office",
+                      "entity_id": "camera.office",
                       "movement": "down"
                     }
                   }
@@ -1104,7 +1137,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_office",
+                      "entity_id": "camera.office",
                       "movement": "left"
                     }
                   }
@@ -1121,7 +1154,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_office",
+                      "entity_id": "camera.office",
                       "movement": "right"
                     }
                   }
@@ -1138,7 +1171,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_office",
+                      "entity_id": "camera.office",
                       "movement": "left_up"
                     }
                   }
@@ -1155,7 +1188,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_office",
+                      "entity_id": "camera.office",
                       "movement": "right_up"
                     }
                   }
@@ -1172,7 +1205,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_office",
+                      "entity_id": "camera.office",
                       "movement": "left_down"
                     }
                   }
@@ -1189,7 +1222,7 @@
                     "action": "call-service",
                     "service": "amcrest.ptz_control",
                     "data": {
-                      "entity_id": "camera.amcrest_office",
+                      "entity_id": "camera.office",
                       "movement": "right_down"
                     }
                   }
@@ -1206,7 +1239,7 @@
                     "action": "call-service",
                     "service": "switch.toggle",
                     "target": {
-                      "entity_id": "switch.amcrest_office_privacy_mode"
+                      "entity_id": "switch.office_privacy_mode"
                     }
                   }
                 }
@@ -1225,6 +1258,26 @@
                 }
               ],
               "camera_image": "camera.cat_bed_camera"
+            },
+            {
+              "camera_view": "auto",
+              "camera_image": "camera.g4_doorbell_pro_package_camera",
+              "entities": [
+                {
+                  "entity": "binary_sensor.g4_doorbell_pro_person_detected"
+                },
+                {
+                  "entity": "binary_sensor.g4_doorbell_pro_package_detected"
+                },
+                {
+                  "entity": "binary_sensor.g4_doorbell_pro_animal_detected"
+                },
+                {
+                  "entity": "binary_sensor.g4_doorbell_pro_object_detected"
+                }
+              ],
+              "title": "Front Door Package",
+              "type": "picture-glance"
             }
           ]
         },
