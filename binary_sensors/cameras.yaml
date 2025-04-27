@@ -21,32 +21,32 @@
         and (as_timestamp(state_attr('sensor.nest_event','time_fired')) - as_timestamp(now()) > -15)
         and is_state_attr('sensor.nest_event', 'device_id', '238b3c51d11f99da1bd7bedd372f050a') }}"
     # front_yard_camera_motion_detected:
-      # device_class: motion
-      # value_template: "{{ is_state('sensor.nest_event', 'camera_motion')
-        # and (as_timestamp(state_attr('sensor.nest_event','time_fired')) - as_timestamp(now()) > -15)
-        # and is_state_attr('sensor.nest_event', 'device_id', '16015c01b7a49cafbfcdb5d184a8b3a1') }}"
+    # device_class: motion
+    # value_template: "{{ is_state('sensor.nest_event', 'camera_motion')
+    # and (as_timestamp(state_attr('sensor.nest_event','time_fired')) - as_timestamp(now()) > -15)
+    # and is_state_attr('sensor.nest_event', 'device_id', '16015c01b7a49cafbfcdb5d184a8b3a1') }}"
     # front_yard_camera_person_detected:
-      # device_class: moving
-      # value_template: "{{ is_state('sensor.nest_event', 'camera_person')
-        # and (as_timestamp(state_attr('sensor.nest_event','time_fired')) - as_timestamp(now()) > -15)
-        # and is_state_attr('sensor.nest_event', 'device_id', '16015c01b7a49cafbfcdb5d184a8b3a1') }}"
+    # device_class: moving
+    # value_template: "{{ is_state('sensor.nest_event', 'camera_person')
+    # and (as_timestamp(state_attr('sensor.nest_event','time_fired')) - as_timestamp(now()) > -15)
+    # and is_state_attr('sensor.nest_event', 'device_id', '16015c01b7a49cafbfcdb5d184a8b3a1') }}"
     # front_yard_camera_sound_detected:
-      # device_class: sound
-      # value_template: "{{ is_state('sensor.nest_event', 'camera_sound')
-        # and (as_timestamp(state_attr('sensor.nest_event','time_fired')) - as_timestamp(now()) > -15)
-        # and is_state_attr('sensor.nest_event', 'device_id', '16015c01b7a49cafbfcdb5d184a8b3a1') }}"
+    # device_class: sound
+    # value_template: "{{ is_state('sensor.nest_event', 'camera_sound')
+    # and (as_timestamp(state_attr('sensor.nest_event','time_fired')) - as_timestamp(now()) > -15)
+    # and is_state_attr('sensor.nest_event', 'device_id', '16015c01b7a49cafbfcdb5d184a8b3a1') }}"
     # backyard_camera_motion_detected:
-      # device_class: motion
-      # value_template: "{{ is_state('sensor.nest_event', 'camera_motion')
-        # and (as_timestamp(state_attr('sensor.nest_event','time_fired')) - as_timestamp(now()) > -15)
-        # and is_state_attr('sensor.nest_event', 'device_id', '6124c7af4dc88ecfef3ebb42daa5ecf6') }}"
+    # device_class: motion
+    # value_template: "{{ is_state('sensor.nest_event', 'camera_motion')
+    # and (as_timestamp(state_attr('sensor.nest_event','time_fired')) - as_timestamp(now()) > -15)
+    # and is_state_attr('sensor.nest_event', 'device_id', '6124c7af4dc88ecfef3ebb42daa5ecf6') }}"
     # backyard_camera_person_detected:
-      # device_class: moving
-      # value_template: "{{ is_state('sensor.nest_event', 'camera_person')
-        # and (as_timestamp(state_attr('sensor.nest_event','time_fired')) - as_timestamp(now()) > -15)
-        # and is_state_attr('sensor.nest_event', 'device_id', '6124c7af4dc88ecfef3ebb42daa5ecf6') }}"
+    # device_class: moving
+    # value_template: "{{ is_state('sensor.nest_event', 'camera_person')
+    # and (as_timestamp(state_attr('sensor.nest_event','time_fired')) - as_timestamp(now()) > -15)
+    # and is_state_attr('sensor.nest_event', 'device_id', '6124c7af4dc88ecfef3ebb42daa5ecf6') }}"
     # backyard_camera_sound_detected:
-      # device_class: sound
-      # value_template: "{{ is_state('sensor.nest_event', 'camera_sound')
-        # and (as_timestamp(state_attr('sensor.nest_event','time_fired')) - as_timestamp(now()) > -15)
-        # and is_state_attr('sensor.nest_event', 'device_id', '6124c7af4dc88ecfef3ebb42daa5ecf6') }}"
+    # device_class: sound
+    # value_template: "{{ is_state('sensor.nest_event', 'camera_sound')
+    # and (as_timestamp(state_attr('sensor.nest_event','time_fired')) - as_timestamp(now()) > -15)
+    # and is_state_attr('sensor.nest_event', 'device_id', '6124c7af4dc88ecfef3ebb42daa5ecf6') }}"
