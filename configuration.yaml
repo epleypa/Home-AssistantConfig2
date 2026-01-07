@@ -5,8 +5,6 @@ homeassistant:
 
 default_config:
 api:
-downloader:
-  download_dir: www
 
 lovelace:
 
@@ -35,7 +33,6 @@ tts:
 
 #media players
 media_player: !include media_players.yaml
-media_extractor:
 
 #device tracking
 device_tracker: !include device_trackers.yaml
@@ -100,6 +97,61 @@ fan:
             fan_mode: "off"
 #        speeds: []
 
+template:
+    - trigger:
+      - platform: time_pattern
+        minutes: "/5"
+      action:
+        - action: seventeentrack.get_packages
+          data:
+            config_entry_id: 01KC4P3BV9DE5NYEBF01XSW8YJ
+            package_state:
+              - in_transit
+          response_variable: packages_in_transit
+      sensor:
+        - name: PackagesInTransit
+          unique_id: seventeentrack_packages_in_transit
+          state: "{{ now().isoformat() }}"
+          icon: mdi:truck-delivery-outline
+          attributes:
+            packages: "{{ packages_in_transit.packages }}"
+
+    - trigger:
+        - platform: time_pattern
+          minutes: "/5"
+      action:
+        - action: seventeentrack.get_packages
+          data:
+            config_entry_id: 01KC4P3BV9DE5NYEBF01XSW8YJ
+            package_state:
+              - not_found
+          response_variable: packages_not_found
+      sensor:
+        - name: PackagesNotFound
+          unique_id: seventeentrack_packages_not_found
+          state: "{{ now().isoformat() }}"
+          icon: mdi:package-variant-closed
+          attributes:
+            packages: "{{ packages_not_found.packages }}"
+
+    - trigger:
+        - platform: time_pattern
+          minutes: "/5"
+      action:
+        - action: seventeentrack.get_packages
+          data:
+            config_entry_id: 01KC4P3BV9DE5NYEBF01XSW8YJ
+            package_state:
+              - delivered
+          response_variable: packages_delivered
+      sensor:
+        - name: PackagesDelivered
+          unique_id: seventeentrack_packages_delivered
+          state: "{{ now().isoformat() }}"
+          icon: mdi:checkbox-marked-circle-outline
+          attributes:
+            packages: "{{ packages_delivered.packages }}"
+
 #vendor-specific integrations
 ifttt:
   key: !secret ifttt_key
@@ -139,6 +191,3 @@ amcrest:
       - ptz_preset
     switches:
       - privacy_mode
-# bhyve:
-# username: !secret bhyve_username
-# password: !secret bhyve_password

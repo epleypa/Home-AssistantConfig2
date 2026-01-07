@@ -1,9 +1,9 @@
 - id: wake_up
   alias: Wake Up
-  trigger:
-  - platform: template
-    value_template: '{{ states(''sensor.time'') == states(''sensor.alarm_time'') }}'
-  condition:
+  triggers:
+  - value_template: '{{ states(''sensor.time'') == states(''sensor.alarm_time'') }}'
+    trigger: template
+  conditions:
   - condition: or
     conditions:
     - condition: and
@@ -23,25 +23,25 @@
     - condition: state
       entity_id: input_boolean.alarmweekday
       state: 'off'
-  action:
-  - service: light.turn_on
-    data:
+  actions:
+  - data:
       brightness_pct: 25
     target:
       entity_id: light.under_bed_lights
+    action: light.turn_on
   - delay:
       hours: 0
       minutes: 30
       seconds: 0
       milliseconds: 0
-  - service: light.turn_on
-    data:
+  - data:
       brightness_pct: 100
     target:
       entity_id:
       - group.office_lights
-  - service: notify.discord
-    data_template:
+    action: light.turn_on
+    enabled: false
+  - data_template:
       target: '814328602270498817'
       message: "{# Deliveries Sentence #}\n  {% macro deliveries_sentence() -%}\n
         \       {%- if states(\"sensor.mail_usps_mail\")|int(0) == 0 -%}\n          No\n
@@ -87,6 +87,7 @@
             url: https://brands.home-assistant.io/mail_and_packages/logo.png
           footer:
             text: Mail and Packages
+    action: notify.discord
   mode: single
 - id: later
   alias: See You Later
@@ -102,39 +103,6 @@
   - service: homeassistant.turn_off
     target:
       entity_id: group.home_lights
-  mode: single
-- id: fan
-  alias: Fan
-  trigger:
-  - platform: time_pattern
-    hours: /1
-  - platform: state
-    entity_id: fan.hvac_fan
-    to: 'on'
-    for:
-      hours: 1
-      minutes: 0
-      seconds: 0
-  condition:
-  - condition: and
-    conditions:
-    - condition: state
-      entity_id: group.family
-      state: home
-  action:
-  - data: {}
-    service: fan.turn_on
-    target:
-      entity_id: fan.hvac_fan
-  - delay:
-      hours: 0
-      minutes: 15
-      seconds: 0
-      milliseconds: 0
-  - service: fan.turn_off
-    target:
-      entity_id: fan.hvac_fan
-    data: {}
   mode: single
 - id: workday
   alias: Workday
@@ -154,15 +122,36 @@
   mode: single
 - id: humidfier
   alias: Humidifier
-  trigger:
-  - platform: template
-    value_template: '{{ states(''sensor.time'') == states(''sensor.alarm_time'') }}'
-  - platform: time
-    at: '22:00:00'
-  action:
-  - service: '{% if now().strftime(''%H:%M:%S'') >= ''12:00:00'' %}humidifier.turn_on
+  triggers:
+  - value_template: '{{ states(''sensor.time'') == states(''sensor.alarm_time'') }}'
+    trigger: template
+  - at: '22:00:00'
+    trigger: time
+  conditions: []
+  actions:
+  - entity_id: humidifier.bedroom_humidifier
+    action: '{% if now().strftime(''%H:%M:%S'') >= ''12:00:00'' %}humidifier.turn_on
       {% else %}humidifier.turn_off {% endif %}'
-    entity_id: humidifier.bedroom_humidifier
+    enabled: false
+  - if:
+    - condition: and
+      conditions:
+      - condition: numeric_state
+        entity_id: sensor.upstairs_current_humidity
+        below: 55
+      - condition: template
+        value_template: '{% if now().strftime(''%H:%M:%S'') >= ''12:00:00'' %}true{%
+          endif %}'
+    then:
+    - action: humidifier.turn_on
+      metadata: {}
+      data: {}
+    else:
+    - action: humidifier.turn_off
+      metadata: {}
+      data: {}
+      target:
+        entity_id: humidifier.bedroom_humidifier
 - id: ledweather
   alias: LED Weather
   trigger:
@@ -928,17 +917,17 @@
 - id: '1608091420017'
   alias: Doorbell
   description: ''
-  trigger:
-  - platform: device
-    device_id: 238b3c51d11f99da1bd7bedd372f050a
-    domain: nest
-    type: doorbell_chime
-  condition: []
-  action:
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.g4_doorbell_pro_doorbell
+    to: 'on'
+  conditions: []
+  actions:
   - data:
       entity_id: camera.front_door
       filename: /config/www/doorbell.jpg
-    service: camera.snapshot
+    action: camera.snapshot
   - delay: 00:00:01
   - data_template:
       target: '812545796339400708'
@@ -949,16 +938,16 @@
         embed:
           description: Doorbell Camera
           author:
-            name: Nest (via Home Assistant)
-            icon_url: https://brands.home-assistant.io/nest/icon.png
+            name: Unifi (via Home Assistant)
+            icon_url: https://brands.home-assistant.io/unifi/icon.png
           fields: []
-    service: notify.discord
-  - service: camera.record
-    metadata: {}
+    action: notify.discord
+  - metadata: {}
     data:
       filename: /config/www/doorbell.mp4
     target:
       entity_id: camera.front_door
+    action: camera.record
   - data_template:
       target: '812545796339400708'
       message: Doorbell Camera
@@ -968,10 +957,10 @@
         embed:
           description: Doorbell Camera
           author:
-            name: Nest (via Home Assistant)
-            icon_url: https://brands.home-assistant.io/nest/icon.png
+            name: Unifi (via Home Assistant)
+            icon_url: https://brands.home-assistant.io/unifi/icon.png
           fields: []
-    service: notify.discord
+    action: notify.discord
   mode: single
 - id: '1612648017088'
   alias: Package Tracking Import
@@ -1019,34 +1008,34 @@
 - id: '1673365170897'
   alias: Amcrest Privacy Mode
   description: ''
-  trigger:
-  - platform: state
-    entity_id:
+  triggers:
+  - entity_id:
     - group.family
     to: home
     id: family_home
-  - platform: time
-    at: 00:00:00
+    trigger: state
+  - at: 00:00:00
     id: goodnight
-  - platform: time
-    at: 07:00:00
+    trigger: time
+  - at: 07:00:00
     id: goodmorning
-  - platform: state
-    entity_id:
+    trigger: time
+  - entity_id:
     - group.family
     id: family_away
     from: home
-  - platform: state
-    entity_id:
+    trigger: state
+  - entity_id:
     - alarm_control_panel.10th_street
     to: disarmed
     id: disarmed
-  - platform: state
-    entity_id:
+    trigger: state
+  - entity_id:
     - alarm_control_panel.10th_street
     from: disarmed
     id: armed
-  condition:
+    trigger: state
+  conditions:
   - condition: not
     conditions:
     - condition: state
@@ -1055,7 +1044,7 @@
     - condition: state
       entity_id: alarm_control_panel.10th_street
       state: unknown
-  action:
+  actions:
   - if:
     - condition: or
       conditions:
@@ -1066,17 +1055,22 @@
       - condition: trigger
         id: armed
     then:
-    - service: switch.turn_off
-      data: {}
+    - data: {}
       target:
         entity_id:
         - switch.amcrest_dining_room_privacy_mode
         - switch.amcrest_office_privacy_mode
-    - service: alarm_control_panel.alarm_arm_away
-      metadata: {}
+      action: switch.turn_off
+    - metadata: {}
       data: {}
       target:
         device_id: fa72deb95f10377f1f021123e1f54026
+      action: alarm_control_panel.alarm_arm_away
+      enabled: false
+    - type: turn_on
+      device_id: 4f5cf561f44eb16c07db3714bb55734a
+      entity_id: 8e0e41544d426c571df9e1777c2b88ed
+      domain: switch
   - if:
     - condition: or
       conditions:
@@ -1093,17 +1087,22 @@
           entity_id: group.family
           state: home
     then:
-    - service: switch.turn_on
-      data: {}
+    - data: {}
       target:
         entity_id:
         - switch.amcrest_dining_room_privacy_mode
         - switch.amcrest_office_privacy_mode
-    - service: alarm_control_panel.alarm_disarm
-      metadata: {}
+      action: switch.turn_on
+    - metadata: {}
       data: {}
       target:
         device_id: fa72deb95f10377f1f021123e1f54026
+      action: alarm_control_panel.alarm_disarm
+      enabled: false
+    - type: turn_off
+      device_id: 4f5cf561f44eb16c07db3714bb55734a
+      entity_id: 8e0e41544d426c571df9e1777c2b88ed
+      domain: switch
   mode: restart
 - id: '1675640672790'
   alias: Tag Bedroom Overhead On/Off is scanned
@@ -1281,36 +1280,6 @@
           fields: []
     action: notify.discord
   mode: single
-- id: '1705632083918'
-  alias: 0Test Nest
-  description: ''
-  trigger:
-  - platform: device
-    device_id: 238b3c51d11f99da1bd7bedd372f050a
-    domain: nest
-    type: camera_motion
-  - platform: device
-    device_id: 238b3c51d11f99da1bd7bedd372f050a
-    domain: nest
-    type: camera_person
-  condition: []
-  action:
-  - service: notify.discord
-    metadata: {}
-    data:
-      target: '812545796339400708'
-      message: test camera
-      data:
-        images:
-        - /api/nest/event_media/{{ trigger.event.data.device_id }}/{{ trigger.event.data.nest_event_id
-          }}/thumbnail
-  - service: notify.mobile_app_peter_sm_s911u
-    data:
-      data:
-        image: /api/nest/event_media/{{ trigger.event.data.device_id }}/{{ trigger.event.data.nest_event_id
-          }}/thumbnail
-      message: test camera
-  mode: single
 - id: '1710214521979'
   alias: Weather Light
   description: ''
@@ -1425,3 +1394,108 @@
       code: 03281990
     target:
       device_id: 62271a51db7e9203f232a7d95bbb8d00
+- id: '1748912120057'
+  alias: Color Loop
+  description: ''
+  use_blueprint:
+    path: mdolnik/color_loop.yaml
+    input:
+      light: light.tv_backlight
+      color_1:
+      - 228
+      - 3
+      - 3
+      color_2:
+      - 255
+      - 100
+      - 0
+      color_3:
+      - 251
+      - 237
+      - 0
+      color_4:
+      - 0
+      - 255
+      - 0
+      color_5:
+      - 0
+      - 76
+      - 255
+      color_6:
+      - 115
+      - 41
+      - 130
+      color_7:
+      - 255
+      - 255
+      - 255
+      color_8:
+      - 255
+      - 138
+      - 189
+      color_9:
+      - 116
+      - 223
+      - 255
+      helper_toggle: light.tv_backlight
+      transition:
+        hours: 0
+        minutes: 0
+        seconds: 10
+- id: '1752098789106'
+  alias: Weather Alert
+  description: ''
+  triggers:
+  - type: precipitation_intensity
+    device_id: 4c762546e98a164e2f85fe05e4f3a19a
+    entity_id: 2ffe0b72929c36412dc3e8289374c0eb
+    domain: sensor
+    trigger: device
+    above: 0
+  conditions: []
+  actions:
+  - data:
+      message: Rain has started
+      target: '814328602270498817'
+      data:
+        embed:
+          author:
+            name: Ambient Weather Station (via Home Assistant)
+            icon_url: https://brands.home-assistant.io/ambient_station/logo.png
+          fields: []
+    action: notify.discord
+  mode: single
+- id: '1766882179170'
+  alias: 'Motion: Front Door'
+  description: ''
+  triggers:
+  - type: motion
+    device_id: 3d15d0d79c721415d6d2f5d57a1bac8f
+    entity_id: 9b49bcae29eeef06a2b527288e877eaa
+    domain: binary_sensor
+    metadata:
+      secondary: false
+    trigger: device
+  - type: motion
+    device_id: 663b6c9ae233860f11ea8566639be1ce
+    entity_id: 7e5c8dfb1d1e47011b55a8ef87457086
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - action: homeassistant.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: group.hallway_lights
+  - delay:
+      hours: 0
+      minutes: 15
+      seconds: 0
+      milliseconds: 0
+  - action: homeassistant.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: group.hallway_lights
+  mode: restart

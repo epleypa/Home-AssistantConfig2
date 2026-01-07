@@ -16,7 +16,11 @@
               "entity": "person.kelley"
             },
             {
-              "entity": "device_tracker.toyota_corolla"
+              "type": "entity",
+              "show_name": false,
+              "show_state": true,
+              "show_icon": true,
+              "entity": "device_tracker.ocean_gem"
             },
             {
               "entity": "sun.sun"
@@ -234,6 +238,7 @@
                   "cards": [
                     {
                       "camera_view": "auto",
+                      "fit_mode": "cover",
                       "camera_image": "camera.front_yard",
                       "entities": [
                         {
@@ -245,16 +250,9 @@
                     },
                     {
                       "camera_view": "auto",
-                      "camera_image": "camera.front_door",
-                      "entities": [
-                        {
-                          "entity": "camera.front_door"
-                        },
-                        {
-                          "entity": "binary_sensor.front_door_camera_doorbell_chime",
-                          "icon": "mdi:power"
-                        }
-                      ],
+                      "fit_mode": "cover",
+                      "camera_image": "camera.g4_doorbell_pro_high_resolution_channel",
+                      "entities": [],
                       "title": "Front Door",
                       "type": "picture-glance"
                     }
@@ -265,10 +263,11 @@
                   "cards": [
                     {
                       "camera_view": "auto",
+                      "fit_mode": "cover",
                       "camera_image": "camera.amcrest_dining_room",
                       "entities": [
                         {
-                          "entity": "camera.amcrest_dining_room"
+                          "entity": "camera.dining_room"
                         },
                         {
                           "entity": "switch.amcrest_dining_room_privacy_mode"
@@ -278,6 +277,8 @@
                       "type": "picture-glance"
                     },
                     {
+                      "camera_view": "auto",
+                      "fit_mode": "cover",
                       "camera_image": "camera.amcrest_office",
                       "entities": [
                         {
@@ -1679,15 +1680,27 @@
                 {
                   "cards": [
                     {
+                      "show_name": true,
+                      "show_icon": true,
+                      "show_state": true,
                       "entities": [
                         {
                           "entity": "binary_sensor.washer_status"
                         },
                         {
                           "entity": "binary_sensor.dryer_status"
+                        },
+                        {
+                          "entity": "sensor.dishwasher_current_status",
+                          "name": "Dishwasher"
+                        },
+                        {
+                          "entity": "sensor.microwave_current_status",
+                          "name": "Microwave"
                         }
                       ],
-                      "type": "glance"
+                      "type": "glance",
+                      "state_color": true
                     }
                   ],
                   "type": "horizontal-stack"
@@ -1704,6 +1717,10 @@
                         {
                           "entity": "binary_sensor.dryer_status",
                           "name": "Dryer"
+                        },
+                        {
+                          "entity": "sensor.dishwasher_current_status",
+                          "name": "Dishwasher"
                         }
                       ],
                       "logarithmic_scale": false
@@ -1712,7 +1729,6 @@
                   "type": "horizontal-stack"
                 }
               ],
-              "title": "Laundry",
               "type": "vertical-stack"
             },
             {
@@ -1917,18 +1933,9 @@
               "type": "entities"
             },
             {
-              "type": "custom:auto-entities",
-              "card": {
-                "type": "entities",
-                "title": "Packages"
-              },
-              "filter": {
-                "include": [
-                  {
-                    "entity_id": "sensor.seventeentrack_package_*"
-                  }
-                ]
-              }
+              "type": "markdown",
+              "title": "Packages in transit",
+              "content": "{% for package in states.sensor['17track_in_transit'].attributes.packages %}\n>- **{{ package.friendly_name }} ({{ package.tracking_number }}):** {{ package.info_text }}\n{% endfor %}\n"
             },
             {
               "entities": [

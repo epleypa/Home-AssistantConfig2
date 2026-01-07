@@ -97,3 +97,7 @@ nest/event_media/*
 go2rtc-*
 rtsp2webrtc_v5_aarch64
 backups/*
+blueprints/*
+.ha_run.lock
+FLUME_TOKEN_FILE*
+rtsp2webrtc*

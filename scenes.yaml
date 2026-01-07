@@ -800,3 +800,235 @@
     switch.circadian_lighting_circadian_lighting:
       entity_only: true
   icon: mdi:pine-tree
+- id: '1748910666112'
+  name: Pride
+  entities:
+    light.living_room_light_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9000
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 224
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 298.8
+      - 100
+      rgb_color:
+      - 250
+      - 0
+      - 255
+      xy_color:
+      - 0.379
+      - 0.152
+      friendly_name: Living Room Light 1
+      supported_features: 32
+      state: 'on'
+    light.living_room_light_2:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9000
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 224
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 28.8
+      - 100
+      rgb_color:
+      - 255
+      - 122
+      - 0
+      xy_color:
+      - 0.619
+      - 0.369
+      friendly_name: Living Room Light 2
+      supported_features: 32
+      state: 'on'
+    light.living_room_light_3:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9000
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 224
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 190.8
+      - 24
+      rgb_color:
+      - 194
+      - 244
+      - 255
+      xy_color:
+      - 0.262
+      - 0.32
+      friendly_name: Living Room Light 3
+      supported_features: 32
+      state: 'on'
+    light.hallway_stairs_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9000
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 241.2
+      - 92
+      rgb_color:
+      - 25
+      - 20
+      - 255
+      xy_color:
+      - 0.14
+      - 0.046
+      friendly_name: Hallway Stairs Light
+      supported_features: 32
+      state: 'on'
+    light.hallway_bathroom_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9000
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 280.8
+      - 94
+      rgb_color:
+      - 178
+      - 15
+      - 255
+      xy_color:
+      - 0.283
+      - 0.109
+      friendly_name: Hallway Bathroom Light
+      supported_features: 32
+      state: 'on'
+    light.hallway_laundry_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9000
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      friendly_name: Hallway Laundry Light
+      supported_features: 32
+      state: 'on'
+    light.tv_backlight:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9000
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 230
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 356.4
+      - 96
+      rgb_color:
+      - 255
+      - 10
+      - 25
+      xy_color:
+      - 0.692
+      - 0.297
+      friendly_name: TV Backlight
+      supported_features: 32
+      state: 'on'
+    light.storage_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9000
+      min_mireds: 111
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: hs
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 288
+      - 27
+      rgb_color:
+      - 241
+      - 186
+      - 255
+      xy_color:
+      - 0.333
+      - 0.253
+      friendly_name: Storage Light
+      supported_features: 32
+      state: 'on'
+    switch.circadian_lighting_circadian_lighting:
+      hs_color:
+      - 28.681
+      - 71.373
+      brightness: 88.86860647037892
+      colortemp: 2500
+      icon: mdi:theme-light-dark
+      friendly_name: Circadian Lighting
+      state: 'off'
+  icon: mdi:looks
+  metadata:
+    light.living_room_light_1:
+      entity_only: true
+    light.living_room_light_2:
+      entity_only: true
+    light.living_room_light_3:
+      entity_only: true
+    light.hallway_stairs_light:
+      entity_only: true
+    light.hallway_bathroom_light:
+      entity_only: true
+    light.hallway_laundry_light:
+      entity_only: true
+    light.tv_backlight:
+      entity_only: true
+    light.storage_light:
+      entity_only: true
+    switch.circadian_lighting_circadian_lighting:
+      entity_only: true
