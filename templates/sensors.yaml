@@ -1,0 +1,96 @@
+- sensor:
+  - default_entity_id: sensor.hvac_status
+    icon: "{% if is_state('sensor.hvac_status',\"idle\") %}\n  mdi:power-on\n{% elif
+      is_state('sensor.hvac_status',\"cool\") %}\n  mdi:snowflake\n{% elif is_state('sensor.hvac_status',\"heat\")
+      %}\n  mdi:fire\n{% else %}\n  mdi:octagon\n{% endif %}"
+    name: Upstairs HVAC Status
+    state: "{%- if is_state('climate.upstairs', 'off') %}\n  off\n{% elif is_state_attr('climate.upstairs',
+      'hvac_action', 'idle') %}\n  idle\n{% elif is_state_attr('climate.upstairs',
+      'hvac_action', 'fan') %}\n  fan\n{% elif is_state_attr('climate.upstairs', 'hvac_action',
+      'cooling') %}\n  cooling\n{% elif is_state_attr('climate.upstairs', 'hvac_action',
+      'heating') %}\n  heating\n{% else %}\n  unknown\n{%- endif %}"
+
+  - default_entity_id: sensor.mail_deliveries_message
+    name: Deliveries Summary
+    state: "{# Deliveries Sentence #}\n  {% macro deliveries_sentence() -%}\n        {%-
+      if states(\"sensor.mail_usps_mail\")|int(0) == 0 -%}\n          No\n        {%-
+      else -%}\n          {{states(\"sensor.mail_usps_mail\")|int(0)}}\n        {%-
+      endif -%}\n      {{' '}}\n        {%- if states(\"sensor.mail_usps_mail\")|int(0)
+      <= 1 -%}\n          pieces of mail\n        {%- else -%}\n          pieces of
+      mail\n        {%- endif -%}\n      {{' '}}will be delivered.{{''}}\n        {%-
+      if states(\"sensor.mail_usps_delivering\")|int(0) == 0 -%}\n          No\n        {%-
+      else -%}\n          {{states(\"sensor.mail_usps_delivering\")|int(0)}}\n        {%-
+      endif -%}\n      {{' '}}\n        {%- if states(\"sensor.mail_usps_delivering\")|int(0)
+      == 1 -%}\n          USPS package is\n        {%- else -%}\n          USPS packages
+      are\n        {%- endif -%}\n      {{' '}}in transit.{{''}}\n        {%- if states(\"sensor.mail_fedex_delivering\")|int(0)
+      == 0 -%}\n          No\n        {%- else -%}\n          {{states(\"sensor.mail_fedex_delivering\")|int(0)}}\n
+      \       {%- endif -%}\n      {{' '}}\n        {%- if states(\"sensor.mail_fedex_delivering\")|int(0)
+      == 1 -%}\n          FedEx package is\n        {%- else -%}\n          Fedex
+      packages are\n        {%- endif -%}\n      {{' '}}in transit.{{''}}\n      {%-
+      if states(\"sensor.mail_ups_delivering\")|int(0) == 0 -%}\n          No\n        {%-
+      else -%}\n          {{states(\"sensor.mail_ups_delivering\")|int(0)}}\n        {%-
+      endif -%}\n      {{' '}}\n        {%- if states(\"sensor.mail_ups_delivering\")|int(0)
+      == 1 -%}\n          UPS package is\n        {%- else -%}\n          UPS packages
+      are\n        {%- endif -%}\n      {{' '}}in transit.{{''}}\n      {%- if states(\"sensor.mail_amazon_packages\")|int(0)
+      == 0 -%}\n          No\n        {%- else -%}\n          {{states(\"sensor.mail_amazon_packages\")|int(0)}}\n
+      \       {%- endif -%}\n      {{' '}}\n        {%- if states(\"sensor.mail_amazon_packages\")|int(0)
+      == 1 -%}\n          Amazon package is\n        {%- else -%}\n          Amazon
+      packages are\n        {%- endif -%}\n      {{' '}}in transit.{{''}}\n  {%- endmacro
+      %}\n{{deliveries_sentence()}}"
+
+  - default_entity_id: sensor.alarm_time
+    name: Time
+    state: '{{ "%0.02d:%0.02d" | format(states("input_number.alarmhour") | int, states("input_number.alarmminutes")
+      | int) }}'
+
+  - default_entity_id: sensor.via_destination
+    state: '{% if is_state("input_select.destination", "Peter Tysons Office") -%}
+      {{ state_attr("zone.peter_tysons_office", "latitude") }},{{ state_attr("zone.peter_tysons_office",
+      "longitude") }} {% elif is_state("input_select.destination", "Peter Client")
+      -%} {{ state_attr("zone.peter_client", "latitude") }},{{ state_attr("zone.peter_client",
+      "longitude") }} {% elif is_state("input_select.destination", "Home") -%} {{
+      state_attr("zone.home", "latitude") }},{{ state_attr("zone.home", "longitude")
+      }} {% elif is_state("input_select.destination", "Gym Dupont") -%} {{ state_attr("zone.gym_dupont",
+      "latitude") }},{{ state_attr("zone.gym_dupont", "longitude") }} {% elif is_state("input_select.destination",
+      "Gym 14th St") -%} {{ state_attr("zone.gym_14th", "latitude") }},{{ state_attr("zone.gym_14th",
+      "longitude") }} {%- endif %}'
+    name: via_destination
+  - default_entity_id: sensor.via_origin
+    state: '{% if is_state("input_select.origin", "Peter Tysons Office") -%} {{ state_attr("zone.peter_tysons_office",
+      "latitude") }},{{ state_attr("zone.peter_tysons_office", "longitude") }} {%
+      elif is_state("input_select.destination", "Peter Client") -%} {{ state_attr("zone.peter_client",
+      "latitude") }},{{ state_attr("zone.peter_client", "longitude") }} {% elif is_state("input_select.origin",
+      "Home") -%} {{ state_attr("zone.home", "latitude") }},{{ state_attr("zone.home",
+      "longitude") }} {% elif is_state("input_select.origin", "Gym Dupont") -%} {{
+      state_attr("zone.gym_dupont", "latitude") }},{{ state_attr("zone.gym_dupont",
+      "longitude") }} {% elif is_state("input_select.destination", "Gym 14th St")
+      -%} {{ state_attr("zone.gym_14th", "latitude") }},{{ state_attr("zone.gym_14th",
+      "longitude") }} {%- endif %}'
+    name: via_origin
+
+  - unit_of_measurement: W
+    default_entity_id: sensor.washer_power
+    icon: mdi:washing-machine
+    name: Washer Power
+    state: '{{ state_attr(''switch.washer'',''current_power_w'') | default(''0'')
+      }}'
+  - unit_of_measurement: W
+    default_entity_id: sensor.dryer_power
+    icon: mdi:tumble-dryer
+    name: Dryer Power
+    state: '{{ state_attr(''switch.dryer'',''current_power_w'') | default(''0'') }}'
+
+  - unit_of_measurement: minutes
+    default_entity_id: sensor.wmata_gr_no
+    name: Green Line Northbound
+    state: '{% set trains = states.sensor.wmata.attributes.Trains %} {% for train
+      in trains if train.DestinationCode == "E10" %} {% if loop.first %}{{ train.Min
+      }} {% elif loop.last %} and {{ train.Min }} {% else %}, {{ train.Min }}, {%
+      endif %} {% endfor %}'
+  - unit_of_measurement: minutes
+    default_entity_id: sensor.wmata_gr_so
+    name: Green Line Southbound
+    state: '{% set trains = states.sensor.wmata.attributes.Trains %} {% for train
+      in trains if train.DestinationCode == "F11" %} {% if loop.first %}{{ train.Min
+      }} {% elif loop.last %} and {{ train.Min }} {% else %}, {{ train.Min }}, {%
+      endif %} {% endfor %}'

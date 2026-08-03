@@ -1,15 +1,3 @@
-# - name: pushbullet
-#   platform: pushbullet
-#   api_key: !secret pushbullet_key
-#
-- name: error_logfile
-  platform: file
-  filename: error_log.log
-
-- name: telegram_peter
-  platform: telegram
-  chat_id: !secret telegram_id_peter
-
 - name: all_mobiles
   platform: group
   services:

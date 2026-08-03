@@ -686,11 +686,11 @@
 - id: '1588304855176'
   alias: Night Motion
   description: ''
-  trigger:
+  triggers:
   - entity_id: binary_sensor.backyard_camera_motion_detected
-    platform: state
     to: 'on'
-  condition:
+    trigger: state
+  conditions:
   - condition: and
     conditions:
     - condition: or
@@ -702,16 +702,18 @@
     - condition: template
       value_template: '{% if state_attr(''weather.kdca_daynight'', ''wind_speed'')
         < 5 %}true{% else %}false{% endif %}'
-  action:
-  - type: turn_on
-    device_id: f0a5bdb86a5e49bebd0aece4f7ab1062
-    entity_id: switch.patio_wall_lights
-    domain: switch
+  actions:
+  - action: switch.turn_on
+    metadata: {}
+    target:
+      entity_id: switch.patio_wall_lights
+    data: {}
   - delay: 00:{{ '{:02}'.format(range(10,20) | random | int) }}:00
-  - type: turn_off
-    device_id: f0a5bdb86a5e49bebd0aece4f7ab1062
-    entity_id: switch.patio_wall_lights
-    domain: switch
+  - action: switch.turn_off
+    metadata: {}
+    target:
+      entity_id: switch.patio_wall_lights
+    data: {}
   mode: single
 - id: '1588452474080'
   alias: Camect Motion
@@ -1061,16 +1063,11 @@
         - switch.amcrest_dining_room_privacy_mode
         - switch.amcrest_office_privacy_mode
       action: switch.turn_off
-    - metadata: {}
-      data: {}
+    - action: switch.turn_on
+      metadata: {}
       target:
-        device_id: fa72deb95f10377f1f021123e1f54026
-      action: alarm_control_panel.alarm_arm_away
-      enabled: false
-    - type: turn_on
-      device_id: 4f5cf561f44eb16c07db3714bb55734a
-      entity_id: 8e0e41544d426c571df9e1777c2b88ed
-      domain: switch
+        entity_id: switch.cat_bed_camera_camera_motion_detection
+      data: {}
   - if:
     - condition: or
       conditions:
@@ -1093,16 +1090,11 @@
         - switch.amcrest_dining_room_privacy_mode
         - switch.amcrest_office_privacy_mode
       action: switch.turn_on
-    - metadata: {}
-      data: {}
+    - action: switch.turn_off
+      metadata: {}
       target:
-        device_id: fa72deb95f10377f1f021123e1f54026
-      action: alarm_control_panel.alarm_disarm
-      enabled: false
-    - type: turn_off
-      device_id: 4f5cf561f44eb16c07db3714bb55734a
-      entity_id: 8e0e41544d426c571df9e1777c2b88ed
-      domain: switch
+        entity_id: switch.cat_bed_camera_camera_motion_detection
+      data: {}
   mode: restart
 - id: '1675640672790'
   alias: Tag Bedroom Overhead On/Off is scanned
@@ -1481,7 +1473,10 @@
     entity_id: 7e5c8dfb1d1e47011b55a8ef87457086
     domain: binary_sensor
     trigger: device
-  conditions: []
+  conditions:
+  - condition: time
+    after: 09:30:00
+    before: '23:00:00'
   actions:
   - action: homeassistant.turn_on
     metadata: {}
