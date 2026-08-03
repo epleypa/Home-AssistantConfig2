@@ -1,0 +1,93 @@
+- switch:
+  - unique_id: tv_power
+    turn_on:
+    - data:
+        entity_id: remote.broadlink
+        device: television
+        command: turn_on
+        num_repeats: 3
+        delay_secs: 0.6
+      action: remote.send_command
+    - entity_id:
+      - input_boolean.tv_power
+      action: input_boolean.turn_on
+    turn_off:
+    - data:
+        entity_id: remote.broadlink
+        device: television
+        command: turn_off
+        num_repeats: 3
+        delay_secs: 0.6
+      action: remote.send_command
+    - entity_id:
+      - input_boolean.tv_power
+      action: input_boolean.turn_off
+    default_entity_id: switch.tv_power
+    state: '{{ is_state(''input_boolean.tv_power'', ''on'') }}'
+    name: tv_power
+  - unique_id: tv_mute
+    turn_on:
+    - data:
+        entity_id: remote.broadlink
+        device: television
+        command: mute
+      action: remote.send_command
+    - entity_id:
+      - input_boolean.tv_mute
+      action: input_boolean.turn_on
+    turn_off:
+    - data:
+        entity_id: remote.broadlink
+        device: television
+        command: mute
+      action: remote.send_command
+    - entity_id:
+      - input_boolean.tv_mute
+      action: input_boolean.turn_off
+    default_entity_id: switch.tv_mute
+    state: '{{ is_state(''input_boolean.tv_mute'', ''on'') }}'
+    name: tv_mute
+  - unique_id: downstairs_snowflake_lights
+    turn_on:
+    - data:
+        device: downstairs_christmas_window_lights
+        command: turn_on
+        num_repeats: 2
+      target:
+        entity_id:
+        - remote.broadlink
+      action: remote.send_command
+    turn_off:
+    - data:
+        device: downstairs_christmas_window_lights
+        command: turn_off
+        num_repeats: 2
+      target:
+        entity_id:
+        - remote.broadlink
+      action: remote.send_command
+    default_entity_id: switch.downstairs_snowflake_lights
+    icon: mdi:snowflake
+    name: Downstairs Snowflake Lights
+  - unique_id: upstairs_snowflake_lights
+    turn_on:
+    - data:
+        device: upstairs_christmas_window_lights
+        command: turn_on
+        num_repeats: 2
+      target:
+        entity_id:
+        - remote.broadlink_rm_pro
+      action: remote.send_command
+    turn_off:
+    - data:
+        device: upstairs_christmas_window_lights
+        command: turn_off
+        num_repeats: 2
+      target:
+        entity_id:
+        - remote.broadlink_rm_pro
+      action: remote.send_command
+    default_entity_id: switch.upstairs_snowflake_lights
+    icon: mdi:snowflake
+    name: Upstairs Snowflake Lights
