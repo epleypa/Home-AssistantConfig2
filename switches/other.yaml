@@ -32,5 +32,3 @@
 #     - light.hallway_stairs_light
 #     - light.hallway_bathroom_light
 #     - light.hallway_laundry_light
-
-# - platform: bhyve

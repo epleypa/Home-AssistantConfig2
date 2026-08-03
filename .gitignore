@@ -101,3 +101,4 @@ blueprints/*
 .ha_run.lock
 FLUME_TOKEN_FILE*
 rtsp2webrtc*
+.cache/*
